@@ -1,0 +1,41 @@
+entities:
+  - estate_type
+  - address
+  - area
+
+slots:
+  estate_type:
+    type: text
+    auto_fill: false
+  address:
+    type: text
+    auto_fill: false
+  area:
+    type: float
+    auto_fill: false
+
+intents:
+  - greet
+  - ask_cost
+  - action_get_cost
+  - goodbye
+
+responses:
+  utter_fallback:
+  - text: "Mình ko hiểu bạn nói gì cả"
+  utter_greet:
+  - text: "Chào bạn, bạn muốn hỏi giá như nào?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+actions:
+- utter_greet
+- form_get_infor
+- action_get_cost
+- utter_goodbye
+- utter_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
