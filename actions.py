@@ -31,21 +31,21 @@ class ActionGetCost(Action):
         return []
 
 
-class FormGetInfor(FormAction):
+class GetCostForm(FormAction):
 
     def name(self) -> Text:
-        return "form_get_infor"
+        return "get_cost_form"
 
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
         return ["estate_type", "address", "area"]
 
-    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
-        return {
-            "estate_type": [self.from_entity(entity="estate_type", intent=["inform"]), self.from_text()],
-            "address": [self.from_entity(entity="address", intent=["inform"]), self.from_text()],
-            "area": [self.from_entity(entity="area", intent=["inform"]), self.from_text()],
-        }
+    # def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+    #     return {
+    #         "estate_type": [self.from_entity(entity="estate_type", intent=["inform"]), self.from_text()],
+    #         "address": [self.from_entity(entity="address", intent=["inform"]), self.from_text()],
+    #         "area": [self.from_entity(entity="area", intent=["inform"]), self.from_text()],
+    #     }
 
     def submit(
             self,
@@ -54,6 +54,9 @@ class FormGetInfor(FormAction):
             domain: Dict[Text, Any],
     ) -> List[Dict]:
         pass
-        # estate_type = tracker.get_slot('estate_type')
-        # address = tracker.get_slot('address')
-        # area = tracker.get_slot('area')
+        estate_type = tracker.get_slot('estate_type')
+        address = tracker.get_slot('address')
+        area = tracker.get_slot('area')
+        dispatcher.utter_message(
+            text="Giá {} tại {} với diện tích {} m2 có giá khoảng 2 tỷ đồng ạ.".format(estate_type, address, area))
+        return []

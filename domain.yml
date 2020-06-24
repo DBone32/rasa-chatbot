@@ -4,34 +4,41 @@ entities:
   - area
 
 slots:
+  requested_slot:
+    type: text
   estate_type:
-    type: text
-    auto_fill: false
+    type: unfeaturized
   address:
-    type: text
-    auto_fill: false
+    type: unfeaturized
   area:
-    type: float
-    auto_fill: false
+    type: unfeaturized
 
 intents:
   - greet
   - ask_cost
-  - action_get_cost
+  - thank
   - goodbye
 
 responses:
-  utter_fallback:
-  - text: "Mình ko hiểu bạn nói gì cả"
+  utter_default:
+    - text: "Mình ko hiểu bạn nói gì cả"
   utter_greet:
-  - text: "Chào bạn, bạn muốn hỏi giá như nào?"
-
+    - text: "Chào bạn, bạn muốn hỏi giá như nào?"
+  utter_ask_estate_type:
+    - text: "Bạn muốn hỏi về loại bất động sản nào?(Chung cư, nhà đất, biệt thự,...)"
+  utter_ask_address:
+    - text: "Bạn muốn hỏi về loại bất động sản tại khu vực nào?"
+  utter_ask_area:
+    - text: "Bạn muốn hỏi về bất động sản có diện tích tầm bao nhiêu m2?"
+  utter_thank:
+    - text: "Không có gì, hihi."
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
 actions:
 - utter_greet
 - form_get_infor
+- get_cost_form
 - action_get_cost
 - utter_goodbye
 - utter_fallback
