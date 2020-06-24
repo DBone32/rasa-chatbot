@@ -28,7 +28,7 @@ class ActionGetCost(Action):
         area = tracker.get_slot('area')
         dispatcher.utter_message(text="Giá {} tại {} với diện tích {} m2 có giá khoảng 2 tỷ đồng ạ.".format(estate_type, address, area))
 
-        return [FollowupAction('form_get_infor')]
+        return []
 
 
 class FormGetInfor(FormAction):
