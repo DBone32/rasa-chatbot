@@ -1,40 +1,51 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- ask_cost
+- thank
+- goodbye
+- buy_house
+- ren_house
+- info_price
+- info_location
+- info_estate_type
 entities:
-  - estate_type
-  - address
-  - area
-
+- estate_type
+- address
+- area
+- cost
 slots:
-  requested_slot:
-    type: text
-  estate_type:
-    type: unfeaturized
   address:
     type: unfeaturized
   area:
     type: unfeaturized
-
-intents:
-  - greet
-  - ask_cost
-  - thank
-  - goodbye
-
+  cost:
+    type: unfeaturized
+  estate_type:
+    type: unfeaturized
+  requested_slot:
+    type: text
 responses:
   utter_default:
-    - text: "Mình ko hiểu bạn nói gì cả"
+  - text: Mình ko hiểu bạn nói gì cả
   utter_greet:
-    - text: "Chào bạn, bạn muốn hỏi giá như nào?"
+  - text: Chào bạn, mình giúp gì được cho bạn ạ?
+  - text: Chào bạn, mình có thể giúp gì được cho bạn ạ?
   utter_ask_estate_type:
-    - text: "Bạn muốn hỏi về loại bất động sản nào?(Chung cư, nhà đất, biệt thự,...)"
+  - text: Bạn muốn hỏi về loại bất động sản nào?(Chung cư, nhà đất, biệt thự,...)
   utter_ask_address:
-    - text: "Bạn muốn hỏi về loại bất động sản tại khu vực nào?"
+  - text: Tại khu vực nào ạ?
+  - text: Bạn quan tâm khu vực nào vậy?
   utter_ask_area:
-    - text: "Bạn muốn hỏi về bất động sản có diện tích tầm bao nhiêu m2?"
+  - text: Diện tích tầm bao nhiêu m2 ạ?
+  utter_ask_cost:
+  - text: Bạn muốn giá tầm bao nhiêu ạ?
   utter_thank:
-    - text: "Không có gì, hihi."
+  - text: Không có gì, hihi.
   utter_goodbye:
-    - text: "Bye"
-
+  - text: Bye
 actions:
 - utter_greet
 - form_get_infor
@@ -42,7 +53,11 @@ actions:
 - action_get_cost
 - utter_goodbye
 - utter_fallback
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+- utter_ask_estate_type
+- utter_ask_address
+- utter_ask_area
+- ren_house_form
+- buy_house_form
+- utter_thank
+- utter_default
+- utter_ask_cost
