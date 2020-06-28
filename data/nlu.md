@@ -31,8 +31,8 @@
 ## intent:buy_house
 - mình muốn mua [nhà](estate_type) ở [cầu giấy](address)
 - mình muốn mua một căn [biệt thự](estate_type) gần [Ngã Tư Sở](address), giá tầm [10 tỷ](cost) thôi nhé
-- mình muốn mua [nhà đất](estate_type) khu vực [Hồ Tây](address), giá tầm[ 4 tỷ](cost) thôi
-- mình định mua một [căn hộ ](estate_type)gần [Phạm Hùng](address)
+- mình muốn mua [nhà đất](estate_type) khu vực [Hồ Tây](address), giá tầm [4 tỷ](cost) thôi
+- mình định mua một [căn hộ](estate_type) gần [Phạm Hùng](address)
 - mình muốn mua [chung cư](estate_type) gần [đại cồ việt](address)
 - mình muốn mua [chung cư](estate_type) ở gần [ngã tư sở](address)
 - mình muốn mua [biệt thự liền kề](estate_type) giá khoảng [20 tỷ](cost)
@@ -50,7 +50,7 @@
 - mình muốn thuê [nhà riêng](estate_type) tại khu vực [trần duy hưng](address) giá khoảng [5tr](cost)
 - mình muốn thuê [chung cư](estate_type) ngân sách tầm [8tr](cost)
 - mình định thuê [phòng trọ](estate_type) gần [Thái thịnh](address)
-- mình muốn thuê[ phòng trọ](estate_type) gần khu [Bách Khoa](address)
+- mình muốn thuê [phòng trọ](estate_type) gần khu [Bách Khoa](address)
 - t muốn thuê [phòng trọ](estate_type) khu [cầu giấy](address)
 - mình muốn thuê nhà gần [ngã tư sở](address) [15tr/tháng](cost)
 
@@ -58,20 +58,20 @@
 - khoảng [10 tỷ](cost)
 - tầm [2-3 tỷ](cost)
 - giá tầm [8-9 tỷ](cost) nhé
-- giá khoảng [9tr](cost)/tháng
+- giá khoảng [9tr/tháng](cost)
 - ngân sách khoảng [3 tỷ](cost)
 - giá khoảng [5tr](cost) thôi
 - [1.5-2 tỷ](cost)
 - khoảng [2 tỷ](cost) đồng
 - giá tầm [9 tỷ](cost) thôi
-- khoảng[ 3tr/tháng](cost)
-- tầm [3tr](cost)/tháng
+- khoảng [3tr/tháng](cost)
+- tầm [3tr/tháng](cost)
 - [3tr](cost)/tháng thôi
 - [4tr](cost)/tháng nhé
-- giá tầm [2.5tr](cost)/tháng thôi
+- giá tầm [2.5tr/tháng](cost) thôi
 - giá tầm [6tr](cost) thôi
 - giá [4tr](cost) một tháng thôi
-- thế giá khoảng[ 4 tr ](cost)có ko?
+- thế giá khoảng [4 tr](cost) có ko?
 - tầm [3tr](cost) một tháng
 - [6000 tỉ](cost)
 

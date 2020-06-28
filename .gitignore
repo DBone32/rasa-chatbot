@@ -1,3 +1,5 @@
 
 rasavenv/*
-rasa-chatbot/
+models/current/*
+
+venv/*
