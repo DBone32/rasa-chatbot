@@ -1,0 +1,6 @@
+language: vi
+pipeline:
+- name: ConveRTTokenizer
+- name: ConveRTFeaturizer
+- name: DIETClassifier
+  epochs: 350
