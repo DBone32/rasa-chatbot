@@ -361,11 +361,8 @@
 - Làm thế nào để check số tiền còn lại trong tài khoản của tôi?
 - Làm thế nào để kiểm tra số tiền dư của tôi trong tài khoản?
 - Làm sao để xem số tiền dư trong tài khoản của tôi nhỉ?
-- Xem số tiền dư trong tài khoản thế nào?
-- Làm sao tôi xem được số tiền dư trong tài khoản nhỉ?
 
 ## intent:how_to_download_app
-- Làm thế nào để tải App?
 - Tải app ở đâu vậy
 - Mình không tìm thấy chỗ tải app meeyland
 
@@ -374,3 +371,72 @@
 - Mình tìm vào thanh search mà không hiện gì
 - mình tìm nhà mà không thấy kết quả
 - tôi nhập từ khóa nhưng không có kết quả
+
+## intent:how_to_sign_in_app
+- tôi không đăng nhập được vào app
+- vừa dow app về xong, đăng nhập thế nào vậy
+- mình vừa đao app về xong, đăng nhập thế nào đây
+- không đăng nhập được vào ứng dụng, làm nào bây giờ
+- mãi không đăng nhập được vào ứng dụng
+- loay hoay mãi không đăng nhập được app
+
+## intent:how_to_search
+- Tìm kiếm bđs thế nào thế
+- làm sao để tìm kiếm bất động sản
+- tìm kiếm bds thế nào vậy
+- t không biết chỗ tìm kiếm bất động sản
+
+## intent:multi_post
+- Tôi có thể đăng bán nhiều BĐS trong cùng một bài đăng không
+- Tôi có thể đăng bán nhiều BĐS trong cùng một dự án hoặc cùng một địa chỉ trong một bài đăng không
+- Tôi đăng bán nhiều BĐS khác địa chỉ trong cùng một bài đăng có được không
+
+## intent:post_image_failed
+- Sao mình không đăng được ảnh vậy
+- Tại sao tôi không đăng được ảnh
+- Ảnh của tôi bị vỡ
+- Đăng tin mà không đăng được ảnh vậy
+
+## intent:post_video_failed
+- t không đăng được video
+- Tôi không thấy video hiển thị trong bài đăng
+- Mình đăng video mà không được
+- Mình đính kèm video mà không hiển thị trong bài đăng
+- Rõ là đính kèm video rồi mà không hiển thị trên tin đăng vậy
+
+## intent:approval_time
+- Khi nào bài của t mới được phê duyệt thế
+- Thời gian để duyệt bài là bao lâu thế
+- Bao  giờ bài của t mới được duyệt
+- khi nào bài mình đăng mới được duyệt vậy admin
+- mãi mà không được duyệt bài vậy
+
+## intent:why_reject_post
+- Vì sao bài đăng của tôi không được duyệt?
+- Tôi đã đăng bài nhưng không thấy bài lên?
+- Tôi đã đăng bài nhưng không thấy thông báo được duyệt?
+- Làm cách nào để biết được lý do vì sao bài đăng không được duyệt?
+- Bài đăng của tôi bị hạ và tôi cần biết lý do
+- sao bài của mình bị hạ thế ad
+
+## intent:how_to_contact_with_seller
+- Tôi có thể liên lạc với người đăng tin trên website bằng cách nào?
+- Tôi có thể liên lạc với người đăng tin trên web như thế nào?
+- Làm cách nào tôi có thể liên lạc với người đăng tin?
+- Liên lạc với người đăng tin trên web như nào vậy/hả em/bạn?
+
+## intent:what_promotions
+- Chính sách khuyến mại khi nạp tiền?
+- Chính sách khuyến mại khi mua gói đăng tin dài ngày
+- Chính sách khuyến mại khi đăng tin
+
+## intent:meey_to_bank
+- Tôi có thể rút tiền từ ví Meey về ngân hàng không
+- Làm sao để rút tiền từ ví meey về tài khoản ngân hàng
+
+## intent:when_money_to_meey_wallet
+- Tôi chuyển khoản thành công rồi, nhưng sao không thấy tiền trong Ví Meeyland
+- Tôi đã chuyển tiền cho bên bạn, nhưng sao không thấy tiền trong Ví Meeyland?
+
+## intent:vip_refund
+- Tôi đăng ký gói tin Vip và hạ tin khi chưa hết thời hạn, tôi có được hoàn tiền không ?
