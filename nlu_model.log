@@ -1,0 +1,29 @@
+INFO:rasa_nlu.training_data.loading:Training data format of ./data/nlu.md is md
+INFO:rasa_nlu.training_data.training_data:Training data stats: 
+	- intent examples: 270 (48 distinct intents)
+	- Found intents: 'greet', 'lost_otp', 'head_quarter', 'how_to_get_receipt', 'how_create_creative_post', 'how_create_new_post', 'post_without_register', 'search_with_filtering', 'about_utility', 'forgot_password', 'fee_of_post', 'which_special_offers', 'how_contact_customer_service', 'prepare_before_create_post', 'what_VIP_post', 'search_for_purposes', 'what_orientation', 'isSave_money', 'isSave_vnpay', 'how_to_chat_with_seller', 'what_product', 'isSecure_vnpay', 'change_email_phone', 'who_founder', 'follow_us', 'benefits_register', 'search_navigation button', 'what_is_up_post', 'how_to_recharge', 'how_to_get_VAT', 'how_edit_delete_post', 'is_advert_onMeey_effective', 'way_contact_to_post_owner', 'how_to_check_money', 'fee_of_up_post', 'how_to_price', 'advanced_features', 'what_difference', 'thank', 'how_to_edit_account_info', 'what_vnpay', 'how_to_register', 'limit_of_post_number', '3rd_login', 'login_failed', 'how_to_auth', 'post_requirement', 'why_not_see_post'
+	- entity examples: 26 (5 distinct entities)
+	- found entities: 'username', 'phone_number', 'location', 'email', 'post_package'
+
+INFO:rasa_nlu.training_data.loading:Training data format of ./data/nlu.md is md
+INFO:rasa_nlu.training_data.training_data:Training data stats: 
+	- intent examples: 270 (48 distinct intents)
+	- Found intents: 'what_orientation', 'how_to_auth', 'how_create_creative_post', 'search_for_purposes', 'what_vnpay', 'what_is_up_post', 'how_to_get_receipt', 'isSecure_vnpay', 'advanced_features', 'how_to_register', 'how_to_recharge', 'how_to_get_VAT', 'how_to_price', 'greet', 'who_founder', 'search_navigation button', 'how_contact_customer_service', 'isSave_vnpay', 'thank', 'what_VIP_post', 'search_with_filtering', 'way_contact_to_post_owner', 'fee_of_post', 'how_to_check_money', 'post_without_register', 'head_quarter', 'follow_us', 'why_not_see_post', 'change_email_phone', 'prepare_before_create_post', 'what_difference', 'fee_of_up_post', 'about_utility', 'login_failed', 'how_to_edit_account_info', 'lost_otp', 'forgot_password', 'limit_of_post_number', 'post_requirement', 'is_advert_onMeey_effective', 'what_product', 'isSave_money', 'benefits_register', 'which_special_offers', 'how_create_new_post', 'how_to_chat_with_seller', 'how_edit_delete_post', '3rd_login'
+	- entity examples: 26 (5 distinct entities)
+	- found entities: 'phone_number', 'post_package', 'location', 'email', 'username'
+
+DEBUG:rasa_nlu.training_data.training_data:Validating training data...
+INFO:rasa_nlu.model:Starting to train component WhitespaceTokenizer
+INFO:rasa_nlu.model:Finished training component.
+INFO:rasa_nlu.model:Starting to train component RegexFeaturizer
+INFO:rasa_nlu.model:Finished training component.
+INFO:rasa_nlu.model:Starting to train component CRFEntityExtractor
+INFO:rasa_nlu.model:Finished training component.
+INFO:rasa_nlu.model:Starting to train component EntitySynonymMapper
+INFO:rasa_nlu.model:Finished training component.
+INFO:rasa_nlu.model:Starting to train component CountVectorsFeaturizer
+INFO:rasa_nlu.model:Finished training component.
+INFO:rasa_nlu.model:Starting to train component CountVectorsFeaturizer
+INFO:rasa_nlu.model:Finished training component.
+INFO:rasa_nlu.model:Starting to train component EmbeddingIntentClassifier
+DEBUG:rasa_nlu.classifiers.embedding_intent_classifier:Check if num_neg 20 is smaller than number of intents 48, else set num_neg to the number of intents - 1

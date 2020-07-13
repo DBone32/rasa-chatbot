@@ -1,12 +1,20 @@
 language: vi
-pipeline: "supervised_embeddings"
+pipeline:
+- name: HFTransformersNLP
+  model_weights: "bert-base-multilingual-uncased"
+  model_name: "bert"
+- name: LanguageModelTokenizer
+- name: LanguageModelFeaturizer
+- name: DIETClassifier
+  epochs: 400
 
 policies:
-  - name: KerasPolicy
-    epochs: 250
+  - name: TEDPolicy
+    epochs: 350
     max_history: 3
   - name: MemoizationPolicy
     max_history: 3
+  - name: MappingPolicy
   - name: FallbackPolicy
     nlu_threshold: 0.1
     core_threshold: 0.2

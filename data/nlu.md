@@ -228,6 +228,10 @@
 - Tôi có thể liên lạc với người đăng tin trên website như thế nào?
 - Tôi muốn liên lạc với người đăng tin thì lấy thông tin liên lạc ở đâu?
 - Để liên lạc với người đăng tin thì làm thế nào?
+- Tôi có thể liên lạc với người đăng tin trên website bằng cách nào?
+- Tôi có thể liên lạc với người đăng tin trên web như thế nào?
+- Làm cách nào tôi có thể liên lạc với người đăng tin?
+- Liên lạc với người đăng tin trên web như nào vậy/hả em/bạn?
 
 ## intent:how_create_creative_post
 - Làm thế nào để có bài đăng hiệu quả?
@@ -263,9 +267,23 @@
 - Đăng tin có mất phí không?
 - Phí đăng tin như thế nào?
 - Tin thường có mất phí không?
-- Tin VIP mất phí bao nhiêu?
 - Tôi muốn đăng tin thì phí bao nhiêu?
 - Cho tôi hỏi là đăng tin có mất phí không?
+
+## intent:fee_of_vip_post
+- Tin VIP mất phí bao nhiêu?
+- Cho hỏi giá gói [vip1](post_package)) là bao nhiêu
+- Giá vip1 là bao nhiêu thế admin
+- Cho mình hỏi giá [vip2](post_package)
+- Gói [vip3](post_package)) có đắt không thế
+- Giá cả các gói như nào vậy
+- Giá các gói như nào admin nhỉ
+- cho hỏi giá [vip 1](post_package)
+- ad ơi, giá [vip 3](post_package) bao nhiêu thế
+- gói [Vip 2](post_package) là bao nhiêu
+- mình định đăng tin, nhưng không biết giá các gói vip như nào
+- mình muốn hỏi giá các gói vip
+- t định đăng tin dùng gói [vip 3](post_package), nhưng không biết giá cả như nào nhỉ
 
 ## intent:what_is_up_post
 - Up tin là gì?
@@ -419,16 +437,13 @@
 - Bài đăng của tôi bị hạ và tôi cần biết lý do
 - sao bài của mình bị hạ thế ad
 
-## intent:how_to_contact_with_seller
-- Tôi có thể liên lạc với người đăng tin trên website bằng cách nào?
-- Tôi có thể liên lạc với người đăng tin trên web như thế nào?
-- Làm cách nào tôi có thể liên lạc với người đăng tin?
-- Liên lạc với người đăng tin trên web như nào vậy/hả em/bạn?
-
 ## intent:what_promotions
 - Chính sách khuyến mại khi nạp tiền?
 - Chính sách khuyến mại khi mua gói đăng tin dài ngày
 - Chính sách khuyến mại khi đăng tin
+- dạo này có khuyến mãi gì không
+- dạo này có khuyễn mãi gì không
+- dạo này có khuyến mại gì không
 
 ## intent:meey_to_bank
 - Tôi có thể rút tiền từ ví Meey về ngân hàng không
@@ -440,3 +455,13 @@
 
 ## intent:vip_refund
 - Tôi đăng ký gói tin Vip và hạ tin khi chưa hết thời hạn, tôi có được hoàn tiền không ?
+
+## intent:app_error
+- vào app cứ bị văng ra hoài
+- app bị lỗi rồi ad ơi
+- tôi đang dùng app thì bị lỗi như này
+- tôi gặp lỗi khi dùng app
+
+## intent:web_error
+- lỗi wed ko thể đăng bài
+- Lỗi wed ko đăng bài dược ad

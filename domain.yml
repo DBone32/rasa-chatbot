@@ -70,6 +70,8 @@ intents:
     triggers: utter_what_VIP_post
 - fee_of_post:
     triggers: utter_fee_of_post
+- fee_of_vip_post:
+    triggers: action_fee_of_vip_post
 - what_is_up_post:
     triggers: utter_what_is_up_post
 - fee_of_up_post:
@@ -104,8 +106,6 @@ intents:
     triggers: utter_post_image_failed
 - how_to_search:
     triggers: utter_how_to_search
-- how_to_contact_with_seller:
-    triggers: utter_how_to_contact_with_seller
 - why_reject_post:
     triggers: utter_why_reject_post
 - no_search_results:
@@ -126,6 +126,8 @@ intents:
     triggers: utter_what_promotions
 - vip_refund:
     triggers: utter_vip_refund
+- app_error
+- web_error
 entities:
 - username
 - location
@@ -312,14 +314,14 @@ responses:
       \ gian cho người dùng, tuy nhiên lại không thể chỉnh sửa, quản lý tin rao đã\
       \ đăng và hưởng các chính sách, quyền lợi khác trên website. "
   utter_why_not_see_post:
-  - text: 'Các tin đăng phải theo đúng quy định đăng tin của meeyland.com. Chi tiết
+  - text: Các tin đăng phải theo đúng quy định đăng tin của meeyland.com. Chi tiết
       tham khảo TẠI ĐÂY (đính kèm link quy định đăng tin). Đối với người dùng có đăng
       ký tài khoản tại meeyland.com, bài đăng tin của bạn sẽ được hệ thống đăng ngay.
       Trường hợp người dùng đăng tin không đăng nhập tài khoản (tư cách tài khoản
-      vãng lai), ban quản trị website sẽ kiểm duyệt và đăng lên trong 24h. '
+      vãng lai), ban quản trị website sẽ kiểm duyệt và đăng lên trong 24h.
   utter_limit_of_post_number:
-  - text: 'Bạn sẽ được đăng tin Không giới hạn nếu tài khoản của bạn vẫn có quyền
-      đăng tin.'
+  - text: Bạn sẽ được đăng tin Không giới hạn nếu tài khoản của bạn vẫn có quyền đăng
+      tin.
   utter_way_contact_to_post_owner:
   - text: Bạn có thể liên hệ với người đăng tin bằng cách liên hệ qua Email/Số điện
       thoại/Thông tin khác do người đăng tin cung cấp trong bài đăng. Hoặc chat trực
@@ -453,10 +455,10 @@ responses:
       tin của Khách hàng bị lộ do khách hàng cung cấp cho đối tượng nào khác ngoài
       Meey Land. '
   utter_what_vnpay:
-  - text: 'Meey Land liên kết với VNPAY để thiết lập cổng thanh toán cho KH tại Meey
+  - text: Meey Land liên kết với VNPAY để thiết lập cổng thanh toán cho KH tại Meey
       Land bằng cách quét mã QR trên mỗi hóa đơn thanh toán. Khách hàng cần phải có
       tài khoản ngân hàng và được mở chức năng thanh toán online mới có thể sử dụng
-      thanh toán qua VNPAY (xem thêm hướng dẫn nạp tiền)'
+      thanh toán qua VNPAY (xem thêm hướng dẫn nạp tiền)
   utter_isSave_vnpay:
   - text: 'VNPAY là “CÔNG TY CỔ PHẦN GIẢI PHÁP THANH TOÁN VIỆT NAM”, đây là tổ chức
       được cho phép thành lập hợp pháp bới ngân hàng nhà nước Việt Nam, VNPAY đề cao
@@ -470,63 +472,85 @@ responses:
       tài khoản của bạn. (Xem thêm hướng dẫn kiểm tra giao dịch tại Hướng dẫn nạp
       tiền vào meeyland.com) '
   utter_how_to_download_app:
-    - text: 'Để sử dụng Ứng dụng MeeyLand, người dùng truy cập vào kho ứng dụng App Store, Google Play với các thiết bị tương ứng trên iOS, Andriod. Tìm kiếm từ khoá "MeeyLand" và chọn Cài đặt để sử dụng Ứng dụng.'
+  - text: Để sử dụng Ứng dụng MeeyLand, người dùng truy cập vào kho ứng dụng App Store,
+      Google Play với các thiết bị tương ứng trên iOS, Andriod. Tìm kiếm từ khoá "MeeyLand"
+      và chọn Cài đặt để sử dụng Ứng dụng.
   utter_no_search_results:
-    - text: 'Nếu như hệ thống không hiển thị kết quả tìm kiếm theo từ khoá nghĩa là khu vực bạn tìm không có tin đăng BĐS cần giao dịch. Bạn có thể chỉnh sửa lại từ khoá khác hoặc nới rộng/thu hẹp khu vực tìm kiếm.'
+  - text: Nếu như hệ thống không hiển thị kết quả tìm kiếm theo từ khoá nghĩa là khu
+      vực bạn tìm không có tin đăng BĐS cần giao dịch. Bạn có thể chỉnh sửa lại từ
+      khoá khác hoặc nới rộng/thu hẹp khu vực tìm kiếm.
   utter_how_to_sign_in_app:
-    - text: 'Để sử dụng các dịch vụ trên MeeyLand, bạn cần đăng kí tài khoản thành viên hoặc đăng nhập nhanh qua Gmail/Facebook.
-             Nếu bạn gặp trục trặc khi đăng nhập, bạn vui lòng liên hệ hotline CSKH của MeeyLand.'
+  - text: Để sử dụng các dịch vụ trên MeeyLand, bạn cần đăng kí tài khoản thành viên
+      hoặc đăng nhập nhanh qua Gmail/Facebook. Nếu bạn gặp trục trặc khi đăng nhập,
+      bạn vui lòng liên hệ hotline CSKH của MeeyLand.
   utter_how_to_search:
-    - text: 'Để tìm kiếm BĐS mới, người dùng nhập từ khoá tìm kiếm vào thanh công cụ tìm kiếm. Hệ thống tự động đưa ra các kết quả tìm kiếm dựa trên từ khoá đã nhập.'
+  - text: Để tìm kiếm BĐS mới, người dùng nhập từ khoá tìm kiếm vào thanh công cụ
+      tìm kiếm. Hệ thống tự động đưa ra các kết quả tìm kiếm dựa trên từ khoá đã nhập.
   utter_multi_post:
-    - text: '1. Hiện tại MeeyLand không khuyến khích KH đăng bán nhiều BĐS trong cùng một bài đăng, đặc biệt là các BĐS khác dự án, khác địa chỉ.
-             Do việc đăng bài như thế khiến cho người tìm kiếm khó tiếp cận và khó khăn trong việc tìm kiếm thông tin. Tuy nhiên, bạn cũng có thể đăng bán nhiều BĐS trong cùng 1 bài đăng trong các trường hợp sau:
-             + Các BĐS rao bán trong cùng 1 dự án
-             + Các BĐS rao bán có cùng 1 địa chỉ
-
-             2. Đối với các bài đăng có nhiều BĐS được rao bán không cùng một dự án hoặc không cùng một địa chỉ sẽ được nhân viên của MeeyLand kiểm duyệt lại và hạ bài mà không cần thông báo trước với khách hàng.'
+  - text: "1. Hiện tại MeeyLand không khuyến khích KH đăng bán nhiều BĐS trong cùng\
+      \ một bài đăng, đặc biệt là các BĐS khác dự án, khác địa chỉ. Do việc đăng bài\
+      \ như thế khiến cho người tìm kiếm khó tiếp cận và khó khăn trong việc tìm kiếm\
+      \ thông tin. Tuy nhiên, bạn cũng có thể đăng bán nhiều BĐS trong cùng 1 bài\
+      \ đăng trong các trường hợp sau: + Các BĐS rao bán trong cùng 1 dự án + Các\
+      \ BĐS rao bán có cùng 1 địa chỉ\n2. Đối với các bài đăng có nhiều BĐS được rao\
+      \ bán không cùng một dự án hoặc không cùng một địa chỉ sẽ được nhân viên của\
+      \ MeeyLand kiểm duyệt lại và hạ bài mà không cần thông báo trước với khách hàng."
   utter_post_image_failed:
-    - text: 'Trường hợp không đăng được ảnh, bạn vui lòng kiểm tra lại một trong các lý do sau:
-             + Ảnh đăng vượt quá kích thước cho phép 4mb cho mỗi ảnh
-             + Số lượng ảnh đăng đã vượt quá số lượng cho phép của mỗi gói tin'
+  - text: 'Trường hợp không đăng được ảnh, bạn vui lòng kiểm tra lại một trong các
+      lý do sau: + Ảnh đăng vượt quá kích thước cho phép 4mb cho mỗi ảnh + Số lượng
+      ảnh đăng đã vượt quá số lượng cho phép của mỗi gói tin'
   utter_post_video_failed:
-    - text: '1. Hiện tại MeeyLand chỉ hỗ trợ link video với đường dẫn từ youtube.com. Với các đường dẫn link video khác, MeeyLand không khuyến khích  và hiện tại không hỗ trợ, do đường dẫn không đảm bảo chất lượng, không ổn định, có thể dính virus và có thể phát sinh lỗi do trang gốc của link video .
-             2. Trường hợp bạn đã gắn link nguồn từ Youtube nhưng vẫn không hiển thị, bạn vui lòng liên hệ MeeyLand để được hỗ trợ:
-              + Gọi đến tổng đài theo số hotline 08.69.09.29.29
-              + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
-              + Chat với "Chăm sóc khách hàng" trên website meeyland.com'
+  - text: '1. Hiện tại MeeyLand chỉ hỗ trợ link video với đường dẫn từ youtube.com.
+      Với các đường dẫn link video khác, MeeyLand không khuyến khích  và hiện tại
+      không hỗ trợ, do đường dẫn không đảm bảo chất lượng, không ổn định, có thể dính
+      virus và có thể phát sinh lỗi do trang gốc của link video . 2. Trường hợp bạn
+      đã gắn link nguồn từ Youtube nhưng vẫn không hiển thị, bạn vui lòng liên hệ
+      MeeyLand để được hỗ trợ: + Gọi đến tổng đài theo số hotline 08.69.09.29.29 +
+      Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com” + Chat với "Chăm
+      sóc khách hàng" trên website meeyland.com'
   utter_approval_time:
-    - text: '- Nếu bạn là người dùng vãng lai, bài đăng của bạn sẽ được kiểm duyệt trong vòng 24h
-             - Nếu bạn là người dùng đã đăng ký tài khoản trên MeeyLand, bài đăng của bạn sẽ được đăng ngay lập tức sau khi bạn hoàn thiện đăng bài và thanh toán chi phí cho bài đăng (nếu có).'
+  - text: '- Nếu bạn là người dùng vãng lai, bài đăng của bạn sẽ được kiểm duyệt trong
+      vòng 24h - Nếu bạn là người dùng đã đăng ký tài khoản trên MeeyLand, bài đăng
+      của bạn sẽ được đăng ngay lập tức sau khi bạn hoàn thiện đăng bài và thanh toán
+      chi phí cho bài đăng (nếu có).'
   utter_why_reject_post:
-    - text: '1. Bài đăng của bạn không được đăng bán vì lí do vi phạm các lí do sau:
-             + Bài đăng không có tiêu đề
-             + Bài đăng trùng lặp nội dung với bài đăng trước đó
-             + Bài đăng không có hình ảnh đính kèm
-             + Tên tiêu đề bài đăng hoặc nội dung không đúng quy định của MeeyLand
-             + Nội dung bài đăng chứa thông tin nhạy cảm, vi phạm quy định đăng bài của MeeyLand
-
-             2. Lý do không được duyệt bài/bị hạ bài: Trường hợp bài đăng của bạn không được duyệt, chúng tôi sẽ gửi thông báo cho bạn biết lý do không được duyệt bài/bị hạ bài, ngoài ra bạn cũng có thể liên hệ với trung tâm chăm sóc khách hàng của MeeyLand theo các phương thức sau:
-              + Gọi đến tổng đài theo số hotline 08.69.09.29.29
-              + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
-              + Chat với "Chăm sóc khách hàng" trên website meeyland.com'
+  - text: "1. Bài đăng của bạn không được đăng bán vì lí do vi phạm các lí do sau:\
+      \ + Bài đăng không có tiêu đề + Bài đăng trùng lặp nội dung với bài đăng trước\
+      \ đó + Bài đăng không có hình ảnh đính kèm + Tên tiêu đề bài đăng hoặc nội dung\
+      \ không đúng quy định của MeeyLand + Nội dung bài đăng chứa thông tin nhạy cảm,\
+      \ vi phạm quy định đăng bài của MeeyLand\n2. Lý do không được duyệt bài/bị hạ\
+      \ bài: Trường hợp bài đăng của bạn không được duyệt, chúng tôi sẽ gửi thông\
+      \ báo cho bạn biết lý do không được duyệt bài/bị hạ bài, ngoài ra bạn cũng có\
+      \ thể liên hệ với trung tâm chăm sóc khách hàng của MeeyLand theo các phương\
+      \ thức sau: + Gọi đến tổng đài theo số hotline 08.69.09.29.29 + Gửi mail yêu\
+      \ cầu hỗ trợ tới địa chỉ “contact@meeyland.com” + Chat với \"Chăm sóc khách\
+      \ hàng\" trên website meeyland.com"
   utter_how_to_chat_with_seller:
-    - text: '- Để chat trực tiếp với người bán, bạn vui lòng nhấn vào biểu tượng chat bên cạnh tên người đăng để sử dụng MeeyChat phiên bản máy tính (nếu sử dụng Laptop/PC) hoặc App MeeyChat cho iOS/Android'
+  - text: '- Để chat trực tiếp với người bán, bạn vui lòng nhấn vào biểu tượng chat
+      bên cạnh tên người đăng để sử dụng MeeyChat phiên bản máy tính (nếu sử dụng
+      Laptop/PC) hoặc App MeeyChat cho iOS/Android'
   utter_what_promotions:
-    - text: 'Chính sách khuyến mại của MeeyLand phụ thuộc tùy từng thời kỳ, bạn có thể xem các chương trình khuyến mại tại mục tin tức hoặc liên hệ trực tiếp với nhân viên kinh doanh/nhân viên chăm sóc khách hàng của MeeyLand.
-
-             Bạn có thể liên hệ với nhân viên chăm sóc khách hàng của MeeyLand qua các kênh sau:
-              + Gọi đến tổng đài theo số hotline 08.69.09.29.29
-              + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
-              + Chat với "Chăm sóc khách hàng" trên website meeyland.com'
+  - text: "Chính sách khuyến mại của MeeyLand phụ thuộc tùy từng thời kỳ, bạn có thể\
+      \ xem các chương trình khuyến mại tại mục tin tức hoặc liên hệ trực tiếp với\
+      \ nhân viên kinh doanh/nhân viên chăm sóc khách hàng của MeeyLand.\nBạn có thể\
+      \ liên hệ với nhân viên chăm sóc khách hàng của MeeyLand qua các kênh sau: +\
+      \ Gọi đến tổng đài theo số hotline 08.69.09.29.29 + Gửi mail yêu cầu hỗ trợ\
+      \ tới địa chỉ “contact@meeyland.com” + Chat với \"Chăm sóc khách hàng\" trên\
+      \ website meeyland.com"
   utter_meey_to_bank:
-    - text: 'Hiện tại MeeyLand chưa cho phép rút tiền từ ví Meey về ngân hàng. Tuy nhiên trong thời gian tới, ví MeeyLand sẽ hoàn thiện hơn và cho phép người dùng được rút tiền về ngân hàng từ ví'
+  - text: Hiện tại MeeyLand chưa cho phép rút tiền từ ví Meey về ngân hàng. Tuy nhiên
+      trong thời gian tới, ví MeeyLand sẽ hoàn thiện hơn và cho phép người dùng được
+      rút tiền về ngân hàng từ ví
   utter_when_money_to_meey_wallet:
-    - text: 'Dạ anh/ chị, sau khi mình nạp tiền thành công cho bên em thì sẽ đợi bên em xác nhận khoản tiền về của mình tối đa trong 24h, sau đó tiền sẽ được đẩy về Ví cho anh chị nhé.'
+  - text: Dạ anh/ chị, sau khi mình nạp tiền thành công cho bên em thì sẽ đợi bên
+      em xác nhận khoản tiền về của mình tối đa trong 24h, sau đó tiền sẽ được đẩy
+      về Ví cho anh chị nhé.
   utter_vip_refund:
-    - text: 'Chính sách của MeeyLand hiện tại cho phép hoàn tiền một phần/toàn bộ, tùy theo chính sách của MeeyLand từng thời kỳ'
+  - text: Chính sách của MeeyLand hiện tại cho phép hoàn tiền một phần/toàn bộ, tùy
+      theo chính sách của MeeyLand từng thời kỳ
 actions:
 - utter_greet
+- action_fee_of_vip_post
 - utter_thank
 - utter_how_to_register
 - utter_how_to_auth
@@ -575,3 +599,16 @@ actions:
 - utter_isSave_vnpay
 - utter_how_to_check_money
 - utter_default
+- utter_how_to_download_app
+- utter_no_search_results
+- utter_how_to_sign_in_app
+- utter_how_to_search
+- utter_multi_post
+- utter_post_image_failed
+- utter_post_video_failed
+- utter_approval_time
+- utter_why_reject_post
+- utter_what_promotions
+- utter_meey_to_bank
+- utter_when_money_to_meey_wallet
+- utter_vip_refund

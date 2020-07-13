@@ -1,7 +1,0 @@
-rasa:
-  production:
-    url: http://rasa-production:5005
-    token: yh154hkk21g4k
-  worker:
-    url: http://rasa-worker:5005
-    token: yh154hkk21g4k
