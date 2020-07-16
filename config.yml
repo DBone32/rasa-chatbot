@@ -6,7 +6,7 @@ pipeline:
 - name: LanguageModelTokenizer
 - name: LanguageModelFeaturizer
 - name: DIETClassifier
-  epochs: 400
+  epochs: 350
 
 policies:
   - name: TEDPolicy

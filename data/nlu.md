@@ -284,6 +284,33 @@
 - mình định đăng tin, nhưng không biết giá các gói vip như nào
 - mình muốn hỏi giá các gói vip
 - t định đăng tin dùng gói [vip 3](post_package), nhưng không biết giá cả như nào nhỉ
+- gói [vip 2](post_package) mà mua [1 tháng](time) có được giảm giá không thế?
+- mua goi [vip2](post_package) [1 tuần](post_package) thì có được k
+- mua gói [vip1](post_package) [7 ngày](time) thì giá như nào ạ
+- nếu mua gói [vip1](post_package) trong vòng [80 ngày](time) thì có rẻ hơn không?
+- chào ad, cho hỏi tin vip mua [3 ngày](time) có rẻ hơn không?
+- mình mua [vip 3](post_package) trong [7 ngày](time) có được giảm giá không
+- thế vip [1](post_package) trong [1 tháng](time) thì đắt ko
+- cho hỏi [vip 2](post_package) trong [3 ngày](time) có đắt không
+- t hỏi là giá [vip 2](post_package) như nào nếu t đăng trong [2 tuần](time)
+- gói [vip 2](post_package) trong [2 tuần](time) thì sao
+- thế [vip 3](post_package) mua trong [3 ngày](time) thì giá như nào
+- t muốn mua gói [vip 3](post_package) nhiều ngày thì giá sao nhỉ
+
+## intent:info_post_package
+- gói [vip 3](post_package)
+- [vip2](post_package) nhé
+- cho hỏi gói [v1](post_package)
+- gói [vip1](post_package) ấy
+- gói [vip2](post_package) ad ơi
+- [vip 2](post_package) nhé
+- [vip 3](post_package) nhé
+- [vip1](post_package) nhé
+- cho hỏi về gói [vip2](post_package)
+- ngu thế, t hỏi gói [vip 2](post_package)
+- gói [vip2](post_package) nhé
+- [vip 2](post_package) ấy
+- cho hỏi giá gói [vip 1](post_package)
 
 ## intent:what_is_up_post
 - Up tin là gì?
@@ -465,3 +492,8 @@
 ## intent:web_error
 - lỗi wed ko thể đăng bài
 - Lỗi wed ko đăng bài dược ad
+
+## intent:info_time
+- trong 90 ngày ý?
+- mua [1 tuần](time) cơ
+- [1 ngày](time) thôi

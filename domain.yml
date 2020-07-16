@@ -126,27 +126,34 @@ intents:
     triggers: utter_what_promotions
 - vip_refund:
     triggers: utter_vip_refund
-- app_error
-- web_error
+- app_error:
+    triggers: utter_app_error
+- web_error:
+    triggers: utter_web_error
+- info_post_package
+- info_time
 entities:
 - username
 - location
 - phone_number
 - email
 - post_package
+- time
 slots:
   email:
-    type: unfeaturized
+    type: text
   location:
-    type: unfeaturized
+    type: text
   phone_number:
-    type: unfeaturized
+    type: text
   post_package:
-    type: unfeaturized
+    type: text
   requested_slot:
     type: text
+  time:
+    type: text
   username:
-    type: unfeaturized
+    type: text
 responses:
   utter_default:
   - text: Xin lỗi mình không hiểu ý bạn ạ.
@@ -157,6 +164,10 @@ responses:
   utter_how_to_register:
   - text: Để đăng ký tài khoản, bạn vui lòng xem hướng dẫn TẠI ĐÂY (đính kèm link
       file hướng dẫn sử dụng Meey ID)
+  utter_app_error:
+  - text: utter_app_error
+  utter_web_error:
+  - text: utter_web_error
   utter_how_to_auth:
   - text: "Khi bạn lựa chọn đăng kí tài khoản thành công bằng Email hoặc Số điện thoại,\
       \ có thể chọn xác thực tài khoản theo 2 cách: Cách 1: Xác thực tài khoản tại\
@@ -612,3 +623,5 @@ actions:
 - utter_meey_to_bank
 - utter_when_money_to_meey_wallet
 - utter_vip_refund
+- utter_app_error
+- utter_web_error

@@ -1,5 +1,12 @@
 
 rasavenv/*
-models/current/*
+models/*
 
 venv/*
+results/*
+h2o.zip
+events.db
+__pycache__/*
+rasa.db
+rasa.db
+events.db

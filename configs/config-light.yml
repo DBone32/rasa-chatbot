@@ -8,3 +8,16 @@ pipeline:
   max_ngram: 4
 - name: DIETClassifier
   epochs: 300
+
+policies:
+  - name: TEDPolicy
+    epochs: 350
+    max_history: 3
+  - name: MemoizationPolicy
+    max_history: 3
+  - name: MappingPolicy
+  - name: FallbackPolicy
+    nlu_threshold: 0.1
+    core_threshold: 0.2
+    fallback_action_name: 'utter_default'
+  - name: FormPolicy
