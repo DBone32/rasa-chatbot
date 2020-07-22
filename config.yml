@@ -1,14 +1,17 @@
 language: vi
 pipeline:
-- name: HFTransformersNLP
-  model_weights: "bert-base-multilingual-uncased"
-  model_name: "bert"
-- name: LanguageModelTokenizer
-- name: LanguageModelFeaturizer
+- name: WhitespaceTokenizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+- name: CRFEntityExtractor
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
 - name: DIETClassifier
-  epochs: 350
+  epochs: 300
 
 policies:
+
   - name: TEDPolicy
     epochs: 350
     max_history: 3

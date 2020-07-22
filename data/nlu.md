@@ -284,17 +284,17 @@
 - mình định đăng tin, nhưng không biết giá các gói vip như nào
 - mình muốn hỏi giá các gói vip
 - t định đăng tin dùng gói [vip 3](post_package), nhưng không biết giá cả như nào nhỉ
-- gói [vip 2](post_package) mà mua [1 tháng](time) có được giảm giá không thế?
+- gói [vip 2](post_package) mà mua [1 tháng](duration) có được giảm giá không thế?
 - mua goi [vip2](post_package) [1 tuần](post_package) thì có được k
-- mua gói [vip1](post_package) [7 ngày](time) thì giá như nào ạ
-- nếu mua gói [vip1](post_package) trong vòng [80 ngày](time) thì có rẻ hơn không?
-- chào ad, cho hỏi tin vip mua [3 ngày](time) có rẻ hơn không?
-- mình mua [vip 3](post_package) trong [7 ngày](time) có được giảm giá không
-- thế vip [1](post_package) trong [1 tháng](time) thì đắt ko
-- cho hỏi [vip 2](post_package) trong [3 ngày](time) có đắt không
-- t hỏi là giá [vip 2](post_package) như nào nếu t đăng trong [2 tuần](time)
-- gói [vip 2](post_package) trong [2 tuần](time) thì sao
-- thế [vip 3](post_package) mua trong [3 ngày](time) thì giá như nào
+- mua gói [vip1](post_package) [7 ngày](duration) thì giá như nào ạ
+- nếu mua gói [vip1](post_package) trong vòng [80 ngày](duration) thì có rẻ hơn không?
+- chào ad, cho hỏi tin vip mua [3 ngày](duration) có rẻ hơn không?
+- mình mua [vip 3](post_package) trong [7 ngày](duration) có được giảm giá không
+- thế vip [1](post_package) trong [1 tháng](duration) thì đắt ko
+- cho hỏi [vip 2](post_package) trong [3 ngày](duration) có đắt không
+- t hỏi là giá [vip 2](post_package) như nào nếu t đăng trong [2 tuần](duration)
+- gói [vip 2](post_package) trong [2 tuần](duration) thì sao
+- thế [vip 3](post_package) mua trong [3 ngày](duration) thì giá như nào
 - t muốn mua gói [vip 3](post_package) nhiều ngày thì giá sao nhỉ
 
 ## intent:info_post_package
@@ -449,7 +449,11 @@
 - Mình đính kèm video mà không hiển thị trong bài đăng
 - Rõ là đính kèm video rồi mà không hiển thị trên tin đăng vậy
 
-## intent:approval_time
+## intent:how_to_attach_video
+- Tôi đính kèm video vào tin đăng như thế nào?
+- đính kèm video vào bài đăng như thế nào vậy
+
+## intent:approval_duration
 - Khi nào bài của t mới được phê duyệt thế
 - Thời gian để duyệt bài là bao lâu thế
 - Bao  giờ bài của t mới được duyệt
@@ -482,6 +486,7 @@
 
 ## intent:vip_refund
 - Tôi đăng ký gói tin Vip và hạ tin khi chưa hết thời hạn, tôi có được hoàn tiền không ?
+- Gỡ bỏ gói vip trước thời hạn có được trả lại tiền không thế
 
 ## intent:app_error
 - vào app cứ bị văng ra hoài
@@ -493,7 +498,40 @@
 - lỗi wed ko thể đăng bài
 - Lỗi wed ko đăng bài dược ad
 
-## intent:info_time
-- trong 90 ngày ý?
-- mua [1 tuần](time) cơ
-- [1 ngày](time) thôi
+## intent:info_duration
+- trong [90 ngày](duration) ý?
+- mua [1 tuần](duration) cơ
+- [1 ngày](duration) thôi
+
+## intent:confirm_yet
+- rồi nhé
+- mình chuẩn bị rồi
+- rồi ạ
+- rồi đó
+
+## intent:wait_a_minute
+- đợi tôi chút
+- mình đang có chút việc, đợi mình chút
+- đợi chút nhé
+
+## intent:confirm_not_yet
+- mình chưa
+- t vẫn chưa
+- t chưa
+
+## intent:what_next
+- mình rồi, làm thế nào nữa
+- làm thế nào nữa vậy?
+- rồi làm tn nữa?
+
+## intent:so_complex
+- Phức tạp thế
+- lằng nhằng phết nhỉ
+- Sao phức tạp thế
+- Sao nhiều bước thế
+
+## regex:link
+- \bhttps://meeyland.com/\w+|\bmeeyland.com/\w+
+
+## regex:phone_number
+- [0-9]{10}

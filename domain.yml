@@ -132,13 +132,22 @@ intents:
     triggers: utter_web_error
 - info_post_package
 - info_time
+- how_to_attach_video
+- confirm_yet
+- wait_a_minute
+- confirm_not_yet
+- what_next
+- approval_duration
+- info_duration
+- so_complex
 entities:
 - username
 - location
 - phone_number
 - email
 - post_package
-- time
+- duration
+- link
 slots:
   email:
     type: text
@@ -149,8 +158,6 @@ slots:
   post_package:
     type: text
   requested_slot:
-    type: text
-  time:
     type: text
   username:
     type: text
@@ -284,33 +291,9 @@ responses:
   utter_how_to_price:
   - text: Bạn vui lòng làm theo hướng dẫn tại đây
   utter_prepare_before_create_post:
-  - text: "Để đăng tin, trước tiên bạn cần chuẩn bị nội dung tin đăng, hình ảnh kèm\
-      \ theo, có thể đăng tin không cần tài khoản (khách hàng vãng lai) hoặc có tài\
-      \ khoản.\nĐể đăng ký tài khoản, bạn truy cập link https://meeyland.com/, chọn\
-      \ 'Đăng Nhập' trên góc phải trên cùng của màn hình và chọn 'Đăng ký tài khoản'\
-      \ (xem thêm hướng dẫn đăng ký tài khoản) Nếu đã có tài khoản, bạn truy cập link\
-      \ https://meeyland.com/, chọn 'Đăng Nhập' trên góc phải trên cùng của màn hình\
-      \ hoặc truy cập link https://www.meeyid.com và chọn 'Đăng Nhập'\nTìm hiểu 'Quy\
-      \ định đăng tin' của website meeyland.com: Khi bạn đăng tin giao dịch Bất động\
-      \ sản bất kì, bạn có trách nhiệm đảm bảo tin đăng của bạn tuân thủ theo quy\
-      \ định đăng tin và chính sách của website meeyland.com. Vui lòng truy cập: https://meeyland.com/page/quy-dinh-dang-tin "
-  utter_how_create_new_post:
-  - text: "Đăng nhập vào website meeyland.com, tại góc trên cùng bên phải màn hình\
-      \ trang chủ, chọn nút chức năng “Đăng bài” và thực hiện theo các bước sau: 'Bước\
-      \ 1: Lựa chọn mục đích đăng bài. Sau khi chọn được mục đích đăng bài: Nếu đã\
-      \ đăng nhập vào tài khoản, thực hiện theo bước tiếp theo Nếu chưa có tài khoản,\
-      \ đăng tin vãng lai, cửa sổ sẽ yêu cầu lựa chọn đối tượng đăng bài. ' 'Bước\
-      \ 2: Nhập thông tin Bất động sản cần giao dịch tại màn hình “Đăng bài” Nhập\
-      \ đầy đủ các trường thông tin tại cột bên trái màn hình: bao gồm trường ''vị\
-      \ trí'', trường ''thông tin Bất động sản'', trường ''thông tin khác'' Tiêu đề:\
-      \ súc tích và đầy đủ thông tin, tối thiểu 6 ký tự, tối đa 100 ký tự Nội dung\
-      \ mô tả: giới hạn tối đa 5000 ký tự và không giới hạn ký tự tối thiểu. Thông\
-      \ tin liên hệ: bạn phải điền đầy đủ thông tin liên hệ để khách hàng liên lạc\
-      \ khi có nhu cầu. Tìm kiếm theo vị trí: Bạn nhập địa chỉ Bất động sản trong\
-      \ tin đăng, chọn theo gợi ý trong thanh tìm kiếm đưa ra, vị trí Bất động sản\
-      \ bạn đăng sẽ hiển thị trên bản đồ. ' Bước 3: Hoàn tất đăng bài. Bạn có thể\
-      \ lưu nháp, xem trước bài đăng hoặc hoàn tất quá trình đăng bài bằng cách nhấp\
-      \ vào nút 'Đăng bài' ở cuối màn hình. "
+  - text: Để đăng tin, trước tiên bạn cần chuẩn bị nội dung tin đăng, hình ảnh hoặc
+      video kèm theo, có thể đăng tin không cần tài khoản (khách hàng vãng lai) hoặc
+      có tài khoản.
   utter_how_edit_delete_post:
   - text: "Đầu tiên, bạn vào Quản lý tin đăng ở góc trên cùng bên phải trang web,\
       \ sau đó vào: Để sửa bài đăng, bạn nhấp chuột vào ký hiệu cây bút 'Chỉnh sửa\
@@ -559,6 +542,11 @@ responses:
   utter_vip_refund:
   - text: Chính sách của MeeyLand hiện tại cho phép hoàn tiền một phần/toàn bộ, tùy
       theo chính sách của MeeyLand từng thời kỳ
+  utter_ask_prepare_content_above:
+  - text: Không biết bạn đã chuẩn bị các nội dung trên chưa ạ?
+  utter_agree:
+  - text: Dạ vâng ạ
+  - text: Vâng ạ
 actions:
 - utter_greet
 - action_fee_of_vip_post
@@ -625,3 +613,5 @@ actions:
 - utter_vip_refund
 - utter_app_error
 - utter_web_error
+- utter_ask_prepare_content_above
+- utter_agree

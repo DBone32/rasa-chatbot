@@ -23,28 +23,8 @@
     triggers: utter_3rd_login
 - change_email_phone:
     triggers: utter_change_email_phone
-- what_product:
-    triggers: utter_what_product
-- who_founder:
-    triggers: utter_who_founder
-- what_orientation:
-    triggers: utter_what_orientation
-- what_difference:
-    triggers: utter_what_difference
-- about_utility:
-    triggers: utter_about_utility
-- head_quarter:
-    triggers: utter_head_quarter
-- which_special_offers:
-    triggers: utter_which_special_offers
-- follow_us:
-    triggers: utter_follow_us
-- advanced_features:
-    triggers: utter_advanced_features
-- how_to_price:
-    triggers: utter_how_to_price
-- how_to_chat_with_seller:
-    triggers: utter_how_to_chat_with_seller
+- how_to_reset_passwords:
+    triggers: utter_how_to_reset_passwords
 - prepare_before_create_post:
     triggers: utter_prepare_before_create_post
 - how_create_new_post:
@@ -67,18 +47,72 @@
     triggers: utter_what_VIP_post
 - fee_of_post:
     triggers: utter_fee_of_post
+- fee_of_vip_post:
+    triggers: action_fee_of_vip_post
+- info_post_package:
+    triggers: action_info_post_package
+- info_time:
+    triggers: action_info_time
 - what_is_up_post:
     triggers: utter_what_is_up_post
 - fee_of_up_post:
     triggers: utter_fee_of_up_post
 - how_contact_customer_service:
     triggers: utter_how_contact_customer_service
+- multi_post:
+    triggers: utter_multi_post
+- post_image_failed:
+    triggers: utter_post_image_failed
+- post_video_failed:
+    triggers: utter_post_video_failed
+- how_to_attach_video:
+    triggers: utter_how_to_attach_video
+- approval_time:
+    triggers: utter_approval_time
+- why_reject_post:
+    triggers: utter_why_reject_post
+- how_to_download_app:
+    triggers: utter_how_to_download_app
+- how_to_search:
+    triggers: utter_how_to_search
+- how_to_sign_in:
+    triggers: utter_how_to_sign_in
+- how_to_sign_up:
+    triggers: utter_how_to_sign_up
+- what_product:
+    triggers: utter_what_product
+- who_founder:
+    triggers: utter_who_founder
+- what_orientation:
+    triggers: utter_what_orientation
+- what_difference:
+    triggers: utter_what_difference
+- about_utility:
+    triggers: utter_about_utility
+- head_quarter:
+    triggers: utter_head_quarter
+- which_special_offers:
+    triggers: utter_which_special_offers
+- follow_us:
+    triggers: utter_follow_us
+- advanced_features:
+    triggers: utter_advanced_features
+- how_to_price:
+    triggers: utter_how_to_price
+- how_to_chat_with_seller:
+    triggers: utter_how_to_chat_with_seller
+- what_is_gold_cost:
+    triggers: utter_what_is_gold_cost
+- how_to_chat_with_buyer:
+    triggers: utter_how_to_chat_with_buyer
 - search_for_purposes:
     triggers: utter_search_for_purposes
 - search_with_filtering:
     triggers: utter_search_with_filtering
 - search_navigation button:
     triggers: utter_search_navigation button
+- no_search_results:
+    triggers: utter_no_search_results
 - how_to_recharge:
     triggers: utter_how_to_recharge
 - how_to_get_receipt:
@@ -96,18 +130,37 @@
 - how_to_check_money:
     triggers: utter_how_to_check_money
 entities:
+- email
+- phone_number
+- username
+- location
+- post_package
+- time
 slots:
+  email:
+    type: text
+  phone_number:
+    type: text
+  username:
+    type: text
+  location:
+    type: text
+  post_package:
+    type: text
+  time:
+    type: text
   requested_slot:
     type: text
 responses:
   utter_default:
-  - text: Xin lỗi mình không hiểu ý bạn ạ.
+  - text: "Xin lỗi mình không hiểu ý bạn ạ."
   utter_greet:
   - text: "Xin chào, mình là MeeyChatBot. Mình có thể giúp gì cho bạn ạ?"
   utter_thank:
   - text: "Rất vui khi được phục vụ bạn :)"
   utter_how_to_register:
-  - text: "Để đăng ký tài khoản, bạn vui lòng xem hướng dẫn TẠI ĐÂY (đính kèm link file hướng dẫn sử dụng Meey ID)"
+  - text: "Để đăng ký tài khoản, bạn truy cập link https://meeyland.com/, chọn 'Đăng Nhập' trên góc phải trên cùng của màn hình và chọn 'Đăng ký tài khoản' (xem thêm hướng dẫn đăng ký tài khoản)
+Nếu đã có tài khoản, bạn truy cập link https://meeyland.com/, chọn 'Đăng Nhập' trên góc phải trên cùng của màn hình hoặc truy cập link https://www.meeyid.com và chọn 'Đăng Nhập'"
   utter_how_to_auth:
   - text: "Khi bạn lựa chọn đăng kí tài khoản thành công bằng Email hoặc Số điện thoại, có thể chọn xác thực tài khoản theo 2 cách:
 Cách 1: Xác thực tài khoản tại meeyid.com
@@ -153,50 +206,8 @@ Trong trường hợp bạn không thể đăng nhập, vui lòng liên hệ v�
   - text: "Hệ thống Meey Land có hỗ trợ đăng nhập nhanh sử dụng tài khoản Gmail/Facebook."
   utter_change_email_phone:
   - text: "Website meeyland.com hiện tại không cho phép thay đổi email/số điện thoại bạn đã đăng kí. Tuy nhiên trong trường hợp bạn nhập sai thông tin, bạn có thể liên hệ hotline 0869092929 để được hỗ trợ."
-  utter_what_product:
-  - text: "Sản phẩm của Meey Land là các ứng dụng công nghệ bất động sản, áp dụng nền tảng công nghệ 4.0, AI, Bigdata, Blockchain."
-  utter_who_founder:
-  - text: "CEO/Founder Hoàng Mai Chung – Chuyên gia Bất động sản với 20 năm kinh nghiệm quản lí và điều hành doanh nghiệp, và rất nhiều năm kinh nghiệm trong lĩnh vực bất động sản, công nghệ thông tin, đã từng đạt được nhiều giải thưởng cúp vàng cho doanh nghiệp."
-  utter_what_orientation:
-  - text: "Meey Land định hướng sẽ là một tập đoàn phát triển toàn cầu theo mô hình nhân bản và nhượng quyền thương hiệu. Bằng việc dẫn đầu thị trường và tạo ra sự khác biệt trong việc ứng dụng công nghệ vào lĩnh vực Bất động sản, Meey Land sẽ trở thành thủ lĩnh dẫn đầu trong lĩnh vực này trong thời gian rất ngắn."
-  utter_what_difference:
-  - text: "Meey Land là sản phẩm công nghệ ứng dụng vào lĩnh vực Bất động sản, là tiện ích tuyệt vời nhất, giải quyết rất nhiều khó khăn của thị trường giao dịch, mua bán, thuê, cho thuê, sang nhượng Bất động sản ở giai đoạn hiện tại. 
-Meey Land là thủ lĩnh dẫn đầu mang công nghệ 4.0 đầu tiên tại Việt Nam và thế giới ứng dụng vào lĩnh vực Bất động sản:
-•Trí tuệ nhân tạo AI
-•Dữ liệu lớn Bigdata
-•Công nghệ Blockchain"
-  utter_about_utility:
-  - text: "• Website không chỉ đăng tải các thông tin mua bán Bất động sản mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…
-• Công cụ tìm kiếm Bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Meey Land."
-  utter_head_quarter:
-  - text: "Trụ sở chính của Meey Land tại Hà Nội: Toà nhà 97-99 Láng Hạ, Đống Đa, Hà Nội."
-  utter_which_special_offers:
-  - text: "Hiện tại Meey Land đang có các chương trình ưu đãi cho các gói đăng tin dài ngày và tặng thưởng khi nạp tiền vào tài khoản tại meeyland.com
-(Gắn link tới các chương trình khuyến mại)"
-  utter_follow_us:
-  - text: "Để theo dõi và cập nhật nhanh các tin tức của chúng tôi trên mạng xã hội, bạn vui lòng nhấp vào link sau:
-
-Meey Land:
-Fanpage: https://www.facebook.com/meeyland.global/
-Youtube: https://bit.ly/ytb_meeyland_official
-
-Meey TV:
-Fanpage: https://www.facebook.com/truyenhinhmeeytv/
-Youtube: https://bit.ly/ytb_meeytv
-
-Meey Info: 
-Fanpage:https://bit.ly/truyenhinh_meeytv
-
-Chuyện nhà môi giới: 
-Fanpage: https://www.facebook.com/chuyenhamoigioi.meeyland/"
-  utter_advanced_features:
-  - text: "•Tính năng bản đồ: Bản đồ được tích hợp với meeyland.com ngoài việc tìm kiếm chính xác vị trí Bất động sản, khách hàng còn có thể xem thêm về tình trạng pháp lý của Bất động sản như tình trạng quy hoạch. Ngoài ra, khách hàng có thể xem được giá rao bán của các Bất động sản xung quanh vị trí của Bất động sản đang xem để tiện so sánh. 
-•Tính năng chat trực tuyến: Ngoài việc liên hệ với người đăng tin qua các cách truyền thống như gọi điện, email, người xem có thể liên hệ với người đăng tin bằng cách sử dụng ứng dụng chat trực tuyến với người đăng tin thông qua website meeyland.com hoặc qua ứng dụng Apps chat của Meey Land trên điện thoại di động.
-•Tính năng định giá Bất động sản: Ngoài giá rao bán của người đăng tin, Meey Land cung cấp cho người xem giá do Meey Land đề xuất. Giá này được nhóm phân tích giá của Meey Land tổng hợp thông qua giá thị trường, và phân tích đưa ra giá chính xác của Bất động sản để người xem tham khảo."
-  utter_how_to_price:
-  - text: "Bạn vui lòng làm theo hướng dẫn tại đây"
-  utter_how_to_chat_with_seller:
-  - text: "Bạn vui lòng làm theo hướng dẫn tại đây"
+  utter_how_to_reset_passwords:
+  - text: "Để thay đổi mật khẩu, người dùng đăng nhập vào Ứng dụng và nhấp vào mục 'Tài khoản'. Ở giao diện này, người dùng lựa chọn mục  'Thay đổi mật khẩu'. Tại giao diện này, người dùng nhập Mật khẩu cũ và Mẩt khẩu mới."
   utter_prepare_before_create_post:
   - text: "Để đăng tin, trước tiên bạn cần chuẩn bị nội dung tin đăng, hình ảnh kèm theo, có thể đăng tin không cần tài khoản (khách hàng vãng lai) hoặc có tài khoản.
 
@@ -208,7 +219,7 @@ Khi bạn đăng tin giao dịch Bất động sản bất kì, bạn có trách
 Vui lòng truy cập: https://meeyland.com/page/quy-dinh-dang-tin
 "
   utter_how_create_new_post:
-  - text: "Đăng nhập vào website meeyland.com, tại góc trên cùng bên phải màn hình trang chủ, chọn nút chức năng “Đăng bài” và thực hiện theo các bước sau:
+  - text: "Để đăng bài, bạn truy cập vào website meeyland.com, tại góc trên cùng bên phải màn hình trang chủ, chọn nút chức năng “Đăng bài” và thực hiện theo các bước sau:
 'Bước 1: Lựa chọn mục đích đăng bài. Sau khi chọn được mục đích đăng bài:
 Nếu đã đăng nhập vào tài khoản, thực hiện theo bước tiếp theo
 Nếu chưa có tài khoản, đăng tin vãng lai, cửa sổ sẽ yêu cầu lựa chọn đối tượng đăng bài.
@@ -220,8 +231,8 @@ Nội dung mô tả: giới hạn tối đa 5000 ký tự và không giới hạ
 Thông tin liên hệ: bạn phải điền đầy đủ thông tin liên hệ để khách hàng liên lạc khi có nhu cầu.
 Tìm kiếm theo vị trí: Bạn nhập địa chỉ Bất động sản trong tin đăng, chọn theo gợi ý trong thanh tìm kiếm đưa ra, vị trí Bất động sản bạn đăng sẽ hiển thị trên bản đồ. 
 '
-Bước 3: Hoàn tất đăng bài. Bạn có thể lưu nháp, xem trước bài đăng hoặc hoàn tất quá trình đăng bài bằng cách nhấp vào nút 'Đăng bài' ở cuối màn hình.
-"
+Bước 3: Hoàn tất đăng bài. Bạn có thể lưu nháp, xem trước bài đăng hoặc hoàn tất quá trình đăng bài bằng cách nhấp vào nút 'Đăng bài' ở cuối màn hình."
+
   utter_how_edit_delete_post:
   - text: "Đầu tiên, bạn vào Quản lý tin đăng ở góc trên cùng bên phải trang web, sau đó vào: 
 Để sửa bài đăng, bạn nhấp chuột vào ký hiệu cây bút 'Chỉnh sửa bài đăng' trên ảnh đại diện của mỗi tin đăng, sau đó chọn phần cần sửa.
@@ -239,8 +250,8 @@ Lưu ý:
   utter_limit_of_post_number:
   - text: "Bạn sẽ được đăng tin Không giới hạn nếu tài khoản của bạn vẫn có quyền đăng tin. "
   utter_way_contact_to_post_owner:
-  - text: "Bạn có thể liên hệ với người đăng tin bằng cách liên hệ qua Email/Số điện thoại/Thông tin khác do người đăng tin cung cấp trong bài đăng.
-Hoặc chat trực tuyến với người đăng tin ngay tại ứng dụng Chat của Meey Land được tích hợp với website meeyland.com"
+  - text: "- Anh/ chị có thể liên hệ với người đăng tin bằng cách liên hệ qua Email/Số điện thoại/Thông tin khác do người đăng tin cung cấp trong bài đăng.
+- Hoặc chat trực tuyến với người đăng tin ngay tại ứng dụng Chat của Meey Land được tích hợp với website meeyland.com."
   utter_how_create_creative_post:
   - text: "Bất động sản có mô tả và hình ảnh đi kèm chi tiết, sinh động sẽ thu hút nhiều khách hàng hơn. Bạn có thể tham khảo các cách sau
 Viết mô tả Bất động sản chi tiết:
@@ -293,9 +304,9 @@ Ngoài ra, website hỗ trợ người dùng chạy quảng cáo đơn giản, t
  Tin thường: Đăng tin hoàn toàn miễn phí, tuy nhiên tin thường sẽ được sắp xếp đăng dưới các tin Vip
  Tin Vip: mất phí và hiển thị trên website theo thứ tự từ trên xuống dưới là Vip 1 => Vip 2 => Vip 3."
   utter_what_is_up_post:
-  - text: "Là tin đăng đang hiển thị của khách hàng được đẩy lên vị trí đầu tiên trong gói đăng tin đó ngay tại thời điểm up tin. 
+  - text: "'Là tin đăng đang hiển thị của khách hàng được đẩy lên vị trí đầu tiên trong gói đăng tin đó ngay tại thời điểm up tin. 
 Up tin giúp cho tin rao của khách hàng tiếp cận được với nhiều người quan tâm và có nhu cầu về 
-Bất động sản, giúp giao dịch được nhanh chóng hơn."
+Bất động sản, giúp giao dịch được nhanh chóng hơn.'"
   utter_fee_of_up_post:
   - text: "Hiện tại Meey Land có áp dụng phí cho Up tin, bạn có thể xem bảng giá Up tin tại (copy đường link dẫn tới mục Báo giá)"
   utter_how_contact_customer_service:
@@ -303,6 +314,102 @@ Bất động sản, giúp giao dịch được nhanh chóng hơn."
  Gọi đến tổng đài theo số hotline 08.69.09.29.29
  Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
  Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  utter_multi_post:
+  - text: "1. Hiện tại MeeyLand không khuyến khích KH đăng bán nhiều BĐS trong cùng một bài đăng, đặc biệt là các BĐS khác dự án, khác địa chỉ. 
+Do việc đăng bài như thế khiến cho người tìm kiếm khó tiếp cận và khó khăn trong việc tìm kiếm thông tin. Tuy nhiên, bạn cũng có thể đăng bán nhiều BĐS trong cùng 1 bài đăng trong các trường hợp sau:
++ Các BĐS rao bán trong cùng 1 dự án
++ Các BĐS rao bán có cùng 1 địa chỉ
+
+2. Đối với các bài đăng có nhiều BĐS được rao bán không cùng một dự án hoặc không cùng một địa chỉ sẽ được nhân viên của MeeyLand kiểm duyệt lại và hạ bài mà không cần thông báo trước với khách hàng."
+  utter_post_image_failed:
+  - text: "- Trường hợp không đăng được ảnh, bạn vui lòng kiểm tra lại một trong các lý do sau: 
++ Ảnh đăng vượt quá kích thước cho phép 4mb cho mỗi ảnh
++ Số lượng ảnh đăng đã vượt quá số lượng cho phép của mỗi gói tin
+"
+  utter_post_video_failed:
+  - text: "1. Hiện tại MeeyLand chỉ hỗ trợ link video với đường dẫn từ youtube.com. Với các đường dẫn link video khác, MeeyLand không khuyến khích  và hiện tại không hỗ trợ, do đường dẫn không đảm bảo chất lượng, không ổn định, có thể dính virus và có thể phát sinh lỗi do trang gốc của link video .
+2. Trường hợp bạn đã gắn link nguồn từ Youtube nhưng vẫn không hiển thị, bạn vui lòng liên hệ MeeyLand để được hỗ trợ:
+ + Gọi đến tổng đài theo số hotline 08.69.09.29.29
+ + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
+ + Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  utter_how_to_attach_video:
+  - text: "1. Hiện tại MeeyLand chỉ hỗ trợ link video với đường dẫn từ youtube.com. Với các đường dẫn link video khác, MeeyLand không khuyến khích  và hiện tại không hỗ trợ, do đường dẫn không đảm bảo chất lượng, không ổn định, có thể dính virus và có thể phát sinh lỗi do trang gốc của link video .
+2. Trường hợp bạn đã gắn link nguồn từ Youtube nhưng vẫn không hiển thị, bạn vui lòng liên hệ MeeyLand để được hỗ trợ:
+ + Gọi đến tổng đài theo số hotline 08.69.09.29.29
+ + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
+ + Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  utter_approval_time:
+  - text: "- Nếu bạn là người dùng vãng lai, bài đăng của bạn sẽ được kiểm duyệt trong vòng 24h
+- Nếu bạn là người dùng đã đăng ký tài khoản trên MeeyLand, bài đăng của bạn sẽ được đăng ngay lập tức sau khi bạn hoàn thiện đăng bài và thanh toán chi phí cho bài đăng (nếu có)."
+  utter_why_reject_post:
+  - text: "1. Bài đăng của bạn không được đăng bán vì lí do vi phạm các lí do sau: 
++ Bài đăng không có tiêu đề
++ Bài đăng trùng lặp nội dung với bài đăng trước đó
++ Bài đăng không có hình ảnh đính kèm
++ Tên tiêu đề bài đăng hoặc nội dung không đúng quy định của MeeyLand
++ Nội dung bài đăng chứa thông tin nhạy cảm, vi phạm quy định đăng bài của MeeyLand
+
+2. Lý do không được duyệt bài/bị hạ bài: Trường hợp bài đăng của bạn không được duyệt, chúng tôi sẽ gửi thông báo cho bạn biết lý do không được duyệt bài/bị hạ bài, ngoài ra bạn cũng có thể liên hệ với trung tâm chăm sóc khách hàng của MeeyLand theo các phương thức sau:
+ + Gọi đến tổng đài theo số hotline 08.69.09.29.29
+ + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
+ + Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  utter_how_to_download_app:
+  - text: "Để sử dụng Ứng dụng MeeyLand, người dùng truy cập vào kho ứng dụng App Store, Google Play với các thiết bị tương ứng trên iOS, Andriod. Tìm kiếm từ khoá 'MeeyLand' và chọn Cài đặt để sử dụng Ứng dụng. "
+  utter_how_to_search:
+  - text: "Để tìm kiếm BĐS mới, người dùng nhập từ khoá tìm kiếm vào thanh công cụ tìm kiếm. Hệ thống tự động đưa ra các kết quả tìm kiếm dựa trên từ khoá đã nhập. "
+  utter_how_to_sign_in:
+  - text: "Để sử dụng các dịch vụ trên MeeyLand, bạn cần đăng kí tài khoản thành viên hoặc đăng nhập nhanh qua Gmail/Facebook.
+Nếu bạn gặp trục trặc khi đăng nhập, bạn vui lòng liên hệ hotline CSKH của MeeyLand. "
+  utter_how_to_sign_up:
+  - text: "Để đăng ký tài khoản, bạn vui lòng xem hướng dẫn TẠI ĐÂY (đính kèm link file hướng dẫn sử dụng Meey ID)"
+  utter_what_product:
+  - text: "Sản phẩm của Meey Land là các ứng dụng công nghệ bất động sản, áp dụng nền tảng công nghệ 4.0, AI, Bigdata, Blockchain."
+  utter_who_founder:
+  - text: "CEO/Founder Hoàng Mai Chung – Chuyên gia Bất động sản với 20 năm kinh nghiệm quản lí và điều hành doanh nghiệp, và rất nhiều năm kinh nghiệm trong lĩnh vực bất động sản, công nghệ thông tin, đã từng đạt được nhiều giải thưởng cúp vàng cho doanh nghiệp."
+  utter_what_orientation:
+  - text: "Meey Land định hướng sẽ là một tập đoàn phát triển toàn cầu theo mô hình nhân bản và nhượng quyền thương hiệu. Bằng việc dẫn đầu thị trường và tạo ra sự khác biệt trong việc ứng dụng công nghệ vào lĩnh vực Bất động sản, Meey Land sẽ trở thành thủ lĩnh dẫn đầu trong lĩnh vực này trong thời gian rất ngắn."
+  utter_what_difference:
+  - text: "Meey Land là sản phẩm công nghệ ứng dụng vào lĩnh vực Bất động sản, là tiện ích tuyệt vời nhất, giải quyết rất nhiều khó khăn của thị trường giao dịch, mua bán, thuê, cho thuê, sang nhượng Bất động sản ở giai đoạn hiện tại. 
+Meey Land là thủ lĩnh dẫn đầu mang công nghệ 4.0 đầu tiên tại Việt Nam và thế giới ứng dụng vào lĩnh vực Bất động sản:
+•Trí tuệ nhân tạo AI
+•Dữ liệu lớn Bigdata
+•Công nghệ Blockchain"
+  utter_about_utility:
+  - text: "• Website không chỉ đăng tải các thông tin mua bán Bất động sản mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…
+• Công cụ tìm kiếm Bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Meey Land."
+  utter_head_quarter:
+  - text: "Trụ sở chính của Meey Land tại Hà Nội: Toà nhà 97-99 Láng Hạ, Đống Đa, Hà Nội."
+  utter_which_special_offers:
+  - text: "Hiện tại Meey Land đang có các chương trình ưu đãi cho các gói đăng tin dài ngày và tặng thưởng khi nạp tiền vào tài khoản tại meeyland.com
+(Gắn link tới các chương trình khuyến mại)"
+  utter_follow_us:
+  - text: "Để theo dõi và cập nhật nhanh các tin tức của chúng tôi trên mạng xã hội, bạn vui lòng nhấp vào link sau:
+
+Meey Land:
+Fanpage: https://www.facebook.com/meeyland.global/
+Youtube: https://bit.ly/ytb_meeyland_official
+
+Meey TV:
+Fanpage: https://www.facebook.com/truyenhinhmeeytv/
+Youtube: https://bit.ly/ytb_meeytv
+
+Meey Info: 
+Fanpage:https://bit.ly/truyenhinh_meeytv
+
+Chuyện nhà môi giới: 
+Fanpage: https://www.facebook.com/chuyenhamoigioi.meeyland/"
+  utter_advanced_features:
+  - text: "•Tính năng bản đồ: Bản đồ được tích hợp với meeyland.com ngoài việc tìm kiếm chính xác vị trí Bất động sản, khách hàng còn có thể xem thêm về tình trạng pháp lý của Bất động sản như tình trạng quy hoạch. Ngoài ra, khách hàng có thể xem được giá rao bán của các Bất động sản xung quanh vị trí của Bất động sản đang xem để tiện so sánh. 
+•Tính năng chat trực tuyến: Ngoài việc liên hệ với người đăng tin qua các cách truyền thống như gọi điện, email, người xem có thể liên hệ với người đăng tin bằng cách sử dụng ứng dụng chat trực tuyến với người đăng tin thông qua website meeyland.com hoặc qua ứng dụng Apps chat của Meey Land trên điện thoại di động.
+•Tính năng định giá Bất động sản: Ngoài giá rao bán của người đăng tin, Meey Land cung cấp cho người xem giá do Meey Land đề xuất. Giá này được nhóm phân tích giá của Meey Land tổng hợp thông qua giá thị trường, và phân tích đưa ra giá chính xác của Bất động sản để người xem tham khảo."
+  utter_how_to_price:
+  - text: "Bạn vui lòng làm theo hướng dẫn tại đây"
+  utter_how_to_chat_with_seller:
+  - text: "- Để chat trực tiếp với người bán, bạn vui lòng nhấn vào biểu tượng chat bên cạnh tên người đăng để sử dụng MeeyChat phiên bản máy tính (nếu sử dụng Laptop/PC) hoặc App MeeyChat cho iOS/Android"
+  utter_what_is_gold_cost:
+  - text: "Giá ghi ở ô màu vàng đồng trên ảnh đại diện của mỗi tin đăng là định giá của bất động sản được đăng, nghĩa là định giá đất và định giá các tài sản gắn liền với đất (nếu có)."
+  utter_how_to_chat_with_buyer:
+  - text: "Dạ anh/ chị, phần chat đó là những khách hàng xem tin đăng của anh chị vào chat với mình đó ạ. Anh chị nên kiểm tra phần chat đó thường xuyên để trả lời người xem nhanh nhất và xin thông tin để liên hệ trực tiếp với khách nhé. Hiện tại bên em chưa hỗ trợ lấy được thông tin của khách xem tin ạ."
   utter_search_for_purposes:
   - text: "Tìm kiếm theo mục đích: Tại trang chủ meeyland.com, kéo xuống mục tìm kiếm
 Người dùng có thể lựa chọn tìm kiếm với 3 mục đích:
@@ -321,6 +428,8 @@ Tìm kiếm nâng cao: Nhấp vào nút “Tìm kiếm nâng cao”, giao diện
 Khi người dùng nhấp vào các nút này, hệ thống sẽ đưa sang 1 trang mới bao gồm toàn bộ các thông tin giao dịch Bất động sản liên quan.
 Hoặc người dùng có thể lựa chọn “Xem tất cả” khi nhấp vào nút “Xem tất cả” phía góc trên cùng bên phải của các mục tìm kiếm.
 (Xem thêm tài liệu giới thiệu các giao diện của meeyland.com – gắn link)"
+  utter_no_search_results:
+  - text: "Nếu như hệ thống không hiển thị kết quả tìm kiếm theo từ khoá nghĩa là khu vực bạn tìm không có tin đăng BĐS cần giao dịch. Bạn có thể chỉnh sửa lại từ khoá khác hoặc nới rộng/thu hẹp khu vực tìm kiếm."
   utter_how_to_recharge:
   - text: "Tại meeyland.com, bạn có thể nạp tiền bằng hình thức như sau:
 Nạp tiền qua VNPAY;
@@ -355,53 +464,77 @@ Hoặc tới trực tiếp văn phòng Công ty cổ phần tập đoàn Meey La
   - text: "Khi nạp tiền vào website, bạn sẽ kiểm tra được số tiền mình nạp trong phần “Số dư khả dụng” và “Lịch sử giao dịch” tại mục Quản lý tài khoản cá nhân trên tài khoản của bạn.
 (Xem thêm hướng dẫn kiểm tra giao dịch tại Hướng dẫn nạp tiền vào meeyland.com)
 "
+  utter_ask_post_package:
+  - text: "Bạn muốn hỏi về gói vip nào ạ"
+  utter_ask_duration:
+  - text: "Bạn muốn mua gói tin trong bao lâu"
+  utter_agree:
+  - text: "Dạ vâng ạ"
 actions:
-- utter_default
- - utter_greet:
- - utter_thank:
- - utter_how_to_register:
- - utter_how_to_auth:
- - utter_lost_otp:
- - utter_login_failed:
- - utter_forgot_password:
- - utter_benefits_register:
- - utter_post_without_register:
- - utter_how_to_edit_account_info:
- - utter_3rd_login:
- - utter_change_email_phone:
- - utter_what_product:
- - utter_who_founder:
- - utter_what_orientation:
- - utter_what_difference:
- - utter_about_utility:
- - utter_head_quarter:
- - utter_which_special_offers:
- - utter_follow_us:
- - utter_advanced_features:
- - utter_how_to_price:
- - utter_how_to_chat_with_seller:
- - utter_prepare_before_create_post:
- - utter_how_create_new_post:
- - utter_how_edit_delete_post:
- - utter_why_not_see_post:
- - utter_limit_of_post_number:
- - utter_way_contact_to_post_owner:
- - utter_how_create_creative_post:
- - utter_is_advert_onMeey_effective:
- - utter_post_requirement:
- - utter_what_VIP_post:
- - utter_fee_of_post:
- - utter_what_is_up_post:
- - utter_fee_of_up_post:
- - utter_how_contact_customer_service:
- - utter_search_for_purposes:
- - utter_search_with_filtering:
- - utter_search_navigation button:
- - utter_how_to_recharge:
- - utter_how_to_get_receipt:
- - utter_how_to_get_VAT:
- - utter_isSave_money:
- - utter_isSecure_vnpay:
- - utter_what_vnpay:
- - utter_isSave_vnpay:
- - utter_how_to_check_money:
+ - utter_default
+ - utter_greet
+ - utter_thank
+ - utter_how_to_register
+ - utter_how_to_auth
+ - utter_lost_otp
+ - utter_login_failed
+ - utter_forgot_password
+ - utter_benefits_register
+ - utter_post_without_register
+ - utter_how_to_edit_account_info
+ - utter_3rd_login
+ - utter_change_email_phone
+ - utter_how_to_reset_passwords
+ - utter_prepare_before_create_post
+ - utter_how_create_new_post
+ - utter_how_edit_delete_post
+ - utter_why_not_see_post
+ - utter_limit_of_post_number
+ - utter_way_contact_to_post_owner
+ - utter_how_create_creative_post
+ - utter_is_advert_onMeey_effective
+ - utter_post_requirement
+ - utter_what_VIP_post
+ - utter_fee_of_post
+ - action_fee_of_vip_post
+ - action_info_post_package
+ - action_info_time
+ - utter_what_is_up_post
+ - utter_fee_of_up_post
+ - utter_how_contact_customer_service
+ - utter_multi_post
+ - utter_post_image_failed
+ - utter_post_video_failed
+ - utter_how_to_attach_video
+ - utter_approval_time
+ - utter_why_reject_post
+ - utter_how_to_download_app
+ - utter_how_to_search
+ - utter_how_to_sign_in
+ - utter_how_to_sign_up
+ - utter_what_product
+ - utter_who_founder
+ - utter_what_orientation
+ - utter_what_difference
+ - utter_about_utility
+ - utter_head_quarter
+ - utter_which_special_offers
+ - utter_follow_us
+ - utter_advanced_features
+ - utter_how_to_price
+ - utter_how_to_chat_with_seller
+ - utter_what_is_gold_cost
+ - utter_how_to_chat_with_buyer
+ - utter_search_for_purposes
+ - utter_search_with_filtering
+ - utter_search_navigation button
+ - utter_no_search_results
+ - utter_how_to_recharge
+ - utter_how_to_get_receipt
+ - utter_how_to_get_VAT
+ - utter_isSave_money
+ - utter_isSecure_vnpay
+ - utter_what_vnpay
+ - utter_isSave_vnpay
+ - utter_how_to_check_money
+ - utter_agree

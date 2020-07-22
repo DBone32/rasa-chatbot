@@ -100,6 +100,28 @@ def convert_domain():
             outfile.writelines(' - utter_{}\n'.format(intent))
 
 
+
+
+def convert_stories():
+    df = pd.ExcelFile('raw_data/chatbot_data_core.xlsx')
+    outfile = open('data/stories.md', 'w', encoding='utf-8-sig')
+    sheetnames = df.sheet_names
+    for i, name in enumerate(sheetnames):
+        sheet_data = df.parse(name)
+        stts = sheet_data['STT']
+        users = sheet_data['User']
+        bots = sheet_data['Bot']
+        stories = sheet_data['Rasa-Stories']
+        for idx, action in enumerate(stories):
+            if stts[idx] == stts[idx] and stories[idx] == stories[idx]:
+                if idx != 0 or i != 0:
+                    outfile.writelines('\n')
+                story_name = '## {} {}\n'.format(name, int(stts[idx]))
+                outfile.writelines(story_name)
+            if users[idx] == users[idx]:
+                outfile.writelines('* {}\n'.format(action.strip()))
+            elif bots[idx] == bots[idx]:
+                outfile.writelines('  - {}\n'.format(action.strip()))
     outfile.close()
 
-convert_domain()
+convert_stories()
