@@ -9,3 +9,6 @@ __pycache__/*
 rasa.db
 rasa.db
 events.db
+venv2/*
+actions/__pycache__/actions.cpython-36.pyc
+actions/__pycache__/actions.cpython-36.pyc

@@ -3,15 +3,14 @@ pipeline:
 - name: WhitespaceTokenizer
 - name: CountVectorsFeaturizer
 - name: CountVectorsFeaturizer
-- name: CRFEntityExtractor
   analyzer: char_wb
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 300
+  epochs: 150
+- name: ResponseSelector
 
 policies:
-
   - name: TEDPolicy
     epochs: 350
     max_history: 3

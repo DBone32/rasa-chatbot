@@ -5,13 +5,13 @@ import re
 
 
 def convert_IE():
-    data = pd.ExcelFile('raw_data/chatbot-data.xlsx')
+    data = pd.ExcelFile('raw_data/chatbot_data_nlu.xlsx')
     outfile = open('data/nlu.md', 'w', encoding='utf-8-sig')
-    sheetnames = data.sheet_names[:-1]
+    sheetnames = data.sheet_names[:-2]
     for name in sheetnames:
         sheet_data = data.parse(name)
-        samples = sheet_data['Samples']
-        intents = sheet_data['Intent']
+        samples = sheet_data['User Request/Questions']
+        intents = sheet_data['IntentName for Bot']
         for idx, sample in enumerate(samples):
             if len(intents) > idx and type(intents[idx]) == str:
                 outfile.writelines('\n## intent:{}\n'.format(intents[idx]))
@@ -21,26 +21,42 @@ def convert_IE():
 
 
 def convert_domain():
-    df = pd.ExcelFile('raw_data/chatbot-data.xlsx')
-    outfile = open('data/domain.yml', 'w', encoding='utf-8-sig')
-    data = {}
+    df = pd.ExcelFile('raw_data/chatbot_data_nlu.xlsx')
+    outfile = open('domain.yml', 'w', encoding='utf-8-sig')
+    intent_dict = {}
+    utter_dict = {}
     entities = []
-    sheetnames = df.sheet_names[:-1]
+    actions = []
+    sheetnames = df.sheet_names[:-2]
     for name in sheetnames:
         sheet_data = df.parse(name)
-        answers = sheet_data['Answer']
-        intents = sheet_data['Intent']
-        questions = sheet_data['Samples']
+        answers = sheet_data['Answer of Bot']
+        intents = sheet_data['IntentName for Bot']
+        questions = sheet_data['User Request/Questions']
+        if 'Name of Utter' in sheet_data:
+            utter_names = sheet_data['Name of Utter']
+        else:
+            print("Sheet {} don't have 'Name of Utter'".format(name))
         current_intent = 0
-        current_answer = 0
         for idx, answer in enumerate(answers):
             intent = intents[idx]
             if intent != current_intent and type(intent) == str:
-                if type(answer) == float:
-                    answer = current_answer
-                data[intent] = answer.replace('"', "'")
                 current_intent = intent
-                current_answer = answer
+                intent_dict[intent] = answer
+            if type(answer) == str:
+                if 'Name of Utter' in sheet_data and type(utter_names[idx]) == str:
+                    utter_dict[utter_names[idx]] = [answer]
+                    actions.append(utter_names[idx])
+                elif 'action_' not in answer:
+                    if 'utter_{}'.format(current_intent) not in utter_dict:
+                        utter_dict['utter_{}'.format(current_intent)] = []
+                    utter_dict['utter_{}'.format(current_intent)].append(answer.replace('"', "'"))
+                    if 'utter_{}'.format(current_intent) not in actions:
+                        actions.append('utter_{}'.format(current_intent))
+                else:
+                    actions.append(answer)
+
+
         # find entities
         for question in questions:
             if type(question) == str:
@@ -61,12 +77,20 @@ def convert_domain():
 
     # generate intents:
     outfile.writelines('intents:\n')
-    for intent in data:
-        if 'action_' in data[intent]:
+    rp_intents = []
+    for intent in intent_dict:
+        if '/' in intent:
+            intent = intent.split('/')[0]
+            if intent in rp_intents:
+                continue
+            rp_intents.append(intent)
             outfile.writelines('- {}:\n'.format(intent))
-            outfile.writelines('    triggers: action_{}\n'.format(intent))
-        elif type(data[intent]) != str:
+            outfile.writelines('    triggers: respond_{}\n'.format(intent))
+        elif type(intent_dict[intent]) != str:
             outfile.writelines('- {}\n'.format(intent))
+        elif 'action_' in intent_dict[intent]:
+            outfile.writelines('- {}:\n'.format(intent))
+            outfile.writelines('    triggers: {}\n'.format(intent_dict[intent]))
         else:
             outfile.writelines('- {}:\n'.format(intent))
             outfile.writelines('    triggers: utter_{}\n'.format(intent))
@@ -83,28 +107,32 @@ def convert_domain():
     # generate responses:
     outfile.writelines('responses:\n')
     outfile.writelines('  utter_default:\n  - text: "Xin lỗi mình không hiểu ý bạn ạ."\n')
-    for intent in data:
-        if type(data[intent]) == str and 'action_' not in data[intent]:
-            outfile.writelines('  utter_{}:\n'.format(intent))
-            outfile.writelines('  - text: "{}"\n'.format(data[intent]))
+    for utter in utter_dict:
+        if '/' in utter:
+            continue
+        outfile.writelines('  {}:\n'.format(utter))
+        for text in utter_dict[utter]:
+            outfile.writelines('  - text: "{}"\n'.format(text))
     for slot in utter_ask:
         outfile.writelines('  utter_ask_{}:\n'.format(slot))
         outfile.writelines('  - text: "{}"\n'.format(utter_ask[slot]))
     # generate actions:
     outfile.writelines('actions:\n')
     outfile.writelines(' - utter_default\n')
-    for intent in data:
-        if 'action_' in data[intent]:
-            outfile.writelines(' - action_{}\n'.format(intent))
+    rp_actions = []
+    for action in actions:
+        if '/' in action:
+            action = action.split('/')[0].replace('utter_', '')
+            if action in rp_actions:
+                continue
+            rp_actions.append(action)
+            outfile.writelines(' - respond_{}\n'.format(action))
         else:
-            outfile.writelines(' - utter_{}\n'.format(intent))
-
-
-
+            outfile.writelines(' - {}\n'.format(action))
 
 def convert_stories():
     df = pd.ExcelFile('raw_data/chatbot_data_core.xlsx')
-    outfile = open('data/stories.md', 'w', encoding='utf-8-sig')
+    outfile = open('data/stories.md', 'w')
     sheetnames = df.sheet_names
     for i, name in enumerate(sheetnames):
         sheet_data = df.parse(name)
@@ -124,4 +152,35 @@ def convert_stories():
                 outfile.writelines('  - {}\n'.format(action.strip()))
     outfile.close()
 
+def convert_respond():
+    Frame = pd.ExcelFile('raw_data/chatbot_data_nlu.xlsx')
+    outfile = open('data/responses.md', 'w', encoding='utf-8-sig')
+    sheetnames = Frame.sheet_names[:-2]
+    data = {}
+    for name in sheetnames:
+        if 'respond' not in name.lower():
+            continue
+        sheet_data = Frame.parse(name)
+        answers = sheet_data['Answer of Bot']
+        intents = sheet_data['IntentName for Bot']
+        curent_intent = 0
+        for idx, answer in enumerate(answers):
+            intent = intents[idx]
+            if type(intent) == str:
+                data[intent] = []
+                curent_intent = intent
+            if type(answer) == str:
+                data[curent_intent].append(answer)
+    for intent in data:
+        outfile.writelines('\n## {}\n'.format(intent.split('/')[0]))
+        outfile.writelines('* {}\n'.format(intent))
+        answers = data[intent]
+        for answer in answers:
+            outfile.writelines('  - {}\n'.format(answer.replace('"', "'").replace('\n', '\\n')))
+
+    outfile.close()
+
+convert_IE()
+convert_domain()
 convert_stories()
+convert_respond()
