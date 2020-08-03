@@ -5,6 +5,8 @@ from rasa_sdk.forms import FormAction
 from rasa_sdk.events import FollowupAction
 from rasa_sdk.executor import CollectingDispatcher
 
+def price_format(price):
+    return '{:,.0f}'.format(price).replace(',', '.')
 
 class ActionFeeOffVipPost(Action):
     def __init__(self):
@@ -22,14 +24,14 @@ class ActionFeeOffVipPost(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         post_package = tracker.get_slot('post_package')
-        time = tracker.get_slot('time')
-        if time != None:
-            time = time.lower()
-            time_value = ''.join(filter(str.isdigit, time))
-            time_unit = time.replace(time_value, '').strip()
-            time_value = int(time_value)
-            if time_value == '' or time_unit not in self.coefficient:
-                time = None
+        duration = tracker.get_slot('duration')
+        if duration != None:
+            duration = duration.lower()
+            duration_value = ''.join(filter(str.isdigit, duration))
+            duration_unit = duration.replace(duration_value, '').strip()
+            duration_value = int(duration_value)
+            if duration_value == '' or duration_unit not in self.coefficient:
+                duration = None
 
         vip_type = 0
         if post_package != None:
@@ -45,25 +47,31 @@ class ActionFeeOffVipPost(Action):
         fee_table = self.fee_table
         if vip_type != 0:
             # nếu chỉ bắt được post_package
-            if time == None:
-                dispatcher.utter_message(text="Giá gói {} hiện tại là {}đ/tin/ngày ạ.".format(fee_table[vip_type]['name'], fee_table[vip_type]['fee'][1]))
+            if duration == None:
+                dispatcher.utter_message(text="Giá gói {} hiện tại là {}đ/tin/ngày ạ."
+                                         .format(fee_table[vip_type]['name'],
+                                                 price_format(fee_table[vip_type]['fee'][1])))
                 message = 'Ngoài ra bên em còn có các gói'
                 for package in fee_table:
                     if package != vip_type:
-                        message += ' {} với giá {}đ/tin/ngày,'.format(fee_table[package]['name'], fee_table[package]['fee'][1])
-                message = message[:-1] + 'ạ.'
+                        message += ' {} với giá {}đ/tin/ngày,'.format(fee_table[package]['name'],
+                                                                      price_format(fee_table[package]['fee'][1]))
+                message = message[:-1] + ' ạ.'
                 dispatcher.utter_message(message)
                 return []
             # nếu bắt dc cả 2
             else:
-                cost = fee_table[vip_type]['fee'][1]*time_value*self.coefficient[time_unit]['coef']
-                text_unit = self.coefficient[time_unit]['text']
-                message = 'Gói {} trong {} {} có giá {}đ ạ'.format(fee_table[vip_type]['name'], time_value, text_unit, cost)
+                cost = fee_table[vip_type]['fee'][1]*duration_value*self.coefficient[duration_unit]['coef']
+                text_unit = self.coefficient[duration_unit]['text']
+                message = 'Gói {} trong {} {} có giá {}đ ạ'.format(fee_table[vip_type]['name'],
+                                                                   duration_value,
+                                                                   text_unit,
+                                                                   price_format(cost))
                 dispatcher.utter_message(message)
                 return []
 
-        # Nếu chỉ bắt dc time
-        elif time != None:
+        # Nếu chỉ bắt dc duration
+        elif duration != None:
             message = 'Không biết bạn muốn hỏi về gói vip nào ạ'
             dispatcher.utter_message(message)
             message = 'Hiện tại bên em đang có 3 gói đăng tin vip là VIP1, VIP2 và VIP3 ạ.'
@@ -74,7 +82,7 @@ class ActionFeeOffVipPost(Action):
         message = 'Hiện tại Meeyland cung cấp {} gói tin VIP là'.format(len(fee_table))
         for package in fee_table:
             message += ' gói {} giá {}đ/tin/ngày,'.format(fee_table[package]['name'],
-                                                         fee_table[package]['fee'][1])
+                                                          price_format(fee_table[package]['fee'][1]))
         message = message[:-1] + ' ạ.'
         dispatcher.utter_message(message)
         return []

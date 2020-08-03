@@ -1,4 +1,7 @@
-﻿intents:
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
 - how_register_account:
     triggers: utter_how_register_account
 - how_auth_account:
@@ -128,357 +131,430 @@ entities:
 slots:
   company:
     type: text
+  duration:
+    type: text
   email:
     type: text
-  phone_number:
+  link:
     type: text
-  username:
+  location:
     type: text
   money_transfer_type:
     type: text
   money_transfer_type_ ngân hàng thì qua các ngân hàng nà:
     type: text
+  phone_number:
+    type: text
   post_package:
-    type: text
-  location:
-    type: text
-  duration:
-    type: text
-  link:
     type: text
   requested_slot:
     type: text
+  username:
+    type: text
 responses:
   utter_default:
-  - text: "Xin lỗi mình không hiểu ý bạn ạ."
+  - text: Xin lỗi mình không hiểu ý bạn ạ.
   utter_how_register_account:
-  - text: "Để đăng ký tài khoản tại [Meey Land](https://meeyland.com/), bạn click vào [đây](https://meeyid.com/register) và làm theo hướng dẫn."
+  - text: Để đăng ký tài khoản tại [Meey Land](https://meeyland.com/), bạn click vào
+      [đây](https://meeyid.com/register) và làm theo hướng dẫn.
   utter_how_auth_account:
-  - text: "Khi bạn lựa chọn đăng kí tài khoản thành công bằng Email hoặc Số điện thoại, có thể chọn xác thực tài khoản theo 2 cách:
-Cách 1: Xác thực tài khoản tại meeyid.com
-Tại trang chủ meeyid.com => Chọn 'Thông tin tài khoản' => Chọn 'Thông tin liên lạc' => Nhấp vào nút 'Xác thực' bên cạnh địa chỉ Email hoặc Số điện thoại cần xác thực
-Sau khi nhấp nút'Xác thực', hệ thống sẽ:
-Xác thực qua Email: Gửi đường link xác thực tài khoản qua Email đăng ký 
-=> Mở Email và nhấp vào đường link để xác thực.
-Xác thực số điện thoại: Hệ thống sẽ chuyển màn hình bắt nhập mã OTP và gửi mã OTP tới số điện thoại đăng ký qua tin nhắn SMS => Nhập mã số OTP được gửi tới điện thoại lên màn hình xác thực
-
-Cách 2: Xác thực tài khoản tại meeyland.com
-Tại trang chủ meeyland.com, đăng nhập tài khoản và nhấp vào avata đại diện tại góc trên cùng bên phải màn hình
-Chọn 'Quản lý tài khoản cá nhân'
-Chọn 'Xác thực tài khoản'
-Nhấp vào nút 'Xác thực' bên cạnh Email hoặc Số điện thoại cần xác thực
-Sau khi nhấp nút'Xác thực', hệ thống sẽ:
-Xác thực qua Email: Gửi đường link xác thực tài khoản qua Email đăng ký => Mở Email và nhấp vào đường link để xác thực.
-Xác thực số điện thoại: Hệ thống sẽ chuyển màn hình bắt nhập mã OTP và gửi mã OTP tới số điện thoại đăng ký qua tin nhắn SMS => Nhập mã số OTP được gửi tới điện thoại lên màn hình xác thực
-"
+  - text: "Khi bạn lựa chọn đăng kí tài khoản thành công bằng Email hoặc Số điện thoại,\
+      \ có thể chọn xác thực tài khoản theo 2 cách: Cách 1: Xác thực tài khoản tại\
+      \ meeyid.com Tại trang chủ meeyid.com => Chọn 'Thông tin tài khoản' => Chọn\
+      \ 'Thông tin liên lạc' => Nhấp vào nút 'Xác thực' bên cạnh địa chỉ Email hoặc\
+      \ Số điện thoại cần xác thực Sau khi nhấp nút'Xác thực', hệ thống sẽ: Xác thực\
+      \ qua Email: Gửi đường link xác thực tài khoản qua Email đăng ký => Mở Email\
+      \ và nhấp vào đường link để xác thực. Xác thực số điện thoại: Hệ thống sẽ chuyển\
+      \ màn hình bắt nhập mã OTP và gửi mã OTP tới số điện thoại đăng ký qua tin nhắn\
+      \ SMS => Nhập mã số OTP được gửi tới điện thoại lên màn hình xác thực\nCách\
+      \ 2: Xác thực tài khoản tại meeyland.com Tại trang chủ meeyland.com, đăng nhập\
+      \ tài khoản và nhấp vào avata đại diện tại góc trên cùng bên phải màn hình Chọn\
+      \ 'Quản lý tài khoản cá nhân' Chọn 'Xác thực tài khoản' Nhấp vào nút 'Xác thực'\
+      \ bên cạnh Email hoặc Số điện thoại cần xác thực Sau khi nhấp nút'Xác thực',\
+      \ hệ thống sẽ: Xác thực qua Email: Gửi đường link xác thực tài khoản qua Email\
+      \ đăng ký => Mở Email và nhấp vào đường link để xác thực. Xác thực số điện thoại:\
+      \ Hệ thống sẽ chuyển màn hình bắt nhập mã OTP và gửi mã OTP tới số điện thoại\
+      \ đăng ký qua tin nhắn SMS => Nhập mã số OTP được gửi tới điện thoại lên màn\
+      \ hình xác thực "
   utter_lost_otp:
-  - text: "Nếu bạn không nhận được mã OTP xác nhận, bạn kích vào “Gửi lại mã OTP” ngay dưới ô “Xác nhận” để nhận mã mới."
+  - text: Nếu bạn không nhận được mã OTP xác nhận, bạn kích vào “Gửi lại mã OTP” ngay
+      dưới ô “Xác nhận” để nhận mã mới.
   utter_login_failed:
-  - text: "Bạn kiểm tra và nhập đúng Email/Số điện thoại và Mật khẩu trước khi đăng nhập. 
-Trong trường hợp bạn không thể đăng nhập, vui lòng liên hệ với bộ phận Chăm sóc khách hàng của chúng tôi để được hỗ trợ:
-• Gọi đến tổng đài theo số hotline 08.69.09.29.29
-• Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
-• Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  - text: "Bạn kiểm tra và nhập đúng Email/Số điện thoại và Mật khẩu trước khi đăng\
+      \ nhập. Trong trường hợp bạn không thể đăng nhập, vui lòng liên hệ với bộ phận\
+      \ Chăm sóc khách hàng của chúng tôi để được hỗ trợ: • Gọi đến tổng đài theo\
+      \ số hotline 08.69.09.29.29 • Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”\
+      \ • Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
   utter_forgot_password:
-  - text: "Trường hợp bạn quên mật khẩu đăng nhập, bạn vào [đây](https://meeyid.com/forgot-password) để tạo mật khẩu mới."
+  - text: Trường hợp bạn quên mật khẩu đăng nhập, bạn vào [đây](https://meeyid.com/forgot-password)
+      để tạo mật khẩu mới.
   utter_benefit_of_meey_account:
-  - text: "• Tại meeyland.com, bạn hoàn toàn có thể đăng bài với tư cách 'tài khoản vãng lai và không cần đăng ký tài khoản'. 
-Đăng kí tài khoản sẽ mang tới cho bạn quyền lợi như sau:
-• Dễ dàng tự thực hiện các giao dịch Bất động sản (mua/bán/thuê/cho thuê/chuyển nhượng) với các thao tác đơn giản, tiện ích và chủ động. 
-• Số lượng tin đăng không hạn chế, quản lý tin đăng, tin đã xem, lịch sử giao dịch. Nếu bạn không đăng ký, chỉ được đăng tối đa 3 tin còn hiệu lực trên website và không quản lý được tin đăng.
-• Meey Land có các gói đăng tin hấp dẫn dành cho khách hàng đăng kí tài khoản.
-• Dễ dàng theo dõi tình trạng giao dịch của mình.
-Việc đăng kí tài khoản Meey Land rất đơn giản, Quý khách vui lòng tham khảo hướng dẫn TẠI ĐÂY (đính kèm link hướng dẫn đăng kí MeeyID), hoặc click vào [đây](https://meeyid.com/register) để đăng ký tài khoản."
+  - text: "• Tại meeyland.com, bạn hoàn toàn có thể đăng bài với tư cách 'tài khoản\
+      \ vãng lai và không cần đăng ký tài khoản'. Đăng kí tài khoản sẽ mang tới cho\
+      \ bạn quyền lợi như sau: • Dễ dàng tự thực hiện các giao dịch Bất động sản (mua/bán/thuê/cho\
+      \ thuê/chuyển nhượng) với các thao tác đơn giản, tiện ích và chủ động. • Số\
+      \ lượng tin đăng không hạn chế, quản lý tin đăng, tin đã xem, lịch sử giao dịch.\
+      \ Nếu bạn không đăng ký, chỉ được đăng tối đa 3 tin còn hiệu lực trên website\
+      \ và không quản lý được tin đăng. • Meey Land có các gói đăng tin hấp dẫn dành\
+      \ cho khách hàng đăng kí tài khoản. • Dễ dàng theo dõi tình trạng giao dịch\
+      \ của mình. Việc đăng kí tài khoản Meey Land rất đơn giản, Quý khách vui lòng\
+      \ tham khảo hướng dẫn TẠI ĐÂY (đính kèm link hướng dẫn đăng kí MeeyID), hoặc\
+      \ click vào [đây](https://meeyid.com/register) để đăng ký tài khoản."
   utter_how_edit_account_info:
-  - text: "Để quản lí và chỉnh sửa thông tin cá nhân, bạn vào [đây](https://meeyland.com/user/profile), vui lòng xem hướng dẫn TẠI ĐÂY (đính kèm file hướng dẫn chỉnh sửa thông tin cá nhân)"
+  - text: Để quản lí và chỉnh sửa thông tin cá nhân, bạn vào [đây](https://meeyland.com/user/profile),
+      vui lòng xem hướng dẫn TẠI ĐÂY (đính kèm file hướng dẫn chỉnh sửa thông tin
+      cá nhân)
   utter_login_by_gmail_facebook:
-  - text: "Hệ thống Meey Land có hỗ trợ đăng nhập nhanh sử dụng tài khoản Gmail/Facebook.
-Tuy nhiên, anh chị phải cung cấp thêm thông tin về Chứng minh nhân dân hoặc mã số thuế nha!"
+  - text: Hệ thống Meey Land có hỗ trợ đăng nhập nhanh sử dụng tài khoản Gmail/Facebook.
+      Tuy nhiên, anh chị phải cung cấp thêm thông tin về Chứng minh nhân dân hoặc
+      mã số thuế nha!
   utter_change_email_phone:
-  - text: "Website meeyland.com hiện tại không cho phép thay đổi email/số điện thoại bạn đã đăng kí. Tuy nhiên trong trường hợp bạn nhập sai thông tin, bạn có thể liên hệ hotline 0869092929 để được hỗ trợ."
+  - text: Website meeyland.com hiện tại không cho phép thay đổi email/số điện thoại
+      bạn đã đăng kí. Tuy nhiên trong trường hợp bạn nhập sai thông tin, bạn có thể
+      liên hệ hotline 0869092929 để được hỗ trợ.
   utter_how_change_password:
-  - text: "Để thay đổi mật khẩu, bạn đăng nhập vào Ứng dụng và nhấp vào mục 'Tài khoản'. Ở giao diện này, người dùng lựa chọn mục  'Thay đổi mật khẩu'. Tại giao diện này, người dùng nhập Mật khẩu cũ và Mẩt khẩu mới.
-Nếu bạn đang đăng nhập, click vào [đây](https://meeyland.com/user/profile#changePassword)"
+  - text: Để thay đổi mật khẩu, bạn đăng nhập vào Ứng dụng và nhấp vào mục 'Tài khoản'.
+      Ở giao diện này, người dùng lựa chọn mục  'Thay đổi mật khẩu'. Tại giao diện
+      này, người dùng nhập Mật khẩu cũ và Mẩt khẩu mới. Nếu bạn đang đăng nhập, click
+      vào [đây](https://meeyland.com/user/profile#changePassword)
   utter_required_personal_info:
-  - text: "Để đăng ký tài khoản tại Meeyland.com, bạn bắt buộc phải cung cấp những thông tin sau:
-• Tên tài khoản (tên đăng nhập)
-• Mật khẩu
-• Địa chỉ gmail hoặc số điện thoại
-• Chứng minh nhân dân hoặc mã số thuế
-Thông tin của bạn hoàn toàn được bảo mật."
+  - text: 'Để đăng ký tài khoản tại Meeyland.com, bạn bắt buộc phải cung cấp những
+      thông tin sau: • Tên tài khoản (tên đăng nhập) • Mật khẩu • Địa chỉ gmail hoặc
+      số điện thoại • Chứng minh nhân dân hoặc mã số thuế Thông tin của bạn hoàn toàn
+      được bảo mật.'
   utter_how_transfer_money_to_account:
-  - text: "Tại meeyland.com, bạn có thể nạp tiền bằng hình thức như sau:
-Nạp tiền qua VNPAY;
-Nạp tiền vào tài khoản qua Internet Banking và chuyển khoản tới số tài khoản đại diện của Công ty cổ phần tập đoàn Meey Land;
-Thanh toán tại văn phòng
-Chi tiết xem tại đây: ….. (chèn link điều hướng sang video/file hướng dẫn nạp tiền)
-"
+  - text: 'Tại meeyland.com, bạn có thể nạp tiền bằng hình thức như sau: Nạp tiền
+      qua VNPAY; Nạp tiền vào tài khoản qua Internet Banking và chuyển khoản tới số
+      tài khoản đại diện của Công ty cổ phần tập đoàn Meey Land; Thanh toán tại văn
+      phòng Chi tiết xem tại đây: ….. (chèn link điều hướng sang video/file hướng
+      dẫn nạp tiền) '
   utter_how_get_money_transfering_receipt:
-  - text: "Bạn vui lòng truy cập lịch sử giao dịch trong tài khoản Internet Banking của ngân hàng chuyển tiền, xem chi tiết giao dịch, chụp lại màn hình có đầy đủ các thông tin bao gồm: Số tài khoản, Tên tài khoản, Số tiền giao dịch, Nội dung chuyển tiền. Hình ảnh này có giá trị tương đương với Uỷ nhiệm chi/Biên lai chuyển tiền. "
+  - text: 'Bạn vui lòng truy cập lịch sử giao dịch trong tài khoản Internet Banking
+      của ngân hàng chuyển tiền, xem chi tiết giao dịch, chụp lại màn hình có đầy
+      đủ các thông tin bao gồm: Số tài khoản, Tên tài khoản, Số tiền giao dịch, Nội
+      dung chuyển tiền. Hình ảnh này có giá trị tương đương với Uỷ nhiệm chi/Biên
+      lai chuyển tiền. '
   utter_how_get_VAT_bill:
-  - text: "Bạn vui lòng:
-Gọi đến tổng đài theo số hotline 08.69.09.29.29
-Gửi mail yêu cầu hỗ trợ tới địa chỉ  “contact@meeyland.com”
-Chat với 'Chăm sóc khách hàng' trên website meeyland.com
-Hoặc tới trực tiếp văn phòng Công ty cổ phần tập đoàn Meey Land tại tầng 5, địa chỉ 97-99 Láng Hạ, Quận Đống Đa, Hà Nội.
-"
+  - text: "Bạn vui lòng: Gọi đến tổng đài theo số hotline 08.69.09.29.29 Gửi mail\
+      \ yêu cầu hỗ trợ tới địa chỉ  “contact@meeyland.com” Chat với 'Chăm sóc khách\
+      \ hàng' trên website meeyland.com Hoặc tới trực tiếp văn phòng Công ty cổ phần\
+      \ tập đoàn Meey Land tại tầng 5, địa chỉ 97-99 Láng Hạ, Quận Đống Đa, Hà Nội. "
   utter_money_security:
-  - text: " Is meey: Website Meey Land được Sở Kế hoạch và Đầu tư Thành Phố Hà Nội cấp phép hoạt động vào năm 2019. Meey Land đề cao tính an toàn và bảo mật cho người dùng, ngoài mật khẩu thông thường, chúng tôi còn có tính năng bảo vệ 2 lớp cho tài khoản MeeyID của bạn, nên bạn hoàn toàn yên tâm về số tiền đã nạp vào Meey Land. 
-Is VN Pay: VNPAY là “CÔNG TY CỔ PHẦN GIẢI PHÁP THANH TOÁN VIỆT NAM”, đây là tổ chức được cho phép thành lập hợp pháp bới ngân hàng nhà nước Việt Nam, VNPAY đề cao tính bảo mật và an toàn cho khách hàng. Ngoài ra, để trở thành đối tác của VNPAY, chúng tôi đã qua quá trình kiểm tra chặt chẽ và đảm bảo các yêu cầu sau:
-- Cung cấp hàng hóa, dịch vụ hợp pháp tại Việt Nam;
-- Có giấy phép đăng ký kinh doanh và được cấp phép hợp pháp.
-
-Is other: - Hiện tại, nhà nước đang đề cao việc thanh toán không dùng tiền mặt, và các hình thức thanh toán trên đều được bảo vệ bởi các tổ chức tài chính lớn, có sự bảo hộ của ngân hàng nhà nước, đo đó việc đảm bảo an toàn là gần như tuyệt đối. 
-- Meey Land đã được cấp phép và ký hợp đồng với các tổ chức trên mới được sử dụng làm phương tiện thanh toán cho khách hàng, các thông tin của khách hàng được đảm bảo tuyệt đối không lộ ra ngoài bằng bất cứ hình thức nào.
-- Tuy nhiên, Khách hàng nên lưu ý về cách bảo mật an toàn thông tin tài khoản theo khuyến cáo của ngân hàng, và chúng tôi không chịu trách nhiệm trong trường hợp thông tin của Khách hàng bị lộ do khách hàng cung cấp cho đối tượng nào khác ngoài Meey Land."
+  - text: " Is meey: Website Meey Land được Sở Kế hoạch và Đầu tư Thành Phố Hà Nội\
+      \ cấp phép hoạt động vào năm 2019. Meey Land đề cao tính an toàn và bảo mật\
+      \ cho người dùng, ngoài mật khẩu thông thường, chúng tôi còn có tính năng bảo\
+      \ vệ 2 lớp cho tài khoản MeeyID của bạn, nên bạn hoàn toàn yên tâm về số tiền\
+      \ đã nạp vào Meey Land. Is VN Pay: VNPAY là “CÔNG TY CỔ PHẦN GIẢI PHÁP THANH\
+      \ TOÁN VIỆT NAM”, đây là tổ chức được cho phép thành lập hợp pháp bới ngân hàng\
+      \ nhà nước Việt Nam, VNPAY đề cao tính bảo mật và an toàn cho khách hàng. Ngoài\
+      \ ra, để trở thành đối tác của VNPAY, chúng tôi đã qua quá trình kiểm tra chặt\
+      \ chẽ và đảm bảo các yêu cầu sau: - Cung cấp hàng hóa, dịch vụ hợp pháp tại\
+      \ Việt Nam; - Có giấy phép đăng ký kinh doanh và được cấp phép hợp pháp.\nIs\
+      \ other: - Hiện tại, nhà nước đang đề cao việc thanh toán không dùng tiền mặt,\
+      \ và các hình thức thanh toán trên đều được bảo vệ bởi các tổ chức tài chính\
+      \ lớn, có sự bảo hộ của ngân hàng nhà nước, đo đó việc đảm bảo an toàn là gần\
+      \ như tuyệt đối. - Meey Land đã được cấp phép và ký hợp đồng với các tổ chức\
+      \ trên mới được sử dụng làm phương tiện thanh toán cho khách hàng, các thông\
+      \ tin của khách hàng được đảm bảo tuyệt đối không lộ ra ngoài bằng bất cứ hình\
+      \ thức nào. - Tuy nhiên, Khách hàng nên lưu ý về cách bảo mật an toàn thông\
+      \ tin tài khoản theo khuyến cáo của ngân hàng, và chúng tôi không chịu trách\
+      \ nhiệm trong trường hợp thông tin của Khách hàng bị lộ do khách hàng cung cấp\
+      \ cho đối tượng nào khác ngoài Meey Land."
   utter_what_vnpay:
-  - text: "Meey Land liên kết với VNPAY để thiết lập cổng thanh toán cho KH tại Meey Land bằng cách quét mã QR trên mỗi hóa đơn thanh toán. Khách hàng cần phải có tài khoản ngân hàng và được mở chức năng thanh toán online mới có thể sử dụng thanh toán qua VNPAY (xem thêm hướng dẫn nạp tiền)"
+  - text: Meey Land liên kết với VNPAY để thiết lập cổng thanh toán cho KH tại Meey
+      Land bằng cách quét mã QR trên mỗi hóa đơn thanh toán. Khách hàng cần phải có
+      tài khoản ngân hàng và được mở chức năng thanh toán online mới có thể sử dụng
+      thanh toán qua VNPAY (xem thêm hướng dẫn nạp tiền)
   utter_how_check_balance:
-  - text: "Khi nạp tiền vào website, bạn sẽ kiểm tra được số tiền mình nạp trong phần “Số dư khả dụng” và “Lịch sử giao dịch” tại mục Quản lý tài khoản cá nhân trên tài khoản của bạn. Click vào [đây](https://meeyland.com/user/profile) nếu bạn đang đăng nhập.
-(Xem thêm hướng dẫn kiểm tra giao dịch tại Hướng dẫn nạp tiền vào meeyland.com)
-"
+  - text: 'Khi nạp tiền vào website, bạn sẽ kiểm tra được số tiền mình nạp trong phần
+      “Số dư khả dụng” và “Lịch sử giao dịch” tại mục Quản lý tài khoản cá nhân trên
+      tài khoản của bạn. Click vào [đây](https://meeyland.com/user/profile) nếu bạn
+      đang đăng nhập. (Xem thêm hướng dẫn kiểm tra giao dịch tại Hướng dẫn nạp tiền
+      vào meeyland.com) '
   utter_is_withdrawal_allowed_from_meeyid:
-  - text: "Hiện tại MeeyLand chưa cho phép rút tiền từ ví Meey về ngân hàng. Tuy nhiên trong thời gian tới, ví MeeyLand sẽ hoàn thiện hơn và cho phép người dùng được rút tiền về ngân hàng từ ví"
+  - text: Hiện tại MeeyLand chưa cho phép rút tiền từ ví Meey về ngân hàng. Tuy nhiên
+      trong thời gian tới, ví MeeyLand sẽ hoàn thiện hơn và cho phép người dùng được
+      rút tiền về ngân hàng từ ví
   utter_why_not_see_money_after_transfer:
-  - text: "Dạ anh/ chị, sau khi mình nạp tiền thành công cho bên em thì sẽ đợi bên em xác nhận khoản tiền về của mình tối đa trong 24h, sau đó tiền sẽ được đẩy về Ví cho anh chị nhé."
+  - text: Dạ anh/ chị, sau khi mình nạp tiền thành công cho bên em thì sẽ đợi bên
+      em xác nhận khoản tiền về của mình tối đa trong 24h, sau đó tiền sẽ được đẩy
+      về Ví cho anh chị nhé.
   utter_is_refund_after_putdown_post:
-  - text: "Chính sách của MeeyLand hiện tại cho phép hoàn tiền một phần/toàn bộ, tùy theo chính sách của MeeyLand từng thời kỳ"
+  - text: Chính sách của MeeyLand hiện tại cho phép hoàn tiền một phần/toàn bộ, tùy
+      theo chính sách của MeeyLand từng thời kỳ
   utter_prepare_before_create_post:
-  - text: "Để đăng tin, trước tiên bạn cần chuẩn bị nội dung tin đăng, hình ảnh/video kèm theo, có thể đăng tin không cần tài khoản (khách hàng vãng lai) hoặc có tài khoản.
-
-Để đăng ký tài khoản, bạn truy cập [link](https://meeyid.com/register) (xem thêm hướng dẫn đăng ký tài khoản)
-Nếu đã có tài khoản, bạn truy cập [link](https://meeyid.com/login)
-
-Tìm hiểu 'Quy định đăng tin', bạn truy cập [link](https://meeyland.com/page/quy-dinh-dang-tin) 
-Khi bạn đăng tin giao dịch Bất động sản bất kì, bạn có trách nhiệm đảm bảo tin đăng của bạn tuân thủ theo quy định đăng tin và chính sách của website meeyland.com. 
-"
+  - text: "Để đăng tin, trước tiên bạn cần chuẩn bị nội dung tin đăng, hình ảnh/video\
+      \ kèm theo, có thể đăng tin không cần tài khoản (khách hàng vãng lai) hoặc có\
+      \ tài khoản.\nĐể đăng ký tài khoản, bạn truy cập [link](https://meeyid.com/register)\
+      \ (xem thêm hướng dẫn đăng ký tài khoản) Nếu đã có tài khoản, bạn truy cập [link](https://meeyid.com/login)\n\
+      Tìm hiểu 'Quy định đăng tin', bạn truy cập [link](https://meeyland.com/page/quy-dinh-dang-tin)\
+      \ Khi bạn đăng tin giao dịch Bất động sản bất kì, bạn có trách nhiệm đảm bảo\
+      \ tin đăng của bạn tuân thủ theo quy định đăng tin và chính sách của website\
+      \ meeyland.com. "
   utter_how_create_new_post:
-  - text: "Để đăng bài, bạn truy cập vào website meeyland.com, tại góc trên cùng bên phải màn hình trang chủ, chọn nút chức năng “Đăng bài” và thực hiện theo các bước sau:
-Bước 1: Lựa chọn mục đích đăng bài. Sau khi chọn được mục đích đăng bài:
-Nếu đã đăng nhập vào tài khoản, thực hiện theo bước tiếp theo
-Nếu chưa có tài khoản, đăng tin vãng lai, cửa sổ sẽ yêu cầu lựa chọn đối tượng đăng bài.
-
-Bước 2: Nhập thông tin Bất động sản cần giao dịch tại màn hình “Đăng bài”
-Nhập đầy đủ các trường thông tin tại cột bên trái màn hình: bao gồm trường ''vị trí'', trường ''thông tin Bất động sản'', trường ''thông tin khác
-Tiêu đề: súc tích và đầy đủ thông tin, tối thiểu 6 ký tự, tối đa 100 ký tự
-Nội dung mô tả: giới hạn tối đa 5000 ký tự và không giới hạn ký tự tối thiểu.
-Thông tin liên hệ: bạn phải điền đầy đủ thông tin liên hệ để khách hàng liên lạc khi có nhu cầu.
-Tìm kiếm theo vị trí: Bạn nhập địa chỉ Bất động sản trong tin đăng, chọn theo gợi ý trong thanh tìm kiếm đưa ra, vị trí Bất động sản bạn đăng sẽ hiển thị trên bản đồ. 
-
-Bước 3: Hoàn tất đăng bài. Bạn có thể lưu nháp, xem trước bài đăng hoặc hoàn tất quá trình đăng bài bằng cách nhấp vào nút 'Đăng bài' ở cuối màn hình.
-"
+  - text: "Để đăng bài, bạn truy cập vào website meeyland.com, tại góc trên cùng bên\
+      \ phải màn hình trang chủ, chọn nút chức năng “Đăng bài” và thực hiện theo các\
+      \ bước sau: Bước 1: Lựa chọn mục đích đăng bài. Sau khi chọn được mục đích đăng\
+      \ bài: Nếu đã đăng nhập vào tài khoản, thực hiện theo bước tiếp theo Nếu chưa\
+      \ có tài khoản, đăng tin vãng lai, cửa sổ sẽ yêu cầu lựa chọn đối tượng đăng\
+      \ bài.\nBước 2: Nhập thông tin Bất động sản cần giao dịch tại màn hình “Đăng\
+      \ bài” Nhập đầy đủ các trường thông tin tại cột bên trái màn hình: bao gồm trường\
+      \ ''vị trí'', trường ''thông tin Bất động sản'', trường ''thông tin khác Tiêu\
+      \ đề: súc tích và đầy đủ thông tin, tối thiểu 6 ký tự, tối đa 100 ký tự Nội\
+      \ dung mô tả: giới hạn tối đa 5000 ký tự và không giới hạn ký tự tối thiểu.\
+      \ Thông tin liên hệ: bạn phải điền đầy đủ thông tin liên hệ để khách hàng liên\
+      \ lạc khi có nhu cầu. Tìm kiếm theo vị trí: Bạn nhập địa chỉ Bất động sản trong\
+      \ tin đăng, chọn theo gợi ý trong thanh tìm kiếm đưa ra, vị trí Bất động sản\
+      \ bạn đăng sẽ hiển thị trên bản đồ.\nBước 3: Hoàn tất đăng bài. Bạn có thể lưu\
+      \ nháp, xem trước bài đăng hoặc hoàn tất quá trình đăng bài bằng cách nhấp vào\
+      \ nút 'Đăng bài' ở cuối màn hình. "
   utter_how_edit_delete_post:
-  - text: "Đầu tiên, bạn vào Quản lý tin đăng ở góc trên cùng bên phải trang web, sau đó vào: 
-Để sửa bài đăng, bạn nhấp chuột vào ký hiệu cây bút 'Chỉnh sửa bài đăng' trên ảnh đại diện của mỗi tin đăng, sau đó chọn phần cần sửa.
-Để xóa bài đăng, bạn nhấp chuột vào ký hiệu X 'Xóa' trên ảnh đại diện của mỗi tin đăng.
-
-Lưu ý: 
-•        Để có trải nghiệm đăng bài trên meeyland.com, bạn có thể thử đăng bài trên phiên bản Web pc hoặc Mobile Web như hướng dẫn (đính kèm file hướng dẫn đăng bài)
-•        Nếu hệ thống báo có lỗi hoặc không thể hoàn tất đăng bài, vui lòng xem lại và hoàn chỉnh điền thông tin tại tất cả các mục của tin đăng. Chú ý các trường có dấu “*” là bắt buộc phải điền. 
-•        Đăng tin không cần đăng nhập tài khoản sẽ nhanh chóng, đỡ mất thời gian cho người dùng, tuy nhiên lại không thể chỉnh sửa, quản lý tin rao đã đăng và hưởng các chính sách, quyền lợi khác trên website. 
-"
+  - text: "Đầu tiên, bạn vào Quản lý tin đăng ở góc trên cùng bên phải trang web,\
+      \ sau đó vào: Để sửa bài đăng, bạn nhấp chuột vào ký hiệu cây bút 'Chỉnh sửa\
+      \ bài đăng' trên ảnh đại diện của mỗi tin đăng, sau đó chọn phần cần sửa. Để\
+      \ xóa bài đăng, bạn nhấp chuột vào ký hiệu X 'Xóa' trên ảnh đại diện của mỗi\
+      \ tin đăng.\nLưu ý: •        Để có trải nghiệm đăng bài trên meeyland.com, bạn\
+      \ có thể thử đăng bài trên phiên bản Web pc hoặc Mobile Web như hướng dẫn (đính\
+      \ kèm file hướng dẫn đăng bài) •        Nếu hệ thống báo có lỗi hoặc không thể\
+      \ hoàn tất đăng bài, vui lòng xem lại và hoàn chỉnh điền thông tin tại tất cả\
+      \ các mục của tin đăng. Chú ý các trường có dấu “*” là bắt buộc phải điền. •\
+      \        Đăng tin không cần đăng nhập tài khoản sẽ nhanh chóng, đỡ mất thời\
+      \ gian cho người dùng, tuy nhiên lại không thể chỉnh sửa, quản lý tin rao đã\
+      \ đăng và hưởng các chính sách, quyền lợi khác trên website. "
   utter_limit_of_post_number:
-  - text: "Bạn sẽ được đăng tin Không giới hạn nếu tài khoản của bạn vẫn có quyền đăng tin. "
+  - text: 'Bạn sẽ được đăng tin Không giới hạn nếu tài khoản của bạn vẫn có quyền
+      đăng tin. '
   utter_how_create_creative_post:
-  - text: "Bất động sản có mô tả và hình ảnh đi kèm chi tiết, sinh động sẽ thu hút nhiều khách hàng hơn. Bạn có thể tham khảo các cách sau
-Viết mô tả Bất động sản chi tiết:
-Vị trí: Tỉnh/TP, Quận/Huyện, Đường/Phố.
-Thông tin: thông tin liên quan tới diện tích, số phòng ngủ, phòng tắm, hướng, các tiện ích đi kèm, đặc điểm nổi bật, hướng…
-Các ưu đãi khi giao dịch Bất động sản này (nếu )
-Đăng tải clip/hình ảnh có phân giải cao:
-Chỉ nên đăng tối đa từ 8-16 ảnh và tối đa 1 clip. Mỗi ảnh dung lượng không vượt quá 4mb.
-Ảnh bìa: Đây là những yếu tố quyết định cho phần ảnh bìa giúp cho bạn bắt được sự chú ý của khách hàng khi tìm kiếm Bất động sản trên meeyland.com 
-Hình ảnh phải liên quan tới Bất động sản
-Hình ảnh phải thể hiện rõ các khu vực chính có trong Bất động sản
-Bất động sản trong ảnh là nhà thật 
-Tránh việc chèn thêm chữ hoặc đồ hoạ vào hình 
-Hình ảnh rõ ràng và thu hút:
-Không sử dụng hình ảnh phản cảm
-Hình ảnh rõ ràng và sáng
-Tránh việc phóng to ảnh và cắt ghép 
-Chất lượng hình ảnh:
-Hình ảnh có kích thước tối thiểu 4mb
-Không chỉnh sửa hình ảnh làm thay đổi tỉ lệ kích thước
-Các ảnh còn lại: Khi khách hàng đã thu hút bởi ảnh bìa, khách hàng có xu hướng tìm hiểu thêm về Bất động sản bạn đăng tin. Vì thế các ảnh chi tiết về Bất động sản của bạn cần trả lời được các câu hỏi sau: 
-Bất động sản trông thế nào ở các góc khác nhau? 
-Điểm nổi bật nhất của Bất động sản đó là gì? 
-Cung cấp thông tin chính xác về Bất động sản: bạn cần điền thông tin chính xác về Bất động sản khi thao tác đăng tin Bất động sản
-Vị trí: Bất động sản thuộc khu vực nào? Dự án thuộc chủ đầu tư nào?
-Thông tin liên hệ: cung cấp thông tin về người đăng/chủ nhà/người môi giới để khách hàng tự liên hệ.
-
-"
+  - text: "Bất động sản có mô tả và hình ảnh đi kèm chi tiết, sinh động sẽ thu hút\
+      \ nhiều khách hàng hơn. Bạn có thể tham khảo các cách sau Viết mô tả Bất động\
+      \ sản chi tiết: Vị trí: Tỉnh/TP, Quận/Huyện, Đường/Phố. Thông tin: thông tin\
+      \ liên quan tới diện tích, số phòng ngủ, phòng tắm, hướng, các tiện ích đi kèm,\
+      \ đặc điểm nổi bật, hướng… Các ưu đãi khi giao dịch Bất động sản này (nếu )\
+      \ Đăng tải clip/hình ảnh có phân giải cao: Chỉ nên đăng tối đa từ 8-16 ảnh và\
+      \ tối đa 1 clip. Mỗi ảnh dung lượng không vượt quá 4mb. Ảnh bìa: Đây là những\
+      \ yếu tố quyết định cho phần ảnh bìa giúp cho bạn bắt được sự chú ý của khách\
+      \ hàng khi tìm kiếm Bất động sản trên meeyland.com Hình ảnh phải liên quan tới\
+      \ Bất động sản Hình ảnh phải thể hiện rõ các khu vực chính có trong Bất động\
+      \ sản Bất động sản trong ảnh là nhà thật Tránh việc chèn thêm chữ hoặc đồ hoạ\
+      \ vào hình Hình ảnh rõ ràng và thu hút: Không sử dụng hình ảnh phản cảm Hình\
+      \ ảnh rõ ràng và sáng Tránh việc phóng to ảnh và cắt ghép Chất lượng hình ảnh:\
+      \ Hình ảnh có kích thước tối thiểu 4mb Không chỉnh sửa hình ảnh làm thay đổi\
+      \ tỉ lệ kích thước Các ảnh còn lại: Khi khách hàng đã thu hút bởi ảnh bìa, khách\
+      \ hàng có xu hướng tìm hiểu thêm về Bất động sản bạn đăng tin. Vì thế các ảnh\
+      \ chi tiết về Bất động sản của bạn cần trả lời được các câu hỏi sau: Bất động\
+      \ sản trông thế nào ở các góc khác nhau? Điểm nổi bật nhất của Bất động sản\
+      \ đó là gì? Cung cấp thông tin chính xác về Bất động sản: bạn cần điền thông\
+      \ tin chính xác về Bất động sản khi thao tác đăng tin Bất động sản Vị trí: Bất\
+      \ động sản thuộc khu vực nào? Dự án thuộc chủ đầu tư nào? Thông tin liên hệ:\
+      \ cung cấp thông tin về người đăng/chủ nhà/người môi giới để khách hàng tự liên\
+      \ hệ.\n"
   utter_post_requirement:
-  - text: "Tin đăng không chứa từ ngữ dung tục, nhạy cảm.
- Hình ảnh trong tin đăng không được dung tục, nhạy cảm.
- Hình ảnh trong tin đăng không chứa tên logo, tên miền website khác.
- Hình ảnh trong tin đăng không được chèn chữ, số điện thoại.
- Tin đăng phải liên quan đến các nội dung mua, bán, cho thuê, thuê, sang nhượng bất động sản.
- Tin đăng không được liên quan đến các nội dung mà Pháp luật Việt Nam không cho phép.
- Tin đăng phải đúng phân loại, phân mục và địa chỉ Bất động sản đăng bán/thuê/cho thuê/sang nhượng. 
- Tin đăng phải để số điện thoại liên hệ. 
- Lưu ý: 
- Nếu bạn vi phạm một trong các quy định trên, bài đăng của bạn có thể sẽ không được hiển thị trên website meeyland.com. 
- Trường hợp bài đăng của bạn không được hiển thị do vi phạm, chúng tôi sẽ gửi thông báo tới bạn, vui lòng liên hệ hotline hỗ trợ: 0869 092 929"
+  - text: 'Tin đăng không chứa từ ngữ dung tục, nhạy cảm. Hình ảnh trong tin đăng
+      không được dung tục, nhạy cảm. Hình ảnh trong tin đăng không chứa tên logo,
+      tên miền website khác. Hình ảnh trong tin đăng không được chèn chữ, số điện
+      thoại. Tin đăng phải liên quan đến các nội dung mua, bán, cho thuê, thuê, sang
+      nhượng bất động sản. Tin đăng không được liên quan đến các nội dung mà Pháp
+      luật Việt Nam không cho phép. Tin đăng phải đúng phân loại, phân mục và địa
+      chỉ Bất động sản đăng bán/thuê/cho thuê/sang nhượng. Tin đăng phải để số điện
+      thoại liên hệ. Lưu ý: Nếu bạn vi phạm một trong các quy định trên, bài đăng
+      của bạn có thể sẽ không được hiển thị trên website meeyland.com. Trường hợp
+      bài đăng của bạn không được hiển thị do vi phạm, chúng tôi sẽ gửi thông báo
+      tới bạn, vui lòng liên hệ hotline hỗ trợ: 0869 092 929'
   utter_what_VIP_post:
-  - text: "Tin Vip: là các tin đứng đầu trong danh sách tin đăng trên website, theo thứ tự Tin Vip 1 => Tin Vip 2 => Tin Vip 3. Tin Vip được thiết kế với tiêu đề chữ in hoa và màu sắc bắt mắt (tùy theo từng loại tin Vip), giúp nổi bật bài đăng, từ đó, giúp bài đăng của bạn thu hút người xem và tăng hiệu quả giao dịch hơn.
- Tin thường: là tin có tiêu đề chữ thường màu đen, đứng dưới các tin vip. Tin thường có ưu điểm là đăng tin miễn phí tuy nhiên bài đăng của bạn sẽ không được nổi bật lên trên và khó tiếp cận với người xem hơn tin Vip"
+  - text: 'Tin Vip: là các tin đứng đầu trong danh sách tin đăng trên website, theo
+      thứ tự Tin Vip 1 => Tin Vip 2 => Tin Vip 3. Tin Vip được thiết kế với tiêu đề
+      chữ in hoa và màu sắc bắt mắt (tùy theo từng loại tin Vip), giúp nổi bật bài
+      đăng, từ đó, giúp bài đăng của bạn thu hút người xem và tăng hiệu quả giao dịch
+      hơn. Tin thường: là tin có tiêu đề chữ thường màu đen, đứng dưới các tin vip.
+      Tin thường có ưu điểm là đăng tin miễn phí tuy nhiên bài đăng của bạn sẽ không
+      được nổi bật lên trên và khó tiếp cận với người xem hơn tin Vip'
   utter_what_is_up_post:
-  - text: "Up tin giúp tin đăng đang hiển thị của khách hàng được đẩy lên vị trí đầu tiên trong gói đăng tin đó ngay tại thời điểm up tin. 
-Up tin giúp cho tin rao của khách hàng tiếp cận được với nhiều người quan tâm và có nhu cầu về bất động sản, giúp giao dịch được nhanh chóng hơn."
+  - text: Up tin giúp tin đăng đang hiển thị của khách hàng được đẩy lên vị trí đầu
+      tiên trong gói đăng tin đó ngay tại thời điểm up tin. Up tin giúp cho tin rao
+      của khách hàng tiếp cận được với nhiều người quan tâm và có nhu cầu về bất động
+      sản, giúp giao dịch được nhanh chóng hơn.
   utter_fee_of_up_post:
-  - text: "Hiện tại Meey Land có áp dụng phí cho Up tin, phí up tin cho các gói tin khác nhau. Bạn có thể xem bảng giá Up tin tại (copy đường link dẫn tới mục Báo giá)"
+  - text: Hiện tại Meey Land có áp dụng phí cho Up tin, phí up tin cho các gói tin
+      khác nhau. Bạn có thể xem bảng giá Up tin tại (copy đường link dẫn tới mục Báo
+      giá)
   utter_multi_content_in_a_post:
-  - text: "1. Hiện tại MeeyLand không khuyến khích KH đăng bán nhiều BĐS trong cùng một bài đăng, đặc biệt là các BĐS khác dự án, khác địa chỉ. 
-Do việc đăng bài như thế khiến cho người tìm kiếm khó tiếp cận và khó khăn trong việc tìm kiếm thông tin. Tuy nhiên, bạn cũng có thể đăng bán nhiều BĐS trong cùng 1 bài đăng trong các trường hợp sau:
-+ Các BĐS rao bán trong cùng 1 dự án
-+ Các BĐS rao bán có cùng 1 địa chỉ
-
-2. Đối với các bài đăng có nhiều BĐS được rao bán không cùng một dự án hoặc không cùng một địa chỉ sẽ được nhân viên của MeeyLand kiểm duyệt lại và hạ bài mà không cần thông báo trước với khách hàng."
+  - text: "1. Hiện tại MeeyLand không khuyến khích KH đăng bán nhiều BĐS trong cùng\
+      \ một bài đăng, đặc biệt là các BĐS khác dự án, khác địa chỉ. Do việc đăng bài\
+      \ như thế khiến cho người tìm kiếm khó tiếp cận và khó khăn trong việc tìm kiếm\
+      \ thông tin. Tuy nhiên, bạn cũng có thể đăng bán nhiều BĐS trong cùng 1 bài\
+      \ đăng trong các trường hợp sau: + Các BĐS rao bán trong cùng 1 dự án + Các\
+      \ BĐS rao bán có cùng 1 địa chỉ\n2. Đối với các bài đăng có nhiều BĐS được rao\
+      \ bán không cùng một dự án hoặc không cùng một địa chỉ sẽ được nhân viên của\
+      \ MeeyLand kiểm duyệt lại và hạ bài mà không cần thông báo trước với khách hàng."
   utter_post_image_complaint:
-  - text: "- Đối với việc tải ảnh cho tin đăng, phải thoả mãn các quy định sau:
-+ Ảnh đăng không vượt quá kích thước cho phép 4MB cho mỗi ảnh.
-+ Số lượng ảnh không vượt quá 30 ảnh mỗi tin."
+  - text: '- Đối với việc tải ảnh cho tin đăng, phải thoả mãn các quy định sau: +
+      Ảnh đăng không vượt quá kích thước cho phép 4MB cho mỗi ảnh. + Số lượng ảnh
+      không vượt quá 30 ảnh mỗi tin.'
   utter_post_video_complaint:
-  - text: "1. Hiện tại MeeyLand chỉ hỗ trợ link video với đường dẫn từ youtube.com. Với các đường dẫn link video khác, MeeyLand không khuyến khích và không hỗ trợ, do đường dẫn không đảm bảo chất lượng, không ổn định, có thể dính virus và có thể phát sinh lỗi do trang gốc của link video .
-2. Trường hợp bạn đã gắn link nguồn từ Youtube nhưng vẫn không hiển thị, bạn vui lòng liên hệ MeeyLand để được hỗ trợ:
- + Gọi đến tổng đài theo số hotline 08.69.09.29.29
- + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
- + Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  - text: "1. Hiện tại MeeyLand chỉ hỗ trợ link video với đường dẫn từ youtube.com.\
+      \ Với các đường dẫn link video khác, MeeyLand không khuyến khích và không hỗ\
+      \ trợ, do đường dẫn không đảm bảo chất lượng, không ổn định, có thể dính virus\
+      \ và có thể phát sinh lỗi do trang gốc của link video . 2. Trường hợp bạn đã\
+      \ gắn link nguồn từ Youtube nhưng vẫn không hiển thị, bạn vui lòng liên hệ MeeyLand\
+      \ để được hỗ trợ: + Gọi đến tổng đài theo số hotline 08.69.09.29.29 + Gửi mail\
+      \ yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com” + Chat với 'Chăm sóc khách\
+      \ hàng' trên website meeyland.com"
   utter_approval_time:
-  - text: "- Nếu bạn là người dùng vãng lai, bài đăng của bạn sẽ được kiểm duyệt trong vòng 24h
-- Nếu bạn là người dùng đã đăng ký tài khoản trên MeeyLand, bài đăng của bạn sẽ được đăng ngay lập tức sau khi bạn hoàn thiện đăng bài và thanh toán chi phí cho bài đăng (nếu có)."
+  - text: '- Nếu bạn là người dùng vãng lai, bài đăng của bạn sẽ được kiểm duyệt trong
+      vòng 24h - Nếu bạn là người dùng đã đăng ký tài khoản trên MeeyLand, bài đăng
+      của bạn sẽ được đăng ngay lập tức sau khi bạn hoàn thiện đăng bài và thanh toán
+      chi phí cho bài đăng (nếu có).'
   utter_why_reject_post:
-  - text: "1. Bài đăng của bạn không được đăng bán vì lí do vi phạm các lí do sau: 
-+ Bài đăng không có tiêu đề
-+ Bài đăng trùng lặp nội dung với bài đăng trước đó
-+ Bài đăng không có hình ảnh đính kèm
-+ Tên tiêu đề bài đăng hoặc nội dung không đúng quy định của MeeyLand
-+ Nội dung bài đăng chứa thông tin nhạy cảm, vi phạm quy định đăng bài của MeeyLand
-
-2. Nếu bạn là người dùng đã đăng ký tài khoản trên MeeyLand, bài đăng của bạn không vi phạm quy đinh sẽ được đăng ngay lập tức sau khi bạn hoàn thiện đăng bài và thanh toán chi phí cho bài đăng (nếu có).
-
-3. Lý do không được duyệt bài/bị hạ bài: Trường hợp bài đăng của bạn không được duyệt, chúng tôi sẽ gửi thông báo cho bạn biết lý do không được duyệt bài/bị hạ bài, ngoài ra bạn cũng có thể liên hệ với trung tâm chăm sóc khách hàng của MeeyLand theo các phương thức sau:
- + Gọi đến tổng đài theo số hotline 08.69.09.29.29
- + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
- + Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  - text: "1. Bài đăng của bạn không được đăng bán vì lí do vi phạm các lí do sau:\
+      \ + Bài đăng không có tiêu đề + Bài đăng trùng lặp nội dung với bài đăng trước\
+      \ đó + Bài đăng không có hình ảnh đính kèm + Tên tiêu đề bài đăng hoặc nội dung\
+      \ không đúng quy định của MeeyLand + Nội dung bài đăng chứa thông tin nhạy cảm,\
+      \ vi phạm quy định đăng bài của MeeyLand\n2. Nếu bạn là người dùng đã đăng ký\
+      \ tài khoản trên MeeyLand, bài đăng của bạn không vi phạm quy đinh sẽ được đăng\
+      \ ngay lập tức sau khi bạn hoàn thiện đăng bài và thanh toán chi phí cho bài\
+      \ đăng (nếu có).\n3. Lý do không được duyệt bài/bị hạ bài: Trường hợp bài đăng\
+      \ của bạn không được duyệt, chúng tôi sẽ gửi thông báo cho bạn biết lý do không\
+      \ được duyệt bài/bị hạ bài, ngoài ra bạn cũng có thể liên hệ với trung tâm chăm\
+      \ sóc khách hàng của MeeyLand theo các phương thức sau: + Gọi đến tổng đài theo\
+      \ số hotline 08.69.09.29.29 + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”\
+      \ + Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
   utter_how_download_app:
-  - text: "Để sử dụng Ứng dụng MeeyLand, người dùng truy cập vào kho ứng dụng App Store, Google Play với các thiết bị tương ứng trên iOS, Andriod. Tìm kiếm từ khoá 'MeeyLand' và chọn Cài đặt để sử dụng Ứng dụng. "
+  - text: "Để sử dụng Ứng dụng MeeyLand, người dùng truy cập vào kho ứng dụng App\
+      \ Store, Google Play với các thiết bị tương ứng trên iOS, Andriod. Tìm kiếm\
+      \ từ khoá 'MeeyLand' và chọn Cài đặt để sử dụng Ứng dụng. "
   utter_error_when_using_app:
-  - text: "Nếu như bạn gặp vấn đề trong sử dụng Ứng dụng hoặc ứng dụng thiếu chức năng, bạn có thể đang sử dụng phiên bản cũ không hỗ trợ thiết bị điện thoại của bạn. Vui lòng gỡ cài đặt Ứng dụng phiên bản cũ và tải xuống phiên bản mới nhất trên kho Ứng dụng. "
+  - text: 'Nếu như bạn gặp vấn đề trong sử dụng Ứng dụng hoặc ứng dụng thiếu chức
+      năng, bạn có thể đang sử dụng phiên bản cũ không hỗ trợ thiết bị điện thoại
+      của bạn. Vui lòng gỡ cài đặt Ứng dụng phiên bản cũ và tải xuống phiên bản mới
+      nhất trên kho Ứng dụng. '
   utter_error_when_download_app:
-  - text: "Bạn vui lòng kiểm tra lại kết nối internet, dung lượng bộ nhớ điện thoại.
-Bạn liên hệ với bộ phận Chăm sóc khách hàng của chúng tôi để được hỗ trợ:
-• Gọi đến tổng đài theo số hotline 08.69.09.29.29
-• Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
-• Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  - text: "Bạn vui lòng kiểm tra lại kết nối internet, dung lượng bộ nhớ điện thoại.\
+      \ Bạn liên hệ với bộ phận Chăm sóc khách hàng của chúng tôi để được hỗ trợ:\
+      \ • Gọi đến tổng đài theo số hotline 08.69.09.29.29 • Gửi mail yêu cầu hỗ trợ\
+      \ tới địa chỉ “contact@meeyland.com” • Chat với 'Chăm sóc khách hàng' trên website\
+      \ meeyland.com"
   utter_no_search_results:
-  - text: "Nếu như hệ thống không hiển thị kết quả tìm kiếm theo từ khoá nghĩa là khu vực bạn tìm không có tin đăng BĐS cần giao dịch. Bạn có thể chỉnh sửa lại từ khoá khác hoặc nới rộng/thu hẹp khu vực tìm kiếm."
+  - text: Nếu như hệ thống không hiển thị kết quả tìm kiếm theo từ khoá nghĩa là khu
+      vực bạn tìm không có tin đăng BĐS cần giao dịch. Bạn có thể chỉnh sửa lại từ
+      khoá khác hoặc nới rộng/thu hẹp khu vực tìm kiếm.
   utter_how_search_info:
-  - text: "Để tìm kiếm, bạn nhập từ khoá vào thanh công cụ tìm kiếm.
-Hệ thống tự động đưa ra các kết quả tìm kiếm dựa trên từ khoá đã nhập."
+  - text: Để tìm kiếm, bạn nhập từ khoá vào thanh công cụ tìm kiếm. Hệ thống tự động
+      đưa ra các kết quả tìm kiếm dựa trên từ khoá đã nhập.
   utter_how_contact_to_post_owner:
-  - text: " - Anh/ chị có thể liên hệ với người đăng tin bằng cách liên hệ qua Email/Số điện thoại/Thông tin khác do người đăng tin cung cấp trong bài đăng.
- - Hoặc chat trực tuyến với người đăng tin ngay tại ứng dụng Chat của Meey Land được tích hợp với website meeyland.com. Anh chị chỉ chat được với người đăng tin nếu anh chị và người đăng tin đều đăng ký tài khoản tại meeyland (không phải khách vãng lai)."
+  - text: ' - Anh/ chị có thể liên hệ với người đăng tin bằng cách liên hệ qua Email/Số
+      điện thoại/Thông tin khác do người đăng tin cung cấp trong bài đăng. - Hoặc
+      chat trực tuyến với người đăng tin ngay tại ứng dụng Chat của Meey Land được
+      tích hợp với website meeyland.com. Anh chị chỉ chat được với người đăng tin
+      nếu anh chị và người đăng tin đều đăng ký tài khoản tại meeyland (không phải
+      khách vãng lai).'
   utter_how_chat_with_buyer:
-  - text: "Phần chat đó là những khách hàng xem tin đăng của anh chị vào chat với mình đó ạ. Anh chị nên kiểm tra phần chat đó thường xuyên để trả lời người xem nhanh nhất và xin thông tin để liên hệ trực tiếp với khách nhé. Hiện tại bên em chưa hỗ trợ lấy được thông tin của khách xem tin ạ."
+  - text: Phần chat đó là những khách hàng xem tin đăng của anh chị vào chat với mình
+      đó ạ. Anh chị nên kiểm tra phần chat đó thường xuyên để trả lời người xem nhanh
+      nhất và xin thông tin để liên hệ trực tiếp với khách nhé. Hiện tại bên em chưa
+      hỗ trợ lấy được thông tin của khách xem tin ạ.
   utter_how_contact_customer_service:
-  - text: "Bạn liên hệ với bộ phận Chăm sóc khách hàng của chúng tôi để được hỗ trợ:
-• Gọi đến tổng đài theo số hotline 08.69.09.29.29
-• Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”
-• Chat với 'Chăm sóc khách hàng' trên website meeyland.com"
+  - text: "Bạn liên hệ với bộ phận Chăm sóc khách hàng của chúng tôi để được hỗ trợ:\
+      \ • Gọi đến tổng đài theo số hotline 08.69.09.29.29 • Gửi mail yêu cầu hỗ trợ\
+      \ tới địa chỉ “contact@meeyland.com” • Chat với 'Chăm sóc khách hàng' trên website\
+      \ meeyland.com"
   utter_greet:
-  - text: "Xin chào, mình là MeeyBot. Mình có thể giúp gì cho bạn ạ?"
-  - text: "Xin chào, mình là MeeyBot."
-  - text: "Chào bạn, tên mình là MeeyBot. Bạn cần mình giúp gì không?"
-  - text: "Chào bạn, mình là MeeyBot. Mình giúp gì cho bạn ạ!"
+  - text: Xin chào, mình là MeeyBot. Mình có thể giúp gì cho bạn ạ?
+  - text: Xin chào, mình là MeeyBot.
+  - text: Chào bạn, tên mình là MeeyBot. Bạn cần mình giúp gì không?
+  - text: Chào bạn, mình là MeeyBot. Mình giúp gì cho bạn ạ!
   utter_thank:
-  - text: "Rất vui khi được phục vụ bạn :)"
+  - text: Rất vui khi được phục vụ bạn :)
   utter_bye:
-  - text: "Tạm biệt!"
-  - text: "Rất vui được trao đổi với bạn!"
-  - text: "Tạm biệt, chúc bạn mọi điều tốt lành!"
+  - text: Tạm biệt!
+  - text: Rất vui được trao đổi với bạn!
+  - text: Tạm biệt, chúc bạn mọi điều tốt lành!
   utter_react_negative:
-  - text: "😕"
-  - text: "😞"
-  - text: "😥"
-  - text: "😢"
+  - text: 😕
+  - text: 😞
+  - text: 😥
+  - text: 😢
   utter_react_positive:
-  - text: "😄"
-  - text: "😊"
-  - text: "👏"
-  - text: "😍"
+  - text: 😄
+  - text: 😊
+  - text: 👏
+  - text: 😍
   utter_canthelp:
-  - text: "Xin lỗi vì không thể giúp bạn."
+  - text: Xin lỗi vì không thể giúp bạn.
   utter_user_feel_expensive:
-  - text: "Mình nghĩ so với lợi ích nó mang lại thì giá này hoàn toàn phù hợp ạ"
-  - text: "So với lợi ích mang lại thì mình thấy giá này hoàn toàn phù hợp đó ạ"
+  - text: Mình nghĩ so với lợi ích nó mang lại thì giá này hoàn toàn phù hợp ạ
+  - text: So với lợi ích mang lại thì mình thấy giá này hoàn toàn phù hợp đó ạ
   utter_confirm:
-  - text: "Dạ vâng ạ"
+  - text: Dạ vâng ạ
   utter_anything_else:
-  - text: "Bạn có thắc mắc hay cần giúp đỡ gì nữa không ạ"
+  - text: Bạn có thắc mắc hay cần giúp đỡ gì nữa không ạ
   utter_is_advert_onMeey_effective:
-  - text: "Meey Land là một hệ sinh thái sản phẩm công nghệ Bất động sản kết hợp Công nghệ - Bất động sản – Tài chính, cung cấp dịch vụ tìm kiếm và chia sẻ thông tin bất động sản tới người có nhu cầu một cách tự động, nhanh chóng.
-Ngoài ra, website hỗ trợ người dùng chạy quảng cáo đơn giản, thuận tiện, chi phí tiết kiệm. 
-Đồng thời, website tích hợp nhiều ứng dụng tiện ích hỗ trợ cho việc giao dịch Bất động sản, tiết kiệm tối đa quỹ thời gian và đạt hiệu quả cao."
+  - text: Meey Land là một hệ sinh thái sản phẩm công nghệ Bất động sản kết hợp Công
+      nghệ - Bất động sản – Tài chính, cung cấp dịch vụ tìm kiếm và chia sẻ thông
+      tin bất động sản tới người có nhu cầu một cách tự động, nhanh chóng. Ngoài ra,
+      website hỗ trợ người dùng chạy quảng cáo đơn giản, thuận tiện, chi phí tiết
+      kiệm. Đồng thời, website tích hợp nhiều ứng dụng tiện ích hỗ trợ cho việc giao
+      dịch Bất động sản, tiết kiệm tối đa quỹ thời gian và đạt hiệu quả cao.
   utter_ask_post_package:
-  - text: "Bạn muốn hỏi về gói vip nào ạ"
+  - text: Bạn muốn hỏi về gói vip nào ạ
   utter_ask_duration:
-  - text: "Bạn muốn mua gói tin trong bao lâu"
+  - text: Bạn muốn mua gói tin trong bao lâu
 actions:
- - utter_default
- - utter_how_register_account
- - utter_how_auth_account
- - utter_lost_otp
- - utter_login_failed
- - utter_forgot_password
- - utter_benefit_of_meey_account
- - utter_how_edit_account_info
- - utter_login_by_gmail_facebook
- - utter_change_email_phone
- - utter_how_change_password
- - utter_required_personal_info
- - utter_how_transfer_money_to_account
- - utter_how_get_money_transfering_receipt
- - utter_how_get_VAT_bill
- - utter_money_security
- - utter_what_vnpay
- - utter_how_check_balance
- - utter_is_withdrawal_allowed_from_meeyid
- - utter_why_not_see_money_after_transfer
- - utter_is_refund_after_putdown_post
- - utter_prepare_before_create_post
- - utter_how_create_new_post
- - utter_how_edit_delete_post
- - utter_limit_of_post_number
- - utter_how_create_creative_post
- - utter_post_requirement
- - utter_what_VIP_post
- - action_fee_of_vip_post
- - utter_what_is_up_post
- - utter_fee_of_up_post
- - utter_multi_content_in_a_post
- - utter_post_image_complaint
- - utter_post_video_complaint
- - utter_approval_time
- - utter_why_reject_post
- - utter_how_download_app
- - utter_error_when_using_app
- - utter_error_when_download_app
- - utter_no_search_results
- - utter_how_search_info
- - utter_how_contact_to_post_owner
- - utter_how_chat_with_buyer
- - utter_how_contact_customer_service
- - utter_greet
- - utter_thank
- - utter_bye
- - utter_react_negative
- - utter_react_positive
- - utter_canthelp
- - utter_user_feel_expensive
- - utter_confirm
- - utter_anything_else
- - respond_faq
- - utter_is_advert_onMeey_effective
- - respond_out_of_scope
- - respond_chitchat
+- utter_default
+- utter_how_register_account
+- utter_how_auth_account
+- utter_lost_otp
+- utter_login_failed
+- utter_forgot_password
+- utter_benefit_of_meey_account
+- utter_how_edit_account_info
+- utter_login_by_gmail_facebook
+- utter_change_email_phone
+- utter_how_change_password
+- utter_required_personal_info
+- utter_how_transfer_money_to_account
+- utter_how_get_money_transfering_receipt
+- utter_how_get_VAT_bill
+- utter_money_security
+- utter_what_vnpay
+- utter_how_check_balance
+- utter_is_withdrawal_allowed_from_meeyid
+- utter_why_not_see_money_after_transfer
+- utter_is_refund_after_putdown_post
+- utter_prepare_before_create_post
+- utter_how_create_new_post
+- utter_how_edit_delete_post
+- utter_limit_of_post_number
+- utter_how_create_creative_post
+- utter_post_requirement
+- utter_what_VIP_post
+- action_fee_of_vip_post
+- utter_what_is_up_post
+- utter_fee_of_up_post
+- utter_multi_content_in_a_post
+- utter_post_image_complaint
+- utter_post_video_complaint
+- utter_approval_time
+- utter_why_reject_post
+- utter_how_download_app
+- utter_error_when_using_app
+- utter_error_when_download_app
+- utter_no_search_results
+- utter_how_search_info
+- utter_how_contact_to_post_owner
+- utter_how_chat_with_buyer
+- utter_how_contact_customer_service
+- utter_greet
+- utter_thank
+- utter_bye
+- utter_react_negative
+- utter_react_positive
+- utter_canthelp
+- utter_user_feel_expensive
+- utter_confirm
+- utter_anything_else
+- respond_faq
+- utter_is_advert_onMeey_effective
+- respond_out_of_scope
+- respond_chitchat
+- utter_ask_post_package
+- utter_ask_duration
