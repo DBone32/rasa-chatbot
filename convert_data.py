@@ -2,6 +2,30 @@ import pandas as pd
 import numpy as np
 from unidecode import unidecode
 import re
+from tqdm import tqdm
+import openpyxl
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+
+def download_file_from_drive(docid, destination):
+    scope = ['https://spreadsheets.google.com/feeds']
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+    client = gspread.authorize(credentials)
+    spreadsheet = client.open_by_key(docid)
+    wb = openpyxl.Workbook()
+    for i, worksheet in enumerate(tqdm(spreadsheet.worksheets())):
+        ws = wb.create_sheet(worksheet.title)
+        data = worksheet.get_all_values()
+        for dat in data:
+            ws.append(dat)
+    wb.remove(wb.get_sheet_by_name('Sheet'))
+    wb.save(destination)
+
+
+def download_raw_data():
+    download_file_from_drive('1FfDe5f1SRRA_sEVENemxQmMjRi_bIrUQ9aLtN0XnPyY', 'raw_data/chatbot_data_core.xlsx')
+    download_file_from_drive('1X_4Mnje7nrimj-at2erVeTkbHTqxczEwQ2VbVah1CFk', 'raw_data/chatbot_data_nlu.xlsx')
 
 
 def convert_IE():
@@ -45,7 +69,7 @@ def convert_domain():
                 intent_dict[intent] = answer
             if type(answer) == str:
                 if 'Name of Utter' in sheet_data and type(utter_names[idx]) == str:
-                    utter_dict[utter_names[idx]] = [answer]
+                    utter_dict[utter_names[idx]] = [answer.replace('"', "'").replace('\n', '\\n')]
                     actions.append(utter_names[idx])
                 elif 'action_' not in answer:
                     if 'utter_{}'.format(current_intent) not in utter_dict:
@@ -130,6 +154,7 @@ def convert_domain():
         else:
             outfile.writelines(' - {}\n'.format(action))
 
+
 def convert_stories():
     df = pd.ExcelFile('raw_data/chatbot_data_core.xlsx')
     outfile = open('data/stories.md', 'w')
@@ -149,8 +174,9 @@ def convert_stories():
             if users[idx] == users[idx]:
                 outfile.writelines('* {}\n'.format(action.strip()))
             elif bots[idx] == bots[idx]:
-                outfile.writelines('  - {}\n'.format(action.strip()))
+                outfile.writelines('    - {}\n'.format(action.strip()))
     outfile.close()
+
 
 def convert_respond():
     Frame = pd.ExcelFile('raw_data/chatbot_data_nlu.xlsx')
@@ -158,7 +184,7 @@ def convert_respond():
     sheetnames = Frame.sheet_names[:-2]
     data = {}
     for name in sheetnames:
-        if 'respond' not in name.lower():
+        if 'respond_' not in name.lower():
             continue
         sheet_data = Frame.parse(name)
         answers = sheet_data['Answer of Bot']
@@ -180,6 +206,8 @@ def convert_respond():
 
     outfile.close()
 
+
+download_raw_data()
 convert_IE()
 convert_domain()
 convert_stories()

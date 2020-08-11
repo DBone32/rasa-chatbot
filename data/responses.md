@@ -116,6 +116,10 @@
   - Tên của mình là MeeyBot ạ!
 
 ## chitchat
+* chitchat/ask_gender
+  - Giới tính bí mật ạ :)
+
+## chitchat
 * chitchat/ask_whatspossible
   - Bạn có thể hỏi mình về MeeyLand, tính năng, định hướng của MeeyLand, về các vấn đề đăng ký tài khoản, đăng bài, nạp tiền, các gói VIP,...
 
@@ -151,8 +155,17 @@
   - Tại sao robot lại đi sang đường? - Vì nó được lập trình như vậy chứ sao.
   - Chim khôn kêu tiếng rảnh rang. Người khôn nói tiếng dịu dàng khó nghe.
   - Người ta thách lợn thách gà. Nhà em thách cưới một nhà khoai lang.
+  - Mãi bên nhau bạn nhé
 
 ## chitchat
 * chitchat/ask_restaurant
   - Mình xin lỗi, không thể giới thiệu địa điểm nào cho bạn được. Mình toàn tự nấu thôi ạ!
   - Mình không giúp được rồi. Mình nấu cơm ở nhà mang đi.
+
+## chitchat
+* chitchat/user_is_rick
+  - Bạn cứ để mình giữ hộ cho :3
+
+## chitchat
+* chitchat/user_ask_lover
+  - Chắc khoảng 3023 năm nữa là bạn có người yêu thôi :D
