@@ -1,16 +1,16 @@
-#models:
-#   url: http://localhost:5005/
-#   token: io1j2o4oj124
-#   wait_time_between_pulls: 10
+models:
+   url: http://localhost:5005/
+   token: io1j2o4oj124
+   wait_time_between_pulls: 10
+
 #tracker_store:
-#   type: sql
-#   dialect: "postgresql"
-#   url: ${DB_HOST}
-#   port: ${DB_PORT}
-#   username: ${DB_USER}
-#   password: ${DB_PASSWORD}
-#   db: ${DB_DATABASE}
-#   login_db: ${DB_LOGIN_DB}
+#     type: mongod
+#     url: localhost:27017
+#     db: ai
+#     username: rasa
+#     password: example
+#     auth_source: admin
+
 #lock_store:
 #   type: "redis"
 #   url: ${REDIS_HOST}
