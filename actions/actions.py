@@ -1,21 +1,61 @@
 from typing import Any, Text, Dict, List, Union
 
 from rasa_sdk import Action, Tracker
+import random
+from numpy import random as rd
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import FollowupAction, SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
+
+fee_table = {'vip1': {'fee': {1: 40000, 7: 266000, 15: 540000, 30: 10200000, 90: 28800000}, 'up_fee': 4000, 'name': 'Vip 1'},
+             'vip2': {'fee': {1: 25000, 7: 166250, 15: 337500, 30: 637500, 90: 18000000}, 'up_fee': 2500, 'name': 'Vip 2'},
+             'vip3': {'fee': {1: 15000, 7: 99750, 15: 202500, 30: 382500, 90: 1080000}, 'up_fee': 1500, 'name': 'Vip 3'}}
+discounts = {1: 0.00, 7: 0.05, 15: 0.10, 30: 0.15, 90: 0.20}
+coefficient = {'ngày': {'coef': 1, 'text': 'ngày'}, 'ngay': {'coef': 1, 'text': 'ngày'},
+                'tháng': {'coef': 30, 'text': 'tháng'}, 'thang': {'coef': 30, 'text': 'tháng'},
+                'tuan': {'coef': 7, 'text': 'tuần'}, 'tuần': {'coef': 7, 'text': 'tuần'}}
+
+
 def price_format(price):
     return '{:,.0f}'.format(price).replace(',', '.')
 
+
+def convert_duration(duration):
+    duration_value = None
+    duration_unit = 'ngày'
+    days = None
+    if duration != None:
+        duration = duration.lower()
+        duration_value = ''.join(filter(str.isdigit, duration))
+        duration_unit = duration.replace(duration_value, '').strip()
+        duration_value = int(duration_value)
+        days = duration_value * coefficient[duration_unit]['coef']
+        if duration_value == '' or duration_unit not in coefficient:
+            duration = None
+
+    return duration, duration_value, duration_unit, days
+
+
+def convert_post_package(post_package):
+    vip_type = None
+    if post_package != None:
+        post_package = post_package.lower()
+        if 'vip' in post_package:
+            if '1' in post_package:
+                vip_type = 'vip1'
+            elif '2' in post_package:
+                vip_type = 'vip2'
+            elif '3' in post_package:
+                vip_type = 'vip3'
+    return vip_type
+
+
 class ActionFeeOffVipPost(Action):
     def __init__(self):
-        self.fee_table = {'vip1': {'fee': {1: 40000, 7: 266000, 15: 540000, 30: 10200000, 90: 28800000}, 'up_fee': 4000, 'name': 'Vip 1'},
-                         'vip2': {'fee': {1: 25000, 7: 166250, 15: 337500, 30: 637500, 90: 18000000}, 'up_fee': 2500, 'name': 'Vip 2'},
-                         'vip3': {'fee': {1: 15000, 7: 99750, 15: 202500, 30: 382500, 90: 1080000}, 'up_fee': 1500, 'name': 'Vip 3'}}
-        self.coefficient = {'ngày': {'coef': 1, 'text': 'ngày'}, 'ngay': {'coef': 1, 'text': 'ngày'},
-                            'tháng': {'coef': 30, 'text': 'tháng'}, 'thang': {'coef': 30, 'text': 'tháng'},
-                            'tuan': {'coef': 7, 'text': 'tuần'}, 'tuần': {'coef': 7, 'text': 'tuần'}}
+        self.fee_table = fee_table
+        self.coefficient = coefficient
+        pass
 
     def name(self) -> Text:
         return "action_fee_of_vip_post"
@@ -25,33 +65,18 @@ class ActionFeeOffVipPost(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         post_package = tracker.get_slot('post_package')
         duration = tracker.get_slot('duration')
-        if duration != None:
-            duration = duration.lower()
-            duration_value = ''.join(filter(str.isdigit, duration))
-            duration_unit = duration.replace(duration_value, '').strip()
-            duration_value = int(duration_value)
-            if duration_value == '' or duration_unit not in self.coefficient:
-                duration = None
+        duration, duration_value, duration_unit, _ = convert_duration(duration)
 
-        vip_type = 0
-        if post_package != None:
-            post_package = post_package.lower()
-            if 'vip' in post_package:
-                if '1' in post_package:
-                    vip_type = 'vip1'
-                elif '2' in post_package:
-                    vip_type = 'vip2'
-                elif '3' in post_package:
-                    vip_type = 'vip3'
+        vip_type = convert_post_package(post_package)
 
         fee_table = self.fee_table
-        if vip_type != 0:
+        if vip_type == vip_type:
             # nếu chỉ bắt được post_package
             if duration == None:
                 dispatcher.utter_message(text="Giá gói {} hiện tại là {}đ/tin/ngày ạ."
                                          .format(fee_table[vip_type]['name'],
                                                  price_format(fee_table[vip_type]['fee'][1])))
-                message = 'Ngoài ra bên em còn có các gói'
+                message = 'Ngoài ra MeeyLand còn có các gói'
                 for package in fee_table:
                     if package != vip_type:
                         message += ' {} với giá {}đ/tin/ngày,'.format(fee_table[package]['name'],
@@ -79,14 +104,56 @@ class ActionFeeOffVipPost(Action):
             return [SlotSet("post_package", None), SlotSet("duration", None)]
 
         # Còn lại là trường hợp không bắt được gì
-        message = 'Hiện tại Meeyland cung cấp {} gói tin VIP là'.format(len(fee_table))
-        for package in fee_table:
-            message += ' gói {} giá {}đ/tin/ngày,'.format(fee_table[package]['name'],
-                                                          price_format(fee_table[package]['fee'][1]))
-        message = message[:-1] + ' ạ.'
-        dispatcher.utter_message(message)
-        dispatcher.utter_message("Bạn có thể tham khảo chi tiết bảng giá tại [đây](https://meeyland.com/page/bao-gia)")
-        return [SlotSet("post_package", None), SlotSet("duration", None)]
+        text = tracker.get_last_event_for('user')['text']
+        if 'vip' in text:
+            message = 'Hiện tại Meeyland cung cấp {} gói tin VIP là'.format(len(fee_table))
+            for package in fee_table:
+                message += ' gói {} giá {}đ/tin/ngày,'.format(fee_table[package]['name'],
+                                                              price_format(fee_table[package]['fee'][1]))
+            message = message[:-1] + ' ạ.'
+            dispatcher.utter_message(message)
+            dispatcher.utter_message("Bạn có thể tham khảo chi tiết bảng giá tại [đây](https://meeyland.com/page/bao-gia)")
+            return [SlotSet("post_package", None), SlotSet("duration", None)]
+        else:
+            message = 'Hiện tại Meeyland cung cấp {} gói tin là'.format(len(fee_table) + 1)
+            for package in fee_table:
+                message += ' gói {} giá {}đ/tin/ngày,'.format(fee_table[package]['name'],
+                                                              price_format(fee_table[package]['fee'][1]))
+            message = message[:-1] + ' và gói tin thường miễn phí ạ.'
+            dispatcher.utter_message(message)
+            dispatcher.utter_message(
+                "Bạn có thể tham khảo chi tiết bảng giá tại [đây](https://meeyland.com/page/bao-gia)")
+            return [SlotSet("post_package", None), SlotSet("duration", None)]
+
+
+class ActionVipPostDetails(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_vip_post_details"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        post_package = tracker.get_slot('post_package')
+        results = []
+        if post_package != None:
+            post_package = post_package.lower()
+            if post_package in ['tin thuong', 'tin thường', 'tinthường', 'tinthuong']:
+                results.append('utter_vip0_info')
+            elif 'vip' in post_package:
+                if '1' in post_package:
+                    results.append('utter_vip1_info')
+                elif '2' in post_package:
+                    results.append('utter_vip2_info')
+                elif '3' in post_package:
+                    results.append('utter_vip3_info')
+        if len(results) < 1:
+            results = ['utter_vip0_info', 'utter_vip1_info', 'utter_vip2_info', 'utter_vip3_info']
+        for utter in results:
+            dispatcher.utter_template(utter, tracker)
+        return [SlotSet("post_package", None)]
 
 
 class ActionVipPackageCompare(Action):
@@ -101,24 +168,211 @@ class ActionVipPackageCompare(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         results = []
         list_entity = tracker.get_last_event_for('user')["parse_data"]["entities"]
-        dispatcher.utter_message('Giữa các gói tin có sự khác nhau về mức độ ưu tiên hiển thị, màu và độ lơn của tiêu đề ạ.')
+        dispatcher.utter_message('Giữa các gói tin có sự khác nhau về mức độ ưu tiên hiển thị, màu và độ lớn của tiêu đề ạ.')
         for entity in list_entity:
             if entity['entity'] == 'post_package':
                 value = entity['value'].lower()
                 if value in ['tin thuong', 'tin thường', 'tinthường', 'tinthuong']:
-                    results.append(FollowupAction('utter_vip0_info'))
+                    results.append('utter_vip0_info')
                 elif 'vip' in value:
                     if '1' in value:
-                        results.append(FollowupAction('utter_vip1_info'))
+                        results.append('utter_vip1_info')
                     elif '2' in value:
-                        results.append(FollowupAction('utter_vip2_info'))
+                        results.append('utter_vip2_info')
                     elif '3' in value:
-                        results.append(FollowupAction('utter_vip3_info'))
-        if len(results) > 2:
-            return results
+                        results.append('utter_vip3_info')
+        if len(results) <= 1:
+            results = ['utter_vip0_info', 'utter_vip1_info', 'utter_vip2_info', 'utter_vip3_info']
+        for utter in results:
+            dispatcher.utter_template(utter, tracker)
+        return [SlotSet("post_package", None)]
+
+
+class ActionHowToSearch(Action):
+    def __init__(self):
+        self.opposition = {'mua': 'bán', 'thuê': 'cho thuê', 'sang nhượng': 'mua sang nhượng',
+                      'bán':  'mua', 'cho thuê': 'cần thuê', 'mua sang nhượng': 'sang nhượng'}
+        self.links = {'mua': ['https://meeyland.com/articles/new?category=mua-ban-nha-dat', 'https://meeyland.com/mua-ban-nha-dat'],
+                      'thuê': ['https://meeyland.com/articles/new?category=cho-thue-nha-dat', 'https://meeyland.com/cho-thue-nha-dat'],
+                      'sang nhượng': ['https://meeyland.com/articles/new?category=sang-nhuong-nha-dat', 'https://meeyland.com/sang-nhuong-nha-dat'],
+                      'bán':  ['https://meeyland.com/articles/new?category=mua-ban-nha-dat', 'https://meeyland.com/mua-ban-nha-dat'],
+                      'cho thuê': ['https://meeyland.com/articles/new?category=cho-thue-nha-dat', 'https://meeyland.com/cho-thue-nha-dat'],
+                      'mua sang nhượng': ['https://meeyland.com/articles/new?category=sang-nhuong-nha-dat', 'https://meeyland.com/sang-nhuong-nha-dat']}
+        pass
+
+    def name(self) -> Text:
+        return "action_how_to_search"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        post_purpose = tracker.get_slot('post_purpose')
+        if post_purpose != None:
+            post_purpose = post_purpose.lower()
+        if post_purpose == None or post_purpose not in self.opposition:
+            message = "Để tìm kiếm, bạn nhập từ khoá vào thanh công cụ tìm kiếm, hệ thống tự động đưa ra các kết quả tìm kiếm dựa trên từ khoá đã nhập. \n• [Mua/ Bán Nhà Đất](https://meeyland.com/mua-ban-nha-dat) \n• [Thuê/ Cho Thuê Nhà Đất](https://meeyland.com/cho-thue-nha-dat) \n• [Sang Nhượng](https://meeyland.com/sang-nhuong-nha-dat)"
         else:
-            return [FollowupAction('utter_vip0_info'), FollowupAction('utter_vip1_info'),
-                    FollowupAction('utter_vip2_info'), FollowupAction('utter_vip3_info')]
+            link1 = self.links[post_purpose][0]
+            link2 = self.links[post_purpose][1]
+            message = 'Để {} BĐS, bạn có thể đăng tin {} BĐS hoặc tìm kiếm tin đăng {} BĐS trên trang [meeyland.com](https://meeyland.com). \nVào [đây]({}) để đăng tin {} BĐS. \nVào [đây]({}) để tìm kiếm tin đăng {} BĐS.'.format(post_purpose, post_purpose, self.opposition[post_purpose], link1, post_purpose, link2, self.opposition[post_purpose])
+            pass
+
+        dispatcher.utter_message(message)
+        return [SlotSet("post_purpose", None)]
+
+
+class ActionGreet(Action):
+    def __init__(self):
+        self.samples = ['Xin chào bạn, mình là MeeyBot. Mình có thể giúp gì cho bạn ạ?',
+                        'Xin chào, mình là MeeyBot. Rất vui khi được hỗ trợ bạn.',
+                        'Chào bạn, tên mình là MeeyBot. Bạn cần mình giúp gì không?',
+                        'Chào bạn, mình là MeeyBot. Mình giúp gì được cho bạn ạ!']
+        self.utters = ['Mình có thể giúp gì cho bạn?',
+                       'Mình đây ạ.',
+                       'Bạn cần giúp đỡ gì nào?'
+                       ]
+        pass
+
+    def name(self) -> Text:
+        return "action_greet"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        is_greeted = tracker.get_slot('is_greeted')
+        username = tracker.get_slot('name')
+
+        td_index = rd.choice(range(len(self.samples)))
+        sample = rd.choice(self.samples)
+        if is_greeted == 'True':
+            dispatcher.utter_message(rd.choice(self.utters))
+        else:
+            dispatcher.utter_message(sample)
+
+        return [SlotSet("is_greeted", "True")]
+
+
+class ActionUserIntroduceName(Action):
+    def __init__(self):
+        self.samples = ['Xin chào {}{}. Mình có thể giúp gì cho bạn ạ?',
+                        'Xin chào {}. Rất vui khi được hỗ trợ bạn.',
+                        'Chào {}{}. Bạn cần mình giúp gì không?',
+                        'Chào {}{}. Mình giúp gì được cho bạn ạ!']
+        self.botintro = ', mình là MeeyBot'
+        pass
+
+    def name(self) -> Text:
+        return "action_user_introduce_name"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        is_greeted = tracker.get_slot('is_greeted')
+        username = tracker.get_slot('name')
+        if username == None:
+            username = "bạn"
+        else:
+            username = username.title()
+
+        sample = rd.choice(self.samples)
+        if is_greeted == 'True':
+            self.botintro = ''
+        dispatcher.utter_message(sample.format(username, self.botintro))
+        return [SlotSet("is_greeted", "True")]
+
+
+class ActionSetSourcePackage(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_set_source_post_package"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        post_package = tracker.get_slot('post_package')
+        return [SlotSet("source_post_package", post_package), SlotSet("post_package", 'None')]
+
+
+class ActionSetDestinationPackage(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_set_destination_post_package"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        post_package = tracker.get_slot('post_package')
+        return [SlotSet("destination_post_package", post_package), SlotSet("post_package", 'None')]
+
+
+class ActionSetBuyPostDuration(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_set_buy_vip_duration"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        duration = tracker.get_slot('duration')
+        _, _, _, bought_days = convert_duration(duration)
+        fees = fee_table['vip1']['fee']
+        if bought_days not in fees:
+            return [FollowupAction('utter_request_valid_buy_vip_duration')]
+        return [SlotSet("buy_vip_duration", duration), SlotSet("duration", 'None')]
+
+
+class ActionSetUsedPostDuration(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_set_used_vip_duration"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        duration = tracker.get_slot('duration')
+        _, _, _, used_days = convert_duration(duration)
+        if used_days < 1:
+            return [FollowupAction('utter_request_valid_used_vip_duration')]
+        return [SlotSet("used_vip_duration", duration), SlotSet("duration", 'None')]
+
+
+class ActionCalculateDownPost(FormAction):
+    def name(self) -> Text:
+        return "action_calculate_down_post"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        source_post_package = tracker.get_slot('source_post_package')
+        buy_vip_duration = tracker.get_slot('buy_vip_duration')
+        used_vip_duration = tracker.get_slot('used_vip_duration')
+
+        vip_type = convert_post_package(source_post_package)
+        _, _, _, bought_days = convert_duration(buy_vip_duration)
+        _, _, _, used_days = convert_duration(used_vip_duration)
+        if vip_type != vip_type:
+            return [FollowupAction('utter_ask_source_post_package')]
+
+        discount = 0
+        for i in discounts:
+            if used_days > i:
+                discount = discounts[i]
+                break
+        used_cost = fee_table[vip_type]['fee'][1]*used_days*(1-discount)
+        paid_cost = fee_table[vip_type]['fee'][bought_days]
+        message1 = 'Bạn đã dùng gói {} được {} ngày. Vậy số tiền bạn đã dùng là {}đ.'.format(fee_table[vip_type]['name'], used_days, price_format(used_cost))
+        message2 = 'Khi hạ tin bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(price_format(paid_cost - used_cost))
+        dispatcher.utter_message(message1)
+        dispatcher.utter_message(message2)
+        return []
 #
 # class GetCostForm(FormAction):
 #

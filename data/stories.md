@@ -1,99 +1,95 @@
-## Tài khoản 1
-* how_register_account
-    - utter_how_register_account
-* how_auth_account
-    - utter_how_auth_account
-
-## Tài khoản 2
-* lost_otp
-    - utter_lost_otp
-* thank
-    - utter_thank
-
-## Tài khoản 3
-* benefit_of_meey_account
-    - utter_benefit_of_meey_account
-* how_register_account
-    - utter_how_register_account
-* lost_otp
-    - utter_lost_otp
-* thank
-    - utter_thank
-
-## Tài khoản 4
-* login_failed
-    - utter_login_failed
-
-## Tài khoản 5
-* forgot_password
-    - utter_forgot_password
-* thank
-    - utter_thank
-
-## Tài khoản 6
-* benefit_of_meey_account
-    - utter_benefit_of_meey_account
-* thank
-    - utter_thank
-
-## Tài khoản 7
-* how_edit_account_info
-    - utter_how_edit_account_info
-* thank
-    - utter_thank
-
 ## Tài khoản 8
 * login_failed
     - utter_login_failed
 * login_failed
     - utter_login_failed
-    - utter_contact_customer_service
+    - utter_how_contact_customer_service
 
 ## Tài khoản 9
 * login_failed
     - utter_login_failed
 * deny
-    - utter_contact_customer_service
+    - utter_how_contact_customer_service
 
 ## Tài khoản 10
 * lost_otp
     - utter_lost_otp
 * deny
-    - utter_contact_customer_service
-
-## Tài khoản 11
-* lost_otp
-    - utter_lost_otp
+    - utter_how_contact_customer_service
 
 ## Tài khoản 12
 * lost_otp
     - utter_lost_otp
 * lost_otp
     - utter_lost_otp
-    - utter_contact_customer_service
+    - utter_how_contact_customer_service
 
-## Nạp tiền 1
-* how_get_VAT_bill
-    - utter_how_get_VAT_bill
+## Tài khoản 14
+* channel_app
+    - utter_channel_app
+* how_download_or_view_st
+    - utter_how_download_app
 
-## Nạp tiền 2
-* greet
-    - utter_greet
-* how_get_VAT_bill
-    - utter_how_get_VAT_bill
+## Hạ tin-Hoàn tiền 1
+* request_down_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* enter_data
+    - action_set_source_post_package
+    - utter_ask_buy_vip_duration
+* enter_data
+    - action_set_buy_vip_duration
+    - utter_ask_used_vip_duration
+* enter_data
+    - action_set_used_vip_duration
+    - action_calculate_down_post
 
-## Nạp tiền 3
-* user_need_help
-    - utter_greet
-* how_get_VAT_bill
-    - utter_how_get_VAT_bill
+## Hạ tin-Hoàn tiền 2
+* request_down_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* enter_data
+    - action_set_source_post_package
+    - utter_ask_buy_vip_duration
+* enter_data
+    - action_set_buy_vip_duration
+    - utter_request_valid_buy_vip_duration
+* enter_data
+    - action_set_buy_vip_duration
+    - utter_ask_used_vip_duration
+* enter_data
+    - action_set_used_vip_duration
+
+## Hạ tin-Hoàn tiền 3
+* request_down_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* enter_data{"post_package":"vip 2"}
+    - slot{"post_package":"vip 2"}
+    - slot{"post_package":"vip 2"}
+    - action_set_source_post_package
+    - slot{"source_post_package":"vip 2"}
+    - slot{"post_package":"None"}
+    - utter_ask_buy_vip_duration
+* enter_data{"duration":"30 ngày"}
+    - slot{"duration":"30 ngày"}
+    - action_set_buy_vip_duration
+    - slot{"buy_vip_duration":"30 ngày"}
+    - slot{"duration":"None"}
+    - utter_ask_used_vip_duration
+* enter_data{"duration":"9 ngày"}
+    - slot{"duration":"9 ngày"}
+    - action_set_used_vip_duration
+    - slot{"used_vip_duration":"9 ngày"}
+    - slot{"duration":"None"}
+    - action_calculate_down_post
 
 ## Đăng bài 1
 * how_create_new_post
     - utter_prepare_before_create_post
 * wait_a_minute
     - utter_confirm
-* next_step
+* request_more
     - utter_how_create_new_post
 * thank
     - utter_thank
@@ -111,8 +107,8 @@
     - utter_prepare_before_create_post
 * affirm
     - utter_how_create_new_post
-* what_VIP_post
-    - utter_what_VIP_post
+* fee_of_vip_post
+    - action_fee_of_vip_post
 * affirm
     - utter_anything_else
 * deny
@@ -120,15 +116,15 @@
 
 ## Đăng bài 4
 * greet
-    - utter_greet
+    - action_greet
 * fee_of_vip_post
     - action_fee_of_vip_post
 * user_feel_expensive
     - utter_user_feel_expensive
 
 ## Đăng bài 5
-* what_VIP_post
-    - utter_what_VIP_post
+* fee_of_vip_post
+    - action_fee_of_vip_post
 * user_ask_price
     - action_fee_of_vip_post
 
@@ -190,64 +186,147 @@
     - utter_why_reject_post_2
     - utter_why_reject_post_3
 
+## Đăng bài 13
+* how_create_new_post
+    - utter_how_create_new_post
+* request_more
+    - utter_how_create_new_post_details
+* request_more
+    - utter_out_of_bot_ability
+    - utter_how_contact_customer_service
+
+## Đăng bài 14
+* how_create_new_post
+    - utter_how_create_new_post
+* affirm
+    - utter_confirm
+    - utter_anything_else
+
+## Đăng bài 13
+* how_create_new_post
+    - utter_how_create_new_post
+* request_more
+    - utter_how_create_new_post_details
+* affirm
+    - utter_confirm
+    - utter_anything_else
+
 ## Câu hỏi khác 1
-* how_contact_customer_service
-    - utter_contact_customer_service
+* how_search_info
+    - action_how_to_search
+* request_more
+    - utter_out_of_bot_ability
+    - utter_how_contact_customer_service
 
 ## Câu hỏi khác 2
-* greet
-    - utter_greet
-* how_contact_customer_service
-    - utter_contact_customer_service
-
-## Câu hỏi khác 5
-* how_search_info
-    - utter_how_search_info
-* request_explain_more
-    - utter_contact_customer_service
-
-## Câu hỏi khác 6
 * error_when_download_app
     - utter_error_when_download_app
 * deny
-    - utter_contact_customer_service
+    - utter_how_contact_customer_service
 
-## Câu hỏi khác 7
+## Câu hỏi khác 3
 * error_when_download_app
     - utter_error_when_download_app
 * error_when_download_app
-    - utter_contact_customer_service
+    - utter_how_contact_customer_service
 
-## Câu hỏi khác 8
-* request_explain_more
-    - utter_contact_customer_service
+## Câu hỏi khác 4
+* forward_to_customer_service
+    - utter_forward_to_customer_service
+    - utter_ask_whatspossible
+
+## Câu hỏi khác 5
+* greet
+    - action_greet
+* forward_to_customer_service
+    - utter_forward_to_customer_service
+    - utter_ask_whatspossible
+
+## Câu hỏi khác 6
+* greet
+    - action_greet
+* chitchat
+    - respond_chitchat
+* forward_to_customer_service
+    - utter_forward_to_customer_service
+    - utter_ask_whatspossible
+
+## Câu hỏi khác 7
+* how_invest_to_meeyland
+    - utter_suggest_get_info
 
 ## General 1
 * user_need_help
-    - utter_greet
+    - utter_ask_whatspossible
 
 ## General 2
 * greet
-    - utter_greet
+    - action_greet
 * affirm
     - utter_confirm
 
 ## General 3
 * greet
-    - utter_greet
+    - action_greet
 * user_need_help
     - utter_confirm
 
-## Combine 1
-* greet
-    - utter_greet
-* how_register_account
-    - utter_how_register_account
-* thank
+## General 4
+    - utter_anything_else
+* deny
     - utter_thank
 
-## Combine 2
+## General 5
 * greet
-    - utter_greet
-* thank
-    - utter_thank
+    - action_greet
+* affirm
+    - utter_confirm
+* user_need_help
+    - utter_confirm
+
+## General 6
+* greet
+    - action_greet
+* greet
+    - action_greet
+* greet
+    - utter_ask_whatspossible
+
+## General 7
+* bot_need_learning
+    - utter_keep_learning
+
+## General 8
+* react_negative
+    - utter_keep_learning
+
+## General 9
+* request_more
+    - utter_ask_whatspossible
+
+## out_of_scope 1
+* out_of_scope
+    - respond_out_of_scope
+    - utter_ask_whatspossible
+
+## out_of_scope 2
+* greet
+    - action_greet
+* out_of_scope
+    - respond_out_of_scope
+    - utter_ask_whatspossible
+
+## out_of_scope 3
+* greet
+    - action_greet
+* enter_data
+    - utter_not_sure
+
+## out_of_scope 4
+* greet
+    - action_greet
+* chitchat
+    - respond_chitchat
+* out_of_scope
+    - respond_out_of_scope
+    - utter_ask_whatspossible

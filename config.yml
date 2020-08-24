@@ -7,15 +7,16 @@ pipeline:
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 150
+  epochs: 100
 - name: ResponseSelector
+  epochs: 150
 
 policies:
   - name: TEDPolicy
-    epochs: 350
+    epochs: 100
     max_history: 5
   - name: MemoizationPolicy
-    max_history: 3
+    max_history: 4
   - name: MappingPolicy
   - name: FallbackPolicy
     nlu_threshold: 0.1

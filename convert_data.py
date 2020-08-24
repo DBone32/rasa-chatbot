@@ -31,7 +31,7 @@ def download_raw_data():
 def convert_IE():
     data = pd.ExcelFile('raw_data/chatbot_data_nlu.xlsx')
     outfile = open('data/nlu.md', 'w', encoding='utf-8-sig')
-    sheetnames = data.sheet_names[:-2]
+    sheetnames = data.sheet_names[:-4]
     for name in sheetnames:
         sheet_data = data.parse(name)
         samples = sheet_data['User Request/Questions']
@@ -51,7 +51,7 @@ def convert_domain():
     utter_dict = {}
     entities = []
     actions = []
-    sheetnames = df.sheet_names[:-2]
+    sheetnames = df.sheet_names[:-4]
     for name in sheetnames:
         sheet_data = df.parse(name)
         answers = sheet_data['Answer of Bot']
@@ -74,11 +74,12 @@ def convert_domain():
                 elif 'action_' not in answer:
                     if 'utter_{}'.format(current_intent) not in utter_dict:
                         utter_dict['utter_{}'.format(current_intent)] = []
-                    utter_dict['utter_{}'.format(current_intent)].append(answer.replace('"', "'"))
+                    utter_dict['utter_{}'.format(current_intent)].append(answer.replace('"', "'").replace('\n', '\\n'))
                     if 'utter_{}'.format(current_intent) not in actions:
                         actions.append('utter_{}'.format(current_intent))
                 else:
-                    actions.append(answer)
+                    if answer not in actions:
+                        actions.append(answer)
 
 
         # find entities
@@ -91,13 +92,21 @@ def convert_domain():
                     if entity not in entities:
                         entities.append(entity)
                     pass
+    # read custom action
+    custom_action_sheet = df.parse('Custom Action')
+    for action in custom_action_sheet['Custom Action']:
+        if action == action:
+            actions.append(action)
     # read utter ask for required slot
     utter_ask = {}
-    utter_ask_sheet = df.parse(df.sheet_names[-1])
-    slots = utter_ask_sheet['Slots']
-    utters = utter_ask_sheet['Utter_ask']
-    for slot, utter in zip(slots, utters):
-        utter_ask[slot] = utter
+    slots_sheet = df.parse('Slots')
+    slots = slots_sheet['Slots']
+    types = slots_sheet['Type']
+    utters = slots_sheet['Utter_ask']
+    set_actions = slots_sheet['Set Action']
+    for idx, slot in enumerate(slots):
+        if utters[idx] == utters[idx]:
+            utter_ask[slot] = utters[idx]
 
     # generate intents:
     outfile.writelines('intents:\n')
@@ -124,9 +133,9 @@ def convert_domain():
         outfile.writelines('- {}\n'.format(entity))
     # generate slots:
     outfile.writelines('slots:\n')
-    for entity in entities:
-        outfile.writelines('  {}:\n'.format(entity))
-        outfile.writelines('    type: text\n')
+    for idx, slot in enumerate(slots):
+        outfile.writelines('  {}:\n'.format(slot))
+        outfile.writelines('    type: {}\n'.format(types[idx]))
     outfile.writelines('  requested_slot:\n    type: text\n')
     # generate responses:
     outfile.writelines('responses:\n')
@@ -153,6 +162,10 @@ def convert_domain():
             outfile.writelines(' - respond_{}\n'.format(action))
         else:
             outfile.writelines(' - {}\n'.format(action))
+    # generate set actions:
+    for set_action in set_actions:
+        if set_action == set_action:
+            outfile.writelines(' - {}\n'.format(set_action))
 
 
 def convert_stories():
@@ -181,7 +194,7 @@ def convert_stories():
 def convert_respond():
     Frame = pd.ExcelFile('raw_data/chatbot_data_nlu.xlsx')
     outfile = open('data/responses.md', 'w', encoding='utf-8-sig')
-    sheetnames = Frame.sheet_names[:-2]
+    sheetnames = Frame.sheet_names[:-4]
     data = {}
     for name in sheetnames:
         if 'respond_' not in name.lower():

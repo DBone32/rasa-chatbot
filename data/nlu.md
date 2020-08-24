@@ -25,7 +25,9 @@
  - giúp mình mở tài khoản với
  - đăng ký tài khoản giúp tôi với
  - bạn giúp mình tạo tài khoản với
+ - Tôi chưa có tài khoản, đăng ký tài khoản có dễ không?
  - tài khoản [meeyland](company) mở sao đây
+ - mình chưa có tài khoản, mở như nào
  - Đăng kí tài khoản trên meeyland.com thế nào? 
  - Tôi làm thế nào để đăng kí trên [meeyland](company)?
  - Đăng kí trên meeyland.com ntn?
@@ -230,14 +232,35 @@
  - tạo tài khoản cần nhập mã số thuế à
  - mở tài khoản không nhập mã số thuế hoặc chứng minh nhân dân không được à
  - đăng nhập bằng tài khoản facebook rồi sao phải cần đến thông tin gmail nữa
+ - Không cung cấp số chứng minh thư được không?
  - đăng ký tài khoản thông tin nào là bắt buộc
+ - Không cung cấp số chứng minh thư được k
+ - Mình ko muốn cung cấp thông tin chứng minh thư
+ - mình không muốn nhập mã số thuế
+ - không muốn nhập chứng minh thư đâu
+ - ko nhập mã số thuế có được không
+ - tôi ko muốn giao chứng minh thư khi chưa tin tưởng
+ - không nhập chứng minh thư đâu
+ - tôi ko giao số chứng minh thư
+ - tôi ko muốn nhập chứng minh thư
+ - tôi không muốn nhập cmt
  - đăng ký tài khoản cần gì
 
 ## intent:how_transfer_money_to_account
  - Làm thế nào để nạp tiền vào tài khoản?
  - Nạp tiền vào tài khoản như thế nào?
+ - Hướng dẫn tôi nạp tiền
+ - Hướng dẫn tôi cách nạp tiền
+ - Hướng dẫn tôi nạp tiền vào tài khoản
  - Tôi nạp tiền bằng cách nào?
  - Nạp tiền thì làm thế nào hả bạn?
+ - lam sao de thanh toan sau khi dang tin vip vay?
+ - làm sao để thanh toán khi đăng tin
+ - làm sao để thanh toán tin vip
+ - các thanh toán tin vip
+ - trả tiền các gói vip như nào
+ - cách thanh toán gói vip
+ - hướng dẫn tôi cách thanh toán tin vip
  - Cách nạp tiền là như thế nào nhỉ?
  - Làm thế nào để chuyển tiền vào tài khoản?
  - chuyển tiền vào tài khoản như thế nào?
@@ -267,6 +290,15 @@
  - Nạp tiền bằng phương thức [chuyển khoản](money_transfer_type) ngân hàng thì qua các ngân hàng nào
  - chuyển money bằng [chuyển khoản](money_transfer_type) được không nhỉ
  - chuyển money bằng [VN PAY](money_transfer_type) được nhỉ
+ - làm sao để thanh toán sau khi đăng tin vip vậy?
+ - hướng dẫn tôi cách thanh toán tin vip
+ - cách thanh toán tin vip
+ - thanh toán khi đăng tin vip như nào
+ - mua tin vip như thế nào nhỉ
+ - cách thanh toán khi đăng tin vip
+ - thanh toán tin vip như thế nào nhỉ
+ - thanh toán tin vip ntn
+ - nạp tiền meeyland
  - chuyển money bằng (internet banking)(money_transfer_type) cũng được mà nhỉ
 
 ## intent:how_get_money_transfering_receipt
@@ -380,15 +412,6 @@
  - vừa [chuyển khoản](money_transfer_type), vào kiểm tra tài khoản không thay đổi gì
  - Tôi đã [chuyển khoản](money_transfer_type) cho bên bạn, nhưng sao không thấy tiền trong Ví [Meeyland](company)?
 
-## intent:is_refund_after_putdown_post
- - Tôi đăng ký gói tin [Vip](post_package) và hạ tin khi chưa hết thời hạn, tôi có được hoàn tiền không ?
- - Gỡ bỏ gói [vip](post_package) trước thời hạn có được trả lại tiền không thế
- - Nếu tôi thay đổi loại tin từ tin [vip](post_package) thành tin thường thì có được hoàn lại tiền không?
- - tôi muốn sửa gói tin [vip 1](post_package) thành tin [vip 2](post_package) thì có được hoàn tiền ko?
- - gỡ bỏ gói tin [vip](post_package) trước thời hạn thì có được hoàn lại tiền dư không?
- - tin đang đăng là tin [vip](post_package) nhưng xoá tin trước hạn thì tiền dư trả lại không
- - Khi thay đổi loại tin thì với tin từ cấp độ cao xuống cấp độ thấp thì có được hoàn lại số tiền dư ra khi đổi tin không ?
-
 ## intent:prepare_before_create_post
  - Để đăng tin thì cần chuẩn bị gì?
  - Để đăng tin cần những gì?
@@ -409,12 +432,31 @@
 
 ## intent:how_create_new_post
  - tôi muốn đăng bán bất động sản mới, tôi phải làm như thế nào?
+ - mình muốn đăng bài lên meeyland
+ - E muốn hỏi cách đăng tin trên ap meeyland.com ạ
+ - đăng tin trên meeyland làm thế nào
  - Để đăng bán bất động sản mới, cần làm như thế nào nhỉ?
+ - làm thế nào để đăng tin lên meey land
+ - làm sao để đăng tin
+ - đăng tin lên trang như nào thế
  - Hướng dẫn tôi cách đăng bán bất động sản mới?
  - Chỉ cho tôi các bước đăng bán bất động sản mới?
  - Tôi cần đăng tin bán bất động sản mới, hướng dẫn tôi các bước?
  - Tôi cần đăng bán nhà đất ở [Hà Nội](location), tôi cần làm như thế nào?
  - Tôi muốn đăng bán nhà chung cư ở [TP Hồ Chí Minh](location), thứ tự đăng tin sao đây nhỉ?
+ - tôi muốn đăng tin
+ - tôi cần tìm hướng dẫn đăng tin
+ - tôi cần đăng tin cho thuê
+ - tôi cần đăng tin trên trang của bên mình
+ - tôi cần đăng tin
+ - tôi muốn đăng tin thì làm sao
+ - tôi cần đăng tin bán nhà
+ - tôi cần đăng tin cho thuê phòng trọ
+ - tôi muốn đăng tin cho thuê nhà
+ - mình muốn đăng tin
+ - Tôi muốn đăng tin trên meeyland
+ - đăng tin trên MeeyLand như thế nào?
+ - đăng tin trên MeeyLand
  - Các bước đăng tin?
  - Các bước đăng tin như thế nào?
  - Các bước cơ bản đăng tin như nào?
@@ -432,8 +474,13 @@
  - Chỉ cho tôi cách đăng bài với?
  - Tôi đăng ký tài khoản xong rồi, giờ tôi muốn đăng bài thì làm thế nào?
  - các bước đăng bài
+ - đăng tin trên meeyland
  - cần bán nhà, đăng sao nhỉ
  - tôi có bđs cho thuê, đăng tin sao nhỉ
+ - giờ đăng tin như thế nào đây
+ - đăng tin sao bot
+ - đăng tin vip như nào
+ - đăng tin như nào
 
 ## intent:how_edit_delete_post
  - Tôi đã đăng tin bán nhà [Hà Nội](location) nhưng ghi nhầm diện tích, giờ muốn sửa, tôi làm thế nào?
@@ -479,6 +526,8 @@
  - Tôi nên trình bày tin đăng như thế nào để có hiệu quả?
  - Bài đăng nên gồm những nội dung như thế nào để có hiệu quả?
  - Tôi muốn đăng tin bán nhà ở khu vực [Ba Đình](location), tôi có cần chụp ảnh chi tiết không?
+ - đăng tin hiệu quả như nào
+ - đăng bài hiệu quả như nào
  - mẹo đăng bài hiệu quả là gì
  - mẹo đăng bài
  - chỉ cho mình vài mẹo đăng bài
@@ -490,6 +539,13 @@
  - chỉ mình vài cách để đăng tin hiệu quả hấp dẫn khách xem
  - trình bày tin đăng như thế nào để hấp dẫn khách nhỉ
  - hình ảnh nên như thế nào để thu hút
+ - Đăng rồi mà mãi ko ai mua là sao
+ - Đăng tin lâu rồi ko bán được nhà thì làm sao
+ - đăng tin lâu rồi không bán được thì làm sao bây giờ
+ - làm sao đây, tao đăng tin mãi mà không ai mua
+ - làm sao đây khi đăng lâu rồi mà không bán được
+ - Tôi đăng lâu rồi má ơi
+ - Đăng tin rồi giờ sao bán hả má
 
 ## intent:post_requirement
  - Quy định đăng bài như thế nào?
@@ -501,18 +557,28 @@
  - cho tôi biết quy định đăng tin
  - cho tôi biết quy định đăng bài với
 
-## intent:what_VIP_post
- - Tin Vip và tin thường khác nhau như thế nào?
- - Tin Vip là gì?
- - Tin thường là gì?
- - Sự khác nhau giữa tin VIP và tin thường?
- - Tin VIP khác tin thường như thế nào?
- - tin vip khác gì tin thường thế
- - Vip1 có gì hơn Vip2
- - vip2 có gì vip3
- - vip1 có gì nổi bật hơn vip2, vip3
- - gói tin càng đắt tiền càng tốt à
- - tin thường hiển thị sau tin vip à
+## intent:vip_post_details
+ - chi tiết gói [vip 1](post_package)
+ - chi tiết gói [vip 2](post_package) như nào
+ - chi tiết [vip1](post_package)
+ - gói [vip2](post_package) thì sao
+ - gói tin [vip1](post_package) như nào
+ - gói [vip1](post_package) thì sao nhỉ
+ - chi tiết các gói tin như nào nhỉ
+ - chi tiết các gói vip
+ - chi tiết gói vip
+ - chi tiết vip 3
+ - nội dung các gói vip như nào
+ - Nội dung các gói tin đăng
+ - Các gói tin đăng chi tiết thế nào
+ - Chi tiết các gói tin đăng
+ - Chi tiết các gói vip của bên mình
+ - Vui lòng tư vấn giúp tôi các gói tin
+ - tư vấn cho tôi các gói đăng tin của Meeyland nhé
+ - Vui lòng tư vấn giúp tôi các gói tin
+tư vấn cho tôi các gói đăng tin của Meeyland nhé
+ - tư vấn cho mình các gói tin đăng của meeyland
+ - tư vấn các gói tin đăng của meeyland
 
 ## intent:fee_of_vip_post
  - Đăng tin có mất phí không?
@@ -521,10 +587,19 @@
  - Tôi muốn đăng tin thì phí bao nhiêu?
  - Cho tôi hỏi là đăng tin có mất phí không?
  - Tin VIP mất phí bao nhiêu?
- - Cho hỏi giá gói vip1 là bao nhiêu
- - Giá vip1 là bao nhiêu thế admin
- - Cho mình hỏi giá vip2
- - Gói vip3 có đắt không thế
+ - cho hỏi giá gói [vip 3](post_package)
+ - cho hỏi giá gói [vip2](post_package)
+ - cho mình hỏi giá gói [vip 2](post_package)
+ - Cho hỏi giá gói [vip1](post_package) là bao nhiêu
+ - giá gói [vip3](post_package) có đắt không nhỉ
+ - Giá [vip1](post_package) là bao nhiêu thế admin
+ - gói vip gồm
+ - Giá đăng tin?
+ - Báo giá dịch vụ đăng tin giúp mình
+ - Đăng tin meeyland giá như nào bạn
+ - giá vip là
+ - Cho mình hỏi giá [vip2](post_package)
+ - Gói [vip3](post_package) có đắt không thế
  - Giá cả các gói như nào vậy
  - Giá các gói như nào admin nhỉ
  - cho hỏi giá [vip 1](post_package)
@@ -533,6 +608,13 @@
  - mình định đăng tin, nhưng không biết giá các gói vip như nào
  - mình muốn hỏi giá các gói vip
  - t định đăng tin dùng gói [vip 3](post_package), nhưng không biết giá cả như nào nhỉ
+ - các gói vip có đắt lắm không nhỉ
+ - chi phí cho các gói vip
+ - phí của đăng tin vip
+ - phí của các gói vip
+ - phí các gói vip như nào
+ - các gói vip có rẻ không
+ - gói vip có rẻ không
  - gói [vip 2](post_package) mà mua [1 tháng](duration) có được giảm giá không thế?
  - mua goi [vip2](post_package) [1 tuần](post_package) thì có được k
  - mua gói [vip1](post_package) [7 ngày](duration) thì giá như nào ạ
@@ -548,8 +630,16 @@
  - giá các gói tin đăng như thế nào
  - Tin Vip bên mình có mấy loại
  - Có bao nhiêu loại gói tin đăng
+ - các gói vip có đắt lắm không
+ - gói vip có đắt lắm không
+ - cho hỏi giá các gói tin vip
+ - các gói vip đắt ko vậy
+ - các gói vip giá như nào
  - Các gói tin đăng như thế nào vậy
  - gói đăng tin
+ - giá tin vip như nào
+ - thế tin vip có đắt không
+ - tin vip có đắt không
  - các loại gói tin đăng
  - các gói đăng tin
  - bên mình có mấy gói đăng tin
@@ -557,11 +647,19 @@
  - các loại gói vip như nào
  - phí các loại tin đăng như nào nhỉ
  - tôi hỏi gói tin đăng
- - tôi cần mua gói đăng tin
+ - các loại gói tin đăng
+ - các gói đăng tin
+ - bên mình có mấy gói đăng tin
  - Có bao nhiêu loại gói tin đăng
+ - có những loại tin vip gì ở meeyland
+ - có bao nhiêu loại tin vip
  - Giá các loại tin đăng như thế nào nhỉ
-
-## intent:type_of_post
+ - Có những loại tin vip gì
+ - có những loại tin vip gì
+ - có bao nhiêu loại tin vip
+ - bên mình có mấy loại tin vip
+ - bên mình có bao nhiêu loại tin vip
+ - meeyland có bao nhiêu loại tin vip
  - MeeyLand có mấy loại tin đăng
  - Bên mình có mấy loại tin đăng
  - có bao nhiêu loại tin đăng
@@ -569,6 +667,69 @@
  - các loại tin đăng
  - có mấy loại tin đăng
  - có mấy loại tin
+ - tin thường là gì
+ - tin vip là gì
+ - vip2 là gì
+ - tin vip1 là gì
+ - vip1 là gì
+
+## intent:post_package_compare
+ - gói [vip 3](post_package) khác gói [vip 1](post_package) như nào thế
+ - gói [vip 2](post_package) với gói [vip 3](post_package) có gì khác nhau
+ - gói [vip 1](post_package) khác gì [vip2](post_package) nhỉ
+ - [vip1](post_package) thì khác [vip3](post_package) ở điểm nào
+ - các gói tin đăng thì khác nhau chỗ nào
+ - các gói tin đăng thì khác nhau chỗ nào nhỉ
+ - Sự khác nhau giữa tin VIP và tin thường?
+ - tin vip khác gì tin thường thế
+ - [Vip1](post_package) có gì hơn [Vip2](post_package)
+ - [vip2](post_package) có gì khác [vip3](post_package)
+ - [vip1](post_package) có gì nổi bật hơn [vip2](post_package), [vip3](post_package)
+ - gói tin càng đắt tiền càng tốt à
+ - tin thường hiển thị sau tin vip à
+ - các gói tin khác nhau như nào
+ - điểm khác nhau giữa các gói tin
+ - điểm khác nhau giữa các gói tin vip
+ - điểm khác nhau giữa các gói 
+ - sự khác nhau giữa các gói tin như nào
+ - [vip1](post_package) có khác [vip 2](post_package) ko
+ - [vip 3](post_package) có đắt hơn [vip 2](post_package) không
+ - gói vip có đắt hơn [tin thường](post_package) không
+ - các gói vip có đắt hơn [tin thường](post_package) không
+ - các gói vip khác nhau như nào nhỉ
+ - [vip 2](post_package) với [tin thường](post_package) khác nhau như nào
+ - Tin Vip và tin thường khác nhau như thế nào?
+ - Tin VIP khác tin thường như thế nào?
+ - [tin thường](post_package) với [vip 1](post_package) có khác nhau ko
+ - [tin thường](post_package) khác với [vip 2](post_package) chỗ nào
+ - [tin thuong](post_package) khac [vip 2](post_package) chỗ nào
+ - điểm khác nhau giữa [tinthường](post_package) và tin vip
+ - các gói vip có gì khác nhau
+ - các gói đăng tin khác nhau như thế nào
+ - [vip1](post_package) có gì khác [vip 2](post_package) thế
+ - các gói tin đăng khác nhau như thế nào
+ - [vip 3](post_package) có gì khác với [tin thường](post_package)
+
+## intent:how_purchase_vip_post
+ - Tôi muốn mua gói [vip1](post_package)
+ - mình muốn mua [vip 3](post_package)
+ - mua các gói vip
+ - mình muốn mua gói vip
+ - tôi muốn mua gói vip
+ - tôi muốn mua các gói đăng tin
+ - mình cần mua gói vip
+ - mình muốn mua gói đăng tin
+ - tôi cần mua gói đăng tin
+ - mua gói đăng tin như nào thế
+ - mình cần mua gói [vip 1](post_package) nhé
+ - cho mình mua gói [vip 2](post_package)
+ - cách mua gói đăng
+ - mua các gói đăng ở meeyland như thế nào
+ - làm sao để mua các gói đăng tin
+ - mua gói tin vip như thế nào
+ - mua tin vip sao nhỉ
+ - tôi cần mua gói đăng tin
+ - làm sao để mua các gói đăng tin ở meeyland
 
 ## intent:what_is_up_post
  - Up tin là gì?
@@ -605,6 +766,7 @@
  - Up tin như thế nào?
  - Cách up tin đăng
  - up tin đăng ntn?
+ - hướng dẫn tôi cách cài đặt đẩy tin
  - Up tin ntn?
  - Tôi cần up tin thì làm ntn?
  - up tin như thế nào vậy
@@ -612,6 +774,8 @@
  - làm sao để up tin nhỉ
  - tôi không biết cách up tin như thế nào
  - làm sao để up tin đây
+ - hướng dẫn tôi đẩy tin lên top nhé
+ - hướng dẫn minh đẩy tin lên top nhé
  - up tin như thế nào thế
  - muốn up tin thì làm thế nào
  - làm sao để up tin bây giờ
@@ -636,6 +800,11 @@
  - đẩy tin sao giờ
  - đẩy tin thì làm tn
  - vào đâu để đẩy tin
+ - cho tin lên đầu như thế nào
+ - đưa tin lên đầu như thế nào
+ - làm sao để đưa tin lên đầu
+ - sao để đưa tin lên đầu
+ - vui lòng hướng dẫn tôi cách đưa tin lên đầu
  - muốn đẩy tin thì vào đâu
 
 ## intent:fee_of_up_post
@@ -646,8 +815,8 @@
  - Up tin thì tính phí như thế nào?
  - tôi muốn hỏi phí up tin
  - cho tôi phí up tin của các gói khác nhau
- - gói vip1 thì phí up tin như thế nào
- - tôi đang dùng gói vip2 thì phí up tin như nào
+ - gói [vip1](post_package) thì phí up tin như thế nào
+ - tôi đang dùng gói [vip2](post_package) thì phí up tin như nào
  - tin thường thì up tin có mất phí không
  - up tin cho tin thường cũng mất phí ạ
  - đẩy tin có mất phí không?
@@ -657,8 +826,8 @@
  - đẩy tin thì tính phí như thế nào?
  - tôi muốn hỏi phí đẩy tin
  - cho tôi phí đẩy tin của các gói khác nhau
- - gói vip1 thì phí đẩy tin như thế nào
- - tôi đang dùng gói vip2 thì phí đẩy tin như nào
+ - gói [vip1](post_package) thì phí đẩy tin như thế nào
+ - tôi đang dùng gói [vip2](post_package) thì phí đẩy tin như nào
  - tin thường thì đẩy tin có mất phí không
  - đẩy tin cho tin thường cũng mất phí ạ
 
@@ -708,6 +877,8 @@
 ## intent:approval_time
  - Bao giờ bài đăng của tôi được duyệt?
 
+ - Duyệt tin đi bot
+ - bot duyệt bài giúp mình nhé
  - Thời gian để duyệt bài đăng là bao lâu ?
  - Khi nào bài của t mới được phê duyệt thế
  - Thời gian để duyệt bài là bao lâu thế
@@ -738,6 +909,80 @@
  - Tôi vừa đăng xong tin mà không thấy tin đăng hiển thị?
  - Tôi đăng 2 tin, một tin bán nhà [Cầu Giấy](location) thấy hiển thị rồi, mà tin cho thuê chung cư ở [Hoàng Quốc Việt](location) lại không thấy đâu?
 
+## intent:is_refund_after_putdown_post
+ - Tôi đăng ký gói tin [Vip 2](post_package) và hạ tin khi chưa hết thời hạn, tôi có được hoàn tiền không ?
+ - Gỡ bỏ gói [vip 1](post_package) trước thời hạn có được trả lại tiền không thế
+ - Nếu tôi thay đổi loại tin từ tin [vip 3](post_package) thành tin thường thì có được hoàn lại tiền không?
+ - tôi muốn sửa gói tin [vip 1](post_package) thành tin [vip 2](post_package) thì có được hoàn tiền ko?
+ - gỡ bỏ gói tin [vip3](post_package) trước thời hạn thì có được hoàn lại tiền dư không?
+ - tin đang đăng là tin [vip2](post_package) nhưng xoá tin trước hạn thì tiền dư trả lại không
+ - Khi thay đổi loại tin thì với tin từ cấp độ cao xuống cấp độ thấp thì có được hoàn lại số tiền dư ra khi đổi tin không ?
+ - hạ tin hoàn tiền không?
+ - meeyland có cho gỡ tin khi chưa hết thời hạn đăng tin không
+ - hoàn tiền không khi tôi hạ tin
+ - hoàn tiền không khi tôi gỡ tin sớm
+ - meeyland cho phép hạ tin không
+ - meeyland có cho gỡ tin khi chưa hết thời hạn đăng tin không
+ - hạ tin vip hoàn tiền không?
+ - meeyland cho phép hạ tin không
+ - hoàn tiền không khi tôi hạ tin
+ - hoàn tiền không khi tôi gỡ tin sớm
+
+## intent:request_down_post
+ - tôi muốn hạ tin
+ - tôi cần hạ tin
+ - hạ tin làm sao đây
+ - tôi muốn gỡ tin đang đăng làm sao đây
+ - gỡ tin xuống sao nhỉ
+ - đang đăng gói [vip1](post_package) [90 ngày](duration), giờ cần thôi thì làm sao
+ - hạ tin hoàn tiền như nào?
+ - hạ tin vip hoàn tiền như nào?
+ - gỡ tin vip làm thế nào nhỉ
+ - gỡ tin vip như thế nào đây
+ - làm sao để gỡ tin vip chưa hết hạn
+ - làm sao để được hoàn tiền khi gỡ tin vip
+ - hạ tin hoàn tiền
+ - tính giúp tôi số tiền hoàn khi hạ tin
+ - khi hạ tin thì được hoàn bao nhiêu phần trăm
+ - tính số tiền còn lại khi hạ tin như thế nào
+
+## intent:request_change_post_package
+ - tôi muốn đổi gói
+ - tôi cần đổi gói
+ - đổi gói làm sao đây
+ - tôi muốn đổi gói tin đang đăng làm sao đây
+ - đổi gói tin sao nhỉ
+ - đang đăng gói vip1 90 ngày, giờ muốn hạ xuống vip2 thì làm sao
+ - đổi gói tin tính tiền như nào?
+ - đổi gói tin vip hoàn tiền như nào?
+ - đổi gói tin vip làm thế nào nhỉ
+ - đổi gói tin vip như thế nào đây
+ - làm sao để đổi gói tin vip chưa hết hạn
+
+## intent:channel_app
+ - meyland có app không?
+ - app của meeyland cũng tên là meeyland à?
+ - app tên gì
+ - tên của app là gì
+ - tên của app thế nào
+ - tên của app như nào nhỉ
+ - tên ap là gì
+ - app là Meeyland à
+ - ap tên là Meeyland luôn sao
+ - ứng dụng điện thoại tên là gì
+ - tên ứng dụng điện thoại là gì
+ - công ty mình có ứng dụng điện thoại không?
+ - có ứng dụng trên điện thoại không
+ - có app trên điện thoại không
+ - bên mình có app ko
+ - bên mình có app không nhỉ
+ - bên mình có ứng dụng cho điện thoại không
+ - có ứng dụng trên smartphone không
+ - có ứng dụng cho điện thoại không
+ - có ứng dụng cho điện thoại ko
+ - ứng dụng trên smartphone là gì
+ - tên ứng dụng điện thoại là gì
+
 ## intent:how_download_app
  - Làm thế nào để tải App? 
  - tải app meeyland như nào nhỉ
@@ -747,6 +992,43 @@
  - app download như nào đây
  - link download app như thế nào
  - làm sao để download app của meeyland
+ - tôi muốn sử dụng app meeyland
+ - app down ở đâu thế
+ - không tìm thấy app
+ - không tìm thấy app ở đâu cả
+ - cho hỏi app ở đâu thế nhỉ
+ - tải ứng dụng ở đâu nhỉ
+ - mình muốn tải app meeyland thì làm thế nào
+ - xin link tải ứng dụng đi
+ - cho mình hỏi tải app meeyland ở đâu nhỉ
+ - cho mình hỏi download ứng dụng ở đâu thế, mình tìm mãi không thấy
+ - mình muốn down ứng dụng mà không thấy link
+ - mình muốn download app
+ - mình muốn tải app meeyland 
+ - tải ứng dụng ở đâu thế
+ - cho hỏi cách tải app với
+ - tôi cần download ứng dụng meeyland
+ - tìm app mà ko thấy
+ - tôi cần dùng app meeyland
+ - tôi muốn down ứng dụng meeyland
+ - tôi định dùng app 
+ - tôi cần dùng app meeyland
+ - tôi muốn dùng app meeyland
+ - link app ở đâu tìm ko thấy
+ - cai app o dau
+ - app
+ - cài app ở đâu
+ - cài ứng dụng ở đâu
+ - tim link cai app
+ - link cài app ở đâu
+ - tìm ko thấy app để cài
+ - mình muốn cài app
+ - cài đặt app ở đâu
+ - cài đặt ứng dụng ở đâu thế
+ - cài  đặt ứng dụng ở đâu
+ - cài app Meeyland như nào
+ - tải ở đâu
+ - bạn cho mình hỏi cách tải app meeyland với
 
 ## intent:error_when_using_app
  - Tôi gặp lỗi khi dùng App
@@ -795,55 +1077,125 @@
 
 ## intent:how_search_info
  - Làm thế nào để tìm kiếm BĐS?
+ - vậy hướng đẫn tôi tìm kiếm tin
  - làm thế nào để tìm kiếm
+ - Mình muốn [bán](post_purpose) bất động sản
  - làm sao để tìm kiếm 
- - tôi cần mua nhà, tìm kiếm như nào
- - tôi cần bán nhà tìm kiếm như nào
- - tìm người mua nhà thì làm thế nào
- - tìm người bán nhà thì làm thế nào
- - tìm bds cho thuê thì làm thế nào
- - tìm bds sang nhượng thì làm thế nào
+ - mình muốn [mua](post_purpose) bất động sản
+ - mình muốn [mua](post_purpose) bđs
+ - Mình đang muốn [bán](post_purpose) bất động sản 🤪
+ - mình muốn [mua](post_purpose) 1 chung cư 3 pn
+ - tôi cần [mua](post_purpose) nhà, tìm kiếm như nào
+ - tôi cần [bán](post_purpose) nhà tìm kiếm như nào
+ - tìm người [mua](post_purpose) nhà thì làm thế nào
+ - tìm người [bán](post_purpose) nhà thì làm thế nào
+ - tìm bds [cho thuê](post_purpose) thì làm thế nào
+ - tìm bds [sang nhượng] thì làm thế nào
  - cần tìm căn hộ thì tìm kiếm như nào
  - cần tìm căn hộ chung cư thì làm thế nào
- - tôi cần mua nhà, tìm như nào
- - tôi cần bán nhà tìm như nào
- - cần tìm người mua nhà thì làm thế nào
- - cần tìm người bán nhà thì làm thế nào
- - cần tìm bds cho thuê thì làm thế nào
- - tìm bds sang nhượng thì làm thế nào đây
+ - tôi cần [mua](post_purpose) nhà, tìm như nào
+ - tôi cần [bán](post_purpose) nhà tìm như nào
+ - cần tìm người [mua](post_purpose) nhà thì làm thế nào
+ - cần tìm người [bán](post_purpose) nhà thì làm thế nào
+ - cần tìm bds [cho thuê](post_purpose) thì làm thế nào
+ - tìm bds [sang nhượng](post_purpose) thì làm thế nào đây
  - cần tìm căn hộ thì tìm như nào đây
  - cần tìm căn hộ chung cư thì tìm thế nào
  - mình muốn tìm nhà ở quận bắc từ liêm
- - Mình muốn tìm mua nhà giá 3 tỉ phố Ngọc Hà
- - tôi muốn mua nhà, tìm kiếm như nào
- - tôi muốn bán nhà tìm kiếm như nào
+ - Mình muốn tìm [mua](post_purpose) nhà giá 3 tỉ phố Ngọc Hà
+ - tôi muốn [mua](post_purpose) nhà, tìm kiếm như nào
+ - tôi muốn [bán](post_purpose) nhà tìm kiếm như nào
  - muốn tìm căn hộ thì tìm kiếm như nào
  - muốn tìm căn hộ chung cư thì làm thế nào
- - Mình muốn mua nhà 3 tỉ phố ngọc hà
- - tôi muốn mua nhà, tìm như nào
- - tôi muốn bán nhà tìm như nào
- - muốn tìm người mua nhà thì làm thế nào
- - muốn tìm người bán nhà thì làm thế nào
- - Nhưng mình muốn thuê nhà 20 triệu
- - cần cho thuê nhà
- - cần thuê nhà
- - cần mua nhà
- - Bạn có nhu cầu nào sang nhượng cửa hàng giá rẻ chút không?
- - muốn sang nhượng
- - cần tìm sang nhượng nhà
- - cần sang nhượng nhà
- - cần bán nhà
- - muốn cho thuê nhà
- - muốn thuê nhà
- - Mình muốn bán nhà nhanh?
+ - Mình muốn [mua](post_purpose) nhà 3 tỉ phố ngọc hà
+ - mình muốn [mua](post_purpose) nhà 10 tỷ ở ba đình
+ - tôi muốn [mua](post_purpose) nhà, tìm như nào
+ - tôi muốn [bán](post_purpose) nhà tìm như nào
+ - muốn tìm người [mua](post_purpose) nhà thì làm thế nào
+ - muốn tìm người [bán](post_purpose) nhà thì làm thế nào
+ - Nhưng mình muốn [thuê](post_purpose) nhà 20 triệu
+ - cần [cho thuê](post_purpose) nhà
+ - cần [thuê](post_purpose) nhà
+ - cần [mua] nhà ở HCM
+ - Bạn có nhu cầu nào [sang nhượng](post_purpose) cửa hàng giá rẻ chút không?
+ - muốn [sang nhượng](post_purpose)
+ - cần tìm [sang nhượng](post_purpose) nhà
+ - cần [sang nhượng](post_purpose) nhà
+ - cần [bán](post_purpose) nhà
+ - muốn [cho thuê](post_purpose) nhà
+ - muốn [thuê](post_purpose) nhà
+ - Mình muốn [bán](post_purpose) nhà nhanh?
+ - Nếu cần [sang nhượng](post_purpose) cửa hàng phải làm sao?
+ - mình muốn tìm tin ở hD
+ - Muốn [mua](post_purpose) đất thì làm thế nào
+ - muốn [bán](post_purpose) đất thì làm tn
+ - muốn [bán](post_purpose) đất
+ - muốn [mua](post_purpose) đất
+ - có mảnh đất nào khu vực hà đông k
+ - Mình muốn [mua](post_purpose) nhà 2 tỷ thì làm thế nào
+ - có ai [bán](post_purpose) đất nền ở Hà đông tài chính 1 tỉ k
+ - mình có một căn nhà cần [cho thuê](post_purpose) ngay trong ngày bạn tự vấn giúp mình
+ - Tôi cần [mua](post_purpose) nhà đất ở hà nội
+ - thế còn muốn [thuê](post_purpose) nhà
+ - Mình muốn [mua](post_purpose) biệt thự
+ - Làm thế nào để [mua](post_purpose) được biệt thự bạn ơi?
+ - mình muốn biết những tin đang bán nhà ở HD
+ - Mình cần [mua](post_purpose) 1 quán cà phê ?
  - Mình muốn tìm nhanh một căn nhà 10 tỷ?
- - muốn mua nhà
- - muốn sang nhượng nhà
- - muốn bán nhà
- - muốn tìm bds cho thuê thì làm thế nào
+ - muốn [mua](post_purpose) nhà
+ - mình hỏi [thuê](post_purpose)
+ - Xin hỏi chung cư nào ở quận đống đa có 30m2
+ - [Thuê](post_purpose) văn phòng 100 tr thì phải làm sao?
+ - mình cần [mua](post_purpose) đất
+ - [mua](post_purpose) nhà ở Hà Nội thì làm thế nào
+ - muốn [sang nhượng](post_purpose) nhà
+ - [mua](post_purpose) nhà làm thế nào?
+ - có nhà nào [bán](post_purpose) gần đây không
+ - có nhà nào [bán](post_purpose) không
+ - muốn [bán](post_purpose) nhà
+ - muốn tìm bds [cho thuê](post_purpose) thì làm thế nào
  - muốn tìm căn hộ thì tìm như nào đây
+ - tôi muốn [mua](post_purpose) 1 căn chung cư tầm 1.5 tỷ
+ - tôi muốn tìm thông tin nhà ở ngã tư sở
+ - tôi muốn tìm thông tin nhà
  - muốn tìm căn hộ chung cư thì tìm thế nào
+ - tôi muốn tìm thông tin nhà ở hà nội
  - mình cần tìm nhà ở quận bắc từ liêm
+ - Mình cần tìm bất động sản
+ - tôi muốn [thuê](post_purpose) nhà
+ - tôi muốn [mua](post_purpose) nhà
+ - Thế thì nhà [thuê](post_purpose) trọ đẹp đẹp có được không
+ - mình muốn [sang nhượng](post_purpose) nhà ở Bạch Mai
+ - tôi có thể tìm nhà trên meeyland như thế nào
+ - tôi muốn [mua sang nhượng](post_purpose)
+ - tôi cần [mua sang nhượng](post_purpose)
+ - tôi muốn [mua sang nhượng](post_purpose) cửa hàng
+ - tôi muốn [mua sang nhượng](post_purpose) nhà trọ
+ - tôi có thể tìm [thuê](post_purpose) nhà trên meeyland  như thế nào
+ - mình muốn [mua](post_purpose) nhà
+ - Tôi muốn [thuê](post_purpose) nhà tại khu vực hà nội thì làm thế Lào?
+ - mình muốn [thuê](post_purpose) nhà trọ
+ - bán bất động sản
+ - mua nhà
+ - mua nhà đất
+ - nhà phố
+ - bán công ty
+ - mua nhà ở hà nội
+ - bán nhà thì làm sao
+ - tìm kiếm thì sao
+ - Tìm nhà ở đâu?
+ - tìm nhà như nào
+ - Mình quan tâm bất động sản hà nôi
+ - Mua đất Mỹ đình
+ - tôi cần [mua](post_purpose) nhà ở hà nội
+ - [bán](post_purpose) nhà thì làm sao
+ - [Mua](post_purpose) đất Mỹ đình
+ - [Bán](post_purpose) đất cầu giấy
+ - mình cần [mua](post_purpose) nhà ở nhổn
+ - cần tìm nhà riêng ở cầu giấy
+ - mình cần tìm nhà riêng ở cầu giấy khoảng 4 tỷ
+ - cần tìm [thuê](post_purpose) nhà mặt phố tại hà nội
+ -  nhu cầu nào [sang nhượng](post_purpose) cửa hàng giá rẻ chút không
 
 ## intent:how_contact_to_post_owner
  - Làm sao để chat trực tiếp với người bán
@@ -852,6 +1204,9 @@
  - t muốn chat với người bán thì làm thế nào
  - Cho hỏi chat với người bán ở đâu thế
  - Tôi có thể liên lạc với người đăng tin trên website bằng cách nào?
+ - để liên lạc với người đăng tin thì làm thế nào
+ - liên hệ với người đăng tin
+ - tôi muốn liên hệ với người đăng tin thì lấy thông tin ở đâu
  - Tôi có thể liên lạc với người đăng tin trên web như thế nào?
  - Làm cách nào tôi có thể liên lạc với người đăng tin?
  - Liên lạc với người đăng tin trên web như nào vậy bạn?
@@ -886,27 +1241,125 @@
  - Cho tôi xin số điện thoại liên lạc của tổng đài?
  - Khi cần trợ giúp, tôi có thể gọi vào số điện thoại nào?
  - Cho tôi số điện thoại của bộ phận chăm sóc khách hàng?
+ - tôi muốn gặp bạn chăm sóc khách hàng
  - chăm sóc khách hàng
  - bộ phận chăm sóc khách hàng
  - liên hệ chăm sóc khách hàng
  - liên hệ tổng đài
  - cho tôi hỏi cách liên hệ tổng đài
  - tổng đài meeyland
+ - Mình cần hỗ trợ trực tiếp
+ - có thể hỗ trợ trực tiếp không
+
+## intent:forward_to_customer_service
+ - Muốn khai báo tai khoản ngân hàng vào mục nào
+ - Điểm MADS này tang hay giảm hang ngày
+ - Nhà trong quy hoạch là gì?
+ - Hồ sơ nhà dự án đền bù gồm những giấy tờ gì?
+ - Có bán dự án không?
+ - Bán nhà không?
+ - Hoangmaichung.com là gì?
+ - Sàn bất động sản nào tốt nhất
+ - Bao lâu thì bán được nhà?
+ - đăng tin hộ tôi với
+ - đăng tin hộ tôi được không?
+ - Cách phân bổ dòng tiền của MeeyLand?
+ - bao lâu thì cho thuê được nhà
+ -  Trợ lý  tổng giám đốc meeyland là ai
+ - trợ lý ceo là ai
+ - ban giám đốc gồm những ai
+ - Mình gửi thông tin bạn đăng giúp mình nhé?
+ - mình muốn bạn đăng giúp cơ?
+ - Dự án này có lớn ko?
+ - meeyland có là dự án lớn không?
+ - Nguyễn hữu kiên là ai?
+ - Kiên cto là ai?
+ - Nhân sự có bao nhiêu người
+ - Xem quy hoạch thì phải làm sao?
+ - Nhà mình có nằm trong quy hoạch ko bạn?
+ - meeyland nay có gì mới không
+ - tôi cần tư vấn nâng cao
+ - tôi cần tư vấn mua nhà đất
+
+## intent:how_invest_to_meeyland
+ - Tôi muốn đầu tư MeeyLand
+ - Tôi muốn mua cổ phần MeeyLand
+ - Tôi bảo tôi muốn đầu tư meeyland
+ - Tôi muốn cổ phần MeeyLand
+ - Tôi muốn mua cổ phần Meey Land
+ - tôi muốn đầu tư vào meey
+ - mình muốn tìm hiểu về việc đầu tư
+ - Tôi muốn mua đồng meey
+ - Tôi muốn đầu tư, vì MeeyLand nó quá tốt
+ - mua meey thì làm tn
+ - Làm sao để mua meey nhỉ
+ - Mua meey thế nào đấy
+ - tôi muốn đầu tư
+ - đồng meey thế nào
+ - đồng meey là gì
+ - mua meey như thế nào
+ - làm sao để mua meey
+ - mua meey thế nào nhỉ
+ - muốn đầu tư thì làm như nào
+ - tôi muốn đầu tư vào meey land thì làm như nào
+ - làm sao để đầu tư đấy
+ - làm sao để đầu tư
+ - đầu tư vào meey như nào nhỉ
+ - Tôi muốn đầu tư vào MeeyLand vì nó rất tốt
+
+ - Tôi muốn đầu tư, MeeyLand quá ok, đăng ký như thế nào?
+ - cổ phiếu meeyland ấy
+ - meeyinvest là gì
+ - meeyinvet là gì
+ - meeyinvest là gì thế
+ - meeyinvest là sao nhỉ
+ - cho mình hỏi meeyinvest là gì
+ - Cách mua Mey của công ty
+ - Tôi muốn mua cổ phần MeeyLand
+ - Tôi bảo tôi muốn đầu tư meeyland
+ - Tôi muốn đầu tư, vì MeeyLand nó quá tốt
+ - tham gia đầu tư như nào giờ
+ - Mình muốn góp tiền vào Meeyland ạ
+ - giá mey
+ - giá meey
+ - Giá meey bao nhiêu
+ - Giá mey bao nhiêu
+ - hiện tại giá meey là bao nhiêu
+ - giá đồng meey là bao nhiêu
 
 ## intent:greet
  - Xin chào
  - Hi
+ - Alo
  - Chào bot
  - Hello
  - Chào bạn
  - Hello bot
+ - hề lố
  - hi bot
  - hi meeybot
  - chào bot nhé
+ - chào buổi sáng
+ - chào buổi sáng bot nhé
+ - chào buổi trưa
+ - chào buổi tối
+ - chào buổi sáng bot
+ - Này
+ - Hê nhố
+ - Hế nhô
+ - hê lố
+ - Hế lô
+ - Hê Lô
+ - bot này
+ - này
+ - chào buổi trưa bot
+ - chào buổi tối bot
  - hilu bot
  - hilu ngày mới
  - helo ngày mới
  - hiii
+ - alo
+ - halo
  - hiiiiiii
  - hai bot
  - 2 bot
@@ -922,26 +1375,95 @@
  - bot ơi
  - xin chao
  - chao
+ - Hello hân hạnh biết bạn!
+ - còn đó không
+
+## intent:user_introduce_name
+ - mình tên [Hùng](name)
+ - tên mình là [Quang](name)
+ - mình tên là [Ngọc](name)
+ - mình tên là [Hải](name)
+ - Mình là [Hằng](name)
+ - Mình là [Khải](name)
+ - Mình là [mạnh](name)
+ - mình là [Đỗ Mạnh](name)
+ - Mình là [trọng nghĩa](name)
+ - t tên [trọng dũng](name)
+ - t tên là [Đỗ](name)
+ - tớ tên [Tuấn](name)
+ - tên mình là [Hoài](name)
+ - mình có tên là [Hoàn](name)
+ - tên tớ là [huế](name)
+ - t tên là [Huy](name)
+ - mình là [Duyên](name)
+ - Mình là [Kỳ duyên](name)
+ - [Thành](name) là tên mình
+ - [Thuật](name) là tên mình
+ - mình tên [Hiếu](name)
+ - Mình là [Thúy Hằng](name)
+ - mình tên là [Bùi Hải] nhé
+ - tên của mình là [Việt Nam](name) nhé
+ - tên là [Minh](name)
+ - tên là [Hồng](name)
+ - mình tên [Lan Anh](name)
+ - tên t là [Hải Anh](name)
+ - mình là [Hà](name)
+ - tên [Hồng](name)
+ - tên [Khang](name)
+ - [Hải](name) là tên mình
+ - bố mẹ đặt tên mình là [Nghĩa](name)
+ - sinh ra mình đã có tên là [Kiên](name)
+ - t là [Mạnh](name)
+ - họ tên mình là [Phan Duy Anh](name) đó
+ - mình là [Hồ Hương](name)
+ - tên mình [Quốc Huy](name)
+ - t tên là [Quỳnh](name), rất vui được làm quen :D
+ - chào bạn, mình tên là [Văn Dũng](name)
+ - mình tên [Ngọc Hân](name)
+ - mình là [Vũ](name), rất vui được nói chuyện với bạn
+ - tên mình là [Cao Kỳ](name) nói chuyện với mình tí nhé
 
 ## intent:user_need_help
  - cho hỏi cái
  - cho mình hỏi
+ - mình hỏi tí
  - hỏi cái
+ - giúp mình câu hỏi này với
+ - chào buổi sáng, hỗ trợ tôi được không?
  - cho hỏi cái này với
  - mình có chút thắc mắc
  - tôi có chút thắc mắc
+ - Mình muốn tư vấn
+ - mình cần hỗ trợ
+ - mình cần hỏi
  - cho mình hỏi cái này với
  - cho mình hỏi cái này
  - cho hoi cai nay
  - ê cho hỏi
  - cho hoi voi
+ - bạn trả lời giúp mình cái này
  - cho mình hỏi câu này được không
  - giúp mình với
+ - giúp mình việc này
  - giúp t với
+ - câu này bot trả lời được không
+ - mình cần hỏi việc này
+ - bạn giúp mình với
+ - trả lời giúp mình với
+ - mình cần bot giúp
+ - mình cần hỏi tí
+ - mình cần hỏi cái này
+ - m cần hỏi cái này
+ - mình có câu hỏi cho bot
+ - bot trả lời giúp mình
 
 ## intent:thank
  - Cảm ơn
  - Thank
+ - Da cam on b nll 😍
+ - chúc bot vui vẻ nhé
+ - cam on
+ - cam on nhe
  - Thanks
  - Cám ơn nhé
  - Cám ơn Bot
@@ -950,31 +1472,16 @@
 ## intent:bye
  - bye
  - chào tạm biệt
+ - tạm biệt nhé
  - bye mày
  - by
  - bai bai
+ - bi bi
  - bye nhé
  - bai nhé
  - good bye
  - GB
  - gbye
-
-## intent:affirm
- - rồi nhé
- - mình chuẩn bị rồi
- - rồi ạ
- - rồi đó
- - yes
- - đồng ý
- - xác nhận
- - làm rồi nhé
- - chắc chắn rồi
- - oke
- - oke nhé
- - okeee
- - có nhé
- - có đấy
- - có
 
 ## intent:wait_a_minute
  - đợi tôi chút
@@ -989,6 +1496,30 @@
  - đi có việc tí đã
  - wait a minute
 
+## intent:affirm
+ - rồi nhé
+ - mình chuẩn bị rồi
+ - rồi ạ
+ - rồi đó
+ - yes
+ - đồng ý
+ - Ok bạn nhé !
+ - Ok bạn nhé
+ - Oke bạn
+ - xác nhận
+ - làm rồi nhé
+ - ừm
+ - ừ
+ - chắc chắn rồi
+ - oke
+ - Oke
+ - oke nhé
+ - okeee
+ - có nhé
+ - có đấy
+ - Có
+ - có
+
 ## intent:deny
  - mình chưa
  - t vẫn chưa
@@ -998,8 +1529,15 @@
  - chưa
  - không
  - không được
+ - mãi vẫn không được
+ - mãi vẫn thế thôi
+ - chẳng thay đổi gì
+ - vẫn thế
  - không được đâu
  - không
+ - k
+ - k ạ
+ - nâu
  - no
  - no no
  - vẫn không được
@@ -1007,8 +1545,28 @@
  - vẫn lỗi
  - đã chọn gửi lại rồi mà vẫn không được ấy ạ
  - gửi lại rồi mà không được
+ - không tôi không thích
+ - không tôi không muốn nói
+ - không tôi không muốn trả lời
+ - tất nhiên không
+ - hoàn toàn không
+ - tôi từ chối
+ - tôi không muốn đưa bot email
+ - tôi không muốn đưa bot số điện thoại
+ - tôi không nghĩ vậy
+ - tôi không thích điều này
+ - tôi không chấp nhận
+ - không chấp nhận
+ - không được
+ - sợ rằng câu trả lời là không
+ - câu trả lời là không nhé
+ - không nhé
+ - tôi không chắc chắn
+ - không cảm ơn
+ - không quên đi
+ - không đồng ý
 
-## intent:next_step
+## intent:request_more
  - mình rồi, làm thế nào nữa
  - làm thế nào nữa vậy?
  - rồi làm tn nữa?
@@ -1018,18 +1576,84 @@
  - rồi làm gì nữa
  - bước tiếp theo là gì
  - bước tiếp theo như thế nào
+ - xong rồi gì nữa
+ - giải thích thêm đi
+ - giải thích giùm sao lại cần thông tin đó
+ - bạn có thể nói rõ hơn được không?
+ - hãy giải thích cho tôi
+ - hãy nói rõ cho tôi
+ - tìm giúp luôn đi
+ - tìm giúp tôi luôn đi đi
+ - mình muốn thêm thông tin
+ - tôi muốn biết sao bạn cần thông tin này
+ - bạn có thể cho mình xem luôn không
+ - hãy giải thích cho tôi
+ - hãy nói rõ hơn 
+ - cụ thể hơn được không
+ - thêm thông tin được không
+ - chi tiết hơn đi
+ - chi tiết hơn được không
+ - tại sao
+ - sao nó lại cần
+ - cung cấp thêm thông tin đi
+ - bạn nói vậy nghĩa là gì
+ - Bạn tư vấn giúp mình nhé
+ - bot tìm giúp luôn đi
+ - tìm hộ luôn đi
+ - tìm luôn cho nhanh
+ - Bạn chỉ cho mình cách tìm nhé
+ - gì nữa
+ - tìm giúp luôn đi
+ - nghĩa là gì
+ - cái đó nghĩa như nào?
+ - Nói đi
+ - ý bạn là sao?
+ - chi tiết
  - rồi sao
+ - chi tiết hơn được không
+ - chi tiết hơn đi
+ - chi tiết đi
 
 ## intent:react_negative
  - Phức tạp thế
+ - bot có vẻ ngố
+ - tào lao
+ - tào lao quá
+ - bot tào lao
+ - tào lao ghê
+ - ngố quá
+ - hơi ngố đấy
+ - bot buồn cười quá
  - lằng nhằng phết nhỉ
+ - Bot khờ
  - Sao phức tạp thế
+ - Bạn chảnh vậy
+ - khó hiểu quá
+ - liên thiên
+ - linh tinh
+ - trả lời không khớp gì cả
+ - trả lời linh tinh
+ - trả lời không khớp
+ - không khớp gì cả
+ - hâm à
+ - dở hơi
+ - nhố nhăng
+ - hâm lắm
+ - hâm
+ - Hâm à, tôi bảo bạn ngu
+ - lâu quá
+ - vớ vẩn
+ - chán bot nhỉ
  - Sao nhiều bước thế
  - lằng nhằng phết nhỉ
  - sao nhì nhằng thế
  - sao mà phức tạp thế nhỉ
  - hướng dẫn từ từ thôi xem nào
  - hướng dẫn từ từ thôi
+ - trả lời liên quan quá
+ - trả lời sai rồi kìa
+ - trả lời tệ quá đấy
+ - không trả lời đúng gì
  - buồn quá
  - tệ quá
  - quá dở
@@ -1041,68 +1665,120 @@
  - quá thất vọng với bot
  - thất vọng quá
  - bot dở quá đi
+ - chatbot chán quá
  - bot quá dở
+ - ngố tàu
+ - ko thông minh lắm
+ - không thông minh tẹo nào
+ - ko thông minh như mình nghĩ
+ - sao m ngu thế
+ - bot ngu thế
+ - ngu lắm
+ - hơi ngu
+ - bot cùi
+ - bot chán vãi
+ - chán nhỉ
+ - bot ngố quá
+ - chán lắm
  - bot cực tệ
+ - sai rồi
+ - không đúng gì cả
+ - cứ sao ấy
+ - chả giúp được
+ - vớ vẩn, không đúng gì
+ - chán vãi
  - rất rất cùi
  - còn tệ lắm
+ - không trả lời đúng được à
+ - lâu vậy
+ - ngu như bò
 
 ## intent:react_positive
  - tốt lắm
+ - bot giỏi quá
+ - bot thông minh quá
+ - haahaa
+ - haha
+ - yêu lắm
+ - tuyệt vời
  - quá tốt
  - quá ấn tượng
+ - vui đấy
+ - Hay quá
+ - hay quá
+ - hay
+ - ngoan quá
+ - giỏi nhở
+ - giỏi quá
+ - giỏi thế
+ - giỏi lắm
+ - đáng yêu quá
+ - đáng eo
+ - Đáng yêu thế
+ - thông minh nhỉ
+ - Thấy bảo ấy thông minh lắm
+ - thông minh vậy
+ - tốt quá
+ - khá thông minh
+ - thông minh
+ - thông mình lắm
+ - Nói chung là bạn thông minh
+ - yêu
+ - iu quá
+ - đáng iu
+ - Bạn thật tuyệt, tôi yêu bạn 
+ - yêu nhắm
+ - yêu quá
+ - đáng yêu
+ - ngoan đấy
+ - cũng được nhỉ
+ - vui tính nhỉ
  - hay lắm
  - hay nhỉ
  - khá lắm
  - chất lượng quá
  - cực chất
- - haaaa
- - haahaa
- - haha
- - yêu lắm
- - tuyệt vời
+ - Thấy giới thiệu bạn Thông minh lắm
+ - Tôi yêu bạn
+ - Bạn thật tuyệt, tôi yêu bạn ❤
+ - Yêu em
 
 ## intent:canthelp
  - mình nghĩ bạn không giúp mình được
  - mình nghĩ bạn không trả lời được
  - chỉ có thế thôi à
+ - chỉ có vậy thôi à
  - tất cả chỉ thế thôi sao
  - đoán là không giúp được đâu
  - đoán là không biết đâu
  - còn gì nữa không?
  - ok mình đoán bạn không giúp được
- - sai rồi
  - Vậy à. Thế thôi
- - không đúng gì cả
- - cứ sao ấy
- - chả giúp được
- - vớ vẩn, không đúng gì
  - thôi
+ - Rasa cứng nhắc thế :3
  - thôi, dừng trao đổi
+ - chẳng thông minh tẹo nào
  - thôi dừng nói chuyện
  - thôi, dừng tại đây
  - câu trả lời không đúng
 
-## intent:request_explain_more
- - giải thích thêm đi
- - giải thích giùm sao lại cần thông tin đó
- - bạn có thể nói rõ hơn được không?
- - hãy giải thích cho tôi
- - hãy nói rõ cho tôi
- - mình muốn thêm thông tin
- - tôi muốn biết sao bạn cần thông tin này
- - bạn có thể cho mình xem luôn không
- - hãy giải thích cho tôi
- - hãy nói rõ hơn 
- - tại sao
- - sao nó lại cần
- - cung cấp thêm thông tin đi
- - bạn nói vậy nghĩa là gì
- - Bạn tư vấn giúp mình nhé
- - Bạn chỉ cho mình cách tìm nhé
- - gì nữa
- - nghĩa là gì
- - cái đó nghĩa như nào?
- - ý bạn là sao?
+## intent:not_need_this_help
+ - tôi không muốn hướng dẫn này
+ - không phải hướng dẫn này
+ - tôi không muốn hướng dẫn đăng tin
+ - tôi không muốn hỏi cái này
+ - tôi không cần hỏi việc này
+ - không phải việc này
+ - không phải câu hỏi này
+ - không đúng rồi
+ - câu trả lời khác đi
+ - câu trả lời này không chuẩn đâu
+ - câu trả lời này không phải rồi
+ - trả lời thế không đúng rồi
+ - tôi có hỏi thế đâu
+ - tôi hỏi khác mà
+ - tôi muốn hỏi khác cơ
+ - câu hỏi của tôi khác mà
 
 ## intent:enter_data
  - trong [90 ngày](duration) ý?
@@ -1120,7 +1796,33 @@
  - ngu thế, t hỏi gói [vip 2](post_package)
  - gói [vip2](post_package) nhé
  - [vip 2](post_package) ấy
- - cho hỏi giá gói [vip 1](post_package)
+ - mình dùng được [30 ngày](duration) rồi
+ - mình dùng được [1 tuần](duration) rồi
+ - mình dùng được [54 ngày](duration) rồi
+ - mình dùng [34 ngày](duration)
+ - [31 ngày](duration)
+ - [1 tháng](duration) rồi
+ - chắc [22 ngày](duration)
+ - tầm [66 ngày](duration) ạ
+ - chắc khoảng [27 ngày](duration) 
+ - khoảng [2 tuần](duration) rồi ấy
+ - cũng được [26 ngày](duration) rồi
+ - mình dùng [vip 2](post_package)
+ - mình dùng gói [vip 3](post_package)
+ - mình đang dùng gói [vip 1](post_package)
+ - t dùng gói [vip2](post_package) nhé
+ - tớ đăng được [40 ngày](duration) rồi ý
+ - mình đăng tin được [31 ngày](duration) rồi
+ - tin của mình đăng được [24 ngày](duration) rồi
+ - mình đăng bài được [19 ngày](duration) rồi
+ - mình mới sử dụng được [3 ngày](duration) thôi
+ - mới dùng có [4 ngày](duration) thôi
+ - mới đăng có [6 ngày](duration) thôi
+ - bài mới đăng được [1 tuần](duration) thôi
+ - chắc khoảng [20 ngày](duration) ấy
+ - tầm [13 ngày](duration)
+ - [2 tuần](duration)
+ - [15 ngày](duration)
 
 ## intent:user_feel_expensive
  - đắt thế
@@ -1145,14 +1847,127 @@
  - giá cả có đắt đỏ ko
  - có đắt không vậy
 
+## intent:user_show_agreement
+ - Thế à
+ - vậy à
+ - ô vậy à
+ - ra thế
+ - ô thì ra là vậy
+ - thì ra là vậy
+ - ô thế à
+ - giờ mới bíết đấy
+
+## intent:how_download_or_view_st
+ - tải ở đâu
+ - tải như thế nào
+ - tải ở đâu thế
+ - download ở đâu thế
+ - down ở đâu thế
+ - đao ở đâu nhỉ
+ - down load ở đâu
+ - tải như nào
+ - tải thế nào
+ - sao để tải
+ - làm sao để down
+ - vào đâu vậy
+ - đâu nhỉ
+ - ở đâu ta
+ - xem ở đâu
+ - có ở đâu
+ - sao để xem
+ - sao để load
+
+## intent:ask_whatspossible
+ - m có thể làm gì
+ - m giúp ích gì
+ - m có thể giúp gì được cho t
+ - m giúp gì được cho t
+ - vậy bạn giúp tôi được những việc gì
+ - thế bạn giúp được việc gì
+ - bạn có thể giúp gì được cho t
+ - Mình hỏi bạn nhé, bạn có trả lời được mọi câu hỏi không?
+ - Bạn hỗ trợ vấn đề gì nhỉ
+ - thế phạm vi của bot là gì
+ - bot có gì nổi bật
+ - bot có gì
+ - bot có những gì
+ - phạm vi của bot là gì
+ - thế phạm vi của bạn là gì
+ - phạm vi của bạn là gì nào
+ - bạn có thể trả lời những gì
+ - bot có thể trả lời những việc gì
+ - tôi có thể hỏi bot những gì
+ - giới thiệu về bạn đi
+ - giới thiệu về bot
+ - cho tôi biết về bạn đi
+ - bạn giúp được gì cho MeeyLand
+ - có thể hỏi bot những gì đây
+ - bạn được sinh ra để làm gì
+ - bot được tạo ra để làm gì
+ - bot được tạo ra có chức năng gì
+ - nhiệm vụ của mày là gì
+ - nhiệm vụ của bot là gì
+ - bot có nhiệm vụ gì
+ - bot có thể giúp tôi những gì
+ - giúp được việc gì
+ - bạn trả lời được gì
+ - vậy bot giúp đc gì
+ - có trả lời được nhiều không
+ - có thể trả lời mọi câu hỏi không
+ - câu hỏi nào bạn trả lời được
+ - trả lời được câu hỏi gì
+ - bạn có thể giúp gì
+ - bạn làm được những gì
+ - m có thể làm những gì vậy
+ - cho hỏi m biết những gì vậy
+ - khả năng của m là gì
+ - m có những khả năng gì
+ - vậy Bot giúp đc việc gì
+ - bot có ích gì
+ - sao t lại cần m
+ - Việc gì trong phạm vi đây
+ - Thế giờ thì hỏi gì đây
+ - Nhiệm vụ của bạn là gì
+ - bot có gì nổi bật
+
+## intent:what_bot_doing
+ - Bot đang làm gì đấy
+ - Bot đang làm gì
+ - bot đang làm gì thế
+ - bạn đang làm gì thế
+ - bot đang làm gì nhỉ
+ - bot đang làm gì thế nhỉ
+ - bot làm gì thế
+ - bot đang làm việc gì thế
+ - mày đang làm việc gì vậy
+ - mày đang làm gì
+ - bạn đang làm gì
+
+## intent:bot_need_learning
+ - bạn học thêm di
+ - bạn cần học thêm
+ - học thêm đi mày
+ - học thêm đi
+ - học đi
+ - cần học hỏi nhiều
+ - cần học hỏi thêm
+ - vẫn còn dốt lắm
+ - vẫn còn kém lắm
+ - vẫn chưa thông minh lắm
+ - cần học thêm đấy
+
 ## intent:faq/meeyland_product
  - Sản phẩm của Meey Land là gì?
  - Meey Land đang phát triển sản phẩm gì vậy
+ - Mình muốn hỏi bạn Meey land là gì bạn
+ - Mình muốn hỏi bạn meeyland là gì bạn
  - Meeyland có những sản phẩm gì?
  - Sản phẩm của công ty là gì?
  - Công ty mình có những sản phẩm gì?
+ - Dự án meeyland là gì
  - Meeyland tạo ra gì?
  - Meeyland có gì?
+ - Vậy meeyland là gì
  - Sự khác biệt của Meey Land với các đơn vị BẤT ĐỘNG SẢN khác là gì?
  - Meey land có gì khác biệt so với cách bên khác
  - Sự khác biệt của meeyland với các bên khác là gì
@@ -1165,6 +1980,7 @@
  - meey land có gì khác biệt?
  - Khác biệt của [Meeyland](company)?
  - Meey land có đáng để đầu tư không?
+ - Meeyland có đáng tin cậy không?
  - Đầu tư vào [meey land](company) sinh lời không?
  - Tạo ra meey land để làm gì?
  - Meey land có gì hay?
@@ -1174,10 +1990,38 @@
 ## intent:faq/who_founder
  - Ai là người sáng lập ra Meey Land?
  - Ai sáng lập ra meeyland thế
+ - Cha đẻ Meeybot là ai?
  - Người sáng lập meeyland là ai?
+ - Ai là người điều hành công ty meeyland
+ - Người đứng đầu Tập đoàn Meey land là ai thế bạn
+ - Cha đẻ của Meeybot là ai?
+ - ai đứng đầu meeyland
+ - Doanh nhân Hoàng Mai Chung là ai?
+ - người nào đứng đầu meeyland
+ - ai đứng đầu meey land thế
  - ai sáng lập?
+ - Hoàng Mai Chung là ai?
+ - ai là Hoàng Mai Chung
+ - anh Hoàng Mai Chung
+ - Ai là ceo
+ - Ai đứng đầu
+ - anh Chung
+ - Hoàng mai chung là ai?
+ - Tổng giám đốc là ai?
+ - ai là tổng giám đốc
+ - giám đốc là ai thế
+ - Hoangmaichung
  - ai tạo ra Meeyland?
+ - ai là người điều hành
+ - ai là người sáng lập
  - chủ meey land là ai?
+ - ai điều hành meeyland thế
+ - ai là người điều hành meeyland vậy
+ - ai là người điều hành meey land vậy
+ - chủ bạn là ai
+ - chủ của bạn là ai vậy
+ - chủ mày là ai thế
+ - ai đang điều hành meey land vậy
  - ông chủ meey land là ai thế?
  - boss meey land là ai?
  - ai là boss của meeyland?
@@ -1189,6 +2033,7 @@
  - tên nào là chủ meey land thế?
  - người chủ của meey land là ai?
  - chủ của meey land?
+ - cha đẻ của meeyland là ai
  - chủ công ty
  - ông chủ công ty
  - sáng lập công ty
@@ -1196,7 +2041,18 @@
  - nhà sáng lập meey land
  - nhà sáng lập của công ty meeyland
  - nhà sáng lập công ty
+ - ceo là ai
  - CEO
+ - ai dẫn đầu
+ - ai đứng sau meeyland
+ - ai lãnh đạo meeyland
+ - ai lãnh đạo
+ - Tổng giám đốc là ai?
+ - Chủ tịch Hội đồng quản trị là ai
+ - Xin hỏi tổng giám đốc tên gì
+ - CEO meeyland là ai
+ - bạn biết Hoàng Mai Chung không
+ - sếp của bạn là ai
 
 ## intent:faq/meeyland_orientation
  - Định hướng phát triển của [Meey land](company) là gì?
@@ -1205,6 +2061,7 @@
  - Định hướng của bên mình là gì
  - Mục tiêu phát triển của [Meeyland](company)
  - Mục tiêu của [Meeyland](company) là gì?
+ - Tương lai nhà Meeyland sẽ về đâu
  - Hướng phát triển của [Meeyland](company) như thế nào?
  - [Meeyland](company) có định hướng phát triển sao vậy
  - Định hướng tương lai của [Meeyland](company) như thế nào?
@@ -1213,10 +2070,17 @@
  - [Meeyland](company) phát triển hướng tới mục tiêu gì?
  - Con đường phát triển của [Meey land](company) 
  - [Meeyland](company) định hướng phát triển ra sao?
+ - Lộ trình sản phẩm
+ - Lộ trình phát triển sản phẩm của meeyland
 
 ## intent:faq/advanced_function
  - Ngoài các tính năng cơ bản, website meeyland.com có các tính năng nâng cao nào
  - Meey land có tính năng nâng cao gì không?
+ - Bạn nói rõ hơn về tính năng vượt trội của MeeyLand được không ?
+ - tính năng vượt trội của MeeyLand ?
+ - tính năng nổi bật của meeyland
+ - tính năng nổi trội của meeyland là gì
+ - tính đăng vượt trội của meey land
  - Ngoài các tính năng cơ bản gì bên mình có tính năng nâng cao nào khác không?
 
 ## intent:faq/meeyland_head_quarter
@@ -1224,12 +2088,20 @@
  - Meeyland ở đâu vậy
  - Trụ sở của meeyland ở đâu thế
  - Trụ sở chính của bên mình ở đâu vậy?
+ - địa chỉ công ty ở đâu thế
+ - thông tin địa chỉ công ty
+ - công ty mình ở đâu vậy
+ - công ty có địa chỉ như nào?
+ - địa chỉ công ty
  - Công ty mình trụ sở ở đâu thế
  - Trụ sở công ty mình ở [Láng Hạ](location) phải không?
  - Công ty mình ở [97-99 Láng Hạ](location) à?
  - Có phải trụ sở công ty ở cuối [Thái Thịnh] đúng ko admin?
  - Công ty có gần [Ngã Tư Sở](location) không vậy
+ - địa chỉ công ty ở đâu
  - Công ty ở trên đường [láng hạ](location) à
+ - địa chỉ công ty ở đâu ạ
+ - địa chỉ công ty ở đâu vậy
 
 ## intent:faq/special_offer
  - Hiện tại Meey Land có các chương trình ưu đãi gì?
@@ -1239,6 +2111,7 @@
  - Nay có gói ưu đãi nào cho [VIP1](post_package) không vậy
  - Chính sách khuyến mại khi nạp tiền ?
  - Chính sách khuyến mại khi mua gói đăng tin dài ngày
+ - Có chương trình khuyến mãi gì ko ạ
  - Chính sách khuyến mại khi đăng tin
  - Gói [vip2](post_package) dạo này có ưu đãi không admin ơi
 
@@ -1260,9 +2133,10 @@
  - bên mình có tính năng định giá bđs, vào mục nào vậy
  - vào mục nào để vào chức năng định giá vậy
 
-## intent:faq/channels
+## intent:faq/channel_web
  - Meeyland có trang web không?
  - Có trang web meeyland không?
+ - web meeyland để làm gì
  - Có web meeyland không nhỉ?
  - Công ty mình có web không?
  - trang web của meyland là gì thế
@@ -1284,21 +2158,14 @@
  - [https://meeyland.com](link) có phải trang web giả mạo không?
  - trang web chính thức của công ty là gì?
  - web chính thức của meeyland phải đây không? [https://meeyland.com](link)
- - meyland có app không?
- - app của meeyland cũng tên là meeyland à?
- - app tên gì
- - tên của app là gì
- - tên của app thế nào
- - tên của app như nào nhỉ
- - tên ap là gì
- - app là Meeyland à
- - ap tên là Meeyland luôn sao
 
 ## intent:faq/community_size
  - số lượng người dùng meeyland lớn mức nào?
  - bạn có biết cộng đồng meey hiện tại bao nhiêu không?
  - bạn biết bao nhiêu người trong cộng đồng meeyland không?
  - cộng đồng meeyland lớn thế nào?
+ - meeyland có bao nhiêu người
+ - người meeyland có đông không
  - số lượng người dùng meeyland lớn thế nào
  - cộng đồng meeyland lớn như nào?
  - số lượng người trong cộng đồng meeylad là bao nhiêu?
@@ -1395,7 +2262,7 @@
  - có hướng dẫn toàn bộ app không?
  - có hướng dẫn toàn bộ web không
 
-## intent:is_advert_onMeey_effective
+## intent:faq/is_advert_onMeey_effective
  - Đăng tin trên Meeyland có hiệu quả không?
  - Quảng cáo trên Meeyland có hiệu quả không?
  - Đăng tin trên Meeyland có tương tác tốt không?
@@ -1408,6 +2275,44 @@
  - Nói tôi vài lý do nên đăng tin ở đây
  - cho tôi biết lý do tôi nên tin tưởng đăng tin ở meeyland 
 
+## intent:faq/birthday_of_MeeyLand
+ - Meeyland thành lập khi nào
+ - meeyland ra đời lúc nào
+ - meeyland có từ khi nào
+ - meeyland thành lập từ bao giờ
+ - ngày thành lập của meeyland
+ - ngày ra đời của công ty
+ - ngày thành lập của công ty meeyland
+
+## intent:is_meeyland_ponzi
+ - meey land có phải đa cấp không
+ - meeyland là đa cấp à
+ - meey land có phải đa cấp không thế
+ - đa cấp à
+ - phải đa cấp không
+ - có phải đa cấp không
+ - đa cấp ấy mà
+ - đa cấp mà
+ - đa cấp phải không
+
+## intent:when_revenue
+ - Khi nào bên mình mới có doanh thu vậy
+ - bên mình bắt đầu có doanh thu chưa
+ - meeyland có doanh thu chưa
+ - có doanh thu chưa vậy
+ - meey land bao giờ mới có doanh thu
+ - khi nào có doanh thu thế
+ - bao giờ bên mình mới có doanh thu
+ - khi nào có doanh thu đây
+ - bao giờ bên mình có doanh thu
+
+## intent:why_meeyland_success
+ - meeyland sẽ thành công chứ
+ - đầu tư vào meeyland hiệu quả k
+ - lý do gì để đảm bảo sự thành công của dự án meeyland
+ - làm sao tôi tin tưởng vào meeyland đây
+ - vì lý do gì để tôi tin vào meeyland
+
 ## intent:out_of_scope/non_vietnamese
  - Please help me
  - can you help me
@@ -1419,6 +2324,179 @@
  - i have a question
  - help me, please
  - how to register
+ - What your name ?
+ - what your name ?
+ - your name
+ - love you
+ - i'am sad
+ - so sad
+ - i love you
+ - miss you
+ - evening
+ - good evening
+ - good morning
+ - morning
+ - good
+ - good night
+ - good job
+ - no no
+ - oh no
+ - ah yes
+ - english
+ - speak english
+ - can you speak english
+ - Hey man
+ - How’s it going
+ - What’s up
+ - How’s everything
+ - How’s it going
+ - How do you do
+ - How’s your day
+ - Haven’t seen you for ages
+ - Long time no see or It’s been a whil
+ - Whazzup
+ - Great to see you again
+ - How’s tricks
+ - Heee
+ - Haven’t seen you in/for a long time
+ - Nice to meet you
+ - How’s your day going
+ - How are you doing
+ - How’s life
+ - How are things
+ - What’s going on
+ - What’s new
+ - Bye for now
+ - See you
+ - Be seeing you
+ - See you soon
+ - I’m off
+ - Catch you later
+ - Good night
+ - Farewell
+ - So long
+ - Alright then
+ - Have a good one
+ - See you later
+ - Later
+ - Smell you later
+ - Peace
+ - Talk to you later
+ - See ya
+ - Thanks
+ - Cheers
+ - Thank you very much
+ - I really appreciate it
+ - You’ve made my day
+ - How thoughtful
+ - You shouldn’t have
+ - hat’s so kind of you
+ - I am most grateful
+ - We would like to express our gratitude
+ - That’s very kind of you
+ - Thanks a lot
+ - lis
+ - Sure
+ - No sweat
+ - No problem
+ - You’re welcome
+ - Don’t worry about it
+ - Don’t mention it
+ - You’re quite welcome
+ - No, not at all
+ - It’s my pleasure
+ - It’s the least I could do
+ - Sorry
+ - I’m sorry
+ - Ever so sorry
+ - How stupid / careless / thoughtless of me
+ - Pardon (me)
+ - That’s my fault
+ - Sorry. It was all my fault
+ - Please excuse my (ignorance)
+ - Please don’t be mad at me
+ - Please accept our (sincerest) apologies
+ - My mistake.I had that wrong
+ - I was wrong on that
+ - My bad
+ - My fault
+ - I so sorry
+ - I'm so sorry
+ - Good for you
+ - That’s really nice
+ - Great
+ - That’s the best ever
+ - You did that very well
+ - That’s great
+ - You’ve got it made
+ - Way to go
+ - Terrific
+ - That’s the way to do it
+ - That’s not bad
+ - That’s quite an improvement
+ - Couldn’t have done it better myself
+ - Good thinking
+ - ?Can you speak English
+ - Marvelous
+ - You really are going to town
+ - You’re doing fine
+ - Keep up the good work
+ - You’re really improving
+ - That’s it
+ - You’re on the right track now
+ - That’s better
+ - Real Estale
+ - Property
+ - Project
+ - Real Estale Consultant
+ - Developer
+ - Invesloper
+ - Architect
+ - Supervisor
+ - Construct
+ - Procedure
+ - Spread of Project/ Project Area/ Site Area
+ - Master Plan
+ - Unit
+ - Density of Building
+ - Void
+ - Mezzanine
+ - Residenc
+ - Residen
+ - Comercial
+ - Landscap
+ - Locatio
+ - Advantage/Amennitie
+ - Layout Floor
+ - Layout Apartmen
+ - Launch Time
+ - Deposi
+ - Contrac
+ - Make contract Wit
+ - Payment ste
+ - Lega
+ - Sale Polic
+ - Show Fla
+ - Contac
+ - For leas
+ - Negotiat
+ - Mortag
+ - Apartmen
+ - Bookshel
+ - Bath roo
+ - Air Conditio
+ - Directio
+ - Master Bedroo
+ - Ceilin
+ - Wooden Floo
+ - Electric equipmen
+ - Kitche
+ - Furnitur
+ - Wadrob
+ - say something?
+ - say something
+ - Balcon
+ - Properties
 
 ## intent:out_of_scope/other
  - cưới t không
@@ -1478,6 +2556,89 @@
  - cho xin số đi bot
  - Bạn có tiền cho mình vay chút?
  - Một vài tỷ cũng được mà
+ - Nhớ mình không
+ - đang làm gì đó
+ - tin tức mới nhất
+ - ngủ chưa
+ - màu gì đẹp nhất
+ - khó làm sao
+ - bạn đang làm gì
+ - bot hẹn hò với anh k
+ - Hay quá, đầu tư bao nhiêu tiền ạ?
+ - Đầu tư bao nhiêu thì đủ
+ - Bạn có bao nhiêu tiền
+ - bạn có tiền không
+ - bot có tiền không
+ - có tiền cho mình vay không
+ - bot có nhiều tiền không
+ - bot cho mình vay tiền được không
+ - bot cho mình mượn tiền đi
+ - Yêu em không
+ - Mình cưới nhau đi
+ - Ko đùa nữa nà
+ - Nhà ở Hà nội tầng bao nhiêu cao nhất?
+ - Tầng mấy cao nhất Hà Nội?
+ - sao tin nhắn bị gì thế này
+ - Nguyên nhân đau bụng?
+ - Nhà ở hà nội có bao nhiêu căn?
+ - Thủ tục ly hôn?
+ - Thủ tục làm sổ đỏ ?
+ - rasa nghĩa là gì vậy
+ - rasa là gì
+ - rasa là gì thế
+ - rasa là cái gì
+ - rasa là j
+ - đồng nghiệp của tớ mùi không thơm Rasa ạ
+ - Thủ tục sang tên
+ - Rasa có đói hơm?
+ - Sổ đỏ khác vi bằng như thế nào?
+ - nên mua nhà sổ đỏ hay mua nhà có vi bằng?
+ - mua nhà vi bằng là gì?
+ - Rasa X là ai?
+ - Vi bằng là gì?
+ - nhà hướng naog hợp mệnh thủy
+ - Mình cần tìm nhà của người yêu mình
+ - 0108867454 là gì?
+ - bạn học lớp mấy rồi
+ - Bạn ăn tối chưa?
+ - Bạn biết ai tên là Uyên ko?
+ - Bạn Uyên là người thế nào?
+ - Bạn Na là bạn nào mà bạn nhắc suốt thế?
+ - Bạn có thích nói chuyện chính trị ko?
+ - Vậy chuyện xã hội?
+ - văn hoá?
+ - khoa học kỹ thuật?
+ - Bạn có yêu meeyland ko?
+ - làm sao để hết buồn ?
+ - giúp tôi vui được không ?
+ - chưa được phục vụ
+ - nói câu khác được không
+ - là nhắn cái khác được không	
+ - vậy sao nói không biết
+ - bạn có cha không
+ - Nóng trong người là sốt rồi
+ - Thế bạn mua thực phẩm ở đâu
+ - Tôi muốn bạn tặng tiền cho tôi để tôi đầu tư
+ - Hâm à, tiền cơ
+ - Thế xin bát phở ăn sáng
+ - Xin ít tiền mua Mey
+ - Đói quá, xin ít tiền tiêu
+ - Đói quá xin ít tiền ăn phở
+ - Thế cho vay 1 ít mua cổ phần MeeyLand
+ - Ăn cơm chưa
+ - Bạn yêu tôi không
+ - tớ ko biết
+ - đẹp trai ko
+ - cho mình xem ảnh bot đi
+ - Thấu
+ - thì là
+ - hơ
+ - ơ hay
+ - chà
+ - thì thế
+ - biết sao được
+ - Tương lai mình có là tỷ phú không bạn
+ - Tôi có thêm Vợ nữa không
 
 ## intent:chitchat/ask_builder
  - ai thiết kế ra mày thế
@@ -1487,17 +2648,52 @@
  - Ai tạo ra m thế
  - Cho hỏi tên người tạo ra mày
  - Ai chế tạo ra bạn vậy
+ - bạn chui đâu ra vậy
+ - bạn từ đâu ra vậy
+ - người nào tạo ra bạn vậy
+ - người nào đã tạo ra mày thế
+ - mày ở đâu đến thế
+ - bạn từ đâu đến
+ - mẹ bạn là ai
+ - bố bạn là ai
 
 ## intent:chitchat/ask_howdoing
  - khỏe không admin
  - khỏe không ad?
  - Bạn khỏe chứ
+ - sức khoẻ tốt không
+ - sức khoẻ tốt chứ
+ - khoẻ nhỉ
+ - dạo này khoẻ không
+ - hôm nay khoẻ không
+ - không khoẻ lắm ạ
+ - hơi yếu đấy
+ - có vẻ mệt nhỉ
+ - ốm phải không
+ - mệt mỏi thế
+ - trông mệt lắm ấy
+ - trông ốm lắm
  - mày khỏe không bot
  - sức khỏe dạo này thế nào
 
 ## intent:chitchat/ask_howold
  - Mày bao tuổi rồi
  - mày bao nhiêu tuổi rồi
+ - bạn bao tuổi rồi
+ - cậ bao tuổi rồi
+ - em bao nhiêu tuổi rùi
+ - cho mình biết tuổi của bạn
+ - bạn bao tủi rồi
+ - bạn bao tủi roài
+ - bot bao tủi thế
+ - tuổi của bot
+ - ngày sinh của bot
+ - bot sinh năm nào đấy
+ - sinh năm nào
+ - ngày tháng năm sinh của bot
+ - bot mấy tuổi rồi
+ - câu bao tuổi thế
+ - bạn mấy tuổi rồi
  - bot bao nhiêu tuổi thế
  - mày sinh năm bao nhiêu
  - mày năm nay bao nhiêu tuổi rồi?
@@ -1520,8 +2716,6 @@
  - ô m là bot à
  - ơ mày là bot à
  - ơ phải bot không đấy
-
-## intent:chitchat/ask_ishuman
  - Có phải người đấy không
  - Không phải người à
  - bộ phận chăm sóc khách hàng đấy à
@@ -1531,7 +2725,10 @@
  - mày là người hay máy?
  - ơ m đang chat với chăm sách khách hàng phải không
  - bên đấy là cskh hay máy đấy
+ - bạn là người hay máy
+ - là người hay máy đấy
  - có phải người không thế?
+ - cậu là người hay máy
 
 ## intent:chitchat/ask_languagesbot
  - m biết nói tiếng anh không
@@ -1565,6 +2762,10 @@
  - Mấy giờ rồi nhỉ
  - giờ là mấy giờ rồi nhỉ
  - biết giờ là mấy giờ không bot
+ - mấy giờ rồi
+ - cho hỏi mấy giờ rồi
+ - mấy giờ rồi cậu
+ - mấy h rồi
  - biết giờ là mấy giờ không admin
  - biết giờ là mấy giờ rồi thế
 
@@ -1578,7 +2779,23 @@
  - mày tên gì 
  - khai tên mau
  - xin cái tên m coi
+ - bot là cái gì
  - m tên là gì vậy
+ - Bạn là ai
+ - mày là ai
+ - ai thế
+ - cậu tên gì
+ - ấy tên gì
+ - tên gì đấy
+ - tên là gì nhỉ
+ - bạn là ai vậy
+ - bạn là ai thế
+ - meeybot là gì
+ - meeybot là gì thế
+ - meeybot
+ - meeybot á
+ - cho mình hỏi meeybot là gì
+ - meeybot là tên của ai
 
 ## intent:chitchat/ask_gender
  - là nam hay nữ
@@ -1588,35 +2805,25 @@
  - nam hay nữ
  - mày có giới tính không
  - mày là nam à
+ - bạn là boy hay girl
+ - thế e là gái à
+ - thế bot là trai à
+ - thế em là trai à
+ - thế bot là girl à
+ - bot là boy à
+ - thế bot là gái
+ - bạn là boy or girl
  - mày là nữ à
  - mày là con gái à
  - mày là con gái hay con trai
  - con gái à
  - con trai à
  - mày là con trai hay con gái
+ - giới tính gì đấy
+ - bạn giới tính gì
+ - giới tính của bạn là gì
  - mày giới tính gì
  - mày có giới tính không
-
-## intent:chitchat/ask_whatspossible
- - m có thể làm gì
- - m giúp ích gì
- - m có thể giúp gì được cho t
- - m giúp gì được cho t
- - bạn có thể giúp gì được cho t
- - Mình hỏi bạn nhé, bạn có trả lời được mọi câu hỏi không?
- - bạn trả lời được gì
- - có trả lời được nhiều không
- - có thể trả lời mọi câu hỏi không
- - câu hỏi nào bạn trả lời được
- - trả lời được câu hỏi gì
- - bạn có thể giúp gì
- - bạn làm được những gì
- - m có thể làm những gì vậy
- - cho hỏi m biết những gì vậy
- - khả năng của m là gì
- - m có những khả năng gì
- - m có ích gì
- - sao t lại cần m
 
 ## intent:chitchat/handleinsult
  - fuck
@@ -1630,6 +2837,7 @@
  - ngu như chó
  - ngu éo chịu dc
  - dốt
+ - chán bot
  - cái loại óc chó
  - loser
  - cái loại óc bã đậu
@@ -1640,6 +2848,9 @@
  - cút
  - cút mẹ mày đi
  - mày cút đi
+ - con điên này
+ - điên
+ - mày bị điên ah
  - cút ngay cho tao
  - biến mẹ m đê
 
@@ -1664,6 +2875,9 @@
  - dự báo mai nắng đúng ko
  - đài báo thời tiết như nào
  - dự báo thời tiết mấy hôm nữa như nào vậy?
+ - nắng lại rồi
+ - mưa suốt
+ - hôm nay thời tiết chán quá
 
 ## intent:chitchat/ask_whatismyname
  - Mày biết tên tao không?
@@ -1677,10 +2891,12 @@
  - biết tên k mà nói chuyện
  - đố bot biết tên tớ
  - tên tao là gì?
+ - biết tên mình không
  - tên mình là gì?
  - tên tớ là gì?
  - tớ tên là gì?
  - tao tên là gì
+ - Biết rồi, bạn biết tôi không?
  - tao tên gì?
 
 ## intent:chitchat/telljoke
@@ -1689,8 +2905,12 @@
  - biết chuyện cười gì không?
  - biết chuyện gì vui vẻ tí không?
  - nói gì để mình vui xem
+ - tán phét nha
+ - nói chuyện vui đi
+ - nói chuyện tí thôi
  - có chuyện nào cười cười tí
  - bớt nghiêm túc đi, kể gì buồn cười tẹo
+ - đọc truyện giúp tôi
  - biết kể chuyện cười gì hay không?
  - đố mày làm tao cười xem nào
  - đồ bạn kể được một câu chuyện cười
@@ -1704,6 +2924,17 @@
 ## intent:chitchat/ask_restaurant
  - Có nhà hàng nào ngon gần đây không?
  - có quán ăn ngon nào gần đây không?
+ - tôi muốn ăn trưa
+ - đói quá
+ - Thế xin bát phở ăn sáng
+ - Tôi muốn đi ăn sáng, đói quá
+ - Tôi muốn ăn
+ - mình đói lắm rồi
+ - Gần đây có quán ăn nào ngon không
+ - mình đói quá
+ - Mình hỏi quán ăn gần đây mà
+ - đói lắm rồi
+ - Tôi muốn ăn sáng
  - Tìm giúp quán KFC gần đây đi
  - Tìm cho mình một quán ăn
  - có nhà hàng quán ăn nào còn mở cửa giờ này không?
@@ -1718,6 +2949,7 @@
  - Tìm giúp một địa điểm để ăn xem nào
  - Ăn gì trưa nay ta
  - Trưa ăn ăn gì nhỉ?
+ - tôi muốn ăn sáng
 
 ## intent:chitchat/user_is_rick
  - Nhiều tiền để làm gì
@@ -1730,13 +2962,74 @@
  - lắm tiền quá
  - giàu quá
  - giàu quá không biết làm gì
+ - Vậy làm sao để giầu?
+ - Vậy làm sao để giầu
+ - làm sao để giầu
+ - làm sao để giàu
+ - Có cách nào giúp tôi có tiền không
+ - Khi nào tôi có tiền
+ - Tôi muốn có tiền
+ - tớ có ít tiền muốn góp thì phải làm sao
+ - Tôi muốn trở nên giàu có
+ - tôi muốn có thật nhiều tiền
+ - tôi muốn thật nhiều tiền
+ - Tôi muốn giàu có
+ - tôi muốn giàu có
+ - Tôi muốn  có tiền, bạn cho tôi 1 ít được không?
+ - bạn cho tôi ít tiền đi
+ - giúp tôi kiếm tiền đi
+ - giúp tôi làm giàu đi
+ - làm giàu sao giờ nhỉ
+ - làm sao để giàu có bây giờ
+ - có tiền nhiều giờ bot biết làm gì giờ k
+ - tiền nhiều làm gì nhỉ
 
 ## intent:chitchat/user_ask_lover
- - Bao giờ có người yêu đây
+ - bao giờ mới có người iu đây
  - Ế quá rồi
  - Khi nào t có người yêu đây
  - Khi nào tôi có người yêu đây
+ - mình muốn tìm người yêu
+ - mình muốn có người yêu
+ - làm sao để có người yêu
+ - Sao mình lâu có người yêu vậy
+ - phải thế nào mới có người yêu
+ - làm sao đây để có người yêu hả bot
  - khi nào thì có người yêu nhỉ
  - tao ế lắm rồi
  - ế quá mày ơi
  - ế lắm rồi
+
+## intent:chitchat/ask_bot_lover
+ - bạn có người yêu chưa
+ - mày có người yêu chưa
+ - có người yêu chưa bot
+ - bot có người yêu chưa
+ - có ai yêu bot chưa
+ - bot đã yêu ai chưa
+ - bot đã yêu chưa
+ - bạn đã biết yêu chưa
+ - chưa yêu ai thì phải
+ - Bạn có người yêu chưa
+ - có ai yêu chưa
+ - người yêu của bot là ai đấy
+ - bot biết yêu chưa đấy
+ - có ny chưa
+ - e có ny chưa
+ - mày có ny chưa
+ - có ny chưa thế
+ - có ny chưa vậy
+ - bạn có người yêu chưa vậy
+ - bạn có người yêu rồi à
+ - có ny chưa zợ
+
+## intent:chitchat/ask_where_bot_home
+ - nhà bot ở đâu
+ - nhà bạn ở đâu
+ - nhà ở đâu
+ - meeybot ở đâu ?
+ - meeybot ở đâu thế
+ - nhà ở đâu thế
+ - cho mình hỏi nhà bot ở đâu
+ - bot ở đâu thế
+ - bot ở đâu nhỉ

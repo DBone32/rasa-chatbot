@@ -1,7 +1,7 @@
 ﻿
 ## faq
 * faq/meeyland_product
-  - Hệ sinh thái bất động sản Meey Land là thủ lĩnh dẫn đầu áp dụng CMCN 4.0 vào lĩnh vực Bất động sản tại Việt Nam, như trí tuệ nhân tạo (AI), công nghệ blockchain, dữ liệu lớn Bigdata, cung cấp sản phẩm công nghệ kết nối giao dịch bất động sản giữa những người có nhu cầu về bất động sản và người chủ sở hữu bất động sản.\n • Website không chỉ đăng tải các thông tin mua bán Bất động sản mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…\n • Công cụ tìm kiếm Bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Meey Land.
+  - Hệ sinh thái bất động sản Meey Land là thủ lĩnh dẫn đầu áp dụng CMCN 4.0 vào lĩnh vực Bất động sản tại Việt Nam, như trí tuệ nhân tạo (AI), công nghệ blockchain, dữ liệu lớn Bigdata, cung cấp sản phẩm công nghệ kết nối giao dịch bất động sản giữa những người có nhu cầu về bất động sản và người chủ sở hữu bất động sản.\n • Website không chỉ đăng tải các thông tin mua bán Bất động sản mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…\n • Công cụ tìm kiếm Bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Meey Land.\nĐầu tư vào MeeyLand là một lựa chọn tuyệt vời của các nhà đầu tư thông minh!
 
 ## faq
 * faq/who_founder
@@ -21,7 +21,7 @@
 
 ## faq
 * faq/special_offer
-  - Chính sách khuyến mại của MeeyLand phụ thuộc tùy từng thời kỳ, bạn có thể xem các chương trình khuyến mại tại mục tin tức hoặc liên hệ trực tiếp với nhân viên kinh doanh/nhân viên chăm sóc khách hàng của MeeyLand.\n \n Bạn có thể liên hệ với nhân viên chăm sóc khách hàng của MeeyLand qua các kênh sau:\n + Gọi đến tổng đài theo số hotline 08.69.09.29.29\n + Gửi mail yêu cầu hỗ trợ tới địa chỉ “contact@meeyland.com”\n + Chat với 'Chăm sóc khách hàng' trên website meeyland.com
+  - Chính sách khuyến mại của MeeyLand phụ thuộc tùy từng thời kỳ, bạn có thể xem các chương trình khuyến mại tại mục tin tức hoặc liên hệ trực tiếp với nhân viên kinh doanh/nhân viên chăm sóc khách hàng của MeeyLand.\nHiện tại MeeyLand có chính sách khuyến mãi khi [mua gói tin](https://meeyland.com/page/bao-gia).
 
 ## faq
 * faq/other_channels
@@ -32,8 +32,8 @@
   - Bạn vui lòng làm theo hướng dẫn tại đây
 
 ## faq
-* faq/channels
-  - Hiện tại Meeyland có website [https://meeyland.com](link) và app Meeyland đăng tải thông tin mua bán Bất động sản, cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…
+* faq/channel_web
+  - Hiện tại, Website chính thức của Meeyland là [https://meeyland.com](link) đăng tải thông tin mua bán Bất động sản, cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…
 
 ## faq
 * faq/community_size
@@ -51,9 +51,24 @@
 * faq/tutorial
   - Bạn vui lòng vào [đây](trích đường dẫn)
 
-## is_advert_onMeey_effective
-* is_advert_onMeey_effective
+## faq
+* faq/is_advert_onMeey_effective
   - Meey Land là một hệ sinh thái sản phẩm công nghệ Bất động sản kết hợp Công nghệ - Bất động sản – Tài chính, cung cấp dịch vụ tìm kiếm và chia sẻ thông tin bất động sản tới người có nhu cầu một cách tự động, nhanh chóng.\nNgoài ra, website hỗ trợ người dùng chạy quảng cáo đơn giản, thuận tiện, chi phí tiết kiệm. \nĐồng thời, website tích hợp nhiều ứng dụng tiện ích hỗ trợ cho việc giao dịch Bất động sản, tiết kiệm tối đa quỹ thời gian và đạt hiệu quả cao.
+
+## faq
+* faq/birthday_of_MeeyLand
+  - Ngày thành lập của MeeyLand là ngày 15/08/2019 nha!
+
+## is_meeyland_ponzi
+* is_meeyland_ponzi
+  - Meey Land không phải là đa cấp. Meey Land có sản phẩm thật là web đăng tin bđs, anh chị có thể vào [web](http://meeyland.com/) tham khảo và đăng tin nhé.
+
+## when_revenue
+* when_revenue
+  - Meey Land có doanh thu từ tháng 8-2020 rồi đó ạ.
+
+## why_meeyland_success
+* why_meeyland_success
 
 ## out_of_scope
 * out_of_scope/non_vietnamese
@@ -61,36 +76,30 @@
 
 ## out_of_scope
 * out_of_scope/other
-  - Xin lỗi, MeeyBot không giúp được bạn việc này!
+  - Xin lỗi, việc này ngoài phạm vi của MeeyBot
 
 ## chitchat
 * chitchat/ask_builder
-  - Là những kỹ sư AI thông minh của Meey Land tạo ra ạ!
+  - Những kỹ sư AI thông minh của Meey Land tạo ra mình ạ!
   - Là những kỹ sư AI của tập đoàn Meey Land tạo ra ạ!
 
 ## chitchat
 * chitchat/ask_howdoing
-  - Tuyệt lắm ạ! Cảm ơn bạn đã hỏi thăm!
-  - Tốt ạ! Cảm ơn đã hỏi thăm nha!
   - Có nóng trong người một chút, còn lại thì tốt cả ạ!
+  - Tốt ạ! Cảm ơn đã hỏi thăm nha!
+  - Tuyệt lắm ạ! Cảm ơn bạn đã hỏi thăm!
   - Có thấy lạnh một chút, còn lại thì tốt cả ạ!
 
 ## chitchat
 * chitchat/ask_howold
-  - Đủ tuổi để trở thành Bot ạ!
+  - Hiện tại mình quên mất mình mấy tuổi rồi ấy ạ!
   - Dạ 2 tuổi ạ!
   - Tuổi tác đâu quan trọng đâu ạ!
-  - Hiện tại mình quên mất mình mấy tuổi rồi ấy ạ!
+  - Mình mới được 2 tuổi thôi ạ
 
 ## chitchat
 * chitchat/ask_isbot
-  - Vâng, mình là bot ạ!
-  - Vâng, mình thực sự là bot ạ!
-  - Bạn đoán đúng ạ! Mình là bot!
-
-## chitchat
-* chitchat/ask_ishuman
-  - Dạ, không phải. Mình là bot nha!
+  - Mình là bot ạ!
 
 ## chitchat
 * chitchat/ask_languagesbot
@@ -100,28 +109,23 @@
 
 ## chitchat
 * chitchat/ask_time
-  - Cái này khó à nha
-  - Mình không biết xem đồng hồ :(
+  - Thời gian là sản phẩm của con người mà, bạn phải nói mình biết chứ!
   - Bây giờ là thời điểm tuyệt vời nhất của năm ạ!
   - Thật khó để trả lời, vì trên quả đất này mỗi nơi một giờ khác nhau ấy!
   - Là giờ để tổ chức tiệc ạ!
   - Ở đâu đó thì đang là 5 giờ chiều ạ!
-  - Thời gian là sản phẩm của con người mà, bạn phải nói mình biết chứ!
+  - Mình không biết xem đồng hồ :(
 
 ## chitchat
 * chitchat/ask_yourname
-  - Tên mình là MeeyBot :)
-  - Mình tên là MeeyBot ạ
+  - Mình là MeeyBot :)
+  - Mình là MeeyBot ạ
   - Mình tên MeeyBot ạ
   - Tên của mình là MeeyBot ạ!
 
 ## chitchat
 * chitchat/ask_gender
-  - Giới tính bí mật ạ :)
-
-## chitchat
-* chitchat/ask_whatspossible
-  - Bạn có thể hỏi mình về MeeyLand, tính năng, định hướng của MeeyLand, về các vấn đề đăng ký tài khoản, đăng bài, nạp tiền, các gói VIP,...
+  - Xin phép giữ giới tính bí mật nha!
 
 ## chitchat
 * chitchat/handleinsult
@@ -132,8 +136,7 @@
 
 ## chitchat
 * chitchat/ask_weather
-  - Cái này khó à nha
-  - Hiện tại mình vẫn chưa có khả năng đưa ra thông tin về thời tiết ạ
+  - Hiện tại mình vẫn chưa có khả năng đưa ra thông tin về thời tiết ạ. Bạn thông cảm nha!
   - Mình chưa có khả năng đưa ra thông tin về thời tiết ạ
   - Hiện tại mình vẫn chưa đủ khả năng để đưa ra thông tin về thời tiết ạ
   - Mình nghĩ thời tiết như nào bạn cũng sẽ gặp nhiều may mắn ạ!
@@ -143,19 +146,21 @@
 
 ## chitchat
 * chitchat/ask_whatismyname
-  - Mình đoán đó là một thứ mà bố mẹ bạn đã chọn cho bạn.
+  - Biết chứ, tên bạn hay phết.
   - Bộ nhớ vùng đấy hơi bị trục trặc một chút, mình không truy cập được để lấy thông tin ấy.
   - Mình không phải là gián điệp theo dõi thông tin cá nhân bạn đâu.
+  - Mình đoán đó là một thứ mà bố mẹ bạn đã chọn cho bạn.
   - Nãy bạn Na vừa hỏi mình, bạn là người thứ hai hỏi vậy đấy.
-  - Biết chứ, tên bạn hay phết.
+  - Mình đoán đó là một thứ mà bố mẹ bạn đã chọn cho bạn.
 
 ## chitchat
 * chitchat/telljoke
+  - Mình không vui tính lắm đâu ạ!
   - Trứng vịt muối từ đâu ra? - Vịt muối đẻ chứ đâu!!!
-  - Tại sao robot lại đi sang đường? - Vì nó được lập trình như vậy chứ sao.
   - Chim khôn kêu tiếng rảnh rang. Người khôn nói tiếng dịu dàng khó nghe.
   - Người ta thách lợn thách gà. Nhà em thách cưới một nhà khoai lang.
   - Mãi bên nhau bạn nhé
+  - Tại sao robot lại đi sang đường?  Vì nó được lập trình như vậy chứ sao.
 
 ## chitchat
 * chitchat/ask_restaurant
@@ -164,8 +169,18 @@
 
 ## chitchat
 * chitchat/user_is_rick
-  - Bạn cứ để mình giữ hộ cho :3
+  - Bạn tham gia vào đội ngũ nhà đầu tư MeeyLand đi ạ!
 
 ## chitchat
 * chitchat/user_ask_lover
-  - Chắc khoảng 3023 năm nữa là bạn có người yêu thôi :D
+  - Chỉ cần bạn chịu mở lòng là duyên sẽ tới thôi :)
+  - Chắc sắp có rồi đấy ạ
+
+## chitchat
+* chitchat/ask_bot_lover
+  - Dạ, bot chờ duyên tới!
+  - Mình rất đáng yêu nhưng không có ai yêu ạ :)
+
+## chitchat
+* chitchat/ask_where_bot_home
+  - Nhà bot ở MeeyLand ạ!
