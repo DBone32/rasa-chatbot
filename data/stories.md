@@ -43,8 +43,19 @@
 * enter_data
     - action_set_used_vip_duration
     - action_calculate_down_post
+* thank
+    - utter_thank
+    - utter_anything_else
 
 ## Hạ tin-Hoàn tiền 2
+* request_down_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* deny
+    - utter_confirm
+    - utter_anything_else
+
+## Hạ tin-Hoàn tiền 3
 * request_down_post
     - utter_bot_need_info_for_refund
     - utter_ask_source_post_package
@@ -60,15 +71,14 @@
 * enter_data
     - action_set_used_vip_duration
 
-## Hạ tin-Hoàn tiền 3
+## Hạ tin-Hoàn tiền 4
 * request_down_post
     - utter_bot_need_info_for_refund
     - utter_ask_source_post_package
-* enter_data{"post_package":"vip 2"}
-    - slot{"post_package":"vip 2"}
-    - slot{"post_package":"vip 2"}
+* enter_data{"post_package":"vip 3"}
+    - slot{"post_package":"vip 3"}
     - action_set_source_post_package
-    - slot{"source_post_package":"vip 2"}
+    - slot{"source_post_package":"vip 3"}
     - slot{"post_package":"None"}
     - utter_ask_buy_vip_duration
 * enter_data{"duration":"30 ngày"}
@@ -83,6 +93,25 @@
     - slot{"used_vip_duration":"9 ngày"}
     - slot{"duration":"None"}
     - action_calculate_down_post
+
+## Meey Invest 1
+* how_invest_to_meeyland
+    - utter_invest_customer_service
+    - utter_suggest_get_info
+* enter_data
+    - action_forward_customer_service
+    - utter_thks_n_forward_info_to_customer_service
+    - utter_anything_else
+
+## Meey Invest 2
+* how_invest_to_meeyland
+    - utter_invest_customer_service
+    - utter_suggest_get_info
+* deny
+    - utter_confirm
+    - utter_anything_else
+* deny
+    - utter_thank
 
 ## Đăng bài 1
 * how_create_new_post
@@ -251,13 +280,9 @@
     - utter_forward_to_customer_service
     - utter_ask_whatspossible
 
-## Câu hỏi khác 7
-* how_invest_to_meeyland
-    - utter_suggest_get_info
-
 ## General 1
 * user_need_help
-    - utter_ask_whatspossible
+    - action_greet
 
 ## General 2
 * greet

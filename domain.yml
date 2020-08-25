@@ -182,7 +182,7 @@ slots:
   name:
     type: text
   phone_number:
-    type: unfeaturized
+    type: text
   post_package:
     type: text
   post_purpose:
@@ -199,9 +199,9 @@ responses:
   utter_default:
   - text: Xin lỗi mình không hiểu ý bạn ạ.
   utter_confirm:
-  - text: Vâng ạ
+  - text: Vâng ạ.
   utter_anything_else:
-  - text: Bạn có thắc mắc hay cần giúp đỡ gì nữa không ạ
+  - text: Bạn có thắc mắc hay cần giúp đỡ gì nữa không ạ.
   utter_why_reject_post_1:
   - text: "1. Bài đăng của bạn không được đăng bán vì lí do vi phạm các lí do sau:\
       \ \n+ Bài đăng không có tiêu đề\n+ Bài đăng trùng lặp nội dung với bài đăng\
@@ -249,15 +249,16 @@ responses:
   utter_not_sure:
   - text: Xin lỗi, mình không hiểu ý bạn.
   utter_bot_need_info_for_refund:
-  - text: Để giúp bạn tính toán số tiền được hoàn trả, bot cần một số thông tin.
+  - text: Để giúp bạn tính toán số tiền được hoàn trả khi hạ tin, bot cần một số thông
+      tin.
   utter_invest_customer_service:
   - text: Hiện tại, MeeyBot chưa hỗ trợ các vấn đề liên quan đến đầu tư vào MeeyLand,
       bạn vui lòng liên hệ bộ phận hỗ trợ trên trang web [hoangmaichung.com](https://hoangmaichung.com)
       hoặc gọi tới số điện thoại CSKH 1900.23.23.16 trong khung thời gian từ 8h30-22h00
       hàng ngày nhé.
   utter_suggest_get_info:
-  - text: Để bot có thể hỗ trợ về vấn đề này, bạn vui lòng cung cấp một số thông tin
-      sau nha.
+  - text: Bạn có thể để lại email hoặc số điện thoại, mình sẽ nhờ bộ phận chăm sóc
+      khách hàng liên hệ trực tiếp để hỗ trợ bạn.
   utter_thks_n_forward_info_to_customer_service:
   - text: Cảm ơn bạn đã cung cấp thông tin, bộ phận CSKH của MeeyLand sẽ liên hệ hỗ
       trợ bạn nha!
@@ -350,26 +351,16 @@ responses:
       \ trực tiếp văn phòng Công ty cổ phần tập đoàn Meey Land tại tầng 5, địa chỉ\
       \ 97-99 Láng Hạ, Quận Đống Đa, Hà Nội. "
   utter_money_security:
-  - text: " Is meey: Website Meey Land được Sở Kế hoạch và Đầu tư Thành Phố Hà Nội\
-      \ cấp phép hoạt động vào năm 2019. Meey Land đề cao tính an toàn và bảo mật\
-      \ cho người dùng, ngoài mật khẩu thông thường, chúng tôi còn có tính năng bảo\
-      \ vệ 2 lớp cho tài khoản MeeyID của bạn, nên bạn hoàn toàn yên tâm về số tiền\
-      \ đã nạp vào Meey Land. \nIs VN Pay: VNPAY là “CÔNG TY CỔ PHẦN GIẢI PHÁP THANH\
-      \ TOÁN VIỆT NAM”, đây là tổ chức được cho phép thành lập hợp pháp bới ngân hàng\
-      \ nhà nước Việt Nam, VNPAY đề cao tính bảo mật và an toàn cho khách hàng. Ngoài\
-      \ ra, để trở thành đối tác của VNPAY, chúng tôi đã qua quá trình kiểm tra chặt\
-      \ chẽ và đảm bảo các yêu cầu sau:\n- Cung cấp hàng hóa, dịch vụ hợp pháp tại\
-      \ Việt Nam;\n- Có giấy phép đăng ký kinh doanh và được cấp phép hợp pháp.\n\n\
-      Is other: - Hiện tại, nhà nước đang đề cao việc thanh toán không dùng tiền mặt,\
-      \ và các hình thức thanh toán trên đều được bảo vệ bởi các tổ chức tài chính\
-      \ lớn, có sự bảo hộ của ngân hàng nhà nước, đo đó việc đảm bảo an toàn là gần\
-      \ như tuyệt đối. \n- Meey Land đã được cấp phép và ký hợp đồng với các tổ chức\
-      \ trên mới được sử dụng làm phương tiện thanh toán cho khách hàng, các thông\
-      \ tin của khách hàng được đảm bảo tuyệt đối không lộ ra ngoài bằng bất cứ hình\
-      \ thức nào.\n- Tuy nhiên, Khách hàng nên lưu ý về cách bảo mật an toàn thông\
-      \ tin tài khoản theo khuyến cáo của ngân hàng, và chúng tôi không chịu trách\
-      \ nhiệm trong trường hợp thông tin của Khách hàng bị lộ do khách hàng cung cấp\
-      \ cho đối tượng nào khác ngoài Meey Land."
+  - text: "Hiện tại, nhà nước đang đề cao việc thanh toán không dùng tiền mặt, và\
+      \ các hình thức thanh toán trên đều được bảo vệ bởi các tổ chức tài chính lớn,\
+      \ có sự bảo hộ của ngân hàng nhà nước, đo đó việc đảm bảo an toàn là gần như\
+      \ tuyệt đối. \n- Meey Land đã được cấp phép và ký hợp đồng với các tổ chức trên\
+      \ mới được sử dụng làm phương tiện thanh toán cho khách hàng, các thông tin\
+      \ của khách hàng được đảm bảo tuyệt đối không lộ ra ngoài bằng bất cứ hình thức\
+      \ nào.\n- Tuy nhiên, Khách hàng nên lưu ý về cách bảo mật an toàn thông tin\
+      \ tài khoản theo khuyến cáo của ngân hàng, và chúng tôi không chịu trách nhiệm\
+      \ trong trường hợp thông tin của Khách hàng bị lộ do khách hàng cung cấp cho\
+      \ đối tượng nào khác ngoài Meey Land."
   utter_what_vnpay:
   - text: Meey Land liên kết với VNPAY để thiết lập cổng thanh toán cho KH tại Meey
       Land bằng cách quét mã QR trên mỗi hóa đơn thanh toán. Khách hàng cần phải có
@@ -555,7 +546,7 @@ responses:
   utter_ask_duration:
   - text: Bạn muốn mua trong bao nhiêu ngày ạ?
   utter_ask_buy_vip_duration:
-  - text: Bạn đã mua gói tin trong bao nhiêu ngày?
+  - text: Số ngày ban đầu bạn đã mua là bao nhiêu?
   utter_ask_used_vip_duration:
   - text: Bạn đã sử dụng trong bao ngày rồi?
   utter_ask_email:
@@ -651,6 +642,7 @@ actions:
 - respond_out_of_scope
 - respond_chitchat
 - action_calculate_down_post
+- action_forward_customer_service
 - action_set_source_post_package
 - action_set_destination_post_package
 - action_set_buy_vip_duration

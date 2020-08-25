@@ -358,6 +358,7 @@ class ActionCalculateDownPost(FormAction):
         vip_type = convert_post_package(source_post_package)
         _, _, _, bought_days = convert_duration(buy_vip_duration)
         _, _, _, used_days = convert_duration(used_vip_duration)
+
         if vip_type != vip_type:
             return [FollowupAction('utter_ask_source_post_package')]
 
@@ -372,6 +373,21 @@ class ActionCalculateDownPost(FormAction):
         message2 = 'Khi hạ tin bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(price_format(paid_cost - used_cost))
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
+        return []
+
+
+class ActionForwardCustomerService(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_forward_customer_service"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        email = tracker.get_slot('email')
+        phone_number = tracker.get_slot('phone_number')
         return []
 #
 # class GetCostForm(FormAction):

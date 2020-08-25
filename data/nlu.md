@@ -958,6 +958,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - đổi gói tin vip làm thế nào nhỉ
  - đổi gói tin vip như thế nào đây
  - làm sao để đổi gói tin vip chưa hết hạn
+ - mình muốn đổi gói tin
+ - tớ muốn đổi gói tin
 
 ## intent:channel_app
  - meyland có app không?
@@ -1456,6 +1458,9 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - m cần hỏi cái này
  - mình có câu hỏi cho bot
  - bot trả lời giúp mình
+ - cho hỏi cái nè
+ - cho mình hỏi cái
+ - cho hỏi
 
 ## intent:thank
  - Cảm ơn
@@ -1565,6 +1570,9 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - không cảm ơn
  - không quên đi
  - không đồng ý
+ - thôi
+ - thôi nhé
+ - không cung cấp đâu
 
 ## intent:request_more
  - mình rồi, làm thế nào nữa
@@ -1812,6 +1820,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - mình đang dùng gói [vip 1](post_package)
  - t dùng gói [vip2](post_package) nhé
  - tớ đăng được [40 ngày](duration) rồi ý
+ - à nhầm [30 ngày](post_package) thì phải
  - mình đăng tin được [31 ngày](duration) rồi
  - tin của mình đăng được [24 ngày](duration) rồi
  - mình đăng bài được [19 ngày](duration) rồi
@@ -1823,6 +1832,21 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tầm [13 ngày](duration)
  - [2 tuần](duration)
  - [15 ngày](duration)
+ - [0396475817](phone_number)
+ - sđt mình [0368546197](phone_number)
+ - số mình là [08192859279](phone_number)
+ - điện thoại mình là [0986764738](phone_number)
+ - số mình là [0338728179](phone_number)
+ - số mình: [0987656678](phone_number)
+ - sdt mình [0162846287](phone_number)
+ - mail mình là [[manhdh@gmail.com](email)
+ - mail là [huongmh@gmail.com](email)
+ - [01685461787](phone_number)
+ - email mình là [mylinh@yahoo.com.vn](email)
+ - [dungct@meeyland.com](email) nhé
+ - [satthubongdem@meeygroup.com](email)
+ - mai mình [hoangtudangyeu@yahoo.com]
+ - [huhahuho@gmail.com](email) nhé
 
 ## intent:user_feel_expensive
  - đắt thế
