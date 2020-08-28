@@ -43,9 +43,9 @@
 * enter_data
     - action_set_used_vip_duration
     - action_calculate_down_post
-* thank
-    - utter_thank
-    - utter_anything_else
+* request_more
+    - utter_out_of_bot_ability
+    - utter_how_contact_customer_service
 
 ## Hạ tin-Hoàn tiền 2
 * request_down_post
@@ -56,6 +56,14 @@
     - utter_anything_else
 
 ## Hạ tin-Hoàn tiền 3
+* request_down_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* request_more
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+
+## Hạ tin-Hoàn tiền 4
 * request_down_post
     - utter_bot_need_info_for_refund
     - utter_ask_source_post_package
@@ -70,8 +78,48 @@
     - utter_ask_used_vip_duration
 * enter_data
     - action_set_used_vip_duration
+    - action_calculate_down_post
+* request_more
+    - utter_out_of_bot_ability
+    - utter_how_contact_customer_service
 
-## Hạ tin-Hoàn tiền 4
+## Hạ tin-Hoàn tiền 5
+* is_refund_after_putdown_post
+    - utter_is_refund_after_putdown_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* enter_data
+    - action_set_source_post_package
+    - utter_ask_buy_vip_duration
+* enter_data
+    - action_set_buy_vip_duration
+    - utter_ask_used_vip_duration
+* enter_data
+    - action_set_used_vip_duration
+    - action_calculate_down_post
+* request_more
+    - utter_out_of_bot_ability
+    - utter_how_contact_customer_service
+
+## Hạ tin-Hoàn tiền 6
+* is_refund_after_putdown_post
+    - utter_is_refund_after_putdown_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* deny
+    - utter_confirm
+    - utter_anything_else
+
+## Hạ tin-Hoàn tiền 7
+* is_refund_after_putdown_post
+    - utter_is_refund_after_putdown_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* request_more
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+
+## Hạ tin-Hoàn tiền 8
 * request_down_post
     - utter_bot_need_info_for_refund
     - utter_ask_source_post_package
@@ -93,12 +141,46 @@
     - slot{"used_vip_duration":"9 ngày"}
     - slot{"duration":"None"}
     - action_calculate_down_post
+* request_more
+    - utter_out_of_bot_ability
+    - utter_how_contact_customer_service
+
+## Hạ tin-Hoàn tiền 9
+* request_down_post
+    - utter_bot_need_info_for_refund
+    - utter_ask_source_post_package
+* enter_data{"post_package":"vip 1"}
+    - slot{"post_package":"vip 1"}
+    - action_set_source_post_package
+    - slot{"source_post_package":"vip 1"}
+    - slot{"post_package":"None"}
+    - utter_ask_buy_vip_duration
+* enter_data{"duration":"29 ngày"}
+    - slot{"duration":"29 ngày"}
+    - action_set_buy_vip_duration
+    - utter_request_valid_buy_vip_duration
+* enter_data{"duration":"30 ngày"}
+    - slot{"duration":"30 ngày"}
+    - action_set_buy_vip_duration
+    - slot{"buy_vip_duration":"30 ngày"}
+    - slot{"duration":"None"}
+    - utter_ask_used_vip_duration
+* enter_data{"duration":"9 ngày"}
+    - slot{"duration":"9 ngày"}
+    - action_set_used_vip_duration
+    - slot{"used_vip_duration":"9 ngày"}
+    - slot{"duration":"None"}
+    - action_calculate_down_post
+* request_more
+    - utter_out_of_bot_ability
+    - utter_how_contact_customer_service
 
 ## Meey Invest 1
 * how_invest_to_meeyland
     - utter_invest_customer_service
     - utter_suggest_get_info
 * enter_data
+    - action_check_email_n_phone
     - action_forward_customer_service
     - utter_thks_n_forward_info_to_customer_service
     - utter_anything_else
@@ -109,36 +191,6 @@
     - utter_suggest_get_info
 * deny
     - utter_confirm
-    - utter_anything_else
-* deny
-    - utter_thank
-
-## Đăng bài 1
-* how_create_new_post
-    - utter_prepare_before_create_post
-* wait_a_minute
-    - utter_confirm
-* request_more
-    - utter_how_create_new_post
-* thank
-    - utter_thank
-
-## Đăng bài 2
-* how_create_new_post
-    - utter_prepare_before_create_post
-* affirm
-    - utter_how_create_new_post
-* thank
-    - utter_thank
-
-## Đăng bài 3
-* how_create_new_post
-    - utter_prepare_before_create_post
-* affirm
-    - utter_how_create_new_post
-* fee_of_vip_post
-    - action_fee_of_vip_post
-* affirm
     - utter_anything_else
 * deny
     - utter_thank
@@ -355,3 +407,15 @@
 * out_of_scope
     - respond_out_of_scope
     - utter_ask_whatspossible
+
+## chitchat 1
+* chitchat
+    - respond_chitchat
+* request_more
+    - utter_invest_customer_service
+
+## chitchat 2
+* chitchat
+    - respond_chitchat
+* how_invest_to_meeyland
+    - utter_invest_customer_service

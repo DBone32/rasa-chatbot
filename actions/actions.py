@@ -8,8 +8,8 @@ from rasa_sdk.events import FollowupAction, SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
 
-fee_table = {'vip1': {'fee': {1: 40000, 7: 266000, 15: 540000, 30: 10200000, 90: 28800000}, 'up_fee': 4000, 'name': 'Vip 1'},
-             'vip2': {'fee': {1: 25000, 7: 166250, 15: 337500, 30: 637500, 90: 18000000}, 'up_fee': 2500, 'name': 'Vip 2'},
+fee_table = {'vip1': {'fee': {1: 40000, 7: 266000, 15: 540000, 30: 1020000, 90: 2880000}, 'up_fee': 4000, 'name': 'Vip 1'},
+             'vip2': {'fee': {1: 25000, 7: 166250, 15: 337500, 30: 637500, 90: 1800000}, 'up_fee': 2500, 'name': 'Vip 2'},
              'vip3': {'fee': {1: 15000, 7: 99750, 15: 202500, 30: 382500, 90: 1080000}, 'up_fee': 1500, 'name': 'Vip 3'}}
 discounts = {1: 0.00, 7: 0.05, 15: 0.10, 30: 0.15, 90: 0.20}
 coefficient = {'ngày': {'coef': 1, 'text': 'ngày'}, 'ngay': {'coef': 1, 'text': 'ngày'},
@@ -70,7 +70,7 @@ class ActionFeeOffVipPost(Action):
         vip_type = convert_post_package(post_package)
 
         fee_table = self.fee_table
-        if vip_type == vip_type:
+        if vip_type is not None:
             # nếu chỉ bắt được post_package
             if duration == None:
                 dispatcher.utter_message(text="Giá gói {} hiện tại là {}đ/tin/ngày ạ."
@@ -251,6 +251,23 @@ class ActionGreet(Action):
 
         return [SlotSet("is_greeted", "True")]
 
+class ActionUserAskUserName(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_user_ask_username"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        username = tracker.get_slot('name')
+        if username is None:
+            return [FollowupAction('utter_ask_name')]
+        username = username.title()
+        dispatcher.utter_message('Tên bạn là {} ạ :D'.format(username))
+        return []
+
 
 class ActionUserIntroduceName(Action):
     def __init__(self):
@@ -337,8 +354,14 @@ class ActionSetUsedPostDuration(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        duration = tracker.get_slot('duration')
+        duration = tracker.get_slot('duration').replace('-', '')
         _, _, _, used_days = convert_duration(duration)
+        buy_vip_duration = tracker.get_slot('buy_vip_duration')
+        if buy_vip_duration is not None:
+            _, _, _, bought_days = convert_duration(buy_vip_duration)
+            if used_days > bought_days:
+                return [FollowupAction('utter_request_valid_used_vip_duration')]
+
         if used_days < 1:
             return [FollowupAction('utter_request_valid_used_vip_duration')]
         return [SlotSet("used_vip_duration", duration), SlotSet("duration", 'None')]
@@ -362,17 +385,70 @@ class ActionCalculateDownPost(FormAction):
         if vip_type != vip_type:
             return [FollowupAction('utter_ask_source_post_package')]
 
-        discount = 0
-        for i in discounts:
-            if used_days > i:
-                discount = discounts[i]
-                break
-        used_cost = fee_table[vip_type]['fee'][1]*used_days*(1-discount)
+        discount_real = 0
+        discount_bought = 0
+        for i in discounts.keys():
+            if used_days >= i:
+                discount_real = discounts[i]
+            if bought_days >= i:
+                discount_bought = discounts[i]
+
+        used_cost = fee_table[vip_type]['fee'][1]*used_days*(1-discount_real)
         paid_cost = fee_table[vip_type]['fee'][bought_days]
-        message1 = 'Bạn đã dùng gói {} được {} ngày. Vậy số tiền bạn đã dùng là {}đ.'.format(fee_table[vip_type]['name'], used_days, price_format(used_cost))
-        message2 = 'Khi hạ tin bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(price_format(paid_cost - used_cost))
+        message1 = 'Gói tin bạn đã mua là gói {}, số ngày là {} ngày nên được chiết khấu {}%, tổng số tiền đã thanh toán là {}.'.format(
+            fee_table[vip_type]['name'], bought_days, int(discount_bought*100), price_format(paid_cost))
+        message2 = 'Số ngày đã sử dụng là {} ngày, thì chỉ được chiết khấu {}% nên số tiền bạn đã dùng là {}đ.'.format(
+            used_days, int(discount_real*100), price_format(used_cost))
+        message3 = 'Như vậy khi hạ tin bạn sẽ được hoàn lại {}đ vào tài khoản khuyến mại bạn nhé!'.format(price_format(paid_cost - used_cost))
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
+        dispatcher.utter_message(message3)
+        return []
+
+
+class ActionCheckEmailAndPhone(Action):
+    def __init__(self):
+        pass
+
+    def check_phone_number(self, phone_number):
+        prefix1 = ['09', '03', '07', '08', '05']
+        prefix2 = ['849', '843', '847', '848', '845']
+        rmchar = ['+', '-', '_', '.', ',']
+        for ch in rmchar:
+            phone_number = phone_number.replace(ch, '')
+        if not phone_number.isdigit():
+            return False
+        if phone_number[:2] in prefix1 and len(phone_number) == 10:
+            return True
+        if phone_number[:3] in prefix2 and len(phone_number) == 11:
+            return True
+        return False
+
+    def name(self) -> Text:
+        return "action_check_email_n_phone"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # check email status
+        email = tracker.get_slot('email')
+        if email is not None:
+            from validate_email import validate_email
+            if not validate_email(email_address=email, check_regex=True, check_mx=False):
+                dispatcher.utter_template('utter_request_valid_email', tracker)
+                return [SlotSet("email", None), FollowupAction('action_listen')]
+            elif not validate_email(email_address=email, check_regex=False, check_mx=True, smtp_timeout=5, dns_timeout=5):
+                dispatcher.utter_template('utter_request_exist_email', tracker)
+                return [SlotSet("email", None), FollowupAction('action_listen')]
+            else:
+                return []
+
+        # check phone number
+        phone_number = tracker.get_slot('phone_number')
+        if phone_number is not None:
+            if not self.check_phone_number(phone_number):
+                dispatcher.utter_template('utter_request_valid_phone_number', tracker)
+                return [SlotSet("phone_number", None), FollowupAction('action_listen')]
         return []
 
 
@@ -389,6 +465,7 @@ class ActionForwardCustomerService(Action):
         email = tracker.get_slot('email')
         phone_number = tracker.get_slot('phone_number')
         return []
+
 #
 # class GetCostForm(FormAction):
 #

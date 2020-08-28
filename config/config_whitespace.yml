@@ -1,0 +1,25 @@
+language: vi
+pipeline:
+- name: WhitespaceTokenizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 100
+- name: ResponseSelector
+  epochs: 150
+
+policies:
+  - name: TEDPolicy
+    epochs: 100
+    max_history: 5
+  - name: AugmentedMemoizationPolicy
+    max_history: 5
+  - name: MappingPolicy
+  - name: FallbackPolicy
+    nlu_threshold: 0.1
+    core_threshold: 0.2
+    fallback_action_name: 'utter_default'
+  - name: FormPolicy

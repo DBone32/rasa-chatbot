@@ -13,10 +13,10 @@ pipeline:
 
 policies:
   - name: TEDPolicy
-    epochs: 100
-    max_history: 5
+    epochs: 1
+    max_history: 12
   - name: AugmentedMemoizationPolicy
-    max_history: 5
+    max_history: 10
   - name: MappingPolicy
   - name: FallbackPolicy
     nlu_threshold: 0.1

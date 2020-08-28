@@ -411,6 +411,12 @@
  - Tôi đã [chuyển khoản](money_transfer_type) cho bên bạn, nhưng sao không thấy tiền trong Ví [Meeyland](company), nhỡ không chuyển đúng thì sao biết.
  - vừa [chuyển khoản](money_transfer_type), vào kiểm tra tài khoản không thay đổi gì
  - Tôi đã [chuyển khoản](money_transfer_type) cho bên bạn, nhưng sao không thấy tiền trong Ví [Meeyland](company)?
+ - mình nạp tiền nhưng ví chưa có bạn ơi
+ - nạp tiền rồi sao không thấy tiền trong ví
+ - mình nạp tiền xong rồi mà ví chưa thấy có
+ - nạp tiền rồi sao ví chưa có hả bot
+ - sao không thấy tiền trong ví, vừa chuyển khoản xong
+ - mình đã nạp tiền mà ví chưa thấy tiền về
 
 ## intent:prepare_before_create_post
  - Để đăng tin thì cần chuẩn bị gì?
@@ -546,6 +552,7 @@
  - làm sao đây khi đăng lâu rồi mà không bán được
  - Tôi đăng lâu rồi má ơi
  - Đăng tin rồi giờ sao bán hả má
+ - đăng bài sao để được nhiều người biết
 
 ## intent:post_requirement
  - Quy định đăng bài như thế nào?
@@ -809,6 +816,15 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
 
 ## intent:fee_of_up_post
  - Up tin có mất phí không?
+ - giá up tin
+ - phí up tin
+ - up tin có đắt ko
+ - chi phí up tin
+ - chi phí đẩy tin
+ - up tin tốn bao nhiêu
+ - phí đẩy tin
+ - giá đẩy tin
+ - đẩy tin có đắt ko
  - tôi muốn up tin, phí như thế nào?
  - Phí up tin như thế nào nhỉ?
  - Phí up tin bao nhiêu vậy?
@@ -945,6 +961,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tính giúp tôi số tiền hoàn khi hạ tin
  - khi hạ tin thì được hoàn bao nhiêu phần trăm
  - tính số tiền còn lại khi hạ tin như thế nào
+ - tôi muốn hạ tin hoàn tiền
+ - mình muốn hạ tin hoàn tiền
 
 ## intent:request_change_post_package
  - tôi muốn đổi gói
@@ -1282,6 +1300,11 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - meeyland nay có gì mới không
  - tôi cần tư vấn nâng cao
  - tôi cần tư vấn mua nhà đất
+ - meeyland sẽ thành công chứ
+ - đầu tư vào meeyland hiệu quả k
+ - lý do gì để đảm bảo sự thành công của dự án meeyland
+ - làm sao tôi tin tưởng vào meeyland đây
+ - vì lý do gì để tôi tin vào meeyland
 
 ## intent:how_invest_to_meeyland
  - Tôi muốn đầu tư MeeyLand
@@ -1380,6 +1403,26 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Hello hân hạnh biết bạn!
  - còn đó không
 
+## intent:ask_whatismyname
+ - Mày biết tên tao không?
+ - Đố biết tên mình
+ - Đố biết tên tớ
+ - Bạn biết tên tớ không?
+ - Nói tao biết tên tao xem nào?
+ - ai đang nói chuyện với bạn vậy?
+ - Bot có biết ai đang nói chuyện với bot không?
+ - có biết tên không mà nói chuyện nãy giờ
+ - biết tên k mà nói chuyện
+ - đố bot biết tên tớ
+ - tên tao là gì?
+ - biết tên mình không
+ - tên mình là gì?
+ - tên tớ là gì?
+ - tớ tên là gì?
+ - tao tên là gì
+ - Biết rồi, bạn biết tôi không?
+ - tao tên gì?
+
 ## intent:user_introduce_name
  - mình tên [Hùng](name)
  - tên mình là [Quang](name)
@@ -1435,6 +1478,12 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - cho hỏi cái này với
  - mình có chút thắc mắc
  - tôi có chút thắc mắc
+ - bạn hỗ trợ tôi được không
+ - tôi cần hỏi bạn vài câu hỏi
+ - bot có hỗ trợ khách hàng không
+ - hỗ trợ tôi nhé
+ - giúp tôi với
+ - bên bạn có hỗ trợ khách hàng không
  - Mình muốn tư vấn
  - mình cần hỗ trợ
  - mình cần hỏi
@@ -1473,6 +1522,16 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Cám ơn nhé
  - Cám ơn Bot
  - Cám ơn bạn.
+ - cảm ơn bạn
+ - cảm ơn bot
+ - thks bot nhé
+ - cảm ơn bot nhiều
+ - thank bot nhiều
+ - cảm ơn bot rất nhiều
+ - cảm ơn bạn rất nhiều
+ - cảm ơn bot yêu nhé
+ - cám ơn bot yêu nhé
+ - cảm ơn nhé
 
 ## intent:bye
  - bye
@@ -1541,6 +1600,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - không được đâu
  - không
  - k
+ - ko
  - k ạ
  - nâu
  - no
@@ -1621,6 +1681,11 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - chi tiết hơn được không
  - chi tiết hơn đi
  - chi tiết đi
+ - cách tính chi tiết như nào vậy?
+ - bot tính như nào vậy
+ - làm sao bot tính toán được
+ - giải thích cách tính cho tôi với
+ - tham gia như thế nào
 
 ## intent:react_negative
  - Phức tạp thế
@@ -1761,16 +1826,12 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - đoán là không biết đâu
  - còn gì nữa không?
  - ok mình đoán bạn không giúp được
- - Vậy à. Thế thôi
- - thôi
  - Rasa cứng nhắc thế :3
  - thôi, dừng trao đổi
  - chẳng thông minh tẹo nào
  - thôi dừng nói chuyện
  - thôi, dừng tại đây
  - câu trả lời không đúng
-
-## intent:not_need_this_help
  - tôi không muốn hướng dẫn này
  - không phải hướng dẫn này
  - tôi không muốn hướng dẫn đăng tin
@@ -1839,13 +1900,13 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - số mình là [0338728179](phone_number)
  - số mình: [0987656678](phone_number)
  - sdt mình [0162846287](phone_number)
- - mail mình là [[manhdh@gmail.com](email)
+ - mail mình là [manhdh@gmail.com](email)
  - mail là [huongmh@gmail.com](email)
  - [01685461787](phone_number)
  - email mình là [mylinh@yahoo.com.vn](email)
  - [dungct@meeyland.com](email) nhé
  - [satthubongdem@meeygroup.com](email)
- - mai mình [hoangtudangyeu@yahoo.com]
+ - mai mình [hoangtudangyeu@yahoo.com](email)
  - [huhahuho@gmail.com](email) nhé
 
 ## intent:user_feel_expensive
@@ -1965,6 +2026,10 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - bot đang làm việc gì thế
  - mày đang làm việc gì vậy
  - mày đang làm gì
+ - đang làm gì đó
+ - bạn đang làm gì đó
+ - làm gì đó
+ - bot làm gì đó
  - bạn đang làm gì
 
 ## intent:bot_need_learning
@@ -2330,13 +2395,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - khi nào có doanh thu đây
  - bao giờ bên mình có doanh thu
 
-## intent:why_meeyland_success
- - meeyland sẽ thành công chứ
- - đầu tư vào meeyland hiệu quả k
- - lý do gì để đảm bảo sự thành công của dự án meeyland
- - làm sao tôi tin tưởng vào meeyland đây
- - vì lý do gì để tôi tin vào meeyland
-
 ## intent:out_of_scope/non_vietnamese
  - Please help me
  - can you help me
@@ -2407,9 +2465,9 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Peace
  - Talk to you later
  - See ya
- - Thanks
+ - Properties
  - Cheers
- - Thank you very much
+ - say something
  - I really appreciate it
  - You’ve made my day
  - How thoughtful
@@ -2418,7 +2476,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - I am most grateful
  - We would like to express our gratitude
  - That’s very kind of you
- - Thanks a lot
+ - Balcon
  - lis
  - Sure
  - No sweat
@@ -2518,9 +2576,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Furnitur
  - Wadrob
  - say something?
- - say something
- - Balcon
- - Properties
 
 ## intent:out_of_scope/other
  - cưới t không
@@ -2533,29 +2588,20 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - thèm ăn tôm hùm quá
  - thèm ăn thịt gà quá
  - giờ mà có ít chân gà mà gặm nhỉ
- - đau đầu quá m ơi
- - bot ơi t bị stress rồi
  - cho xin ít tiền coi
- - tao là batman
- - t là người sử dụng
  - đói quá m ơi
  - bot ơi t đói quá
- - cứu t với
- - hey ya
  - cho order 1 cái pizza nhé
  - giờ có bài hát gì hay không
  - dạo này bài gì đang hot nhỉ
  - cho hỏi là mình muốn hỏi gì
  - đố m biết được tên bố mẹ t
- - t muốn chết
- - tối qua đi ngủ muộn, sáng nay mệt vl
  - hết tiền rồi, làm nào giờ
  - làm gì mà việc nhẹ lương cao
  - không làm mà vẫn muốn ăn thì làm gì
  - bọn trẻ con bây giờ chán thật
  - giới trẻ bây giờ làm sao ý
  - t bị chó cắn chó biến thành người sói không, hay thành người chó
- - hôm nay
  - sở thích của m là gì
  - sở thích của bot là gì
  - 1 + 1 bằng mấy
@@ -2568,28 +2614,19 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - ad có người yêu chưa
  - ad có gia đình chưa
  - giá cua hoàng đế giờ bao nhiêu nhỉ
- - mệt quá
- - ây gu
- - t có tin m được không
  - giờ có phim gì hay nhể
  - có gì hot ko
  - giờ có tin gì hot không
  - cho xin mấy cốc cafe coi
- - chả thấy gì cả
  - cho xin số đi ad
  - cho xin số đi bot
  - Bạn có tiền cho mình vay chút?
  - Một vài tỷ cũng được mà
- - Nhớ mình không
- - đang làm gì đó
  - tin tức mới nhất
  - ngủ chưa
  - màu gì đẹp nhất
- - khó làm sao
  - bạn đang làm gì
  - bot hẹn hò với anh k
- - Hay quá, đầu tư bao nhiêu tiền ạ?
- - Đầu tư bao nhiêu thì đủ
  - Bạn có bao nhiêu tiền
  - bạn có tiền không
  - bot có tiền không
@@ -2602,7 +2639,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Ko đùa nữa nà
  - Nhà ở Hà nội tầng bao nhiêu cao nhất?
  - Tầng mấy cao nhất Hà Nội?
- - sao tin nhắn bị gì thế này
  - Nguyên nhân đau bụng?
  - Nhà ở hà nội có bao nhiêu căn?
  - Thủ tục ly hôn?
@@ -2637,7 +2673,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - giúp tôi vui được không ?
  - chưa được phục vụ
  - nói câu khác được không
- - là nhắn cái khác được không	
+ - là nhắn cái khác được không
  - vậy sao nói không biết
  - bạn có cha không
  - Nóng trong người là sốt rồi
@@ -2654,6 +2690,31 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tớ ko biết
  - đẹp trai ko
  - cho mình xem ảnh bot đi
+ - Tương lai mình có là tỷ phú không bạn
+ - Tôi có thêm Vợ nữa không
+ - đánh nhau không
+ - đánh nhau ko
+ - oánh nhau ko
+ - cho vay ít tiền đi
+
+## intent:out_of_scope/no_meaning
+ - đau đầu quá m ơi
+ - bot ơi t bị stress rồi
+ - tao là batman
+ - t là người sử dụng
+ - cứu t với
+ - hey ya
+ - t muốn chết
+ - tối qua đi ngủ muộn, sáng nay mệt vl
+ - hôm nay
+ - mệt quá
+ - ây gu
+ - t có tin m được không
+ - chả thấy gì cả
+ - Nhớ mình không
+ - đang làm gì đó
+ - khó làm sao
+ - sao tin nhắn bị gì thế này
  - Thấu
  - thì là
  - hơ
@@ -2661,8 +2722,16 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - chà
  - thì thế
  - biết sao được
- - Tương lai mình có là tỷ phú không bạn
- - Tôi có thêm Vợ nữa không
+ - thoi
+ - ngày ngày
+ - hàng ngày
+ - mỗi ngày
+ - ý gì
+ - không tin
+ - trời
+ - hay là
+ - có phải
+ - không tin
 
 ## intent:chitchat/ask_builder
  - ai thiết kế ra mày thế
@@ -2903,26 +2972,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - mưa suốt
  - hôm nay thời tiết chán quá
 
-## intent:chitchat/ask_whatismyname
- - Mày biết tên tao không?
- - Đố biết tên mình
- - Đố biết tên tớ
- - Bạn biết tên tớ không?
- - Nói tao biết tên tao xem nào?
- - ai đang nói chuyện với bạn vậy?
- - Bot có biết ai đang nói chuyện với bot không?
- - có biết tên không mà nói chuyện nãy giờ
- - biết tên k mà nói chuyện
- - đố bot biết tên tớ
- - tên tao là gì?
- - biết tên mình không
- - tên mình là gì?
- - tên tớ là gì?
- - tớ tên là gì?
- - tao tên là gì
- - Biết rồi, bạn biết tôi không?
- - tao tên gì?
-
 ## intent:chitchat/telljoke
  - Nói gì vui xem nào?
  - mày kể chuyện cười được k?
@@ -3007,6 +3056,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - làm sao để giàu có bây giờ
  - có tiền nhiều giờ bot biết làm gì giờ k
  - tiền nhiều làm gì nhỉ
+ - nhiều tiền quá, làm sao tiêu hết nhỉ
+ - nhiều tiền đầu tư gì sinh lãi
 
 ## intent:chitchat/user_ask_lover
  - bao giờ mới có người iu đây

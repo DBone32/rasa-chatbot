@@ -67,9 +67,6 @@
 * when_revenue
   - Meey Land có doanh thu từ tháng 8-2020 rồi đó ạ.
 
-## why_meeyland_success
-* why_meeyland_success
-
 ## out_of_scope
 * out_of_scope/non_vietnamese
   - Xin lỗi, hiện tại MeeyBot chỉ có thể hiểu được Tiếng Việt nha!
@@ -77,6 +74,10 @@
 ## out_of_scope
 * out_of_scope/other
   - Xin lỗi, việc này ngoài phạm vi của MeeyBot
+
+## out_of_scope
+* out_of_scope/no_meaning
+  - Xin lỗi, bot không hiểu ý bạn!
 
 ## chitchat
 * chitchat/ask_builder
@@ -143,15 +144,6 @@
   - Dự báo mỗi nơi một khác, không giống nhau chút nào ấy!
   - Dạ, thấy báo chỗ này nắng mà chỗ kia lại mưa.
   - Nắng hay mưa là chuyện của trời, dự báo không chính xác 100% ạ!
-
-## chitchat
-* chitchat/ask_whatismyname
-  - Biết chứ, tên bạn hay phết.
-  - Bộ nhớ vùng đấy hơi bị trục trặc một chút, mình không truy cập được để lấy thông tin ấy.
-  - Mình không phải là gián điệp theo dõi thông tin cá nhân bạn đâu.
-  - Mình đoán đó là một thứ mà bố mẹ bạn đã chọn cho bạn.
-  - Nãy bạn Na vừa hỏi mình, bạn là người thứ hai hỏi vậy đấy.
-  - Mình đoán đó là một thứ mà bố mẹ bạn đã chọn cho bạn.
 
 ## chitchat
 * chitchat/telljoke

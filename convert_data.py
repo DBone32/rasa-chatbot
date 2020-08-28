@@ -104,9 +104,19 @@ def convert_domain():
     types = slots_sheet['Type']
     utters = slots_sheet['Utter_ask']
     set_actions = slots_sheet['Set Action']
+    buttons = slots_sheet['Buttons']
     for idx, slot in enumerate(slots):
         if utters[idx] == utters[idx]:
-            utter_ask[slot] = utters[idx]
+            ask_str = utters[idx]
+            if buttons[idx] == buttons[idx]:
+                ask_str += '\n    buttons:\n'
+                bts = buttons[idx].split(',')
+                for bt in bts:
+                    txt, payload = bt.split('/')
+                    ask_str += '    - title: "{}"\n'.format(txt)
+                    ask_str += '      payload: \'{}\'\n'.format(payload)
+
+            utter_ask[slot] = ask_str
 
     # generate intents:
     outfile.writelines('intents:\n')
@@ -139,7 +149,7 @@ def convert_domain():
     outfile.writelines('  requested_slot:\n    type: text\n')
     # generate responses:
     outfile.writelines('responses:\n')
-    outfile.writelines('  utter_default:\n  - text: "Xin lỗi mình không hiểu ý bạn ạ."\n')
+    outfile.writelines('  utter_default:\n  - text: "Xin lỗi mình không hiểu ý bạn ạ. Bạn nói rõ hơn được không!"\n')
     for utter in utter_dict:
         if '/' in utter:
             continue
@@ -148,7 +158,7 @@ def convert_domain():
             outfile.writelines('  - text: "{}"\n'.format(text))
     for slot in utter_ask:
         outfile.writelines('  utter_ask_{}:\n'.format(slot))
-        outfile.writelines('  - text: "{}"\n'.format(utter_ask[slot]))
+        outfile.writelines('  - text: {}\n'.format(utter_ask[slot]))
     # generate actions:
     outfile.writelines('actions:\n')
     outfile.writelines(' - utter_default\n')
