@@ -341,7 +341,7 @@ class ActionSetBuyPostDuration(Action):
         fees = fee_table['vip1']['fee']
         if bought_days not in fees:
             return [FollowupAction('utter_request_valid_buy_vip_duration')]
-        return [SlotSet("buy_vip_duration", duration), SlotSet("duration", 'None')]
+        return [SlotSet("buy_vip_duration", duration), SlotSet("duration", None)]
 
 
 class ActionSetUsedPostDuration(Action):
@@ -364,7 +364,7 @@ class ActionSetUsedPostDuration(Action):
 
         if used_days < 1:
             return [FollowupAction('utter_request_valid_used_vip_duration')]
-        return [SlotSet("used_vip_duration", duration), SlotSet("duration", 'None')]
+        return [SlotSet("used_vip_duration", duration), SlotSet("duration", None)]
 
 
 class ActionCalculateDownPost(FormAction):
@@ -395,7 +395,7 @@ class ActionCalculateDownPost(FormAction):
 
         used_cost = fee_table[vip_type]['fee'][1]*used_days*(1-discount_real)
         paid_cost = fee_table[vip_type]['fee'][bought_days]
-        message1 = 'Gói tin bạn đã mua là gói {}, số ngày là {} ngày nên được chiết khấu {}%, tổng số tiền đã thanh toán là {}.'.format(
+        message1 = 'Gói tin bạn đã mua là gói {}, số ngày là {} ngày nên được chiết khấu {}%, tổng số tiền đã thanh toán là {}đ.'.format(
             fee_table[vip_type]['name'], bought_days, int(discount_bought*100), price_format(paid_cost))
         message2 = 'Số ngày đã sử dụng là {} ngày, thì chỉ được chiết khấu {}% nên số tiền bạn đã dùng là {}đ.'.format(
             used_days, int(discount_real*100), price_format(used_cost))

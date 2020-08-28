@@ -189,10 +189,10 @@
 * how_invest_to_meeyland
     - utter_invest_customer_service
     - utter_suggest_get_info
-* deny
+* deny OR canthelp
     - utter_confirm
     - utter_anything_else
-* deny
+* deny OR canthelp
     - utter_thank
 
 ## Đăng bài 4
@@ -295,7 +295,7 @@
 ## Câu hỏi khác 1
 * how_search_info
     - action_how_to_search
-* request_more
+* request_more OR user_need_help
     - utter_out_of_bot_ability
     - utter_how_contact_customer_service
 
@@ -370,16 +370,8 @@
     - utter_ask_whatspossible
 
 ## General 7
-* bot_need_learning
+* bot_need_learning OR react_negative
     - utter_keep_learning
-
-## General 8
-* react_negative
-    - utter_keep_learning
-
-## General 9
-* request_more
-    - utter_ask_whatspossible
 
 ## out_of_scope 1
 * out_of_scope
