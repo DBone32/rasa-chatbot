@@ -263,6 +263,7 @@ class ActionUserAskUserName(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         username = tracker.get_slot('name')
         if username is None:
+            dispatcher.utter_message('Bạn chưa giới thiệu tên cho mình mà :D'.format(username))
             return [FollowupAction('utter_ask_name')]
         username = username.title()
         dispatcher.utter_message('Tên bạn là {} ạ :D'.format(username))
@@ -297,7 +298,6 @@ class ActionUserIntroduceName(Action):
         dispatcher.utter_message(sample.format(username, self.botintro))
         return [SlotSet("is_greeted", "True")]
 
-
 class ActionSetSourcePackage(Action):
     def __init__(self):
         pass
@@ -309,8 +309,24 @@ class ActionSetSourcePackage(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         post_package = tracker.get_slot('post_package')
-        return [SlotSet("source_post_package", post_package), SlotSet("post_package", 'None')]
+        return [SlotSet("source_post_package", post_package), SlotSet("post_package", None)]
 
+class ActionSetBuyNewPostDuration(Action):
+    def __init__(self):
+        pass
+
+    def name(self) -> Text:
+        return "action_set_buy_new_vip_duration"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        new_duration = tracker.get_slot('duration')
+        _, _, _, bought_days = convert_duration(new_duration)
+        fees = fee_table['vip1']['fee']
+        if bought_days not in fees:
+            return [FollowupAction('utter_request_valid_buy_vip_duration')]
+        return [SlotSet("buy_new_vip_duration", new_duration), SlotSet("duration", None)]
 
 class ActionSetDestinationPackage(Action):
     def __init__(self):
@@ -323,7 +339,7 @@ class ActionSetDestinationPackage(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         post_package = tracker.get_slot('post_package')
-        return [SlotSet("destination_post_package", post_package), SlotSet("post_package", 'None')]
+        return [SlotSet("destination_post_package", post_package), SlotSet("post_package", None)]
 
 
 class ActionSetBuyPostDuration(Action):
@@ -340,7 +356,7 @@ class ActionSetBuyPostDuration(Action):
         _, _, _, bought_days = convert_duration(duration)
         fees = fee_table['vip1']['fee']
         if bought_days not in fees:
-            return [FollowupAction('utter_request_valid_buy_vip_duration')]
+            return [FollowupAction('utter_request_valid_buy_vip_duration'), SlotSet("duration", None)]
         return [SlotSet("buy_vip_duration", duration), SlotSet("duration", None)]
 
 
@@ -360,20 +376,100 @@ class ActionSetUsedPostDuration(Action):
         if buy_vip_duration is not None:
             _, _, _, bought_days = convert_duration(buy_vip_duration)
             if used_days > bought_days:
-                return [FollowupAction('utter_request_valid_used_vip_duration')]
+                return [FollowupAction('utter_request_valid_used_vip_duration'), SlotSet("duration", None)]
 
         if used_days < 1:
-            return [FollowupAction('utter_request_valid_used_vip_duration')]
+            return [FollowupAction('utter_request_valid_used_vip_duration'), SlotSet("duration", None)]
         return [SlotSet("used_vip_duration", duration), SlotSet("duration", None)]
 
 
-class ActionCalculateDownPost(FormAction):
+class CalculateDownPostForm(FormAction):
     def name(self) -> Text:
-        return "action_calculate_down_post"
+        return "calculate_down_post_form"
 
-    def run(self, dispatcher: CollectingDispatcher,
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        return ["source_post_package", "buy_vip_duration", "used_vip_duration"]
+
+    def validate_source_post_package(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'source_post_package':
+            return {"source_post_package": tracker.get_slot('source_post_package')}
+
+        post_package = convert_post_package(value)
+        if post_package:
+            return {'post_package': None, "source_post_package": value}
+        else:
+            return {'post_package': None, "source_post_package": None}
+
+    def validate_buy_vip_duration(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'buy_vip_duration':
+            return {"buy_vip_duration": tracker.get_slot('buy_vip_duration')}
+
+        _, _, _, bought_days = convert_duration(value)
+        fees = fee_table['vip1']['fee']
+        if bought_days in fees:
+            return {"duration": None, "buy_vip_duration": value}
+        else:
+            dispatcher.utter_template('utter_request_valid_buy_vip_duration', tracker)
+            return {"duration": None, "buy_vip_duration": None}
+
+    def validate_used_vip_duration(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'used_vip_duration':
+            return {"used_vip_duration": tracker.get_slot('used_vip_duration')}
+
+        _, _, _, used_days = convert_duration(value)
+        buy_vip_duration = tracker.get_slot('buy_vip_duration')
+        if buy_vip_duration is not None:
+            _, _, _, bought_days = convert_duration(buy_vip_duration)
+            if used_days > bought_days:
+                dispatcher.utter_template('utter_request_valid_used_vip_duration', tracker)
+                return {"used_vip_duration": None, "duration": None}
+        if used_days < 1:
+            dispatcher.utter_template('utter_request_valid_used_vip_duration', tracker)
+            return {"duration": None, "used_vip_duration": None}
+
+        return {"duration": None, "used_vip_duration": value}
+
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        """A dictionary to map required slots to
+            - an extracted entity
+            - intent: value pairs
+            - a whole message
+            or a list of them, where a first match will be picked"""
+
+        return {
+            "source_post_package": self.from_entity(entity="post_package", intent=["enter_data"]),
+            "buy_vip_duration": self.from_entity(entity="duration", intent=["enter_data"]),
+            "used_vip_duration": self.from_entity(entity="duration", intent=["enter_data"])
+        }
+    def submit(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict]:
         source_post_package = tracker.get_slot('source_post_package')
         buy_vip_duration = tracker.get_slot('buy_vip_duration')
         used_vip_duration = tracker.get_slot('used_vip_duration')
@@ -399,10 +495,232 @@ class ActionCalculateDownPost(FormAction):
             fee_table[vip_type]['name'], bought_days, int(discount_bought*100), price_format(paid_cost))
         message2 = 'Số ngày đã sử dụng là {} ngày, thì chỉ được chiết khấu {}% nên số tiền bạn đã dùng là {}đ.'.format(
             used_days, int(discount_real*100), price_format(used_cost))
-        message3 = 'Như vậy khi hạ tin bạn sẽ được hoàn lại {}đ vào tài khoản khuyến mại bạn nhé!'.format(price_format(paid_cost - used_cost))
+        refund = paid_cost - used_cost
+        if refund < 0:
+            message3 = "Số tiền bạn đã dùng vượt quá số tiền bạn thanh toán ban đầu. Vậy khi hạ tin bạn sẽ không được hoàn trả và cũng không cần phải nạp thêm ạ."
+        elif refund == 0:
+            message3 = "Bạn đã dùng hết số tiền thanh toán ban đầu. Vậy khi hạ tin bạn sẽ không được hoàn trả tiền vào tài khoản nữa ạ."
+        else:
+            message3 = 'Như vậy khi hạ tin bạn sẽ được hoàn lại {}đ vào tài khoản khuyến mại bạn nhé!'.format(price_format(paid_cost - used_cost))
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
         dispatcher.utter_message(message3)
+        return []
+
+class CalculateChangePostForm(FormAction):
+    def name(self) -> Text:
+        return "calculate_change_post_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        return ["source_post_package", "buy_vip_duration", "used_vip_duration", "destination_post_package", "buy_new_vip_duration"]
+
+    def validate_source_post_package(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'source_post_package':
+            return {"source_post_package": tracker.get_slot('source_post_package')}
+
+        post_package = convert_post_package(value)
+        if post_package:
+            return {'post_package': None, "source_post_package": value}
+        else:
+            return {'post_package': None, "source_post_package": None}
+
+    def validate_buy_vip_duration(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'buy_vip_duration':
+            return {"buy_vip_duration": tracker.get_slot('buy_vip_duration')}
+
+        _, _, _, bought_days = convert_duration(value)
+        fees = fee_table['vip1']['fee']
+        if bought_days in fees:
+            return {"duration": None, "buy_vip_duration": value}
+        else:
+            dispatcher.utter_template('utter_request_valid_buy_vip_duration', tracker)
+            return {"duration": None, "buy_vip_duration": None}
+
+    def validate_used_vip_duration(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'used_vip_duration':
+            return {"used_vip_duration": tracker.get_slot('used_vip_duration')}
+
+        _, _, _, used_days = convert_duration(value)
+        buy_vip_duration = tracker.get_slot('buy_vip_duration')
+        if buy_vip_duration is not None:
+            _, _, _, bought_days = convert_duration(buy_vip_duration)
+            if used_days > bought_days:
+                dispatcher.utter_template('utter_request_valid_used_vip_duration', tracker)
+                return {"used_vip_duration": None, "duration": None}
+        if used_days < 1:
+            dispatcher.utter_template('utter_request_valid_used_vip_duration', tracker)
+            return {"duration": None, "used_vip_duration": None}
+
+        return {"duration": None, "used_vip_duration": value}
+
+    def validate_destination_post_package(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'destination_post_package':
+            return {"destination_post_package": tracker.get_slot('destination_post_package')}
+
+        post_package = convert_post_package(value)
+        if post_package:
+            return {'post_package': None, "destination_post_package": value}
+        else:
+            return {'post_package': None, "destination_post_package": None}
+
+    def validate_buy_new_vip_duration(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        requested_slot = tracker.current_state()['slots']['requested_slot']
+        if requested_slot != 'buy_new_vip_duration':
+            return {"buy_new_vip_duration": tracker.get_slot('buy_new_vip_duration')}
+
+        _, _, _, bought_days = convert_duration(value)
+        fees = fee_table['vip1']['fee']
+        if bought_days in fees:
+            return {"duration": None, "buy_new_vip_duration": value}
+        else:
+            dispatcher.utter_template('utter_request_valid_buy_vip_duration', tracker)
+            return {"duration": None, "buy_new_vip_duration": None}
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        return {
+            "source_post_package": self.from_entity(entity="post_package", intent=["enter_data"]),
+            "buy_vip_duration": self.from_entity(entity="duration", intent=["enter_data"]),
+            "used_vip_duration": self.from_entity(entity="duration", intent=["enter_data"]),
+            "destination_post_package": self.from_entity(entity="post_package", intent=["enter_data"]),
+            "buy_new_vip_duration": self.from_entity(entity="duration", intent=["enter_data"])
+        }
+
+    def submit(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        source_post_package = tracker.get_slot('source_post_package')
+        buy_vip_duration = tracker.get_slot('buy_vip_duration')
+        used_vip_duration = tracker.get_slot('used_vip_duration')
+
+        vip_type = convert_post_package(source_post_package)
+        _, _, _, bought_days = convert_duration(buy_vip_duration)
+        _, _, _, used_days = convert_duration(used_vip_duration)
+
+        if vip_type is None:
+            return [FollowupAction('utter_ask_source_post_package')]
+
+        discount = 0
+        for i in discounts.keys():
+            if used_days >= i:
+                discount = discounts[i]
+
+        used_cost = fee_table[vip_type]['fee'][1] * used_days * (1 - discount)
+        paid_cost = fee_table[vip_type]['fee'][bought_days]
+
+        message1 = 'Bạn đã dùng gói {} được {} ngày trên tổng số {} ngày. Vậy số tiền bạn đã dùng là {}đ.'.format(
+            fee_table[vip_type]['name'], used_days, bought_days, price_format(used_cost))
+
+        destination_post_package = tracker.get_slot('destination_post_package')
+        buy_new_vip_duration = tracker.get_slot('buy_new_vip_duration')
+
+        vip_type_new = convert_post_package(destination_post_package)
+        _, _, _, bought_days_new = convert_duration(buy_new_vip_duration)
+
+        if vip_type_new is None:
+            return [FollowupAction('utter_ask_destination_post_package')]
+
+        paid_cost_new = fee_table[vip_type_new]['fee'][bought_days_new]
+
+        result = int(float((paid_cost - used_cost - paid_cost_new)))
+
+        if result > 0:
+            message2 = 'Khi đổi sang gói {} với thời gian {} ngày bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(
+                fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result)))
+        else:
+            message2 = 'Khi đổi sang gói {} với thời gian {} ngày bạn sẽ cần thanh toán thêm {}đ.'.format(
+                fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result) * -1))
+        dispatcher.utter_message(message1)
+        dispatcher.utter_message(message2)
+        return []
+
+class ActionCalculateChangePost(Action):
+    def name(self) -> Text:
+        return "action_change_post_package"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        source_post_package = tracker.get_slot('source_post_package')
+        buy_vip_duration = tracker.get_slot('buy_vip_duration')
+        used_vip_duration = tracker.get_slot('used_vip_duration')
+
+        vip_type = convert_post_package(source_post_package)
+        _, _, _, bought_days = convert_duration(buy_vip_duration)
+        _, _, _, used_days = convert_duration(used_vip_duration)
+
+        if vip_type is None:
+            return [FollowupAction('utter_ask_source_post_package')]
+
+        discount = 0
+        for i in discounts.keys():
+            if used_days >= i:
+                discount = discounts[i]
+
+        used_cost = fee_table[vip_type]['fee'][1] * used_days * (1 - discount)
+        paid_cost = fee_table[vip_type]['fee'][bought_days]
+
+        message1 = 'Bạn đã dùng gói {} được {} ngày trên tổng số {} ngày. Vậy số tiền bạn đã dùng là {}đ.'.format(
+            fee_table[vip_type]['name'], used_days, bought_days, price_format(used_cost))
+
+        destination_post_package = tracker.get_slot('destination_post_package')
+        buy_new_vip_duration = tracker.get_slot('buy_new_vip_duration')
+
+        vip_type_new = convert_post_package(destination_post_package)
+        _, _, _, bought_days_new = convert_duration(buy_new_vip_duration)
+
+        if vip_type_new is None:
+            return [FollowupAction('utter_ask_destination_post_package')]
+
+        paid_cost_new = fee_table[vip_type_new]['fee'][bought_days_new]
+
+        result = int(float((paid_cost - used_cost - paid_cost_new)))
+
+        if result > 0:
+            message2 = 'Khi đổi sang gói {} với thời gian {} ngày bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(
+                fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result)))
+        else:
+            message2 = 'Khi đổi sang gói {} với thời gian {} ngày bạn sẽ cần thanh toán thêm {}đ.'.format(
+                fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result) * -1))
+        dispatcher.utter_message(message1)
+        dispatcher.utter_message(message2)
         return []
 
 

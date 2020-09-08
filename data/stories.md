@@ -30,150 +30,45 @@
 * how_download_or_view_st
     - utter_how_download_app
 
-## Hạ tin-Hoàn tiền 1
-* request_down_post
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* enter_data
-    - action_set_source_post_package
-    - utter_ask_buy_vip_duration
-* enter_data
-    - action_set_buy_vip_duration
-    - utter_ask_used_vip_duration
-* enter_data
-    - action_set_used_vip_duration
-    - action_calculate_down_post
-* request_more
-    - utter_out_of_bot_ability
-    - utter_how_contact_customer_service
-
 ## Hạ tin-Hoàn tiền 2
 * request_down_post
     - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* deny
-    - utter_confirm
-    - utter_anything_else
+    - calculate_down_post_form
+    - form{"name": "calculate_down_post_form"}
+    - form{"name": null}
 
 ## Hạ tin-Hoàn tiền 3
 * request_down_post
     - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* request_more
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-
-## Hạ tin-Hoàn tiền 4
-* request_down_post
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* enter_data
-    - action_set_source_post_package
-    - utter_ask_buy_vip_duration
-* enter_data
-    - action_set_buy_vip_duration
-    - utter_request_valid_buy_vip_duration
-* enter_data
-    - action_set_buy_vip_duration
-    - utter_ask_used_vip_duration
-* enter_data
-    - action_set_used_vip_duration
-    - action_calculate_down_post
-* request_more
-    - utter_out_of_bot_ability
-    - utter_how_contact_customer_service
-
-## Hạ tin-Hoàn tiền 5
-* is_refund_after_putdown_post
-    - utter_is_refund_after_putdown_post
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* enter_data
-    - action_set_source_post_package
-    - utter_ask_buy_vip_duration
-* enter_data
-    - action_set_buy_vip_duration
-    - utter_ask_used_vip_duration
-* enter_data
-    - action_set_used_vip_duration
-    - action_calculate_down_post
-* request_more
-    - utter_out_of_bot_ability
-    - utter_how_contact_customer_service
-
-## Hạ tin-Hoàn tiền 6
-* is_refund_after_putdown_post
-    - utter_is_refund_after_putdown_post
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* deny
+    - calculate_down_post_form
+    - form{"name":"calculate_down_post_form"}
+    - slot{"requested_slot":"source_post_package"}
+* canthelp OR deny
+    - action_deactivate_form
+    - form{"name":null}
+    - slot{"requested_slot":null}
     - utter_confirm
     - utter_anything_else
 
-## Hạ tin-Hoàn tiền 7
-* is_refund_after_putdown_post
-    - utter_is_refund_after_putdown_post
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* request_more
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
+## Hạ tin-Hoàn tiền 4
+* request_change_post_package
+    - utter_bot_need_info_for_change_source_package
+    - calculate_change_post_form
+    - form{"name": "calculate_change_post_form"}
+    - form{"name": null}
 
-## Hạ tin-Hoàn tiền 8
-* request_down_post
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* enter_data{"post_package":"vip 3"}
-    - slot{"post_package":"vip 3"}
-    - action_set_source_post_package
-    - slot{"source_post_package":"vip 3"}
-    - slot{"post_package":"None"}
-    - utter_ask_buy_vip_duration
-* enter_data{"duration":"30 ngày"}
-    - slot{"duration":"30 ngày"}
-    - action_set_buy_vip_duration
-    - slot{"buy_vip_duration":"30 ngày"}
-    - slot{"duration":"None"}
-    - utter_ask_used_vip_duration
-* enter_data{"duration":"9 ngày"}
-    - slot{"duration":"9 ngày"}
-    - action_set_used_vip_duration
-    - slot{"used_vip_duration":"9 ngày"}
-    - slot{"duration":"None"}
-    - action_calculate_down_post
-* request_more
-    - utter_out_of_bot_ability
-    - utter_how_contact_customer_service
-
-## Hạ tin-Hoàn tiền 9
-* request_down_post
-    - utter_bot_need_info_for_refund
-    - utter_ask_source_post_package
-* enter_data{"post_package":"vip 1"}
-    - slot{"post_package":"vip 1"}
-    - action_set_source_post_package
-    - slot{"source_post_package":"vip 1"}
-    - slot{"post_package":"None"}
-    - utter_ask_buy_vip_duration
-* enter_data{"duration":"29 ngày"}
-    - slot{"duration":"29 ngày"}
-    - action_set_buy_vip_duration
-    - utter_request_valid_buy_vip_duration
-* enter_data{"duration":"30 ngày"}
-    - slot{"duration":"30 ngày"}
-    - action_set_buy_vip_duration
-    - slot{"buy_vip_duration":"30 ngày"}
-    - slot{"duration":"None"}
-    - utter_ask_used_vip_duration
-* enter_data{"duration":"9 ngày"}
-    - slot{"duration":"9 ngày"}
-    - action_set_used_vip_duration
-    - slot{"used_vip_duration":"9 ngày"}
-    - slot{"duration":"None"}
-    - action_calculate_down_post
-* request_more
-    - utter_out_of_bot_ability
-    - utter_how_contact_customer_service
+## Hạ tin-Hoàn tiền 5
+* request_change_post_package
+    - utter_bot_need_info_for_change_source_package
+    - calculate_change_post_form
+    - form{"name":"calculate_change_post_form"}
+    - slot{"requested_slot":"source_post_package"}
+* canthelp OR deny
+    - action_deactivate_form
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - utter_confirm
+    - utter_anything_else
 
 ## Meey Invest 1
 * how_invest_to_meeyland

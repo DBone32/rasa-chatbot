@@ -189,14 +189,16 @@ def convert_stories():
         bots = sheet_data['Bot']
         stories = sheet_data['Rasa-Stories']
         for idx, action in enumerate(stories):
-            if stts[idx] == stts[idx] and stories[idx] == stories[idx]:
+            if stts[idx] == stts[idx] and action == action:
                 if idx != 0 or i != 0:
                     outfile.writelines('\n')
                 story_name = '## {} {}\n'.format(name, int(stts[idx]))
                 outfile.writelines(story_name)
-            if users[idx] == users[idx]:
+            if users[idx] == users[idx] or '*' in action:
+                action = action.replace('*', '').strip()
                 outfile.writelines('* {}\n'.format(action.strip()))
-            elif bots[idx] == bots[idx]:
+            elif bots[idx] == bots[idx] or '-' in action:
+                action = action.replace('-', '').strip()
                 outfile.writelines('    - {}\n'.format(action.strip()))
     outfile.close()
 

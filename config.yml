@@ -16,7 +16,7 @@ policies:
     epochs: 50
     max_history: 12
   - name: AugmentedMemoizationPolicy
-    max_history: 10
+    max_history: 12
   - name: MappingPolicy
   - name: FallbackPolicy
     nlu_threshold: 0.1

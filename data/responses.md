@@ -1,7 +1,7 @@
 ﻿
 ## faq
 * faq/meeyland_product
-  - Hệ sinh thái bất động sản Meey Land là thủ lĩnh dẫn đầu áp dụng CMCN 4.0 vào lĩnh vực Bất động sản tại Việt Nam, như trí tuệ nhân tạo (AI), công nghệ blockchain, dữ liệu lớn Bigdata, cung cấp sản phẩm công nghệ kết nối giao dịch bất động sản giữa những người có nhu cầu về bất động sản và người chủ sở hữu bất động sản.\n • Website không chỉ đăng tải các thông tin mua bán Bất động sản mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…\n • Công cụ tìm kiếm Bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Meey Land.\nĐầu tư vào MeeyLand là một lựa chọn tuyệt vời của các nhà đầu tư thông minh!
+  - Meeyland.com là trung tâm Thương mại điện tử (TMĐT) phục vụ nhu cầu giới thiệu, dịch vụ trực tuyến về lĩnh vực bất động sản (BĐS) bao gồm: Đăng tin mua bán/cho thuê/sang nhượng BĐS, đăng tin giới thiệu các dự án, định giá về BĐS, đặt banner quảng cáo và giới thiệu thông tin về các công trình, dự án cho các chủ đầu tư,…\nWebsite không chỉ đăng tải các thông tin mua bán Bất động sản mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường Bất động sản, kiến thức mua bán nhà đất, danh sách các phòng công chứng…\nMeeyland.com được xây dựng nhằm hỗ trợ tối đa cho người dùng muốn tìm hiểu thông tin trực tuyến về BĐS hoặc có nhu cầu đăng tin mua bán BĐS.
 
 ## faq
 * faq/who_founder
@@ -13,7 +13,7 @@
 
 ## faq
 * faq/advanced_function
-  - •Tính năng bản đồ: Bản đồ được tích hợp với meeyland.com ngoài việc tìm kiếm chính xác vị trí Bất động sản, khách hàng còn có thể xem thêm về tình trạng pháp lý của Bất động sản như tình trạng quy hoạch. Ngoài ra, khách hàng có thể xem được giá rao bán của các Bất động sản xung quanh vị trí của Bất động sản đang xem để tiện so sánh. \n •Tính năng chat trực tuyến: Ngoài việc liên hệ với người đăng tin qua các cách truyền thống như gọi điện, email, người xem có thể liên hệ với người đăng tin bằng cách sử dụng ứng dụng chat trực tuyến với người đăng tin thông qua website meeyland.com hoặc qua ứng dụng Apps chat của Meey Land trên điện thoại di động.\n •Tính năng định giá Bất động sản: Ngoài giá rao bán của người đăng tin, Meey Land cung cấp cho người xem giá do Meey Land đề xuất. Giá này được nhóm phân tích giá của Meey Land tổng hợp thông qua giá thị trường, và phân tích đưa ra giá chính xác của Bất động sản để người xem tham khảo.
+  - MeeyLand có rất nhiều tính năng hữu ích để hỗ trợ người dùng như:\n•Tính năng bản đồ: Bản đồ được tích hợp với meeyland.com ngoài việc tìm kiếm chính xác vị trí Bất động sản, khách hàng còn có thể xem thêm về tình trạng pháp lý của Bất động sản như tình trạng quy hoạch. Ngoài ra, khách hàng có thể xem được giá rao bán của các Bất động sản xung quanh vị trí của Bất động sản đang xem để tiện so sánh.\n •Tính năng định giá Bất động sản: Ngoài giá rao bán của người đăng tin, Meey Land cung cấp cho người xem giá do Meey Land đề xuất. Giá này được nhóm phân tích giá của Meey Land tổng hợp thông qua giá thị trường, và phân tích đưa ra giá chính xác của Bất động sản để người xem tham khảo.\n •Tính năng chat trực tuyến: Ngoài việc liên hệ với người đăng tin qua các cách truyền thống như gọi điện, email, người xem có thể liên hệ với người đăng tin bằng cách sử dụng ứng dụng chat trực tuyến với người đăng tin thông qua website meeyland.com hoặc qua ứng dụng Apps chat của Meey Land trên điện thoại di động.\n
 
 ## faq
 * faq/meeyland_head_quarter
@@ -29,7 +29,7 @@
 
 ## faq
 * faq/pricing_function
-  - Bạn vui lòng làm theo hướng dẫn tại đây
+  - Chức năng định giá sử dụng trí tuệ nhân tạo để phân tích và đưa ra dự đoán giá cho một bất động sản bất kì.\nGiá được dự đoán bởi AI sẽ được tự động hiển thị ngay trên giao diện của tin đăng.
 
 ## faq
 * faq/channel_web
@@ -49,7 +49,7 @@
 
 ## faq
 * faq/tutorial
-  - Bạn vui lòng vào [đây](trích đường dẫn)
+  - Bạn vui lòng vào [đây](https://meeyland.com/page/cau-hoi-thuong-gap) để tham khảo các câu hỏi thường gặp ạ.
 
 ## faq
 * faq/is_advert_onMeey_effective
@@ -61,11 +61,15 @@
 
 ## is_meeyland_ponzi
 * is_meeyland_ponzi
-  - Meey Land không phải là đa cấp. Meey Land có sản phẩm thật là web đăng tin bđs, anh chị có thể vào [web](http://meeyland.com/) tham khảo và đăng tin nhé.
+  - Meey Land không phải là đa cấp. Meey Land có sản phẩm thật là web đăng tin bất động sản, anh chị có thể vào [web](http://meeyland.com/) tham khảo và đăng tin nhé.
 
 ## when_revenue
 * when_revenue
   - Meey Land có doanh thu từ tháng 8-2020 rồi đó ạ.
+
+## why_success
+* why_success
+  - Meeyland được dẫn dắt bởi người lãnh đạo tài năng - CEO/Founder Hoàng Mai Chung,  chuyên gia Bất động sản với 20 năm kinh nghiệm quản lí và điều hành doanh nghiệp, và rất nhiều năm kinh nghiệm trong lĩnh vực bất động sản, công nghệ thông tin, đã từng đạt được nhiều giải thưởng cúp vàng cho doanh nghiệp.\nMeeyland.com tối đa hóa lợi nhuận bằng các tính năng thông minh tự động hóa hầu hết nhằm giảm tối đa chi phí hoạt động và tái đầu tư, trở thành một công cụ đem lại thu nhập thụ động lớn, liên tục và lâu dài. 
 
 ## out_of_scope
 * out_of_scope/non_vietnamese

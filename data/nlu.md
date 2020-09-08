@@ -715,6 +715,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - các gói đăng tin khác nhau như thế nào
  - [vip1](post_package) có gì khác [vip 2](post_package) thế
  - các gói tin đăng khác nhau như thế nào
+ - lợi ích của gói vip so với gói thường là gì
+ - lợi ích của gói vip là gì
  - [vip 3](post_package) có gì khác với [tin thường](post_package)
 
 ## intent:how_purchase_vip_post
@@ -1047,7 +1049,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - cài đặt ứng dụng ở đâu thế
  - cài  đặt ứng dụng ở đâu
  - cài app Meeyland như nào
- - tải ở đâu
  - bạn cho mình hỏi cách tải app meeyland với
 
 ## intent:error_when_using_app
@@ -1416,6 +1417,11 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - đố bot biết tên tớ
  - tên tao là gì?
  - biết tên mình không
+ - thế giờ tên mình là gì
+ - tên tớ là gì biết ko
+ - biết tớ là ai không
+ - biết tên mình ko
+ - tên mình cơ mà
  - tên mình là gì?
  - tên tớ là gì?
  - tớ tên là gì?
@@ -1765,6 +1771,9 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - không trả lời đúng được à
  - lâu vậy
  - ngu như bò
+ - ngáo à
+ - bot ngáo à
+ - bot ngáo vãi
 
 ## intent:react_positive
  - tốt lắm
@@ -1978,6 +1987,9 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - bot có những gì
  - phạm vi của bot là gì
  - thế phạm vi của bạn là gì
+ - thế mày làm được cái vẹo gì
+ - thế mày làm được gì
+ - thế bạn làm được gì
  - phạm vi của bạn là gì nào
  - bạn có thể trả lời những gì
  - bot có thể trả lời những việc gì
@@ -2395,6 +2407,15 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - khi nào có doanh thu đây
  - bao giờ bên mình có doanh thu
 
+## intent:why_success
+ - Tại sao Meeyland thành công
+ - Lý do gì để meeyland thành công
+ - Meeyland sẽ thành công chứ? Lý do?
+ - Meeyland sẽ thành công chứ?
+ - Meey land liệu có thành công được không
+ - Lý do để meey land thành công
+ - Lý do để meey land thành công là gì
+
 ## intent:out_of_scope/non_vietnamese
  - Please help me
  - can you help me
@@ -2421,8 +2442,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - good
  - good night
  - good job
- - no no
- - oh no
+ - Wadrob
+ - say something?
  - ah yes
  - english
  - speak english
@@ -2574,8 +2595,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Electric equipmen
  - Kitche
  - Furnitur
- - Wadrob
- - say something?
 
 ## intent:out_of_scope/other
  - cưới t không
@@ -2625,7 +2644,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tin tức mới nhất
  - ngủ chưa
  - màu gì đẹp nhất
- - bạn đang làm gì
+ - cho vay ít tiền đi
  - bot hẹn hò với anh k
  - Bạn có bao nhiêu tiền
  - bạn có tiền không
@@ -2695,7 +2714,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - đánh nhau không
  - đánh nhau ko
  - oánh nhau ko
- - cho vay ít tiền đi
 
 ## intent:out_of_scope/no_meaning
  - đau đầu quá m ơi
@@ -2712,7 +2730,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - t có tin m được không
  - chả thấy gì cả
  - Nhớ mình không
- - đang làm gì đó
+ - không tin
  - khó làm sao
  - sao tin nhắn bị gì thế này
  - Thấu
@@ -2731,7 +2749,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - trời
  - hay là
  - có phải
- - không tin
 
 ## intent:chitchat/ask_builder
  - ai thiết kế ra mày thế
@@ -2999,7 +3016,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - có quán ăn ngon nào gần đây không?
  - tôi muốn ăn trưa
  - đói quá
- - Thế xin bát phở ăn sáng
+ - tôi muốn ăn sáng
  - Tôi muốn đi ăn sáng, đói quá
  - Tôi muốn ăn
  - mình đói lắm rồi
@@ -3022,7 +3039,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Tìm giúp một địa điểm để ăn xem nào
  - Ăn gì trưa nay ta
  - Trưa ăn ăn gì nhỉ?
- - tôi muốn ăn sáng
 
 ## intent:chitchat/user_is_rick
  - Nhiều tiền để làm gì
