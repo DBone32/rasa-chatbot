@@ -184,7 +184,7 @@ class ActionVipPackageCompare(Action):
                     elif '2' in value:
                         results.append('utter_vip2_info')
                     elif '3' in value:
-                        results.append('utter_vip3_info')
+                        results.append('utter_vip3_info') 
         if len(results) <= 1:
             results = ['utter_vip0_info', 'utter_vip1_info', 'utter_vip2_info', 'utter_vip3_info']
         for utter in results:
@@ -667,13 +667,13 @@ class CalculateChangePostForm(FormAction):
         
         if result > 0:
             message2 = 'Khi đổi sang gói {} với thời gian {} ngày có đơn giá {}đ - đã được khuyến mãi {}"%" bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(
-                fee_table[vip_type_new]['name'], bought_days_new,price_format(paid_cost_new),int(discount)*100,price_format(float(result)))
+                fee_table[vip_type_new]['name'], bought_days_new,price_format(paid_cost_new),int(discount*100),price_format(float(result)))
         elif result < 0:
             message2 = 'Khi đổi sang gói {} với thời gian {} ngày có đơn giá {}đ - đã được khuyến mãi {}"%" bạn sẽ cần thanh toán thêm {}đ.'.format(
-                fee_table[vip_type_new]['name'], bought_days_new,price_format(paid_cost_new),int(discount)*100,price_format(float(result) * -1))
+                fee_table[vip_type_new]['name'], bought_days_new,price_format(paid_cost_new),int(discount*100),price_format(float(result) * -1))
         elif result == 0:
             message2 = 'Khi đổi sang gói {} với thời gian {} ngày có đơn giá {}đ - đã được khuyến mãi {}"%" bạn sẽ không cần thanh toán thêm chi phí gì cả.'.format(
-                fee_table[vip_type_new]['name'], bought_days_new,int(discount)*100,price_format(paid_cost_new))        
+                fee_table[vip_type_new]['name'], bought_days_new,int(discount*100),price_format(paid_cost_new))        
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
         return [SlotSet("source_post_package", None),SlotSet("buy_vip_duration", None),SlotSet("used_vip_duration", None),SlotSet("destination_post_package", None),SlotSet("buy_new_vip_duration", None)]
@@ -728,7 +728,7 @@ class ActionCalculateChangePost(Action):
                 fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result) * -1))
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
-        return [AllSlotsReset()]
+        return []
 
 
 class ActionCheckEmailAndPhone(Action):
