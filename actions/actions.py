@@ -28,9 +28,13 @@ def convert_duration(duration):
     if duration != None:
         duration = duration.lower()
         duration_value = ''.join(filter(str.isdigit, duration))
+        
         duration_unit = duration.replace(duration_value, '').strip()
         duration_value = int(duration_value)
-        days = duration_value * coefficient[duration_unit]['coef']
+        try:
+            days = duration_value * coefficient[duration_unit]['coef']
+        except:
+            days = duration_value * coefficient['ngày']['coef']    
         if duration_value == '' or duration_unit not in coefficient:
             duration = None
 
