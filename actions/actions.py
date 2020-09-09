@@ -4,7 +4,7 @@ from rasa_sdk import Action, Tracker
 import random
 from numpy import random as rd
 from rasa_sdk.forms import FormAction
-from rasa_sdk.events import FollowupAction, SlotSet
+from rasa_sdk.events import FollowupAction, SlotSet, AllSlotsReset
 from rasa_sdk.executor import CollectingDispatcher
 
 
@@ -505,7 +505,7 @@ class CalculateDownPostForm(FormAction):
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
         dispatcher.utter_message(message3)
-        return []
+        return [SlotSet("source_post_package", None),SlotSet("buy_vip_duration", None),SlotSet("used_vip_duration", None)]
 
 class CalculateChangePostForm(FormAction):
     def name(self) -> Text:
@@ -645,31 +645,34 @@ class CalculateChangePostForm(FormAction):
         used_cost = fee_table[vip_type]['fee'][1] * used_days * (1 - discount)
         paid_cost = fee_table[vip_type]['fee'][bought_days]
 
-        message1 = 'Bạn đã dùng gói {} được {} ngày trên tổng số {} ngày. Vậy số tiền bạn đã dùng là {}đ.'.format(
-            fee_table[vip_type]['name'], used_days, bought_days, price_format(used_cost))
+        message1 = 'Bạn đã dùng gói {} được {} ngày trên tổng số {} ngày. Vậy số tiền bạn đã dùng là {}đ. Số tiền còn lại của bạn là {}đ'.format(
+            fee_table[vip_type]['name'], used_days, bought_days, price_format(used_cost), price_format(int(float((paid_cost - used_cost)))))
 
         destination_post_package = tracker.get_slot('destination_post_package')
         buy_new_vip_duration = tracker.get_slot('buy_new_vip_duration')
 
         vip_type_new = convert_post_package(destination_post_package)
         _, _, _, bought_days_new = convert_duration(buy_new_vip_duration)
-
+        
         if vip_type_new is None:
             return [FollowupAction('utter_ask_destination_post_package')]
 
         paid_cost_new = fee_table[vip_type_new]['fee'][bought_days_new]
-
+        discount = discounts[bought_days_new]
         result = int(float((paid_cost - used_cost - paid_cost_new)))
-
+        
         if result > 0:
-            message2 = 'Khi đổi sang gói {} với thời gian {} ngày bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(
-                fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result)))
-        else:
-            message2 = 'Khi đổi sang gói {} với thời gian {} ngày bạn sẽ cần thanh toán thêm {}đ.'.format(
-                fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result) * -1))
+            message2 = 'Khi đổi sang gói {} với thời gian {} ngày có đơn giá {}đ - đã được khuyến mãi {}"%" bạn sẽ được hoàn lại {}đ vào Tài khoản khuyến mại.'.format(
+                fee_table[vip_type_new]['name'], bought_days_new,price_format(paid_cost_new),int(discount)*100,price_format(float(result)))
+        elif result < 0:
+            message2 = 'Khi đổi sang gói {} với thời gian {} ngày có đơn giá {}đ - đã được khuyến mãi {}"%" bạn sẽ cần thanh toán thêm {}đ.'.format(
+                fee_table[vip_type_new]['name'], bought_days_new,price_format(paid_cost_new),int(discount)*100,price_format(float(result) * -1))
+        elif result == 0:
+            message2 = 'Khi đổi sang gói {} với thời gian {} ngày có đơn giá {}đ - đã được khuyến mãi {}"%" bạn sẽ không cần thanh toán thêm chi phí gì cả.'.format(
+                fee_table[vip_type_new]['name'], bought_days_new,int(discount)*100,price_format(paid_cost_new))        
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
-        return []
+        return [SlotSet("source_post_package", None),SlotSet("buy_vip_duration", None),SlotSet("used_vip_duration", None),SlotSet("destination_post_package", None),SlotSet("buy_new_vip_duration", None)]
 
 class ActionCalculateChangePost(Action):
     def name(self) -> Text:
@@ -721,7 +724,7 @@ class ActionCalculateChangePost(Action):
                 fee_table[vip_type_new]['name'], bought_days_new, price_format(float(result) * -1))
         dispatcher.utter_message(message1)
         dispatcher.utter_message(message2)
-        return []
+        return [AllSlotsReset()]
 
 
 class ActionCheckEmailAndPhone(Action):

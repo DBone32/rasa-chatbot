@@ -46,7 +46,7 @@
 * canthelp OR deny
     - action_deactivate_form
     - form{"name":null}
-    - slot{"requested_slot":null}
+    - slot{"requested_slot":null} 
     - utter_confirm
     - utter_anything_else
 
@@ -56,6 +56,7 @@
     - calculate_change_post_form
     - form{"name": "calculate_change_post_form"}
     - form{"name": null}
+    - reset_slots
 
 ## Hạ tin-Hoàn tiền 5
 * request_change_post_package
@@ -63,6 +64,7 @@
     - calculate_change_post_form
     - form{"name":"calculate_change_post_form"}
     - slot{"requested_slot":"source_post_package"}
+    - reset_slots
 * canthelp OR deny
     - action_deactivate_form
     - form{"name":null}
