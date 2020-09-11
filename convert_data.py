@@ -239,9 +239,9 @@ def convert_respond():
 
     outfile.close()
 
-
-download_raw_data()
-convert_IE()
-convert_domain()
-convert_stories()
-convert_respond()
+if __name__ == "__main__":
+    download_raw_data()
+    convert_IE()
+    convert_domain()
+    convert_stories()
+    convert_respond()

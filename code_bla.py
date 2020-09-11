@@ -47,5 +47,5 @@ def send_request():
     res = requests.post('http://localhost:5005/webhooks/rest/webhook', data= data, headers = headers)
     res = res.json()
     print(res)
-
-send_request()
+if __name__ == "__main__":
+    send_request()
