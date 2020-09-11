@@ -94,9 +94,13 @@ def convert_domain():
                     pass
     # read custom action
     custom_action_sheet = df.parse('Custom Action')
+    forms = []
     for action in custom_action_sheet['Custom Action']:
         if action == action:
-            actions.append(action)
+            if '_form' in action:
+                forms.append(action)
+            else:
+                actions.append(action)
     # read utter ask for required slot
     utter_ask = {}
     slots_sheet = df.parse('Slots')
@@ -176,6 +180,10 @@ def convert_domain():
     for set_action in set_actions:
         if set_action == set_action:
             outfile.writelines(' - {}\n'.format(set_action))
+    # generate set forms:
+    outfile.writelines('forms:\n')
+    for form in forms:
+        outfile.writelines(' - {}\n'.format(form))
 
 
 def convert_stories():

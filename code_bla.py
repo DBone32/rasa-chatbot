@@ -12,7 +12,7 @@ def abc():
             num_intents += 1
             print(intent)
         print(num_intents)
-abc()
+
 
 def statistics():
     with open('data/nlu.md', 'r') as file:
@@ -39,3 +39,13 @@ def statistics():
                 res_dict[f1][f2].append(dics[intent])
         for intent in res_dict:
             print('{}:{}'.format(intent, len(res_dict[intent])))
+
+def send_request():
+    import requests
+    data = json.dumps({"sender": 'tester',"message": "xin chao bot"})
+    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+    res = requests.post('http://localhost:5005/webhooks/rest/webhook', data= data, headers = headers)
+    res = res.json()
+    print(res)
+
+send_request()

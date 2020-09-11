@@ -11,3 +11,5 @@ venv2/*
 actions/__pycache__/*
 models (copy)/*
 models/*
+rasa.db
+.vscode/launch.json
