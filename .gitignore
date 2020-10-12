@@ -1,15 +1,14 @@
 rasavenv/*
 venv/*
+rasax/*
 results/*
 h2o.zip
 events.db
 __pycache__/*
 rasa.db
-rasa.db
-events.db
 venv2/*
 actions/__pycache__/*
 models (copy)/*
 models/*
-rasa.db
 .vscode/launch.json
+*.pyc

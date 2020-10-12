@@ -7,6 +7,8 @@ pipeline:
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
+  number_of_transformer_layers: 1
+  transformer_size: 256
   epochs: 100
 - name: ResponseSelector
   epochs: 150

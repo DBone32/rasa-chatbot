@@ -267,7 +267,7 @@ class ActionUserAskUserName(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         username = tracker.get_slot('name')
         if username is None:
-            dispatcher.utter_message('Bạn chưa giới thiệu tên cho mình mà :D'.format(username))
+            dispatcher.utter_message('Bạn chưa giới thiệu tên cho mình mà :D')
             return [FollowupAction('utter_ask_name')]
         username = username.title()
         dispatcher.utter_message('Tên bạn là {} ạ :D'.format(username))

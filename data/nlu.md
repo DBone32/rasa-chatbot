@@ -15,9 +15,13 @@
  - Tôi đăng ký tài khoản như thế nào
  - Tôi muốn đăng ký tài khoản với địa chỉ email là [panzer@gmail.com](email)
  - chưa biết cách mở tài khoản
+ - mình chưa biết cách mở tài khoản
  - muốn mở tài khoản
  - lập tài khoản như nào
  - lập tài khoản làm sao đây
+ - lâp tài khoản thế nào
+ - lập tài khoản sao thế
+ - mình chưa có tài khoản thì đăng ký tài khoản thế nào
  - làm sao để lập tài khoản
  - chỉ mình cách đăng ký tài khoản
  - vào mở tài khoản ở đâu
@@ -59,6 +63,10 @@
  - Mãi mình không nhận được mã OTP vậy, số mình là [0987564715](phone_number)
  - Tôi không nhận được mã OTP kích hoạt tài khoản, hỗ trợ tôi?
  - nãy mình đăng ký tài khoản mà mãi không được xác nhận
+ - mình không thấy mã xác thực
+ - mã xác thực sao không thấy nhỉ
+ - sao ko thấy mã xác thực đâu vậy
+ - ko nhận được tin nhắn xác thực
  - mã xác thực sao không thấy?
  - không nhận được mã kích hoạt
  - không nhận được mã xác thực gì cả
@@ -150,6 +158,7 @@
  - đăng bài có tài khoản với không có tài khoản khác gì nhau
  - sao phải lập tài khoản
  - một số tính năng phải lập tài khoản mới có à
+ - mình bị ẩn một số chức năng, phải đăng nhập mới dùng được à
  - một số chức năng không thấy đâu, phải đăng nhập à
  - Đăng ký tài khoản [meey land](company) có lợi ích gì?
  - Tôi được gì khi đăng ký tài khoản [meeyland](company)?
@@ -192,6 +201,8 @@
  - đăng nhập bằng tài khoản fb cũng được nhỉ
  - Bên mình có được đăng nhập bằng tài khoản facebook không admin
  - Mình không muốn đăng ký mới, mà đăng nhập bằng tài khoản khác như mail, facebook có được không?
+ - mình muốn đăng nhập bằng email được không vậy
+ - có đăng nhập được bằng mail không vậy
  - Mình muốn đăng nhập bằng email [hkt@gmail.com](email) được không
  - đăng nhập bằng nick face cũng được đúng không admin
 
@@ -403,7 +414,7 @@
 ## intent:why_not_see_money_after_transfer
  - Tôi [chuyển khoản](money_transfer_type) thành công rồi, nhưng sao không thấy tiền trong Ví [Meey land](company)
  - [chuyển khoản](money_transfer_type) xong rồi sao không thấy tiền 
- - sau khi [chuyển khoản](money_transfer_type) thì bao giờ tiền nổi
+ - sau khi [chuyển khoản](money_transfer_type) thì bao giờ tiền nơi
  - sau bao lâu thì biết đc tk của [Meeyland](company) đã nhận đc tiền [chuyển khoản](money_transfer_type)
  - sau bao lâu thì tài khoản [Meeyland](company) đã nhận đc tiền [chuyển khoản](money_transfer_type)
  - vừa [chuyển khoản](money_transfer_type), vào kiểm tra tài khoản không thay đổi gì, có trục trặc gì không?
@@ -417,6 +428,7 @@
  - nạp tiền rồi sao ví chưa có hả bot
  - sao không thấy tiền trong ví, vừa chuyển khoản xong
  - mình đã nạp tiền mà ví chưa thấy tiền về
+ - vừa tạp tiền xong mà vào kiểm tra vẫn chưa có tiền vậy
 
 ## intent:prepare_before_create_post
  - Để đăng tin thì cần chuẩn bị gì?
@@ -476,6 +488,11 @@
  - Mình muốn đăng tin mà chưa biết làm thế nào?
  - Tôi muốn đăng tin, giờ tôi phải làm sao?
  - Tôi muốn đăng bài, tôi vào mục nào nhỉ?
+ - tôi muốn đăng bài thì làm thế nào 
+ - tôi muốn đăng bài thì vào chỗ nào thế
+ - mình muốn đăng tin thì vào mục nào đây
+ - mình muốn đăng tin thì làm thế nào đây
+ - tôi vào mục nào để đăng bài đây
  - Tôi vào mục nào để đăng bài nhỉ?
  - Chỉ cho tôi cách đăng bài với?
  - Tôi đăng ký tài khoản xong rồi, giờ tôi muốn đăng bài thì làm thế nào?
@@ -487,6 +504,8 @@
  - đăng tin sao bot
  - đăng tin vip như nào
  - đăng tin như nào
+ - đăng tin lên trang kiểu gì
+ - Đăng tin kiểu gì thế
 
 ## intent:how_edit_delete_post
  - Tôi đã đăng tin bán nhà [Hà Nội](location) nhưng ghi nhầm diện tích, giờ muốn sửa, tôi làm thế nào?
@@ -521,6 +540,11 @@
  - Số bài đăng mà tôi được phép đăng là bao nhiêu?
  - Số tin đăng có bị giới hạn không?
  - Tôi đăng bao nhiêu tin cũng được à?
+ - một tài khoản được phép đăng bao nhiêu tin?
+ - Một người được phép đăng bao nhiêu tin?
+ - được phép đăng bao nhiêu tin thế
+ - tôi muốn đăng nhiều tin, một người được phép đăng bao nhiêu tin thế
+ - mình muốn đăng nhiều tin có đươc không
  - Có giới hạn số tin tôi có thể đăng không?
 
 ## intent:how_create_creative_post
@@ -553,6 +577,11 @@
  - Tôi đăng lâu rồi má ơi
  - Đăng tin rồi giờ sao bán hả má
  - đăng bài sao để được nhiều người biết
+ - Làm sao để có nhiều người đọc tin mình nhất
+ - Làm sao để tin đăng được quan tâm nhất
+ - Làm thế nào để đăng tin bán được nhanh nhất
+ - Đăng tin mãi chả ai hỏi mua 
+ - Đăng tin mãi đéo ai hỏi mua 
 
 ## intent:post_requirement
  - Quy định đăng bài như thế nào?
@@ -563,6 +592,25 @@
  - tin đăng phải theo quy định như thế nào
  - cho tôi biết quy định đăng tin
  - cho tôi biết quy định đăng bài với
+ - Đăng tin thế nào để không bị vi phạm
+ - Đăng tin không vi phạm thì thế nào
+
+## intent:what_is_vippost
+ - gói [vip 1](post_package) là gì
+ - gói [vip 2](post_package) là gì
+ - gói [vip 2](post_package) là cái gì thế
+ - mình thấy gói [vip2](post_package), nó là cái gì thế
+ - gói [vip 3](post_package) là gì
+ - gói [vip 1](post_package) có gì hay không
+ - gói [vip 2](post_package) có gì hay không
+ - gói [vip 3](post_package) có gì hay không
+ - t nhìn thấy có gói vip là gì thế
+ - gói vip là gì vậy bot
+ - tin [vip3](post_package) là gì vậy
+ - tin vip là gì
+ - [vip2](post_package) là gì
+ - tin [vip1](post_package) là gì
+ - [vip1](post_package) là gì
 
 ## intent:vip_post_details
  - chi tiết gói [vip 1](post_package)
@@ -570,11 +618,12 @@
  - chi tiết [vip1](post_package)
  - gói [vip2](post_package) thì sao
  - gói tin [vip1](post_package) như nào
+ - gói [vip 1](post_package) như nào
  - gói [vip1](post_package) thì sao nhỉ
  - chi tiết các gói tin như nào nhỉ
  - chi tiết các gói vip
  - chi tiết gói vip
- - chi tiết vip 3
+ - chi tiết [vip 3](post_package)
  - nội dung các gói vip như nào
  - Nội dung các gói tin đăng
  - Các gói tin đăng chi tiết thế nào
@@ -586,6 +635,9 @@
 tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tư vấn cho mình các gói tin đăng của meeyland
  - tư vấn các gói tin đăng của meeyland
+ - mình cân tư vấn về các gói đăng tin của meeyland
+ - tư vấn các gói đăng tin với
+ - mình cần tư vấn về các gói đăng tin
 
 ## intent:fee_of_vip_post
  - Đăng tin có mất phí không?
@@ -674,11 +726,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - các loại tin đăng
  - có mấy loại tin đăng
  - có mấy loại tin
- - tin thường là gì
- - tin vip là gì
- - vip2 là gì
- - tin vip1 là gì
- - vip1 là gì
 
 ## intent:post_package_compare
  - gói [vip 3](post_package) khác gói [vip 1](post_package) như nào thế
@@ -704,7 +751,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - gói vip có đắt hơn [tin thường](post_package) không
  - các gói vip có đắt hơn [tin thường](post_package) không
  - các gói vip khác nhau như nào nhỉ
- - [vip 2](post_package) với [tin thường](post_package) khác nhau như nào
+ - [vip 2](post_package) với tin thường khác nhau như nào
  - Tin Vip và tin thường khác nhau như thế nào?
  - Tin VIP khác tin thường như thế nào?
  - [tin thường](post_package) với [vip 1](post_package) có khác nhau ko
@@ -721,7 +768,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
 
 ## intent:how_purchase_vip_post
  - Tôi muốn mua gói [vip1](post_package)
- - mình muốn mua [vip 3](post_package)
  - mua các gói vip
  - mình muốn mua gói vip
  - tôi muốn mua gói vip
@@ -934,6 +980,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tôi muốn sửa gói tin [vip 1](post_package) thành tin [vip 2](post_package) thì có được hoàn tiền ko?
  - gỡ bỏ gói tin [vip3](post_package) trước thời hạn thì có được hoàn lại tiền dư không?
  - tin đang đăng là tin [vip2](post_package) nhưng xoá tin trước hạn thì tiền dư trả lại không
+ - tôi đã mua gói tin vip, giờ xóa tin có được trả lại tiền không
+ - tôi đã mua gói vip, giờ gỡ bài có được hoàn lại tiền không thế
  - Khi thay đổi loại tin thì với tin từ cấp độ cao xuống cấp độ thấp thì có được hoàn lại số tiền dư ra khi đổi tin không ?
  - hạ tin hoàn tiền không?
  - meeyland có cho gỡ tin khi chưa hết thời hạn đăng tin không
@@ -965,6 +1013,10 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tính số tiền còn lại khi hạ tin như thế nào
  - tôi muốn hạ tin hoàn tiền
  - mình muốn hạ tin hoàn tiền
+ - mình bán được nhà rồi, giờ muốn gỡ tin thì làm thế nào
+ - tôi có đăng bán nhà trên trang web, bây giờ nhà của tôi bán được rồi tôi muốn hạ tin thì làm thế nào
+ - tôi có đăng bán đất trên trang web, bây giờ đất của tôi bán được rồi tôi muốn hạ tin
+ - Tôi có đăng tin bán trên web, bây giờ đã được rồi tôi muốn hạ tin
 
 ## intent:request_change_post_package
  - tôi muốn đổi gói
@@ -980,6 +1032,11 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - làm sao để đổi gói tin vip chưa hết hạn
  - mình muốn đổi gói tin
  - tớ muốn đổi gói tin
+ - gói tin tôi đang dùng đắt quá tôi muốn đổi xuống gói thấp hơn
+ - gói tin [vip 1](post_package) tôi đang dùng đắt quá tôi muốn đổi xuống gói thấp hơn
+ - tôi đang dùng gói [vip 1](post_package), tôi muốn đổi xuống gói thấp hơn
+ - tôi đang dùng gói [vip 3](post_package), tôi muốn nâng lên gói cao hơn
+ - tôi đang dùng gói [vip 3](post_package), tôi muốn đổi lên gói cao hơn
 
 ## intent:channel_app
  - meyland có app không?
@@ -1094,6 +1151,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tin đăng ít quá hay sao mà tìm kiếm không có kết quả gì
  - tìm kiếm không có kết quả nào hiện ra cả
  - tìm không có gì hiện ra cả
+ - sao mình không tìm thấy tin đăng nào cả
  - tìm kiếm sao không thấy kết quả nào cả
 
 ## intent:how_search_info
@@ -1269,8 +1327,14 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - liên hệ tổng đài
  - cho tôi hỏi cách liên hệ tổng đài
  - tổng đài meeyland
+ - cho mình xin số tổng đài với
+ - gọi đến tổng đài meeyland thế nào
+ - làm sao để gọi rổng đài vậy
  - Mình cần hỗ trợ trực tiếp
  - có thể hỗ trợ trực tiếp không
+ - Liên hệ với CSKH như thế nào
+ - CSKH số điện thoại là gì
+ - CSKH là gì
 
 ## intent:forward_to_customer_service
  - Muốn khai báo tai khoản ngân hàng vào mục nào
@@ -1300,7 +1364,6 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Nhà mình có nằm trong quy hoạch ko bạn?
  - meeyland nay có gì mới không
  - tôi cần tư vấn nâng cao
- - tôi cần tư vấn mua nhà đất
  - meeyland sẽ thành công chứ
  - đầu tư vào meeyland hiệu quả k
  - lý do gì để đảm bảo sự thành công của dự án meeyland
@@ -1345,6 +1408,9 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Tôi bảo tôi muốn đầu tư meeyland
  - Tôi muốn đầu tư, vì MeeyLand nó quá tốt
  - tham gia đầu tư như nào giờ
+ - làm sao để đầu tư giờ
+ - đầu tư như nào nhỉ
+ - mình muốn đầu tư vào meeyland thì làm thế nào
  - Mình muốn góp tiền vào Meeyland ạ
  - giá mey
  - giá meey
@@ -1352,6 +1418,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Giá mey bao nhiêu
  - hiện tại giá meey là bao nhiêu
  - giá đồng meey là bao nhiêu
+ - hiện tại giá đồng meey là bao nhiêu
 
 ## intent:greet
  - Xin chào
@@ -1398,6 +1465,9 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - mày ơi
  - ad ơi
  - admin ơi
+ - chào ngày mới
+ - hello ngày mới
+ - xin chào mày
  - bot ơi
  - xin chao
  - chao
@@ -1411,6 +1481,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Bạn biết tên tớ không?
  - Nói tao biết tên tao xem nào?
  - ai đang nói chuyện với bạn vậy?
+ - bạn đăng nói chuyện với ai vậy
+ - biết mình tên gì hok
  - Bot có biết ai đang nói chuyện với bot không?
  - có biết tên không mà nói chuyện nãy giờ
  - biết tên k mà nói chuyện
@@ -1464,6 +1536,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - [Hải](name) là tên mình
  - bố mẹ đặt tên mình là [Nghĩa](name)
  - sinh ra mình đã có tên là [Kiên](name)
+ - tên tớ là [Tuấn](name)
  - t là [Mạnh](name)
  - họ tên mình là [Phan Duy Anh](name) đó
  - mình là [Hồ Hương](name)
@@ -1508,6 +1581,8 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - bạn giúp mình với
  - trả lời giúp mình với
  - mình cần bot giúp
+ - mình cần bot giúp mình với
+ - mình cần bot giúp với
  - mình cần hỏi tí
  - mình cần hỏi cái này
  - m cần hỏi cái này
@@ -1570,8 +1645,11 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - rồi nhé
  - mình chuẩn bị rồi
  - rồi ạ
+ - rồi
+ - rồi nhé
  - rồi đó
  - yes
+ - oki
  - đồng ý
  - Ok bạn nhé !
  - Ok bạn nhé
@@ -1587,6 +1665,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - okeee
  - có nhé
  - có đấy
+ - mình có
  - Có
  - có
 
@@ -1624,6 +1703,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tôi từ chối
  - tôi không muốn đưa bot email
  - tôi không muốn đưa bot số điện thoại
+ - mình không nghĩ vậy
  - tôi không nghĩ vậy
  - tôi không thích điều này
  - tôi không chấp nhận
@@ -1633,11 +1713,12 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - câu trả lời là không nhé
  - không nhé
  - tôi không chắc chắn
- - không cảm ơn
+ - không đâu
  - không quên đi
  - không đồng ý
  - thôi
  - thôi nhé
+ - thôi bỏ qua
  - không cung cấp đâu
 
 ## intent:request_more
@@ -2057,7 +2138,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - vẫn chưa thông minh lắm
  - cần học thêm đấy
 
-## intent:faq/meeyland_product
+## intent:meeyland_product
  - Sản phẩm của Meey Land là gì?
  - Meey Land đang phát triển sản phẩm gì vậy
  - Mình muốn hỏi bạn Meey land là gì bạn
@@ -2087,8 +2168,10 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Meey land có gì hay?
  - bạn có những dịch vụ gì
  - bên bạn có dịch vụ gì
+ - hệ sinh thái meeyland có gì
+ - hệ sinh thái meeyland là gì
 
-## intent:faq/who_founder
+## intent:who_founder
  - Ai là người sáng lập ra Meey Land?
  - Ai sáng lập ra meeyland thế
  - Cha đẻ Meeybot là ai?
@@ -2155,7 +2238,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - bạn biết Hoàng Mai Chung không
  - sếp của bạn là ai
 
-## intent:faq/meeyland_orientation
+## intent:meeyland_orientation
  - Định hướng phát triển của [Meey land](company) là gì?
  - [Meeyland](company) định hướng như thế nào
  - [Meey land](company) định hướng phát triển như thế nào
@@ -2174,7 +2257,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Lộ trình sản phẩm
  - Lộ trình phát triển sản phẩm của meeyland
 
-## intent:faq/advanced_function
+## intent:advanced_function
  - Ngoài các tính năng cơ bản, website meeyland.com có các tính năng nâng cao nào
  - Meey land có tính năng nâng cao gì không?
  - Bạn nói rõ hơn về tính năng vượt trội của MeeyLand được không ?
@@ -2184,7 +2267,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - tính đăng vượt trội của meey land
  - Ngoài các tính năng cơ bản gì bên mình có tính năng nâng cao nào khác không?
 
-## intent:faq/meeyland_head_quarter
+## intent:meeyland_head_quarter
  - Trụ sở chính của Meey Land ở đâu?
  - Meeyland ở đâu vậy
  - Trụ sở của meeyland ở đâu thế
@@ -2204,7 +2287,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - địa chỉ công ty ở đâu ạ
  - địa chỉ công ty ở đâu vậy
 
-## intent:faq/special_offer
+## intent:special_offer
  - Hiện tại Meey Land có các chương trình ưu đãi gì?
  - Các chương trình ưu đãi hiện tài là gì
  - Các chương trình ưu đãi hiện tại của meeyland là gì
@@ -2216,14 +2299,14 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Chính sách khuyến mại khi đăng tin
  - Gói [vip2](post_package) dạo này có ưu đãi không admin ơi
 
-## intent:faq/other_channels
+## intent:other_channels
  - Làm thế nào để theo dõi chúng tôi trên mạng xã hội Facebook/Youtube
  - Meeyland có fanpage không vậy
  - Làm sao để mình cập nhập thông tin mới nhất ở meeyland thế
  - Fanpage của meeyland là meeyland.abc à
  - Trang meeyland tv trên youtube là của bên mình à
 
-## intent:faq/pricing_function
+## intent:pricing_function
  - Dùng chức năng định giá ở đâu?
  - Bên mình có tính năng định giá bất động sản à, mình tham khảo với
  - dùng tính năng định giá ở đâu vậy admin?
@@ -2234,7 +2317,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - bên mình có tính năng định giá bđs, vào mục nào vậy
  - vào mục nào để vào chức năng định giá vậy
 
-## intent:faq/channel_web
+## intent:channel_web
  - Meeyland có trang web không?
  - Có trang web meeyland không?
  - web meeyland để làm gì
@@ -2260,7 +2343,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - trang web chính thức của công ty là gì?
  - web chính thức của meeyland phải đây không? [https://meeyland.com](link)
 
-## intent:faq/community_size
+## intent:community_size
  - số lượng người dùng meeyland lớn mức nào?
  - bạn có biết cộng đồng meey hiện tại bao nhiêu không?
  - bạn biết bao nhiêu người trong cộng đồng meeyland không?
@@ -2298,7 +2381,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - bao nhiêu người lập tài khoản ở meeyland?
  - lượt truy cập có vẻ chẳng mấy
 
-## intent:faq/languages
+## intent:languages
  - Meeyland hiện hỗ trợ ngôn ngữ nào?
  - ngoài Tiếng Việt có ngôn ngữ nào không?
  - mỗi Tiếng Việt thôi à
@@ -2316,7 +2399,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - cài đặt tiếng anh cho web như nào đây
  - cài đặt giao diện tiếng anh cho web như nào vậy?
 
-## intent:faq/what_is_forum
+## intent:what_is_forum
  - bạn biết gì về forum của Meeyland không?
  - Meeyland có forum không?
  - Forum Meeyland có hoạt động không?
@@ -2346,7 +2429,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - mình có nên đăng ký tài khoản forum không?
  - Forum phục vụ cho ai?
 
-## intent:faq/tutorial
+## intent:tutorial
  - Xem hướng dẫn sử dụng ở đâu?
  - tôi cần hướng dẫn sử dụng trang web
  - có hướng dẫn sử dụng không?
@@ -2363,7 +2446,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - có hướng dẫn toàn bộ app không?
  - có hướng dẫn toàn bộ web không
 
-## intent:faq/is_advert_onMeey_effective
+## intent:is_advert_onMeey_effective
  - Đăng tin trên Meeyland có hiệu quả không?
  - Quảng cáo trên Meeyland có hiệu quả không?
  - Đăng tin trên Meeyland có tương tác tốt không?
@@ -2376,7 +2459,7 @@ tư vấn cho tôi các gói đăng tin của Meeyland nhé
  - Nói tôi vài lý do nên đăng tin ở đây
  - cho tôi biết lý do tôi nên tin tưởng đăng tin ở meeyland 
 
-## intent:faq/birthday_of_MeeyLand
+## intent:birthday_of_MeeyLand
  - Meeyland thành lập khi nào
  - meeyland ra đời lúc nào
  - meeyland có từ khi nào

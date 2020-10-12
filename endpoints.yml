@@ -3,13 +3,13 @@
 #    token: io1j2o4oj124
 #    wait_time_between_pulls: 10
 
-#tracker_store:
-#     type: mongod
-#     url: localhost:27017
-#     db: ai
-#     username: rasa
-#     password: example
-#     auth_source: admin
+# tracker_store:
+#      type: mongod
+#      url: 18.140.240.198:27017
+#      db: tracker
+#      username: ai_chatbot
+#      password: chatbot!@#
+#      auth_source: tracker
 
 #lock_store:
 #   type: "redis"
