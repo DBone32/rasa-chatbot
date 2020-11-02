@@ -71,15 +71,15 @@ def convert_domain():
                 if 'Name of Utter' in sheet_data and type(utter_names[idx]) == str:
                     utter_dict[utter_names[idx]] = [answer.replace('"', "'").replace('\n', '\\n')]
                     actions.append(utter_names[idx])
-                elif 'action_' not in answer:
+                elif 'action_' in answer or 'utter_' in answer:
+                    if answer not in actions:
+                        actions.append(answer)
+                else:
                     if 'utter_{}'.format(current_intent) not in utter_dict:
                         utter_dict['utter_{}'.format(current_intent)] = []
                     utter_dict['utter_{}'.format(current_intent)].append(answer.replace('"', "'").replace('\n', '\\n'))
                     if 'utter_{}'.format(current_intent) not in actions:
                         actions.append('utter_{}'.format(current_intent))
-                else:
-                    if answer not in actions:
-                        actions.append(answer)
 
 
         # find entities
@@ -153,7 +153,6 @@ def convert_domain():
     outfile.writelines('  requested_slot:\n    type: text\n')
     # generate responses:
     outfile.writelines('responses:\n')
-    outfile.writelines('  utter_default:\n  - text: "Xin lỗi mình không hiểu ý bạn ạ. Bạn nói rõ hơn được không!"\n')
     for utter in utter_dict:
         if '/' in utter:
             continue
@@ -165,7 +164,6 @@ def convert_domain():
         outfile.writelines('  - text: {}\n'.format(utter_ask[slot]))
     # generate actions:
     outfile.writelines('actions:\n')
-    outfile.writelines(' - utter_default\n')
     rp_actions = []
     for action in actions:
         if '/' in action:
