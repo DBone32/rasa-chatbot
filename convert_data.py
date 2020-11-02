@@ -135,7 +135,7 @@ def convert_domain():
             outfile.writelines('    triggers: respond_{}\n'.format(intent))
         elif type(intent_dict[intent]) != str:
             outfile.writelines('- {}\n'.format(intent))
-        elif 'action_' in intent_dict[intent]:
+        elif 'action_' in intent_dict[intent] or 'utter_' in intent_dict[intent]:
             outfile.writelines('- {}:\n'.format(intent))
             outfile.writelines('    triggers: {}\n'.format(intent_dict[intent]))
         else:
